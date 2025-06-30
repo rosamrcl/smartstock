@@ -51,6 +51,20 @@ html{
 .btn:hover{
     color: var(--cor8);
 }
+.btn-blue{
+    display: inline-block;
+    margin-top: 1rem;
+    padding: .5rem;
+    padding-left: 1rem;
+    border-radius: .5rem;
+    background: var(--cor1);
+    font-size: 2rem;
+    color: var(--cor4);
+    cursor: pointer;
+}
+.btn-blue:hover{
+    color: var(--cor8);
+}
 .btn-delete{
     display: inline-block;
     margin-top: 1rem;
@@ -100,6 +114,47 @@ form select{
     margin: 1rem;
     font-size: 1.7rem;
 }
+.table-container{    
+    background: var(--cor2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: .5rem;
+}
+.tabela{
+    width: 50rem;
+    padding: 2rem 9%;
+    margin: 2rem;
+    display: flex;
+    align-items: center;
+}
+.table-container h3{
+    color: var(--cor4);
+    font-size: 3rem;
+}
 table{
-    background: var(--cor7);
+    background: var(--cor4);
+    width: 100%;
+    border: .1rem solid var(--cor6);
+}
+table tr{
+    font-size: 2rem;
+    padding: 1rem;
+    margin: 1rem;
+}
+table tr th{
+    font-size: 2rem;
+    padding: 1rem;
+    margin: 1rem;
+    border: .1rem solid var(--cor6);
+    text-align: center;
+}
+table tr td{
+    font-size: 2rem;
+    padding: 1rem;
+    margin: 1rem;
+    border: .1rem solid var(--cor6);
+    text-align: center;
 }
