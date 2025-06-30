@@ -1,0 +1,49 @@
+header{
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    background: var(--cor4);
+    box-shadow: var(--box-shadow);
+    padding: 1rem 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+header .home {
+    color: var(--cor9);
+    font-size: 2.5rem;   
+
+}
+header .home:hover{
+    color: var(--cor2);
+}
+header img{
+    height: 8rem;
+}
+
+header .navbar a{
+    font-size: 2.5rem;
+    color: var(--cor9);
+    cursor: pointer; 
+    padding: .5rem 1.5rem;
+}
+header .navbar a:hover{
+    color: var(--cor1);
+}
+header .navbar.active{
+    background: var(--cor7);
+    color: var(--cor1);
+}
+header .icons{
+    font-size: 2.5rem;
+    color: var(--cor9);
+    cursor: pointer;    
+}
+header .navbar i{
+    margin: 2rem;
+}
+header .icons #menu-bars{
+    display: none;
+}
