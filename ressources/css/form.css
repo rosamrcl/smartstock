@@ -24,11 +24,9 @@
     align-items: center;
     padding: 2rem 9%;
     border-radius: .5rem;
-    box-shadow: var(--box-shadow);
 }
 .form-container{
-    width: 50rem;
-    box-shadow: var(--box-shadow);
+    width: 50rem;    
     display: flex;
     align-items: center;
     justify-content: center;

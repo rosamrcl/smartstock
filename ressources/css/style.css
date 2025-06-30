@@ -81,8 +81,7 @@ html{
     opacity: .7;
 }
 
-.cadastrogerencia{
-    background: var(--cor1);
+.cadastrogerencia{   
     display: flex;   
     flex: 1 1 45rem;
     height: 100%;    
@@ -96,10 +95,10 @@ html{
     align-items: center;
     padding: 2rem 9%;
     border-radius: .5rem;
+    background: var(--cor1);
 }
 .form-container-produto{
-    width: 50rem;
-    box-shadow: var(--box-shadow);
+    width: 50rem;   
     display: flex;
     align-items: center;
     justify-content: center;
@@ -122,13 +121,21 @@ form select{
     flex-direction: column;
     padding: 1rem;
     border-radius: .5rem;
+    width: 100%;
 }
 .tabela{
     width: 50rem;
     padding: 2rem 9%;
     margin: 2rem;
     display: flex;
+    flex-direction: column;
     align-items: center;
+}
+
+.table-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem; 
 }
 .table-container h3{
     color: var(--cor4);
@@ -137,7 +144,8 @@ form select{
 table{
     background: var(--cor4);
     width: 100%;
-    border: .1rem solid var(--cor6);
+    border: .1rem solid var(--cor8);
+    border-radius: .5rem;
 }
 table tr{
     font-size: 2rem;
@@ -148,13 +156,13 @@ table tr th{
     font-size: 2rem;
     padding: 1rem;
     margin: 1rem;
-    border: .1rem solid var(--cor6);
+    border: .1rem solid var(--cor8);
     text-align: center;
 }
 table tr td{
     font-size: 2rem;
     padding: 1rem;
     margin: 1rem;
-    border: .1rem solid var(--cor6);
+    border: .1rem solid var(--cor8);
     text-align: center;
 }
