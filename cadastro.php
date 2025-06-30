@@ -11,18 +11,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <header>
-        <a href="#home" class="home"><i class="fa-solid fa-house"></i></a>
-        <img src="./ressources/img/smartstock.png" alt="logo">
-        <nav class="navbar">  
-            <a href=""><i class="fas fa-search" id="search-icon"></i></a>
-            <a href=""><i class="fa-solid fa-user"></i></a>
-            <a href=""><i class="fa-solid fa-bell"></i></a>
-        </nav>
-        <div class="icons">
-            <i class="fas fa-bars" id="menu-bars"></i>
-        </div>        
-    </header>
+    <?php
+    include '/laragon/www/smartstock/includes/header.php';
+    ?>
     <section class="container">
         <div class="logo">
             <img src="./ressources/img/smartstock.png" alt="">
@@ -30,12 +21,19 @@
         <div class="form">
             <div class="form-container">
                 <form action="" method="post">
-                    <h3>Login</h3>
+                    <h3>Cadastro</h3>
+                    <label for="nome">Nome</label>
+                    <input type="text" name="nome" placeholder="Nome">
+                    <label for="sobrenome">Sobrenome</label>
+                    <input type="text" name="sobrenome" placeholder="Sobrenome">
                     <label for="email">E-mail</label>
                     <input type="email" name="email" id="" placeholder="email@email.com">
                     <label for="senha">Senha</label>
                     <input type="password" name="senha" id="" placeholder="•••••••••">
-                    <p>Esqueci minha senha <a href="#">Clique aqui</a></p>
+                    <label for="csenha">Confirmar senha</label>
+                    <input type="password" name="csenha" id="" placeholder="•••••••••">
+                    <label for="codigosuperior">Código do Superior</label>
+                    <input type="text" placeholder="Código do Superior">                    
                     <input type="submit" value="Enviar" class="btn">
                 </form>
             </div>

@@ -6,7 +6,7 @@
     <title>SmartStock</title>
     <link rel="stylesheet" href="./ressources/css/style.css">
     <link rel="stylesheet" href="./ressources/css/header.css">
-    <link rel="stylesheet" href="./ressources/css/home.css">
+    <link rel="stylesheet" href="./ressources/css/form.css">
     <link rel="stylesheet" href="./ressources/css/media.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -23,34 +23,35 @@
             <i class="fas fa-bars" id="menu-bars"></i>
         </div>        
     </header>
-    <section class="usuario">
-        <div class="logo_foto">
-            <img src="./ressources/img/smartstock.png" alt="">
-            <div class="perfil">
-                <img src="./ressources/img/perfil.png" alt="">
-                <p>Bem Vindo, Ambrosio</p>
-                <button type="submit" class="btn-delete">Sair <i class="fa-solid fa-right-to-bracket"></i></button>
-            </div>
-        </div>
-        <div class="service">
-            <div class="gerenciar">
-                <h5>Gerenciar Produtos</h5>
-                <a href="#"> <i class="fa-solid fa-boxes-stacked"></i>   </a>
-                            
-            </div>
-            <div class="ordem-servico">
-                <h5>Ordem de Serviço</h5>
-                <a href="#"><i class="fa-solid fa-users-gear"></i></a>
-            </div>
-            <div class="manutencao">
-                <h5>Manutenção</h5>
-                <a href="#"><i class="fa-solid fa-screwdriver-wrench"></i></a>
-            </div>
-        </div>
 
+    <section class="cadastrogerencia">
+        <div class="form-produto">
+            <div class="form-container-produto">
+                <form action="" method="post">
+                    <h3>Cadastro do produto</h3>
+                    <label for="productname">Nome produto</label>
+                    <input type="text" name="productname" id="">
+                    <label for="descricao">Descrição</label>
+                    <input type="text" name="descricao" >
+                    <label for="status">Status</label>
+                    <select name="status" id="">
+                        <option value="funcionando">Funcionando</option>
+                        <option value="funcionando">Com defeito</option>
+                        <option value="funcionando">Em uso</option>
+                    </select>
+                    <label for="quantidade">Quantidade</label>
+                    <input type="number" name="quantidade" id="">                    
+                    <input type="submit" value="Adicionar" class="btn" name="adicionar">
+                </form>
+            </div>
+        </div>
+        <div class="tabela">
+            <table>
+                <th>ID</th>
+            </table>
+        </div>
 
     </section>
-
 
     <script src="./ressources/js/script.js"></script>
     

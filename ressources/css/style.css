@@ -66,3 +66,40 @@ html{
 .btn-delete:hover{
     opacity: .7;
 }
+
+.cadastrogerencia{
+    background: var(--cor1);
+    display: flex;   
+    flex: 1 1 45rem;
+    height: 100%;    
+    box-shadow: var(--box-shadow);
+    padding: 2rem 9%;
+    margin: 2rem;
+    border-radius: .5rem;
+}
+.form-produto{   
+    display: flex;
+    align-items: center;
+    padding: 2rem 9%;
+    border-radius: .5rem;
+}
+.form-container-produto{
+    width: 50rem;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    border-radius: .5rem;
+}
+
+form select{
+    width: 100%;
+    border-radius: .5rem;
+    padding: 1rem;
+    margin: 1rem;
+    font-size: 1.7rem;
+}
+table{
+    background: var(--cor7);
+}

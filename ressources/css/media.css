@@ -38,6 +38,21 @@
     .container{
         flex-direction: column;
     }
+    .usuario .logo_foto {
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .service {
+        flex-direction: column; 
+    }
+
+    .service .gerenciar,
+    .service .ordem-servico,
+    .service .manutencao {
+        width: 90%;
+        max-width: none;
+    }
 }
 @media (max-width:450px){
     html{
