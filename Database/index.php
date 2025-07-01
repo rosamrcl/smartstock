@@ -12,7 +12,10 @@ try {
         nome VARCHAR(100),
         sobrenome VARCHAR(100),
         email VARCHAR(100) UNIQUE,
-        senha VARCHAR(255)
+        senha VARCHAR(255),
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP,
+        deleted_at TIMESTAMP NULL
     )");
 
     // 2. Produtos
@@ -21,7 +24,10 @@ try {
         nome VARCHAR(100),
         descricao TEXT,
         status VARCHAR(50),
-        quantidade INT
+        quantidade INT,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP,
+        deleted_at TIMESTAMP NULL
     )");
 
     // 3. Ordens de Serviço
@@ -32,7 +38,10 @@ try {
         responsavel VARCHAR(100),
         agendamento DATE,
         observacoes TEXT,
-        status VARCHAR(50)
+        status VARCHAR(50),
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP,
+        deleted_at TIMESTAMP NULL
     )");
 
     // 4. Ordem Estoque
@@ -44,6 +53,9 @@ try {
         quantidade INT,
         unidade VARCHAR(20),
         localizacao VARCHAR(100),
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP,
+        deleted_at TIMESTAMP NULL,
         FOREIGN KEY (id_ordem) REFERENCES ordens_servico(id)
     )");
 
@@ -56,6 +68,9 @@ try {
         etapa VARCHAR(100),
         descricao_tarefa TEXT,
         data_verificacao DATE,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP,
+        deleted_at TIMESTAMP NULL,
         FOREIGN KEY (id_ordem) REFERENCES ordens_servico(id)
     )");
 
@@ -66,7 +81,9 @@ try {
         email VARCHAR(100),
         mensagem TEXT,
         arquivo VARCHAR(255),
-        data_envio TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        data_envio TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP,
+        deleted_at TIMESTAMP NULL
     )");
 
 } catch (PDOException $e) {
