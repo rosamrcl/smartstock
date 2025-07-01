@@ -13,13 +13,9 @@
 </head>
 
 <body>
-<<<<<<< HEAD
-    <?php include '/laragon/www/smartstock/Frontend/includes/header.php';?>
-=======
     <?php
     include __DIR__ . '/includes/header.php';
     ?>
->>>>>>> 2b83f20e9a0f59309d33754afc6788945a6649ba
     <section class="container">
         <div class="logo">
             <img src="./ressources/img/smartstock.png" alt="">

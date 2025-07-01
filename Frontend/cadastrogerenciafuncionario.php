@@ -16,7 +16,9 @@
 </head>
 
 <body>
-    <?php include '/laragon/www/smartstock/Frontend/includes/header.php';?>
+    <?php
+    include __DIR__ . '/includes/header.php';
+    ?>
 
 
     <section class="cadastrogerencia">      
