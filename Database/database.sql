@@ -21,11 +21,6 @@ CREATE DATABASE IF NOT EXISTS `smartstock` /*!40100 DEFAULT CHARACTER SET utf8mb
 USE `smartstock`;
 
 -- Copiando estrutura para tabela smartstock.usarios
-DROP TABLE IF EXISTS `usarios`;
-CREATE TABLE IF NOT EXISTS `usarios` (
-  `id_user` int NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`id_user`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Copiando dados para a tabela smartstock.usarios: ~0 rows (aproximadamente)
 
