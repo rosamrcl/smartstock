@@ -71,4 +71,12 @@ html{
     opacity: .7;
 }
 
-
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--box-shadow);
+}
+footer img{
+    width: 10rem;
+}

@@ -1,8 +1,7 @@
 .cadastrogerencia{   
     display: flex;   
     flex: 1 1 45rem;
-    height: 100%;    
-    box-shadow: var(--box-shadow);
+    height: 100%;   
     padding: 2rem 9%;
     margin: 2rem;
     border-radius: .5rem;

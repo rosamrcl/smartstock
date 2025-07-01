@@ -128,6 +128,9 @@
                 </div>
 
     </section>
+    <?php
+    include __DIR__ . '/includes/footer.php';
+    ?>
 
     <script src="./ressources/js/script.js"></script>
 
