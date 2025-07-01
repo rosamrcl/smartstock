@@ -103,3 +103,19 @@ table tr td{
     border: .1rem solid var(--cor8);
     text-align: center;
 }
+
+.cadastrogerencia .perfil-cadastro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 4%; 
+    font-size: 2rem;   
+}
+
+.cadastrogerencia .perfil-cadastro img{
+    width: 40rem;
+    object-fit: cover;
+    padding: 0;
+    margin: 2rem;
+}
