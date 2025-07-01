@@ -16,30 +16,18 @@
 </head>
 
 <body>
-    <header>
-        <a href="#home" class="home"><i class="fa-solid fa-house"></i></a>
-        <img src="./ressources/img/smartstock.png" alt="logo">
-        <nav class="navbar">
-            <a href=""><i class="fas fa-search" id="search-icon"></i></a>
-            <a href=""><i class="fa-solid fa-user"></i></a>
-            <a href=""><i class="fa-solid fa-bell"></i></a>
-        </nav>
-        <div class="icons">
-            <i class="fas fa-bars" id="menu-bars"></i>
-        </div>
-    </header>
+    <?php include '/laragon/www/smartstock/Frontend/includes/header.php';?>
 
-    <section class="cadastrogerencia">
-        <div class="logo_foto">
-            <img src="./ressources/img/smartstock.png" alt="">
-            <div class="perfil">
+
+    <section class="cadastrogerencia">      
+            
+            <div class="perfil-cadastro">
                 <div class="image">
                     <img src="./ressources/img/perfil.png" alt="">
                 </div>
                 <p>Bem Vindo, Ambrosio</p>
                 <button type="submit" class="btn-delete">Sair <i class="fa-solid fa-right-to-bracket"></i></button>
-            </div>
-        </div>
+            </div>       
         <div class="table-container">
             <h3>Gerenciar Produtos</h3>
             <div class="tabela">
