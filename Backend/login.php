@@ -13,17 +13,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
-
     $stmt = $pdo->prepare("SELECT * FROM usuarios WHERE email = :email");
     $stmt->bindParam(':email', $email);
     $stmt->execute();
 
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if ($user && password_hash($senha, $user['senha'])) {
+    if ($user && password_verify($senha, $user['senha'])) {
         $_SESSION['usuario'] = [
-            'id_user' => $user['id_user'],
-            'name' => $user['name'],
+            'id_user' => $user['id'],
+            'nome' => $user['nome'],
             'sobrenome' => $user['sobrenome'],
             'email' => $user['email']
         ];
@@ -39,5 +38,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     header('Location: ../Frontend/login.php');
     exit;
 }
-
 ?>

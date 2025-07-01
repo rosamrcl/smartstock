@@ -20,7 +20,7 @@
         </div>
         <div class="form">
             <div class="form-container">
-                <form action="" method="post">
+                <form action="../Backend/cadastro.php" method="post">
                     <h3>Cadastro</h3>
                     <label for="nome">Nome</label>
                     <input type="text" name="nome" placeholder="Nome">
@@ -35,6 +35,20 @@
                     <label for="codigosuperior">Código do Superior</label>
                     <input type="text" placeholder="Código do Superior">                    
                     <input type="submit" value="Enviar" class="btn">
+
+                    <!-- Exibir erro ou sucesso -->
+                    <?php
+                    session_start();
+                    if (!empty($_SESSION['erro_cadastro'])) {
+                        echo "<p style='color:var(--cor4); text-align:center; font-size:3rem;'>" . $_SESSION['erro_cadastro'] . "</p>";
+                        unset($_SESSION['erro_cadastro']);
+                    }
+                    if (!empty($_SESSION['sucesso_cadastro'])) {
+                        echo "<p style='color:var(--cor4); text-align:center; font-size:3rem;'>" . $_SESSION['sucesso_cadastro'] . "</p>";
+                        unset($_SESSION['sucesso_cadastro']);
+                    }
+                    ?>
+
                 </form>
             </div>
         </div>
