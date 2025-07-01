@@ -64,16 +64,18 @@ CREATE TABLE IF NOT EXISTS `ordem_estoque` (
 DROP TABLE IF EXISTS `ordens_servico`;
 CREATE TABLE IF NOT EXISTS `ordens_servico` (
   `id_services` int NOT NULL AUTO_INCREMENT,
-  `solicitante` varchar(100) DEFAULT NULL,
-  `categoria` varchar(100) DEFAULT NULL,
-  `responsavel` varchar(100) DEFAULT NULL,
+  `id_responsible` int DEFAULT NULL,
+  `solicitante` varchar(100) NOT NULL,
+  `categoria` varchar(100) NOT NULL,
   `agendamento` date DEFAULT NULL,
   `observacoes` text,
   `status` varchar(50) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   `deleted_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id_services`)
+  PRIMARY KEY (`id_services`),
+  KEY `id_responsible` (`id_responsible`),
+  CONSTRAINT `ordens_servico_ibfk_1` FOREIGN KEY (`id_responsible`) REFERENCES `usuarios` (`id_user`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Exportação de dados foi desmarcado.

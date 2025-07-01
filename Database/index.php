@@ -9,10 +9,10 @@ try {
     // 1. Usuários
     $pdo->exec("CREATE TABLE IF NOT EXISTS usuarios (
         id_user INT AUTO_INCREMENT PRIMARY KEY,
-        nome VARCHAR(100),
-        sobrenome VARCHAR(100),
-        email VARCHAR(100) UNIQUE,
-        senha VARCHAR(255),
+        nome VARCHAR(100) NOT NULL,
+        sobrenome VARCHAR(100) NOT NULL,
+        email VARCHAR(100) UNIQUE NOT NULL,
+        senha VARCHAR(255) NOT NULL,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         updated_at TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP,
         deleted_at TIMESTAMP NULL
@@ -21,7 +21,7 @@ try {
     // 2. Produtos
     $pdo->exec("CREATE TABLE IF NOT EXISTS produtos (
         id_products INT AUTO_INCREMENT PRIMARY KEY,
-        nome VARCHAR(100),
+        nome VARCHAR(100) NOT NULL,
         descricao TEXT,
         status ENUM('Estoque', 'Manutenção', 'Em uso'),
         quantidade INT,
@@ -33,26 +33,27 @@ try {
     // 3. Ordens de Serviço
     $pdo->exec("CREATE TABLE IF NOT EXISTS ordens_servico (
         id_services INT AUTO_INCREMENT PRIMARY KEY,
-        solicitante VARCHAR(100),
-        categoria VARCHAR(100),
-        responsavel VARCHAR(100),
+        id_responsible INT,
+        solicitante VARCHAR(100) NOT NULL,
+        categoria VARCHAR(100) NOT NULL,
         agendamento DATE,
         observacoes TEXT,
         status VARCHAR(50),
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         updated_at TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP,
-        deleted_at TIMESTAMP NULL
+        deleted_at TIMESTAMP NULL,
+        FOREIGN KEY (id_responsible) REFERENCES usuarios(id_user)
     )");
 
     // 4. Ordem Estoque
     $pdo->exec("CREATE TABLE IF NOT EXISTS ordem_estoque (
         id_stock INT AUTO_INCREMENT PRIMARY KEY,
         id_ordem INT,
-        produto VARCHAR(100),
-        descricao VARCHAR(100),
-        quantidade INT,
-        unidade VARCHAR(20),
-        localizacao VARCHAR(100),
+        produto VARCHAR(100) NOT NULL,
+        descricao VARCHAR(100) NOT NULL,
+        quantidade INT NOT NULL,
+        unidade VARCHAR(20) NOT NULL,
+        localizacao VARCHAR(100) NOT NULL,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         updated_at TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP,
         deleted_at TIMESTAMP NULL,
@@ -63,9 +64,9 @@ try {
     $pdo->exec("CREATE TABLE IF NOT EXISTS checklist (
         id_checklist INT AUTO_INCREMENT PRIMARY KEY,
         id_ordem INT,
-        manutencao VARCHAR(100),
-        status VARCHAR(50),
-        etapa VARCHAR(100),
+        manutencao VARCHAR(100) NOT NULL,
+        status VARCHAR(50) NOT NULL,
+        etapa VARCHAR(100) NOT NULL,
         descricao_tarefa TEXT,
         data_verificacao DATE,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
