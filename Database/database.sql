@@ -120,12 +120,13 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `sobrenome` varchar(100) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
   `senha` varchar(255) DEFAULT NULL,
+  `foto_perfil` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id_user`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Exportação de dados foi desmarcado.
 
