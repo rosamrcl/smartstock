@@ -12,7 +12,7 @@
 </head>
 <body>
     <?php
-    include '/laragon/www/smartstock/includes/header.php';
+    include __DIR__ . '/includes/header.php';
     ?>
     <section class="container">
         <div class="logo">
