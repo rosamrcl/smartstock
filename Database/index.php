@@ -8,7 +8,7 @@ try {
 
     // 1. Usuários
     $pdo->exec("CREATE TABLE IF NOT EXISTS usuarios (
-        id INT AUTO_INCREMENT PRIMARY KEY,
+        id_user INT AUTO_INCREMENT PRIMARY KEY,
         nome VARCHAR(100),
         sobrenome VARCHAR(100),
         email VARCHAR(100) UNIQUE,
@@ -20,10 +20,10 @@ try {
 
     // 2. Produtos
     $pdo->exec("CREATE TABLE IF NOT EXISTS produtos (
-        id INT AUTO_INCREMENT PRIMARY KEY,
+        id_products INT AUTO_INCREMENT PRIMARY KEY,
         nome VARCHAR(100),
         descricao TEXT,
-        status VARCHAR(50),
+        status ENUM('Estoque', 'Manutenção', 'Em uso'),
         quantidade INT,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         updated_at TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP,
@@ -32,7 +32,7 @@ try {
 
     // 3. Ordens de Serviço
     $pdo->exec("CREATE TABLE IF NOT EXISTS ordens_servico (
-        id INT AUTO_INCREMENT PRIMARY KEY,
+        id_services INT AUTO_INCREMENT PRIMARY KEY,
         solicitante VARCHAR(100),
         categoria VARCHAR(100),
         responsavel VARCHAR(100),
@@ -46,7 +46,7 @@ try {
 
     // 4. Ordem Estoque
     $pdo->exec("CREATE TABLE IF NOT EXISTS ordem_estoque (
-        id INT AUTO_INCREMENT PRIMARY KEY,
+        id_stock INT AUTO_INCREMENT PRIMARY KEY,
         id_ordem INT,
         produto VARCHAR(100),
         descricao VARCHAR(100),
@@ -56,12 +56,12 @@ try {
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         updated_at TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP,
         deleted_at TIMESTAMP NULL,
-        FOREIGN KEY (id_ordem) REFERENCES ordens_servico(id)
+        FOREIGN KEY (id_ordem) REFERENCES ordens_servico(id_services)
     )");
 
     // 5. Check-list
     $pdo->exec("CREATE TABLE IF NOT EXISTS checklist (
-        id INT AUTO_INCREMENT PRIMARY KEY,
+        id_checklist INT AUTO_INCREMENT PRIMARY KEY,
         id_ordem INT,
         manutencao VARCHAR(100),
         status VARCHAR(50),
@@ -71,12 +71,12 @@ try {
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         updated_at TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP,
         deleted_at TIMESTAMP NULL,
-        FOREIGN KEY (id_ordem) REFERENCES ordens_servico(id)
+        FOREIGN KEY (id_ordem) REFERENCES ordens_servico(id_services)
     )");
 
     // 6. Suporte
     $pdo->exec("CREATE TABLE IF NOT EXISTS suporte (
-        id INT AUTO_INCREMENT PRIMARY KEY,
+        id_suport INT AUTO_INCREMENT PRIMARY KEY,
         nome VARCHAR(100),
         email VARCHAR(100),
         mensagem TEXT,
