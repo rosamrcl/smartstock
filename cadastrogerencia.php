@@ -67,6 +67,7 @@
                                 <th>Descrição</th>
                                 <th>Status</th>
                                 <th>Quantidade</th>
+                            
                             </tr>
                         </thead>
                         <tbody>
@@ -76,6 +77,7 @@
                                 <td>Dado 1-3</td>
                                 <td>Dado 1-4</td>
                                 <td>Dado 1-5</td>
+                                <td><a href="#" class="btn"><i class="fa-solid fa-pencil"></i></a><a href="#" class="btn-delete"><i class="fa-solid fa-trash-can"></i></a></td> 
                             </tr>
                         </tbody>
                     </table>
@@ -90,6 +92,7 @@
                                 <th>Descrição</th>
                                 <th>Status</th>
                                 <th>Quantidade</th>
+                                
                             </tr>
                         </thead>
                         <tbody>                
@@ -99,6 +102,7 @@
                                 <td>Info B2</td>
                                 <td>Info B2</td>
                                 <td>Info B2</td>
+                                <td><a href="#" class="btn"><i class="fa-solid fa-pencil"></i></a><a href="#" class="btn-delete"><i class="fa-solid fa-trash-can"></i></a></td> 
                             </tr>
                         </tbody>
                     </table>
@@ -113,6 +117,8 @@
                                 <th>Descrição</th>
                                 <th>Status</th>
                                 <th>Quantidade</th>
+                                <th>Quantidade</th>
+                                
                             </tr>
                         </thead>
                         <tbody>
@@ -123,6 +129,7 @@
                                 <td>Produto X</td>
                                 <td>R$ 10,00</td>
                                 <td>5</td>
+                                <td><a href="#" class="btn"><i class="fa-solid fa-pencil"></i></a><a href="#" class="btn-delete"><i class="fa-solid fa-trash-can"></i></a></td> 
                             </tr>
                             
                         </tbody>

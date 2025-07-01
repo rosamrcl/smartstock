@@ -47,9 +47,11 @@ html{
     font-size: 2rem;
     color: var(--cor4);
     cursor: pointer;
+    width: 100%;
 }
 .btn:hover{
     color: var(--cor8);
+    opacity: .7;
 }
 
 .btn-delete{
@@ -65,6 +67,7 @@ html{
     width:100%;
 }
 .btn-delete:hover{
+    color: var(--cor8);
     opacity: .7;
 }
 
