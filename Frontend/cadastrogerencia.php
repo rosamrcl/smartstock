@@ -1,3 +1,9 @@
+<?php
+
+require_once("../Backend/conexao.php")
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -23,21 +29,24 @@
     <section class="cadastrogerencia">
         <div class="form-produto">
             <div class="form-container-produto">
-                <form action="" method="post">
+                <form action="../Backend/produtos.php" method="post">
                     <h3>Cadastro do produto</h3>
+
+                    <input type="hidden" name="acao" value="adicionar">
+
                     <label for="productname">Nome produto</label>
                     <input type="text" name="productname" id="">
                     <label for="descricao">Descrição</label>
                     <input type="text" name="descricao">
                     <label for="status">Status</label>
                     <select name="status" id="">
-                        <option value="funcionando">Funcionando</option>
-                        <option value="funcionando">Com defeito</option>
-                        <option value="funcionando">Em uso</option>
+                        <option value="Estoque">Estoque</option>
+                        <option value="Manutenção">Manutenção</option>
+                        <option value="Em uso">Em uso</option>
                     </select>
                     <label for="quantidade">Quantidade</label>
                     <input type="number" name="quantidade" id="">
-                    <input type="submit" value="Adicionar" class="btn" name="adicionar">
+                    <input type="submit" value="Adicionar" class="btn">
                 </form>
             </div>
         </div>
@@ -62,14 +71,32 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Dado 1-1</td>
-                                <td>Dado 1-2</td>
-                                <td>Dado 1-3</td>
-                                <td>Dado 1-4</td>
-                                <td>Dado 1-5</td>
-                                <td><a href="#" class="btn"><i class="fa-solid fa-pencil"></i></a><a href="#" class="btn-delete"><i class="fa-solid fa-trash-can"></i></a></td> 
-                            </tr>
+                            <?php
+                            require_once("../Backend/conexao.php");
+                            
+                            $stmt = $pdo->query("SELECT * FROM produtos WHERE status = 'Estoque'");
+                            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) :
+                            ?>
+                                <tr>
+                                    <td><?= $row['id_products'] ?></td>
+                                    <td><?= htmlspecialchars($row['nome']) ?></td>
+                                    <td><?= htmlspecialchars($row['descricao']) ?></td>
+                                    <td><?= $row['status'] ?></td>
+                                    <td><?= $row['quantidade'] ?></td>
+                                    <td>
+                                        <button class="btn-edit btn" onclick='preencherForm(<?= json_encode($row) ?>)'>
+                                            <a href="cadastrogerenciaupdate.php?id=<?= $row['id_products'] ?>" class="btn-edit" style="color: white;">
+                                                <i class="fa-solid fa-pencil"></i>
+                                            </a>
+                                        </button>
+                                        <a href="../Backend/produtos.php?excluir=<?= $row['id_products'] ?>" onclick="return confirm('Deseja excluir?')" class="btn-delete">
+                                            <i class="fa-solid fa-trash-can"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            <?php
+                            endwhile;
+                            ?>
                         </tbody>
                     </table>
                 </div>
@@ -87,14 +114,32 @@
                             </tr>
                         </thead>
                         <tbody>                
-                            <tr>
-                                <td>Info A2</td>
-                                <td>Info B2</td>
-                                <td>Info B2</td>
-                                <td>Info B2</td>
-                                <td>Info B2</td>
-                                <td><a href="#" class="btn"><i class="fa-solid fa-pencil"></i></a><a href="#" class="btn-delete"><i class="fa-solid fa-trash-can"></i></a></td> 
-                            </tr>
+                            <?php
+                            require_once("../Backend/conexao.php");
+                            
+                            $stmt = $pdo->query("SELECT * FROM produtos WHERE status = 'Manutenção'");
+                            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) :
+                            ?>
+                                <tr>
+                                    <td><?= $row['id_products'] ?></td>
+                                    <td><?= htmlspecialchars($row['nome']) ?></td>
+                                    <td><?= htmlspecialchars($row['descricao']) ?></td>
+                                    <td><?= $row['status'] ?></td>
+                                    <td><?= $row['quantidade'] ?></td>
+                                    <td>
+                                        <button class="btn-edit btn" onclick='preencherForm(<?= json_encode($row) ?>)'>
+                                            <a href="cadastrogerenciaupdate.php?id=<?= $row['id_products'] ?>" class="btn-edit" style="color: white;">
+                                                <i class="fa-solid fa-pencil"></i>
+                                            </a>
+                                        </button>
+                                        <a href="../Backend/produtos.php?excluir=<?= $row['id_products'] ?>" onclick="return confirm('Deseja excluir?')" class="btn-delete">
+                                            <i class="fa-solid fa-trash-can"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            <?php
+                            endwhile;
+                            ?>
                         </tbody>
                     </table>
                 </div>
@@ -113,16 +158,32 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Produto X</td>
-                                <td>R$ 10,00</td>
-                                <td>5</td>
-                                <td>Produto X</td>
-                                <td>R$ 10,00</td>
-                                <td>5</td>
-                                <td><a href="#" class="btn"><i class="fa-solid fa-pencil"></i></a><a href="#" class="btn-delete"><i class="fa-solid fa-trash-can"></i></a></td> 
-                            </tr>
+                            <?php
+                            require_once("../Backend/conexao.php");
                             
+                            $stmt = $pdo->query("SELECT * FROM produtos WHERE status = 'Em uso'");
+                            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) :
+                            ?>
+                                <tr>
+                                    <td><?= $row['id_products'] ?></td>
+                                    <td><?= htmlspecialchars($row['nome']) ?></td>
+                                    <td><?= htmlspecialchars($row['descricao']) ?></td>
+                                    <td><?= $row['status'] ?></td>
+                                    <td><?= $row['quantidade'] ?></td>
+                                    <td>
+                                        <button class="btn-edit btn" onclick='preencherForm(<?= json_encode($row) ?>)'>
+                                            <a href="cadastrogerenciaupdate.php?id=<?= $row['id_products'] ?>" class="btn-edit" style="color: white;">
+                                                <i class="fa-solid fa-pencil"></i>
+                                            </a>
+                                        </button>
+                                        <a href="../Backend/produtos.php?excluir=<?= $row['id_products'] ?>" onclick="return confirm('Deseja excluir?')" class="btn-delete">
+                                            <i class="fa-solid fa-trash-can"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            <?php
+                            endwhile;
+                            ?>
                         </tbody>
                     </table>
                 </div>

@@ -1,3 +1,40 @@
+<?php
+require_once("../Backend/conexao.php");
+
+// Verifica se veio um ID na URL
+if (!isset($_GET['id'])) {
+    header("Location: ../Frontend/cadastrogerencia.php");
+    exit;
+}
+
+$id = $_GET['id'];
+
+// Busca o produto pelo ID
+$stmt = $pdo->prepare("SELECT * FROM produtos WHERE id_products = ?");
+$stmt->execute([$id]);
+$produto = $stmt->fetch(PDO::FETCH_ASSOC);
+
+// Se não encontrar o produto
+if (!$produto) {
+    echo "Produto não encontrado.";
+    exit;
+}
+
+// Se o formulário foi enviado
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $nome = $_POST['productname'];
+    $descricao = $_POST['descricao'];
+    $status = $_POST['status'];
+    $quantidade = $_POST['quantidade'];
+
+    $stmt = $pdo->prepare("UPDATE produtos SET nome = ?, descricao = ?, status = ?, quantidade = ? WHERE id_products = ?");
+    $stmt->execute([$nome, $descricao, $status, $quantidade, $id]);
+
+    header("Location: ../Frontend/cadastrogerencia.php");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -29,18 +66,18 @@
                 <form action="" method="post">
                     <h3>Atualize o produto</h3>
                     <label for="productname">Nome produto</label>
-                    <input type="text" name="productname" id="">
+                    <input type="text" name="productname" id="" value="<?= htmlspecialchars($produto['nome']); ?>">
                     <label for="descricao">Descrição</label>
-                    <input type="text" name="descricao">
+                    <input type="text" name="descricao" value="<?= htmlspecialchars($produto['descricao']); ?>">
                     <label for="status">Status</label>
                     <select name="status" id="">
-                        <option value="funcionando">Funcionando</option>
-                        <option value="funcionando">Com defeito</option>
-                        <option value="funcionando">Em uso</option>
+                        <option value="Estoque">Estoque</option>
+                        <option value="Manutenção">Manutenção</option>
+                        <option value="Em uso">Em uso</option>
                     </select>
                     <label for="quantidade">Quantidade</label>
-                    <input type="number" name="quantidade" id="">
-                    <input type="submit" value="Adicionar" class="btn" name="adicionar">
+                    <input type="number" name="quantidade" id="" value="<?= htmlspecialchars($produto['quantidade']); ?>">
+                    <input type="submit" value="Atualizar" class="btn" name="atualizar">
                 </form>
             </div>
         </div>       
