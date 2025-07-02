@@ -1,23 +1,18 @@
 <?php
-
 session_start();
 
-if (!isset($_SESSION['usuario'])) {
-    // Redireciona para login se não estiver logado
-    header('Location: login.php');
+if (!isset($_SESSION['id_user'])) {
+    header('Location: ../Frontend/login.php');
     exit;
 }
-
-$nome = $_SESSION['usuario']['nome'];
-$sobrenome = $_SESSION['usuario']['sobrenome'];
-
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <title>SmartStock</title>
     <link rel="stylesheet" href="./ressources/css/style.css">
     <link rel="stylesheet" href="./ressources/css/header.css">
@@ -25,6 +20,7 @@ $sobrenome = $_SESSION['usuario']['sobrenome'];
     <link rel="stylesheet" href="./ressources/css/media.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
     <?php
     include __DIR__ . '/includes/header.php';
@@ -36,15 +32,15 @@ $sobrenome = $_SESSION['usuario']['sobrenome'];
                 <div class="image">
                     <img src="./ressources/img/perfil.png" alt="">
                 </div>
-                <p>Olá, <strong><?=$nome;?> <?=$sobrenome;?></strong>! Seja bem-vindo ao SmartStock.</p>
+                <p>Bem Vindo, Ambrosio</p>
                 <button type="submit" class="btn-delete">Sair <i class="fa-solid fa-right-to-bracket"></i></button>
             </div>
         </div>
         <div class="service">
             <div class="gerenciar">
                 <h5>Gerenciar Produtos</h5>
-                <a href="#"> <i class="fa-solid fa-boxes-stacked"></i>   </a>
-                            
+                <a href="#"> <i class="fa-solid fa-boxes-stacked"></i> </a>
+
             </div>
             <div class="ordem-servico">
                 <h5>Ordem de Serviço</h5>
@@ -62,6 +58,7 @@ $sobrenome = $_SESSION['usuario']['sobrenome'];
 
 
     <script src="./ressources/js/script.js"></script>
-    
+
 </body>
+
 </html>

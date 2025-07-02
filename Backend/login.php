@@ -24,15 +24,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($user && password_verify($senha, $user['senha'])) {
-
-        $_SESSION['usuario'] = [
-
-            'id_user' => $user['id'],
-            'nome' => $user['nome'],
-            'sobrenome' => $user['sobrenome'],
-            'email' => $user['email']
-
-        ];
+        $_SESSION['id_user'] = $user['id_user'];
+        $_SESSION['name'] = $user['nome'];
+        $_SESSION['email'] = $user['email'];
 
         header('Location: ../Frontend/home.php');
         exit;
