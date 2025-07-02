@@ -1,3 +1,18 @@
+<?php
+
+session_start();
+
+if (!isset($_SESSION['usuario'])) {
+    // Redireciona para login se não estiver logado
+    header('Location: login.php');
+    exit;
+}
+
+$nome = $_SESSION['usuario']['nome'];
+$sobrenome = $_SESSION['usuario']['sobrenome'];
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -16,12 +31,12 @@
     ?>
     <section class="usuario">
         <div class="logo_foto">
-            <img src="./ressources/img/smartstock.png" alt="">
+            <img src="./ressources/img/smartstock.png" alt="" style="height: 50%; width: 50%; margin-top: 13%;">
             <div class="perfil">
                 <div class="image">
                     <img src="./ressources/img/perfil.png" alt="">
                 </div>
-                <p>Bem Vindo, Ambrosio</p>
+                <p>Olá, <strong><?=$nome;?> <?=$sobrenome;?></strong>! Seja bem-vindo ao SmartStock.</p>
                 <button type="submit" class="btn-delete">Sair <i class="fa-solid fa-right-to-bracket"></i></button>
             </div>
         </div>
