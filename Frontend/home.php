@@ -12,7 +12,7 @@ if (!isset($_SESSION['id_user'])) {
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartStock</title>
     <link rel="stylesheet" href="./ressources/css/style.css">
     <link rel="stylesheet" href="./ressources/css/header.css">
@@ -33,7 +33,9 @@ if (!isset($_SESSION['id_user'])) {
                     <img src="./ressources/img/perfil.png" alt="">
                 </div>
                 <p>Bem Vindo, Ambrosio</p>
-                <button type="submit" class="btn-delete">Sair <i class="fa-solid fa-right-to-bracket"></i></button>
+                <?php if (isset($_SESSION['id_user'])): ?>
+                    <button type="submit" class="btn-delete">Sair <i class="fa-solid fa-right-to-bracket"></i></button>
+                <?php endif; ?>
             </div>
         </div>
         <div class="service">
