@@ -15,22 +15,22 @@
 </head>
 
 <body>
+
     <?php
     include __DIR__ . '/includes/header.php';
     ?>
-
-    <section class="cadastrogerencia">
+    <section class="updateperfil">
         <div class="logo">
             <img src="./ressources/img/smartstock.png" alt="">
         </div>
-        <div class="form">
-            <div class="form-container">
-                <form action="../Backend/cadastro.php" method="post">
+        <div class="form-update">
+            <div class="form-container-update">
+                <form action="" method="post">
                     <h3>Atualize seu perfil</h3>
                     <div class="foto-update-perfil">
                         <img src="./ressources/img/perfil.png" alt="">            
+                        <input type="file" name="" id="">
                     </div>
-                    <input type="file" name="" id="">
                     <label for="nome">Nome</label>
                     <input type="text" name="nome" placeholder="Nome">
                     <label for="sobrenome">Sobrenome</label>
@@ -40,22 +40,10 @@
                     <label for="senha">Senha</label>
                     <input type="password" name="senha" id="" placeholder="•••••••••">
                     <label for="csenha">Confirmar senha</label>
-                    <input type="password" name="csenha" id="" placeholder="•••••••••">                                 
+                    <input type="password" name="csenha" id="" placeholder="•••••••••">                            
                     <input type="submit" value="Enviar" class="btn">
 
-                    <!-- Exibir erro ou sucesso -->
-                    <?php
-                    session_start();
-                    if (!empty($_SESSION['erro_cadastro'])) {
-                        echo "<p style='color:var(--cor4); text-align:center; font-size:3rem;'>" . $_SESSION['erro_cadastro'] . "</p>";
-                        unset($_SESSION['erro_cadastro']);
-                    }
-                    if (!empty($_SESSION['sucesso_cadastro'])) {
-                        echo "<p style='color:var(--cor4); text-align:center; font-size:3rem;'>" . $_SESSION['sucesso_cadastro'] . "</p>";
-                        unset($_SESSION['sucesso_cadastro']);
-                    }
-                    ?>
-
+                    
                 </form>
             </div>
         </div> 
