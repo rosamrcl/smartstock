@@ -6,8 +6,6 @@ if (!isset($_SESSION['id_user'])) {
     exit;
 }
 
-$nome = $_SESSION['usuario']['nome'];
-$sobrenome = $_SESSION['usuario']['sobrenome'];
 
 ?>
 
@@ -36,7 +34,7 @@ $sobrenome = $_SESSION['usuario']['sobrenome'];
                 <div class="image">
                     <img src="./ressources/img/perfil.png" alt="">
                 </div>
-                <p style="text-align: center;">Bem Vindo, <strong><?= $nome; ?> <?= $sobrenome; ?><strong>.</p>
+                <p style="text-align: center;">Bem Vindo, <strong><?= $_SESSION['nome'] ?> <?= $_SESSION['sobrenome'] ?><strong>.</p>
                 <?php if (isset($_SESSION['id_user'])): ?>
                     <form action="../Backend/logout.php" method="post">
                         <button type="submit" class="btn-delete">Sair <i class="fa-solid fa-right-to-bracket"></i></button>
