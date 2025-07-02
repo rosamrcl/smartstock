@@ -6,6 +6,7 @@
             
             <a href="cadastrogerencia.php">Grenciamento de Estoque</a>
             <a href="cadastrogerenciafuncionario.php">Ordem de Serviço</a>
+            <a href="updateperfil.php">Editar Perfil</a>
             <a href=""><i class="fa-solid fa-bell"></i></a>
         </nav>
         <div class="icons">
