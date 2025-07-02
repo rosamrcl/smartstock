@@ -5,6 +5,12 @@ if (!isset($_SESSION['id_user'])) {
     header('Location: ../Frontend/login.php');
     exit;
 }
+
+// Puxa nome e sobrenome do usuario logado na sessão atual <!!!! LUAN POR FAVOR NÃO MEXER !!!!>
+
+$nome = $_SESSION['usuario']['nome'];
+$sobrenome = $_SESSION['usuario']['sobrenome'];
+
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +38,7 @@ if (!isset($_SESSION['id_user'])) {
                 <div class="image">
                     <img src="./ressources/img/perfil.png" alt="">
                 </div>
-                <p>Bem Vindo, Ambrosio</p>
+                <p style="text-align: center;">Bem Vindo, <strong><?=$nome;?> <?=$sobrenome;?><strong>.</p>
                 <?php if (isset($_SESSION['id_user'])): ?>
                     <button type="submit" class="btn-delete">Sair <i class="fa-solid fa-right-to-bracket"></i></button>
                 <?php endif; ?>
