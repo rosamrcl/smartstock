@@ -14,7 +14,7 @@
 
 <body>
     <?php
-    include __DIR__ . '/includes/header.php';
+    include __DIR__ . '/includes/headerog.php';
     ?>
     <section class="container">
         <div class="logo">
@@ -29,6 +29,7 @@
                     <label for="senha">Senha</label>
                     <input type="password" name="senha" id="" placeholder="•••••••••" required>
                     <p>Esqueci minha senha <a href="#">Clique aqui</a></p>
+                    <p>Ainda não tem cadastro? <a href="cadastro.php">Clique aqui</a></p>
                     <input type="submit" value="Enviar" class="btn">
                 </form>
             </div>
