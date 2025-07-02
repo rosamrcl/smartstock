@@ -3,8 +3,7 @@
         <img src="./ressources/img/smartstock.png" alt="logo">
         <nav class="navbar"> 
             
-            <a href="login.php"><i class="fa-solid fa-user"></i>Login</a>
-            <a href="cadastro.php">Cadastro</a>
+            
             <a href="cadastrogerencia.php">Grenciamento de Estoque</a>
             <a href="cadastrogerenciafuncionario.php">Ordem de Serviço</a>
             <a href=""><i class="fa-solid fa-bell"></i></a>
