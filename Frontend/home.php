@@ -34,19 +34,26 @@ if (!isset($_SESSION['id_user'])) {
                 <div class="image">
                     <img src="./ressources/img/perfil.png" alt="">
                 </div>
-                <p style="text-align: center;">Bem Vindo, <strong><?= $_SESSION['nome'] ?> <?= $_SESSION['sobrenome'] ?><strong>.</p>
-                <a class="btn" href="updateperfil.php"><i class="fa-solid fa-pencil"></i> Editar Perfil</a>
+                <p  class="welcome">Bem Vindo, <strong><?= $_SESSION['nome'] ?> <?= $_SESSION['sobrenome'] ?></strong>.</p>
+
+    
+                <a class="btn" href="updateperfil.php">Editar <i class="fa-solid fa-pencil"></i></a>
+                <?php if (isset($_SESSION['id_user'])): ?>
+                    <form action="../Backend/logout.php" method="post">
+                        <button type="submit" class="btn-delete">Sair <i class="fa-solid fa-right-to-bracket"></i></button>
+                    </form>
+                <?php endif; ?>
             </div>
         </div>
         <div class="service">
             <div class="gerenciar">
                 <h5>Gerenciar Produtos</h5>
-                <a href="#"> <i class="fa-solid fa-boxes-stacked"></i> </a>
+                <a href="cadastrogerencia.php"> <i class="fa-solid fa-boxes-stacked"></i> </a>
 
             </div>
             <div class="ordem-servico">
                 <h5>Ordem de Serviço</h5>
-                <a href="#"><i class="fa-solid fa-users-gear"></i></a>
+                <a href="cadastrogerenciafuncionario.php"><i class="fa-solid fa-users-gear"></i></a>
             </div>
             <div class="manutencao">
                 <h5>Manutenção</h5>

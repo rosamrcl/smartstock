@@ -37,53 +37,36 @@ html{
     scroll-behavior: smooth;
     scroll-padding-top: 5.5rem;
 }
-.btn{
+.btn,.btn-delete{
     display: inline-block;
     margin-top: 1rem;
     padding: .5rem;
     padding-left: 1rem;
-    border-radius: .5rem;
-    background: var(--cor3);
+    border-radius: .5rem;    
     font-size: 2rem;
     color: var(--cor4);
     cursor: pointer;
     width: 100%;
+    text-align: center;
 }
-.btn:hover{
-    color: var(--cor8);
-    opacity: .7;
+.btn{
+    background: var(--cor3);
 }
 
 .btn-delete{
-    display: inline-block;
-    margin-top: 1rem;
-    padding: .5rem;
-    padding-left: 1rem;
-    border-radius: .5rem;
     background: var(--cor5);
-    font-size: 2rem;
-    color: var(--cor4);
-    cursor: pointer; 
-    width:100%;
 }
-.btn-sair{
-    display: inline-block;
-    margin-top: .5rem;
-    padding: .5rem;
-    padding-left: 1rem;
-    border-radius: .5rem;
-    background: var(--cor5);
-    font-size: 1.6rem;
-    color: var(--cor4);
-    cursor: pointer;  
-
-}
-.btn-sair,
+.btn:hover,
 .btn-delete:hover{
     color: var(--cor8);
     opacity: .7;
 }
-
+strong{
+    color: var(--cor3);
+}
+.welcome{
+    text-align: center;
+}
 footer{
     display: flex;
     align-items: center;
