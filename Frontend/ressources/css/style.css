@@ -17,7 +17,7 @@
 body{
     height: 100vh;
     background: var(--cor4);
-    padding-top: 4rem;
+    padding-top: 10rem;
 }
 
 *{
