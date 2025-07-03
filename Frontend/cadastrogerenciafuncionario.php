@@ -40,7 +40,7 @@ if(!isset($_SESSION['id_user'])){
                 <button type="submit" class="btn-delete">Sair <i class="fa-solid fa-right-to-bracket"></i></button>
             </div>       
         <div class="table-container">
-            <h3>Gerenciar Produtos</h3>
+            <h3>Área do funcionário</h3>
             <div class="tabela">
                 <div class="tab-buttons">
                     <button class="tab-button active" onclick="openTab('tab1')">Lista de Chamados</button>
