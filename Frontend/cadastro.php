@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
     <link rel="stylesheet" href="./ressources/css/media.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
     <?php
     include __DIR__ . '/includes/headerog.php';
@@ -32,8 +34,9 @@
                     <input type="password" name="senha" id="" placeholder="•••••••••">
                     <label for="csenha">Confirmar senha</label>
                     <input type="password" name="csenha" id="" placeholder="•••••••••">
-                    <label for="codigosuperior">Código do Superior</label>
-                    <input type="text" placeholder="Código do Superior">                    
+                    <label for="codigo_superior">Código do Superior</label>
+                    <input type="text" name="codigo_superior" id="codigo_superior" placeholder="Código do Superior">
+
                     <input type="submit" value="Enviar" class="btn">
 
                     <!-- Exibir erro ou sucesso -->
@@ -59,6 +62,7 @@
     ?>
 
     <script src="./ressources/js/script.js"></script>
-    
+
 </body>
+
 </html>

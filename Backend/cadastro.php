@@ -1,7 +1,6 @@
 <?php
 
 session_start();
-
 include __DIR__ . '/conexao.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -10,33 +9,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $sobrenome = trim($_POST['sobrenome'] ?? '');
     $email = trim($_POST['email'] ?? '');
     $senha = $_POST['senha'] ?? '';
+    $codigo_superior = trim($_POST['codigo_superior'] ?? '');
 
-    // Verificar se todos os campos estão preenchidos
-    if (empty($nome) || empty($sobrenome) || empty($email) || empty($senha)) {
-
+    // Verifica se todos os campos foram preenchidos
+    if (empty($nome) || empty($sobrenome) || empty($email) || empty($senha) || empty($codigo_superior)) {
         $_SESSION['erro_cadastro'] = "Preencha todos os campos.";
         header('Location: ../Frontend/cadastro.php');
         exit;
-
     }
 
-    // Verificar se o e-mail já está cadastrado
+    // Verifica se o código do superior é exatamente '1010'
+    if ($codigo_superior !== '1010') {
+        $_SESSION['erro_cadastro'] = "Código do superior inválido.";
+        header('Location: ../Frontend/cadastro.php');
+        exit;
+    }
+
+    // Verifica se o e-mail já está em uso
     $stmt = $pdo->prepare("SELECT id_user FROM usuarios WHERE email = :email");
     $stmt->bindParam(':email', $email);
     $stmt->execute();
 
     if ($stmt->fetch()) {
-
         $_SESSION['erro_cadastro'] = "Este e-mail já está em uso.";
         header('Location: ../Frontend/cadastro.php');
         exit;
-
     }
 
-    // Criptografar a senha
+    // Criptografa a senha
     $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
 
-    // Inserir no banco de dados
+    // Insere o usuário no banco
     $stmt = $pdo->prepare("INSERT INTO usuarios (nome, sobrenome, email, senha) VALUES (:nome, :sobrenome, :email, :senha)");
     $stmt->bindParam(':nome', $nome);
     $stmt->bindParam(':sobrenome', $sobrenome);
@@ -44,22 +47,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->bindParam(':senha', $senhaHash);
 
     if ($stmt->execute()) {
-
         $_SESSION['sucesso_cadastro'] = "Usuário cadastrado com sucesso!";
         header('Location: ../Frontend/login.php');
         exit;
-
     } else {
-
         $_SESSION['erro_cadastro'] = "Erro ao cadastrar. Tente novamente.";
         header('Location: ../Frontend/cadastro.php');
         exit;
-
     }
 
 } else {
-
     header('Location: ../Frontend/cadastro.php');
     exit;
-
 }
+?>
