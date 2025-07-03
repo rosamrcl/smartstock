@@ -66,6 +66,19 @@ html{
     cursor: pointer; 
     width:100%;
 }
+.btn-sair{
+    display: inline-block;
+    margin-top: .5rem;
+    padding: .5rem;
+    padding-left: 1rem;
+    border-radius: .5rem;
+    background: var(--cor5);
+    font-size: 1.6rem;
+    color: var(--cor4);
+    cursor: pointer;  
+
+}
+.btn-sair,
 .btn-delete:hover{
     color: var(--cor8);
     opacity: .7;

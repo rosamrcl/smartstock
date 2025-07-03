@@ -4,13 +4,9 @@
         <nav class="navbar"> 
             
             
-            <a href="cadastrogerencia.php">Grenciamento de Estoque</a>
+            <a href="cadastrogerencia.php">Gerenciamento de Estoque</a>
             <a href="cadastrogerenciafuncionario.php">Ordem de Serviço</a>
-            <?php if (isset($_SESSION['id_user'])): ?>
-                <form action="../Backend/logout.php" method="post">
-                    <button type="submit" class="btn-delete">Sair <i class="fa-solid fa-right-to-bracket"></i></button>
-                    </form>
-            <?php endif; ?>            
+            <a href="updateperfil.php">Editar Perfil</a>
             <a href=""><i class="fa-solid fa-bell"></i></a>
         </nav>
         <div class="icons">

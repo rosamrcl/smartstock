@@ -35,7 +35,7 @@ if (!isset($_SESSION['id_user'])) {
                     <img src="./ressources/img/perfil.png" alt="">
                 </div>
                 <p style="text-align: center;">Bem Vindo, <strong><?= $_SESSION['nome'] ?> <?= $_SESSION['sobrenome'] ?><strong>.</p>
-                <a class="btn" href="updateperfil.php"><i class="fa-solid fa-pencil"> Editar Perfil</a>
+                <a class="btn" href="updateperfil.php"><i class="fa-solid fa-pencil"></i> Editar Perfil</a>
             </div>
         </div>
         <div class="service">
