@@ -34,15 +34,16 @@ if (!isset($_SESSION['id_user'])) {
                 <div class="image">
                     <img src="./ressources/img/perfil.png" alt="">
                 </div>
-                <p  class="welcome">Bem Vindo, <strong><?= $_SESSION['nome'] ?> <?= $_SESSION['sobrenome'] ?></strong>.</p>
+                <p class="welcome">Bem Vindo, <strong><?= $_SESSION['nome'] ?> <?= $_SESSION['sobrenome'] ?></strong>.</p>
 
-    
-                <a class="btn" href="updateperfil.php">Editar <i class="fa-solid fa-pencil"></i></a>
-                <?php if (isset($_SESSION['id_user'])): ?>
-                    <form action="../Backend/logout.php" method="post">
-                        <button type="submit" class="btn-delete">Sair <i class="fa-solid fa-right-to-bracket"></i></button>
-                    </form>
-                <?php endif; ?>
+                <div>
+                    <a class="btn" href="updateperfil.php">Editar <i class="fa-solid fa-pencil"></i></a>
+                    <?php if (isset($_SESSION['id_user'])): ?>
+                        <form action="../Backend/logout.php" method="post">
+                            <button type="submit" class="btn-delete">Sair <i class="fa-solid fa-right-to-bracket"></i></button>
+                        </form>
+                    <?php endif; ?>
+                </div>
             </div>
         </div>
         <div class="service">
