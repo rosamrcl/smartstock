@@ -1,0 +1,194 @@
+/* media.css */
+@media (max-width: 1200px) {
+    .cadastrogerencia,
+    .updateperfil {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .form-produto,
+    .form-update {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+    
+    .table-container {
+        width: 100%;
+    }
+}
+
+@media (max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+    
+    header {
+        padding: 1rem 2rem;
+    }
+    
+    .container,
+    .cadastrogerencia,
+    .updateperfil {
+        padding: 2rem;
+        margin: 1rem;
+    }
+    
+    .form-container,
+    .form-container-produto,
+    .form-container-update {
+        width: 100%;
+        padding: 1rem;
+    }
+    
+    .logo img,
+    .logo_foto img {
+        width: 80%;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    header .icons #menu-bars {
+        display: inline-block;
+    }
+    
+    header .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--cor7);
+        border-top: .1rem solid rgba(0, 0, 0, .2);
+        border-bottom: .1rem solid rgba(0, 0, 0, .2);
+        padding: 1rem;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    
+    header .navbar.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    
+    header .navbar a {
+        display: block;
+        padding: 1.5rem;
+        margin: 1rem;
+        font-size: 2rem;
+        background: var(--cor7);
+    }
+    
+    .container,
+    .usuario,
+    .cadastrogerencia,
+    .updateperfil {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    .form,
+    .form-produto,
+    .form-update {
+        padding: 1rem;
+        width: 100%;
+    }
+    form {
+        padding: 1rem;
+    }
+    
+    form input,
+    form select {
+        margin: 0.5rem 0;
+    }
+    
+    form h3 {
+        font-size: 2.5rem;
+    }
+    table {
+        font-size: 1.5rem;
+    }
+    
+    table tr th,
+    table tr td {
+        padding: 0.5rem;
+        font-size: 1.5rem;
+    }
+    .table-container {
+        padding: 1rem;
+    }
+    
+    .tabela {
+        padding: 1rem;
+        margin: 1rem 0;
+    }
+    .service {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .service .gerenciar,
+    .service .ordem-servico,
+    .service .manutencao {
+        width: 90%;
+        max-width: none;
+        margin: 1rem 0;
+    }
+    .usuario {
+        width: 95%;       
+    }
+    
+    .logo_foto {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .logo_foto img {
+        width: 70%;
+        margin: 0 auto;
+    }
+    
+    .perfil .image {
+        width: 100%;
+        max-width: 20rem;
+        height: auto;
+    }
+    
+    .perfil-cadastro img {
+        width: 100%;
+        max-width: 20rem;
+    }
+    
+    .form-update .form-container-update form .foto-update-perfil img {
+        width: 15rem;
+    }
+    .form-container-update form input {
+        margin: 0.5rem 0;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+    
+    .btn,
+    .btn-delete {
+        padding: 0.5rem;
+        font-size: 1.6rem;
+    }
+    
+    form input,
+    form select {
+        padding: 0.8rem;
+        margin: 0.5rem 0;
+    }
+    
+    .tab-button {
+        padding: 5px 10px;
+        font-size: 1.5rem;
+    }
+    
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}

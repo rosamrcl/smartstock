@@ -5,7 +5,7 @@ header{
     top: 0;
     background: var(--cor4);
     box-shadow: var(--box-shadow);
-    padding: 1rem 7%;
+    padding: 1rem 4%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -24,7 +24,7 @@ header img{
 }
 
 header .navbar a{
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: var(--cor9);
     cursor: pointer; 
     padding: .5rem 1.5rem;
@@ -37,12 +37,12 @@ header .navbar.active{
     color: var(--cor1);
 }
 header .icons{
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: var(--cor9);
     cursor: pointer;    
 }
 header .navbar i{
-    margin: 2rem;
+    margin: 1rem;
 }
 header .icons #menu-bars{
     display: none;

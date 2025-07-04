@@ -17,7 +17,7 @@
 body{
     height: 100vh;
     background: var(--cor4);
-    padding-top: 4rem;
+    padding-top: 10rem;
 }
 
 *{
@@ -37,69 +37,47 @@ html{
     scroll-behavior: smooth;
     scroll-padding-top: 5.5rem;
 }
-.btn{
+.btn,.btn-delete{
     display: inline-block;
     margin-top: 1rem;
     padding: .5rem;
     padding-left: 1rem;
-    border-radius: .5rem;
-    background: var(--cor3);
+    border-radius: .5rem;    
     font-size: 2rem;
     color: var(--cor4);
     cursor: pointer;
+    width: 100%;
+    text-align: center;
 }
-.btn:hover{
-    color: var(--cor8);
-}
-.btn-delete{
-    display: inline-block;
-    margin-top: 1rem;
-    padding: .5rem;
-    padding-left: 1rem;
-    border-radius: .5rem;
-    background: var(--cor5);
-    font-size: 2rem;
-    color: var(--cor4);
-    cursor: pointer; 
-    width:100%;
-}
-.btn-delete:hover{
-    opacity: .7;
+.btn{
+    background: var(--cor3);
 }
 
-.cadastrogerencia{
-    background: var(--cor1);
-    display: flex;   
-    flex: 1 1 45rem;
-    height: 100%;    
-    box-shadow: var(--box-shadow);
-    padding: 2rem 9%;
-    margin: 2rem;
-    border-radius: .5rem;
+.btn-delete{
+    background: var(--cor5);
 }
-.form-produto{   
-    display: flex;
-    align-items: center;
-    padding: 2rem 9%;
-    border-radius: .5rem;
+.btn:hover,
+.btn-delete:hover{
+    color: var(--cor8);
+    opacity: .7;
 }
-.form-container-produto{
-    width: 50rem;
-    box-shadow: var(--box-shadow);
+strong{
+    color: var(--cor3);
+}
+.welcome{
+    text-align: center;
+}
+footer{
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
-    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
 }
-
-form select{
-    width: 100%;
-    border-radius: .5rem;
-    padding: 1rem;
-    margin: 1rem;
-    font-size: 1.7rem;
+footer img{
+    width: 10rem;
 }
-table{
-    background: var(--cor7);
+.foto-update-perfil img{
+    width: 10rem;
+    object-fit: cover;
+    border-radius: .5rem;
 }
