@@ -1,0 +1,96 @@
+.flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--cor2);
+    border-radius: 1.25rem;
+    margin: 8rem;
+}
+
+.heading h1 {
+    font-size: 4rem;
+    color: var(--cor4);
+    padding: 3.4rem;
+}
+
+.heading {
+    border-radius: 1.25rem 1.25rem 0 0; 
+    background: var(--cor1);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    width: 100%; 
+    margin-bottom: 0;
+}
+
+.flex .container {
+    padding: 1.875rem;
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    align-items: flex-start; 
+    width: 100%;
+    background: var(--cor2);
+    border-radius: 1.25rem;
+    gap: 1rem; 
+}
+.container form{
+    width: 80%;
+}
+
+
+.container .input-group {
+    display: flex; 
+    gap: 1rem; 
+    width: 100%; 
+}
+
+.container input[type="text"],
+.container input[type="email"] {
+    font-size: 2rem;
+    border-radius: 1.25rem;
+    padding: 1rem;
+    flex: 1; 
+    min-width: 0; 
+}
+.container textarea {
+    width: 100%;    
+    height: 20rem;
+    border-radius:  1.25rem;
+    font-size: 2rem;
+    margin-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.file-upload-group {
+    display: flex;
+    align-items: center; 
+    gap: 1rem; 
+    margin-top: 1rem; 
+    width: 100%;
+}
+
+
+.file-upload-group label {    
+    width: 75%; 
+    margin: 0; 
+    padding: 25px;
+    background: var(--cor4);
+    color: var(--cor9);
+    border: none;
+    border-radius: 5px;
+    font-size: 2rem;
+}
+
+.file-upload-group .btn {    
+    height: 5rem; 
+    margin-left: 0; 
+    width: 25%;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+
