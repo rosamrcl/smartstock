@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    margin: 10px;
+}
+
+main {
+    align-items: center;
+    justify-content: center;
+    background: #327596;
+    border-radius: 20px;
+    height: 930px;
+}
+
+h1 {
+    font-size: 4rem;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    padding: 55px;
+}
+
+#col_text {
+    border-radius: 20px;
+    background: #009EEB;
+    width: 85rem;
+    height: 11rem;
+    box-shadow: #000000 0 0 4px;
+    box-shadow: #000000 0 20 0px;
+}
+
+
+/* input com cols */
+
+#container_input {
+    padding: 30px;
+}
+
+#nome {
+    width: 149%;
+    height: 80px;
+    padding: 20px;
+    border-radius: 20px;
+    border: none;
+}
+
+#email {
+    width: 149%;
+    height: 80px;
+    padding: 20px;
+    border-radius: 20px;
+    border: none;
+}
+
+.text_big {
+    width: 70rem;
+    height: 250px;
+    padding: 20px;
+    margin: 35px;
+    border: none;
+    border-radius: 20px;
+    padding-top: 20px;
+    text-align: left;
+    vertical-align: top;
+    .text_big {
+    text-align: left;          /* Alinha à esquerda */
+    vertical-align: top;       /* Funciona em textarea */
+}
+
+}
+
+.big {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text_upload {
+    width: 20rem;
+    height: 5rem;
+    border-radius: 10px;
+    border: none;
+    margin-left: 300px;
+}
+
+/* buttons */
+
+
+.enviar_btn {
+    width: 150px;
+    margin: 70px;
+    margin-left: 205px;
+    padding: 15px;
+    margin-left: 240px;
+    background: #EB8000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+#upload_btn {
+    width: 150px;
+    padding: 15px;
+    margin-top: 25px;
+    margin-left: 250px;
+    background: #EB8000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+input[type="file"] {
+    display: none;
+    
+}
+
+
+label {
+    width: 480px;
+    padding: 25px;
+    margin-top: 15px;
+    margin-left: 185px;
+    background: #ffffff;
+    color: #666666;
+    border: none;
+    border-radius: 5px;
+
+}
+
+.nome_label{
+    display: none;
+}
+
+/* teste inputs email e nome */
+
+
+#teste_container {
+    padding: 30px;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+    margin-left: 5px
+}
+
+
+#nome {
+    background: #fafaf8;
+    display: flex;
+    align-items: center;
+    width: 500px;
+}
+
+#email {
+    background: #f7f7f7;
+    display: flex;
+    align-items: center;
+    width: 500px;
+}
