@@ -1,5 +1,7 @@
 <?php
 session_start();
+include '../Backend/painel.php';
+
 
 if (!isset($_SESSION['id_user'])) {
     header('Location: ../Frontend/login.php');
@@ -53,22 +55,34 @@ if (!isset($_SESSION['id_user'])) {
                             <tr>
                                 <th>OS</th>
                                 <th>Nome</th>
-                                <th>Descrição</th>
-                                <th>Status</th>
-                                <th>Quantidade</th>
-
+                                <th>Mensagem</th>
+                                <th>Anexo</th>
+                                <th>Data</th>
+                                <th>Ação</th>
                             </tr>
                         </thead>
+
                         <tbody>
-                            <tr>
-                                <td>Dado 1-1</td>
-                                <td>Dado 1-2</td>
-                                <td>Dado 1-3</td>
-                                <td>Dado 1-4</td>
-                                <td>Dado 1-5</td>
-                                <td><a href="#" class="btn"><i class="fa-solid fa-check"></i></a></td>
-                            </tr>
+                            <?php if (count($chamados) > 0): ?>
+                                <?php foreach ($chamados as $chamado): ?>
+                                    <tr>
+                                        <td>#<?= $chamado['id_suport'] ?></td>
+                                        <td><?= htmlspecialchars($chamado['nome']) ?></td>
+                                        <td><?= htmlspecialchars($chamado['mensagem']) ?></td>
+                                        <td>
+                                            <?= $chamado['arquivo'] ? '<a href="../Frontend/uploads/' . $chamado['arquivo'] . '" target="_blank">Ver Anexo</a>' : 'Sem arquivo' ?>
+                                        </td>
+                                        <td><?= date('d/m/Y H:i', strtotime($chamado['data_envio'])) ?></td>
+                                        <td><a href="#" class="btn"><i class="fa-solid fa-check"></i></a></td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            <?php else: ?>
+                                <tr>
+                                    <td colspan="6">Nenhum chamado registrado.</td>
+                                </tr>
+                            <?php endif; ?>
                         </tbody>
+
                     </table>
                 </div>
 
