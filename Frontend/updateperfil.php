@@ -2,6 +2,21 @@
 
 session_start();
 
+require_once('../Backend/conexao.php');
+
+$id = $_SESSION['id_user'];
+
+$stmt = $pdo->prepare("SELECT foto FROM usuarios WHERE id_user = ?");
+$stmt->execute([$id]);
+$dados = $stmt->fetch(PDO::FETCH_ASSOC);
+
+// Verifica se tem foto cadastrada
+if (!empty($dados['foto'])) {
+    $fotoPerfil = './uploads/' . $dados['foto']; // imagem enviada pelo usuário
+} else {
+    $fotoPerfil = "./ressources/img/perfil.png"; // imagem padrão
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -47,7 +62,7 @@ session_start();
 
                     <div class="foto-update-perfil">
 
-                        <img src="./uploads/<?php echo $_SESSION['foto'] ?? 'perfil.png'; ?>" alt="Foto de Perfil">
+                        <img src="<?= htmlspecialchars($fotoPerfil) ?>" alt="Foto de Perfil">
 
                         <input type="file" name="foto">
 
@@ -75,7 +90,7 @@ session_start();
             </div>
 
     </section>
-    
+
     <?php
     include __DIR__ . '/includes/footer.php';
     ?>

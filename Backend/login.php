@@ -28,6 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['nome'] = $user['nome'];
         $_SESSION['sobrenome'] = $user['sobrenome'];
         $_SESSION['email'] = $user['email'];
+        $_SESSION['foto'] = !empty($usuario['foto']) ? $usuario['foto'] : 'perfil.png';
 
         header('Location: ../Frontend/home.php');
         exit;

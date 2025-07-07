@@ -7,6 +7,22 @@ if (!isset($_SESSION['id_user'])) {
     header('Location: ../Frontend/login.php');
     exit;
 }
+
+require_once('../Backend/conexao.php');
+
+$id = $_SESSION['id_user'];
+
+$stmt = $pdo->prepare("SELECT foto FROM usuarios WHERE id_user = ?");
+$stmt->execute([$id]);
+$dados = $stmt->fetch(PDO::FETCH_ASSOC);
+
+// Verifica se tem foto cadastrada
+if (!empty($dados['foto'])) {
+    $fotoPerfil = './uploads/' . $dados['foto']; // imagem enviada pelo usuário
+} else {
+    $fotoPerfil = "./ressources/img/perfil.png"; // imagem padrão
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -36,7 +52,7 @@ if (!isset($_SESSION['id_user'])) {
 
         <div class="perfil-cadastro">
             <div class="image">
-                <img src="./uploads/<?php echo $_SESSION['foto'] ?? 'perfil.png'; ?>" alt="Foto de Perfil">
+                <img src="<?= htmlspecialchars($fotoPerfil) ?>" alt="Foto de Perfil">
             </div>
             <p class="welcome">Bem Vindo, <strong><?= $_SESSION['nome'] ?> <?= $_SESSION['sobrenome'] ?></strong>.</p>
             <button type="submit" class="btn-delete">Sair <i class="fa-solid fa-right-to-bracket"></i></button>
