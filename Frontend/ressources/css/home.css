@@ -33,7 +33,7 @@
     max-width: 300px; 
     gap: 2rem;
 }
-.gerenciarprodutos.logo_foto .perfil .image,
+.gerenciarprodutos .perfil-cadastro  .image,
 .usuario .logo_foto .perfil .image{
     width: 40rem;
     height: 40rem;
@@ -45,7 +45,7 @@
     align-items: center;
     justify-content: center;
 }
-.gerenciarprodutos.logo_foto .perfil .image img,
+.gerenciarprodutos .perfil-cadastro  .image img,
 .usuario .logo_foto .perfil .image img{
     object-fit: cover;
     border-radius: 50%;
