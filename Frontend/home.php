@@ -32,7 +32,7 @@ if (!isset($_SESSION['id_user'])) {
             <img src="./ressources/img/smartstock.png" alt="" style="height: 50%; width: 50%; margin-top: 13%;">
             <div class="perfil">
                 <div class="image">
-                    <img src="./ressources/img/perfil.png" alt="">
+                    <img src="./uploads/<?php echo $_SESSION['foto'] ?? 'perfil.png'; ?>" alt="Foto de Perfil">
                 </div>
                 <p class="welcome">Bem Vindo, <strong><?= $_SESSION['nome'] ?> <?= $_SESSION['sobrenome'] ?></strong>.</p>
 
