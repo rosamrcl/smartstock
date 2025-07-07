@@ -1,17 +1,19 @@
 .updateperfil{   
     display: flex;   
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    align-items: flex-start;
+    gap: 3rem;
     height: 100%;   
     padding: 2rem 9%;
     margin: 2rem;
     border-radius: .5rem;
 }
 .form-update{   
+    flex: 2;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex: 1;
     padding: 2rem ;
     border-radius: .5rem;
     background: var(--cor1);
@@ -65,10 +67,13 @@
     width: 20rem;
     object-fit: cover;
 }
-.logo-form-container {
+.logo {
+    flex: 1;
     display: flex;
     align-items: center;
-    gap: 3rem; /* Espaço entre a logo e o formulário */
-    max-width: 1200px;
-    width: 100%;
+    justify-content: center;
+}
+.logo img {
+    max-width: 100%; 
+    height: auto;
 }
