@@ -1,3 +1,43 @@
+<?php
+
+require_once __DIR__ . '/../Backend/conexao.php'; // ajuste o caminho conforme seu projeto
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $nome = $_POST['nome'] ?? '';
+    $email = $_POST['email'] ?? '';
+    $mensagem = $_POST['mensagem'] ?? '';
+    $arquivo_nome = null;
+
+
+    if (!empty($nome) && !empty($email) && !empty($mensagem)) {
+        // Lidar com o arquivo se existir
+        if (isset($_FILES['arquivo']) && $_FILES['arquivo']['error'] === UPLOAD_ERR_OK) {
+            $extensoes_permitidas = ['jpg', 'jpeg', 'png', 'pdf'];
+            $info = pathinfo($_FILES['arquivo']['name']);
+            $extensao = strtolower($info['extension']);
+
+            if (in_array($extensao, $extensoes_permitidas)) {
+                $novo_nome = uniqid('arquivo_') . '.' . $extensao;
+                $caminho_destino = __DIR__ . '/uploads/' . $novo_nome;
+
+                if (move_uploaded_file($_FILES['arquivo']['tmp_name'], $caminho_destino)) {
+                    $arquivo_nome = $novo_nome;
+                }
+            }
+        }
+
+        // Inserir no banco
+        $stmt = $pdo->prepare("INSERT INTO suporte (nome, email, mensagem, arquivo) VALUES (?, ?, ?, ?)");
+        $stmt->execute([$nome, $email, $mensagem, $arquivo_nome]);
+
+        echo "<script>alert('Mensagem enviada com sucesso!');</script>";
+    } else {
+        echo "<script>alert('Por favor, preencha todos os campos obrigatórios.');</script>";
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -24,17 +64,17 @@
         </div>
 
         <div class="container">
-            <form action="" method="post">
+            <form action="" method="post" enctype="multipart/form-data">
                 <div class="input-group">
-                    <input type="text" placeholder="Digite seu nome">
-                    <input type="email" placeholder="Digite seu email">
+                    <input name="nome" type="text" placeholder="Digite seu nome">
+                    <input name="email" type="email" placeholder="Digite seu email">
                 </div>
-                <textarea placeholder="Digite seu problema"></textarea>
+                <textarea name="mensagem" placeholder="Digite seu problema"></textarea>
                 <div class="file-upload-group">
                     <label for="arquivo" class="custom-file-upload">
                         <i class="fa-solid fa-upload"></i> Enviar foto ou PDF
                     </label>
-                    <input type="file" id="arquivo" name="arquivo" class="hidden-file-input">
+                    <input type="file" id="arquivo" name="arquivo" class="hidden-file-input" accept=".jpg,.jpeg,.png,.pdf">
                 </div>
                 <input type="submit" class="btn" value="Enviar">
             </form>
