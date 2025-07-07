@@ -23,7 +23,7 @@
     justify-content: center; 
     gap: 10rem;
 }
-.gerenciarprodutos.logo_foto .perfil,
+.gerenciarprodutos .perfil-cadastro  .image,
 .usuario .logo_foto .perfil{
     display: flex;
     align-items: center;    
@@ -49,8 +49,8 @@
 .usuario .logo_foto .perfil .image img{
     object-fit: cover;
     border-radius: 50%;
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
 }
 .service{
     display: flex;    
