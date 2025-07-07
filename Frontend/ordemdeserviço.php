@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if(!isset($_SESSION['id_user'])){
+if (!isset($_SESSION['id_user'])) {
     header('Location: ../Frontend/login.php');
     exit;
 }
@@ -29,15 +29,15 @@ if(!isset($_SESSION['id_user'])){
     ?>
 
 
-    <section class="gerenciarprodutos">      
-            
-            <div class="perfil-cadastro">
-                <div class="image">
-                    <img src="./ressources/img/perfil.png" alt="">
-                </div>
-                <p class="welcome">Bem Vindo, <strong><?= $_SESSION['nome'] ?> <?= $_SESSION['sobrenome'] ?></strong>.</p>
-                <button type="submit" class="btn-delete">Sair <i class="fa-solid fa-right-to-bracket"></i></button>
-            </div>       
+    <section class="gerenciarprodutos">
+
+        <div class="perfil-cadastro">
+            <div class="image">
+                <img src="./uploads/<?php echo $_SESSION['foto'] ?? 'perfil.png'; ?>" alt="Foto de Perfil">
+            </div>
+            <p class="welcome">Bem Vindo, <strong><?= $_SESSION['nome'] ?> <?= $_SESSION['sobrenome'] ?></strong>.</p>
+            <button type="submit" class="btn-delete">Sair <i class="fa-solid fa-right-to-bracket"></i></button>
+        </div>
         <div class="table-container">
             <h3>Área do funcionário</h3>
             <div class="tabela">
@@ -55,7 +55,7 @@ if(!isset($_SESSION['id_user'])){
                                 <th>Descrição</th>
                                 <th>Status</th>
                                 <th>Quantidade</th>
-                            
+
                             </tr>
                         </thead>
                         <tbody>
@@ -65,7 +65,7 @@ if(!isset($_SESSION['id_user'])){
                                 <td>Dado 1-3</td>
                                 <td>Dado 1-4</td>
                                 <td>Dado 1-5</td>
-                                <td><a href="#" class="btn"><i class="fa-solid fa-check"></i></a></td> 
+                                <td><a href="#" class="btn"><i class="fa-solid fa-check"></i></a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -80,17 +80,17 @@ if(!isset($_SESSION['id_user'])){
                                 <th>Descrição</th>
                                 <th>Status</th>
                                 <th>Quantidade</th>
-                                
+
                             </tr>
                         </thead>
-                        <tbody>                
+                        <tbody>
                             <tr>
                                 <td>Info A2</td>
                                 <td>Info B2</td>
                                 <td>Info B2</td>
                                 <td>Info B2</td>
                                 <td>Info B2</td>
-                                
+
                             </tr>
                         </tbody>
                     </table>
@@ -102,11 +102,11 @@ if(!isset($_SESSION['id_user'])){
                             <tr>
                                 <th>Manutenção</th>
                                 <th>Status</th>
-                                <th>Estapa</th>              
-                                
+                                <th>Estapa</th>
+
                                 <th>Descrição da tarefa</th>
                                 <th>Data da verificação</th>
-                                
+
                             </tr>
                         </thead>
                         <tbody>
@@ -127,18 +127,18 @@ if(!isset($_SESSION['id_user'])){
                                     </select>
                                 </td>
                                 <td><select name="" id="">
-                                    <option value="">
-                                        Verificar conectividade
-                                    </option>
-                                    <option value="">
-                                        Testar alimentação alétrica
-                                    </option>
-                                </select></td>
-                                <td><input type="file" name="" id=""></td>                                
+                                        <option value="">
+                                            Verificar conectividade
+                                        </option>
+                                        <option value="">
+                                            Testar alimentação alétrica
+                                        </option>
+                                    </select></td>
+                                <td><input type="file" name="" id=""></td>
                                 <td><input type="date" name="" id=""></td>
-                                <td><a href="#" class="btn"><i class="fa-solid fa-check"></i></a></td> 
+                                <td><a href="#" class="btn"><i class="fa-solid fa-check"></i></a></td>
                             </tr>
-                            
+
                         </tbody>
                     </table>
                 </div>
