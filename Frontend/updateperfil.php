@@ -28,7 +28,7 @@
                 <form action="../Backend/atualizar.php" method="post" enctype="multipart/form-data">
                     <h3>Atualize seu perfil</h3>
                     <div class="foto-update-perfil">
-                        <img class="profile" src="./uploads/<?php echo $usuario['foto'] ?? 'perfil.png'; ?>" alt="">
+                        <img src="./uploads/<?php echo $usuario['foto'] ?? 'perfil.png'; ?>" alt="">
                         <input type="file" name="foto">
                     </div>
                     <label for="nome">Nome</label>
