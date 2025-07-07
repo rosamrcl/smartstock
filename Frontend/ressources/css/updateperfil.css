@@ -66,6 +66,7 @@
 .form-update .form-container-update form .foto-update-perfil img{
     width: 20rem;
     object-fit: cover;
+    border-radius: 50%;
 }
 .logo {
     flex: 1;
