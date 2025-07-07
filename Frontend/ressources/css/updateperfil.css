@@ -62,6 +62,8 @@
     padding: 1rem;
     border-radius: .5rem;
     background: var(--cor4);
+    object-fit: cover;
+    border-radius: 50%;
 }
 .form-update .form-container-update form .foto-update-perfil img{
     width: 20rem;
