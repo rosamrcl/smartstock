@@ -32,7 +32,7 @@
                     <input type="email" name="email" id="" placeholder="email@email.com" required>
                     <label for="senha">Senha</label>
                     <input type="password" name="senha" id="" placeholder="•••••••••" required>
-                    <p>Esqueci minha senha <a href="#">Clique aqui</a></p>
+                    <p>Esqueci minha senha <a href="password.php">Clique aqui</a></p>
                     <p>Ainda não tem cadastro? <a href="cadastro.php">Clique aqui</a></p>
                     <input type="submit" value="Enviar" class="btn">
                 </form>

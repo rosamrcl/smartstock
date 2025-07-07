@@ -58,7 +58,7 @@ if (!isset($_SESSION['id_user'])) {
             </div>
             <div class="manutencao">
                 <h5>Manutenção</h5>
-                <a href="#"><i class="fa-solid fa-screwdriver-wrench"></i></a>
+                <a href="cadastrogerencia.php"><i class="fa-solid fa-screwdriver-wrench"></i></a>
             </div>
         </div>
     </section>
