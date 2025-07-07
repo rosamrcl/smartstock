@@ -3,27 +3,34 @@
 require_once __DIR__ . '/../Backend/conexao.php'; // ajuste o caminho conforme seu projeto
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
     $nome = $_POST['nome'] ?? '';
     $email = $_POST['email'] ?? '';
     $mensagem = $_POST['mensagem'] ?? '';
     $arquivo_nome = null;
 
-
     if (!empty($nome) && !empty($email) && !empty($mensagem)) {
+
         // Lidar com o arquivo se existir
         if (isset($_FILES['arquivo']) && $_FILES['arquivo']['error'] === UPLOAD_ERR_OK) {
+
             $extensoes_permitidas = ['jpg', 'jpeg', 'png', 'pdf'];
             $info = pathinfo($_FILES['arquivo']['name']);
             $extensao = strtolower($info['extension']);
 
             if (in_array($extensao, $extensoes_permitidas)) {
+
                 $novo_nome = uniqid('arquivo_') . '.' . $extensao;
                 $caminho_destino = __DIR__ . '/uploads/' . $novo_nome;
 
                 if (move_uploaded_file($_FILES['arquivo']['tmp_name'], $caminho_destino)) {
+
                     $arquivo_nome = $novo_nome;
+
                 }
+
             }
+
         }
 
         // Inserir no banco
@@ -31,9 +38,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->execute([$nome, $email, $mensagem, $arquivo_nome]);
 
         echo "<script>alert('Mensagem enviada com sucesso!');</script>";
+
     } else {
+
         echo "<script>alert('Por favor, preencha todos os campos obrigatórios.');</script>";
+
     }
+    
 }
 
 ?>
