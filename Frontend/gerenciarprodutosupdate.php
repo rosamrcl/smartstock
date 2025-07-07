@@ -3,7 +3,7 @@ require_once("../Backend/conexao.php");
 
 // Verifica se veio um ID na URL
 if (!isset($_GET['id'])) {
-    header("Location: ../Frontend/cadastrogerencia.php");
+    header("Location: ../Frontend/gerenciarprodutos.php");
     exit;
 }
 
@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt = $pdo->prepare("UPDATE produtos SET nome = ?, descricao = ?, status = ?, quantidade = ? WHERE id_products = ?");
     $stmt->execute([$nome, $descricao, $status, $quantidade, $id]);
 
-    header("Location: ../Frontend/cadastrogerencia.php");
+    header("Location: ../Frontend/gerenciarprodutos.php");
     exit;
 }
 ?>
@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     include __DIR__ . '/includes/header.php';
     ?>
 
-    <section class="cadastrogerencia">
+    <section class="gerenciarprodutos">
         <div class="logo">
             <img src="./ressources/img/smartstock.png" alt="">
         </div>

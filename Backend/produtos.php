@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['acao']) && $_POST['ac
 
     $stmt = $pdo->prepare("INSERT INTO produtos (nome, descricao, status, quantidade) VALUES (?, ?, ?, ?)");
     $stmt->execute([$nome, $descricao, $status, $quantidade]);
-    header("Location: ../Frontend/cadastrogerencia.php");
+    header("Location: ../Frontend/gerenciarprodutos.php");
     exit;
 }
 
@@ -20,7 +20,7 @@ if (isset($_GET['excluir'])) {
     $id = $_GET['excluir'];
     $stmt = $pdo->prepare("DELETE FROM produtos WHERE id_products = ?");
     $stmt->execute([$id]);
-    header("Location: ../Frontend/cadastrogerencia.php");
+    header("Location: ../Frontend/gerenciarprodutos.php");
     exit;
 }
 
@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['acao']) && $_POST['ac
 
     $stmt = $pdo->prepare("UPDATE produtos SET nome = ?, descricao = ?, status = ?, quantidade = ? WHERE id_products = ?");
     $stmt->execute([$nome, $descricao, $status, $quantidade, $id]);
-    header("Location: ../Frontend/cadastrogerencia.php");
+    header("Location: ../Frontend/gerenciarprodutos.php");
     exit;
 }
 ?>

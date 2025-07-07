@@ -49,16 +49,16 @@ if (!isset($_SESSION['id_user'])) {
         <div class="service">
             <div class="gerenciar">
                 <h5>Gerenciar Produtos</h5>
-                <a href="cadastrogerencia.php"> <i class="fa-solid fa-boxes-stacked"></i> </a>
+                <a href="gerenciarprodutos.php"> <i class="fa-solid fa-boxes-stacked"></i> </a>
 
             </div>
             <div class="ordem-servico">
                 <h5>Ordem de Serviço</h5>
-                <a href="cadastrogerenciafuncionario.php"><i class="fa-solid fa-users-gear"></i></a>
+                <a href="ordemdeserviço.php"><i class="fa-solid fa-users-gear"></i></a>
             </div>
             <div class="manutencao">
                 <h5>Manutenção</h5>
-                <a href="cadastrogerencia.php"><i class="fa-solid fa-screwdriver-wrench"></i></a>
+                <a href="gerenciarprodutos.php"><i class="fa-solid fa-screwdriver-wrench"></i></a>
             </div>
         </div>
     </section>

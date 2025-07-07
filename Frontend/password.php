@@ -19,15 +19,21 @@
     <?php
     include __DIR__ . '/includes/header.php';
     ?>
+    
     <section class="updateperfil">
 
             <div class="logo">
+
                 <img src="./ressources/img/smartstock.png" alt="">
+
             </div>
 
         <div class="form-update">
+
             <div class="form-container-update">
+
                 <form action="" method="post">
+
                     <h3>Atualize sua senha</h3>                    
                     <label for="email">E-mail</label>
                     <input type="email" name="email" id="" placeholder="email@email.com">
@@ -37,12 +43,14 @@
                     <input type="password" name="csenha" id="" placeholder="•••••••••">                            
                     <input type="submit" value="Enviar" class="btn">
 
-                    
                 </form>
+
             </div>
+
         </div> 
 
     </section>
+
     <?php
     include __DIR__ . '/includes/footer.php';
     ?>

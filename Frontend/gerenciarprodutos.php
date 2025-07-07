@@ -25,7 +25,7 @@ require_once("../Backend/conexao.php")
     include __DIR__ . '/includes/header.php';
     ?>
 
-    <section class="cadastrogerencia">
+    <section class="gerenciarprodutos">
         <div class="form-produto">
             <div class="form-container-produto">
                 <form action="../Backend/produtos.php" method="post">
@@ -84,7 +84,7 @@ require_once("../Backend/conexao.php")
                                     <td><?= $row['quantidade'] ?></td>
                                     <td>
                                         <button class="btn-edit btn" onclick='preencherForm(<?= json_encode($row) ?>)'>
-                                            <a href="cadastrogerenciaupdate.php?id=<?= $row['id_products'] ?>" class="btn-edit" style="color: white;">
+                                            <a href="gerenciarprodutosupdate.php?id=<?= $row['id_products'] ?>" class="btn-edit" style="color: white;">
                                                 <i class="fa-solid fa-pencil"></i>
                                             </a>
                                         </button>
@@ -127,7 +127,7 @@ require_once("../Backend/conexao.php")
                                     <td><?= $row['quantidade'] ?></td>
                                     <td>
                                         <button class="btn-edit btn" onclick='preencherForm(<?= json_encode($row) ?>)'>
-                                            <a href="cadastrogerenciaupdate.php?id=<?= $row['id_products'] ?>" class="btn-edit" style="color: white;">
+                                            <a href="gerenciarprodutosupdate.php?id=<?= $row['id_products'] ?>" class="btn-edit" style="color: white;">
                                                 <i class="fa-solid fa-pencil"></i>
                                             </a>
                                         </button>
@@ -171,7 +171,7 @@ require_once("../Backend/conexao.php")
                                     <td><?= $row['quantidade'] ?></td>
                                     <td>
                                         <button class="btn-edit btn" onclick='preencherForm(<?= json_encode($row) ?>)'>
-                                            <a href="cadastrogerenciaupdate.php?id=<?= $row['id_products'] ?>" class="btn-edit" style="color: white;">
+                                            <a href="gerenciarprodutosupdate.php?id=<?= $row['id_products'] ?>" class="btn-edit" style="color: white;">
                                                 <i class="fa-solid fa-pencil"></i>
                                             </a>
                                         </button>

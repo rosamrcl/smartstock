@@ -29,13 +29,13 @@ if(!isset($_SESSION['id_user'])){
     ?>
 
 
-    <section class="cadastrogerencia">      
+    <section class="gerenciarprodutos">      
             
             <div class="perfil-cadastro">
                 <div class="image">
                     <img src="./ressources/img/perfil.png" alt="">
                 </div>
-                <p>Bem Vindo, Ambrosio</p>
+                <p class="welcome">Bem Vindo, <strong><?= $_SESSION['nome'] ?> <?= $_SESSION['sobrenome'] ?></strong>.</p>
                 <button type="submit" class="btn-delete">Sair <i class="fa-solid fa-right-to-bracket"></i></button>
             </div>       
         <div class="table-container">

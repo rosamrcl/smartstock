@@ -4,9 +4,9 @@
         <nav class="navbar"> 
             
             
-            <a href="cadastrogerencia.php">Gerenciamento de Estoque</a>
-            <a href="cadastrogerenciafuncionario.php">Ordem de Serviço</a>    
-            <a href="help.php">Posso ajudar</a>        
+            <a href="gerenciarprodutos.php">Gerenciamento de Estoque</a>
+            <a href="ordemdeserviço.php">Ordem de Serviço</a>    
+            <a href="suporte.php">Posso ajudar</a>        
             <a href=""><i class="fa-solid fa-bell"></i></a>
         </nav>
         <div class="icons">
