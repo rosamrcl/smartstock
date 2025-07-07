@@ -1,3 +1,9 @@
+<?php
+
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -28,7 +34,7 @@
                 <form action="../Backend/atualizar.php" method="post" enctype="multipart/form-data">
                     <h3>Atualize seu perfil</h3>
                     <div class="foto-update-perfil">
-                        <img src="./uploads/<?php echo $usuario['foto'] ?? 'perfil.png'; ?>" alt="">
+                        <img src="./uploads/<?php echo $_SESSION['foto'] ?? 'perfil.png'; ?>" alt="Foto de Perfil">
                         <input type="file" name="foto">
                     </div>
                     <label for="nome">Nome</label>

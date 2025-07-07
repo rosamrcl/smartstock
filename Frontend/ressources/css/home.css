@@ -40,6 +40,11 @@
     padding: 2rem 5%;
     margin: 2rem 5%;
 }
+.usuario .logo_foto .perfil .image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .gerenciarprodutos.logo_foto .perfil .image img,
 .usuario .logo_foto .perfil .image img{
     object-fit: cover;
