@@ -26,9 +26,17 @@
         <div class="form-update">
             <div class="form-container-update">
                 <form action="" method="post">
-                    <h3>Atualize sua senha</h3>
+                    <h3>Atualize seu perfil</h3>
+                    <div class="foto-update-perfil">
+                        <img src="./ressources/img/perfil.png" alt="">            
+                        <input type="file" name="" id="">
+                    </div>
+                    <label for="nome">Nome</label>
+                    <input type="text" name="nome" placeholder="Nome">
+                    <label for="sobrenome">Sobrenome</label>
+                    <input type="text" name="sobrenome" placeholder="Sobrenome">
                     <label for="email">E-mail</label>
-                    <input type="email" name="email" id="" placeholder="email@email.com" required>               
+                    <input type="email" name="email" id="" placeholder="email@email.com">
                     <label for="senha">Senha</label>
                     <input type="password" name="senha" id="" placeholder="•••••••••">
                     <label for="csenha">Confirmar senha</label>

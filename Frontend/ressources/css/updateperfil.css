@@ -11,7 +11,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2rem 9%;
+    flex: 1;
+    padding: 2rem ;
     border-radius: .5rem;
     background: var(--cor1);
     width: 100%;
@@ -63,4 +64,11 @@
 .form-update .form-container-update form .foto-update-perfil img{
     width: 20rem;
     object-fit: cover;
+}
+.logo-form-container {
+    display: flex;
+    align-items: center;
+    gap: 3rem; /* Espaço entre a logo e o formulário */
+    max-width: 1200px;
+    width: 100%;
 }
