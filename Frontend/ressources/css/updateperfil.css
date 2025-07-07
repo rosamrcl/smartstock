@@ -66,7 +66,8 @@
     border-radius: 50%;
 }
 .form-update .form-container-update form .foto-update-perfil img{
-    width: 20rem;
+    width: 200px;
+    height: 200px;
     object-fit: cover;
     border-radius: 50%;
 }
