@@ -29,6 +29,7 @@ body{
     outline: none;
     font-family: "Poppins", sans-serif;
     transition: all .2s linear;
+    list-style: none;
 
 }
 html{

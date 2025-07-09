@@ -150,8 +150,7 @@ $produtosEstoque = $stmtEstoque->fetchAll(PDO::FETCH_ASSOC);
                 </div>
 
 
-                <div id="tab3" class="tab-content">
-                    <h3>Check-list de Manutenção</h3>
+                <div id="tab3" class="tab-content">                    
                     <form action="../Backend/adicionar_checklist.php" method="post">
                         <table>
                             <thead>
@@ -159,7 +158,7 @@ $produtosEstoque = $stmtEstoque->fetchAll(PDO::FETCH_ASSOC);
                                     <th>Etapas realizadas</th>
                                     <th>Cliente</th>
                                     <th>Local</th>
-                                    <th>Ação</th>
+                                    
                                 </tr>
                             </thead>
                             <tbody>
@@ -190,8 +189,8 @@ $produtosEstoque = $stmtEstoque->fetchAll(PDO::FETCH_ASSOC);
                     ?>
 
                     <!-- Exibir checklists já cadastrados -->
-                    <h4>Registros de Check-lists</h4>
                     <table>
+                        <!-- <h4>Registros de Check-lists</h4> -->
                         <thead>
                             <tr>
                                 <th>Cliente</th>
