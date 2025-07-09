@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 try {
 
@@ -63,17 +63,11 @@ try {
 
     // 5. Check-list
     $pdo->exec("CREATE TABLE IF NOT EXISTS checklist (
-        id_checklist INT AUTO_INCREMENT PRIMARY KEY,
-        id_ordem INT,
-        manutencao VARCHAR(100) NOT NULL,
-        status VARCHAR(50) NOT NULL,
-        etapa VARCHAR(100) NOT NULL,
-        descricao_tarefa TEXT,
-        data_verificacao DATE,
-        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        updated_at TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP,
-        deleted_at TIMESTAMP NULL,
-        FOREIGN KEY (id_ordem) REFERENCES ordens_servico(id_services)
+            id_checklist INT AUTO_INCREMENT PRIMARY KEY,
+            etapas TEXT NOT NULL,
+            cliente VARCHAR(100) NOT NULL,
+            local_servico VARCHAR(150) NOT NULL,
+            data_execucao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )");
 
     // 6. Suporte

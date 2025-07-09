@@ -151,51 +151,75 @@ $produtosEstoque = $stmtEstoque->fetchAll(PDO::FETCH_ASSOC);
 
 
                 <div id="tab3" class="tab-content">
+                    <h3>Check-list de Manutenção</h3>
+                    <form action="../Backend/adicionar_checklist.php" method="post">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Etapas realizadas</th>
+                                    <th>Cliente</th>
+                                    <th>Local</th>
+                                    <th>Ação</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <label><input type="checkbox" name="etapas[]" value="Verificar conectividade">
+                                            Verificar conectividade</label><br>
+                                        <label><input type="checkbox" name="etapas[]"
+                                                value="Testar alimentação elétrica"> Testar alimentação
+                                            elétrica</label><br>
+                                        <label><input type="checkbox" name="etapas[]" value="Atualizar firmware">
+                                            Atualizar firmware</label><br>
+                                        <label><input type="checkbox" name="etapas[]" value="Checar sinal da rede">
+                                            Checar sinal da rede</label><br>
+                                    </td>
+                                    <td><input type="text" name="cliente" placeholder="Nome do cliente" required></td>
+                                    <td><input type="text" name="local" placeholder="Local do serviço" required></td>
+                                    <td><button type="submit" class="btn"><i class="fa-solid fa-check"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
+
+                    <?php
+                    $stmtChecks = $pdo->query("SELECT * FROM checklist ORDER BY data_execucao DESC");
+                    $checklists = $stmtChecks->fetchAll(PDO::FETCH_ASSOC);
+                    ?>
+
+                    <!-- Exibir checklists já cadastrados -->
+                    <h4>Registros de Check-lists</h4>
                     <table>
                         <thead>
                             <tr>
-                                <th>Manutenção</th>
-                                <th>Status</th>
-                                <th>Estapa</th>
-
-                                <th>Descrição da tarefa</th>
-                                <th>Data da verificação</th>
-
+                                <th>Cliente</th>
+                                <th>Local</th>
+                                <th>Etapas</th>
+                                <th>Data</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>
-                                    <select name="" id="">
-                                        <option value="">Preventiva</option>
-                                        <option value="">Corretiva</option>
-                                        <option value="">Instalação</option>
-                                        <option value="">Configuração</option>
-                                    </select>
-                                </td>
-                                <td>
-                                    <select name="" id="">
-                                        <option value="">Pendente</option>
-                                        <option value="">Em andamento</option>
-                                        <option value="">Concluído</option>
-                                    </select>
-                                </td>
-                                <td><select name="" id="">
-                                        <option value="">
-                                            Verificar conectividade
-                                        </option>
-                                        <option value="">
-                                            Testar alimentação alétrica
-                                        </option>
-                                    </select></td>
-                                <td><input type="file" name="" id=""></td>
-                                <td><input type="date" name="" id=""></td>
-                                <td><a href="#" class="btn"><i class="fa-solid fa-check"></i></a></td>
-                            </tr>
-
+                            <?php foreach ($checklists as $c): ?>
+                                <tr>
+                                    <td><?= htmlspecialchars($c['cliente']) ?></td>
+                                    <td><?= htmlspecialchars($c['local_servico']) ?></td>
+                                    <td>
+                                        <ul>
+                                            <?php foreach (json_decode($c['etapas']) as $etapa): ?>
+                                                <li><?= htmlspecialchars($etapa) ?></li>
+                                            <?php endforeach; ?>
+                                        </ul>
+                                    </td>
+                                    <td><?= date('d/m/Y', strtotime($c['data_execucao'])) ?></td>
+                                </tr>
+                            <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>
+
+
 
     </section>
     <?php
