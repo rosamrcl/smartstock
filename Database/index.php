@@ -83,6 +83,7 @@ try {
         email VARCHAR(100),
         mensagem TEXT,
         arquivo VARCHAR(255),
+        status_sup VARCHAR(50) DEFAULT 'pendente',
         data_envio TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         updated_at TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP,
         deleted_at TIMESTAMP NULL

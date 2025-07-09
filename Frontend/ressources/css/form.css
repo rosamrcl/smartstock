@@ -174,3 +174,14 @@ table tr td{
     padding: 0;
     margin: 2rem;
 }
+
+.tr-concluida {
+    background-color: #d4edda;
+    color: #155724;
+    transition: 0.3s;
+}
+
+.tr-concluida .btn {
+    background-color: #28a745;
+    color: #fff;
+}

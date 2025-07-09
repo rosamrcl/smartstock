@@ -81,7 +81,7 @@ if (!empty($dados['foto'])) {
                         <tbody>
                             <?php if (count($chamados) > 0): ?>
                                 <?php foreach ($chamados as $chamado): ?>
-                                    <tr>
+                                    <tr class="<?= $chamado['status_sup'] === 'concluido' ? 'tr-concluida' : '' ?>">
                                         <td>#<?= $chamado['id_suport'] ?></td>
                                         <td><?= htmlspecialchars($chamado['nome']) ?></td>
                                         <td><?= htmlspecialchars($chamado['mensagem']) ?></td>
@@ -89,7 +89,16 @@ if (!empty($dados['foto'])) {
                                             <?= $chamado['arquivo'] ? '<a href="../Frontend/uploads/' . $chamado['arquivo'] . '" target="_blank">Ver Anexo</a>' : 'Sem arquivo' ?>
                                         </td>
                                         <td><?= date('d/m/Y H:i', strtotime($chamado['data_envio'])) ?></td>
-                                        <td><a href="#" class="btn"><i class="fa-solid fa-check"></i></a></td>
+                                        <td>
+                                            <?php if ($chamado['status_sup'] === 'concluido'): ?>
+                                                <button class="btn" disabled><i class="fa-solid fa-check-double"></i></button>
+                                            <?php else: ?>
+                                                <button class="btn concluir-btn"
+                                                    onclick="marcarConcluido(this, <?= $chamado['id_suport'] ?>)">
+                                                    <i class="fa-solid fa-check"></i>
+                                                </button>
+                                            <?php endif; ?>
+                                        </td>
                                     </tr>
                                 <?php endforeach; ?>
                             <?php else: ?>
@@ -98,6 +107,7 @@ if (!empty($dados['foto'])) {
                                 </tr>
                             <?php endif; ?>
                         </tbody>
+
 
                     </table>
                 </div>
