@@ -23,6 +23,12 @@ if (!empty($dados['foto'])) {
     $fotoPerfil = "./ressources/img/perfil.png"; // imagem padrão
 }
 
+
+// Busca apenas produtos que estão no ESTOQUE.
+$stmtEstoque = $pdo->prepare("SELECT * FROM produtos WHERE status = 'Estoque'");
+$stmtEstoque->execute();
+$produtosEstoque = $stmtEstoque->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 
 <!DOCTYPE html>
@@ -121,21 +127,28 @@ if (!empty($dados['foto'])) {
                                 <th>Descrição</th>
                                 <th>Status</th>
                                 <th>Quantidade</th>
-
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Info A2</td>
-                                <td>Info B2</td>
-                                <td>Info B2</td>
-                                <td>Info B2</td>
-                                <td>Info B2</td>
-
-                            </tr>
+                            <?php if (count($produtosEstoque) > 0): ?>
+                                <?php foreach ($produtosEstoque as $produto): ?>
+                                    <tr>
+                                        <td>#<?= $produto['id_products'] ?></td>
+                                        <td><?= htmlspecialchars($produto['nome']) ?></td>
+                                        <td><?= htmlspecialchars($produto['descricao']) ?></td>
+                                        <td><?= $produto['status'] ?></td>
+                                        <td><?= $produto['quantidade'] ?></td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            <?php else: ?>
+                                <tr>
+                                    <td colspan="5">Nenhum produto em estoque.</td>
+                                </tr>
+                            <?php endif; ?>
                         </tbody>
                     </table>
                 </div>
+
 
                 <div id="tab3" class="tab-content">
                     <table>
