@@ -34,7 +34,10 @@
     gap: 2rem;
 }
 .gerenciarprodutos .perfil-cadastro  .image,
-.usuario .logo_foto .perfil .image{
+.usuario .logo_foto .perfil .image,
+.gerenciarprodutos .perfil-cadastro  .image img,
+.usuario .logo_foto .perfil .image img
+{
     width: 250px;
     height: 250px;
     border-radius: 50%;
@@ -49,9 +52,6 @@
 .gerenciarprodutos .perfil-cadastro  .image img,
 .usuario .logo_foto .perfil .image img{
     object-fit: cover;
-    border-radius: 50%;
-    width: 250px;
-    height: 250px;
 }
 .service{
     display: flex;    
