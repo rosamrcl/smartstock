@@ -54,6 +54,7 @@ $produtosEstoque = $stmtEstoque->fetchAll(PDO::FETCH_ASSOC);
     ?>
 
 
+
     <section class="gerenciarprodutos">
 
         <div class="perfil-cadastro">
@@ -150,20 +151,19 @@ $produtosEstoque = $stmtEstoque->fetchAll(PDO::FETCH_ASSOC);
                 </div>
 
 
-                <div id="tab3" class="tab-content">                    
-                    <form action="../Backend/adicionar_checklist.php" method="post">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Etapas realizadas</th>
-                                    <th>Cliente</th>
-                                    <th>Local</th>
-                                    
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
+                <div id="tab3" class="tab-content">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Etapas realizadas</th>
+                                <th>Cliente</th>
+                                <th>Local</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <form action="../Backend/adicionar_checklist.php" method="post">
+                                <td>
                                         <label><input type="checkbox" name="etapas[]" value="Verificar conectividade">
                                             Verificar conectividade</label><br>
                                         <label><input type="checkbox" name="etapas[]"
@@ -173,54 +173,56 @@ $produtosEstoque = $stmtEstoque->fetchAll(PDO::FETCH_ASSOC);
                                             Atualizar firmware</label><br>
                                         <label><input type="checkbox" name="etapas[]" value="Checar sinal da rede">
                                             Checar sinal da rede</label><br>
-                                    </td>
-                                    <td><input type="text" name="cliente" placeholder="Nome do cliente" required></td>
-                                    <td><input type="text" name="local" placeholder="Local do serviço" required></td>
-                                    <td><button type="submit" class="btn"><i class="fa-solid fa-check"></i></button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </form>
-
-                    <?php
-                    $stmtChecks = $pdo->query("SELECT * FROM checklist ORDER BY data_execucao DESC");
-                    $checklists = $stmtChecks->fetchAll(PDO::FETCH_ASSOC);
-                    ?>
-
-                    <!-- Exibir checklists já cadastrados -->
-                    <table>
-                        <!-- <h4>Registros de Check-lists</h4> -->
-                        <thead>
-                            <tr>
-                                <th>Cliente</th>
-                                <th>Local</th>
-                                <th>Etapas</th>
-                                <th>Data</th>
+                                </td>
+                                <td><input type="text" name="cliente" placeholder="Nome do cliente" required></td>
+                                <td><input type="text" name="local" placeholder="Local do serviço" required></td>
+                                <td><button type="submit" class="btn"><i class="fa-solid fa-check"></i></button></td>
+                                </form>
                             </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach ($checklists as $c): ?>
-                                <tr>
-                                    <td><?= htmlspecialchars($c['cliente']) ?></td>
-                                    <td><?= htmlspecialchars($c['local_servico']) ?></td>
-                                    <td>
-                                        <ul>
-                                            <?php foreach (json_decode($c['etapas']) as $etapa): ?>
-                                                <li><?= htmlspecialchars($etapa) ?></li>
-                                            <?php endforeach; ?>
-                                        </ul>
-                                    </td>
-                                    <td><?= date('d/m/Y', strtotime($c['data_execucao'])) ?></td>
-                                </tr>
-                            <?php endforeach; ?>
                         </tbody>
                     </table>
+                    <div class="relatorio">
+                        <h4>Registros de Check-lists</h4>
+                        <?php
+                        $stmtChecks = $pdo->query("SELECT * FROM checklist ORDER BY data_execucao DESC");
+                        $checklists = $stmtChecks->fetchAll(PDO::FETCH_ASSOC);
+                        ?>
+
+                        <!-- Exibir checklists já cadastrados -->
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Cliente</th>
+                                    <th>Local</th>
+                                    <th>Etapas</th>
+                                    <th>Data</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($checklists as $c): ?>
+                                    <tr>
+                                        <td><?= htmlspecialchars($c['cliente']) ?></td>
+                                        <td><?= htmlspecialchars($c['local_servico']) ?></td>
+                                        <td>
+                                            <ul>
+                                                <?php foreach (json_decode($c['etapas']) as $etapa): ?>
+                                                    <li><?= htmlspecialchars($etapa) ?></li>
+                                                <?php endforeach; ?>
+                                            </ul>
+                                        </td>
+                                        <td><?= date('d/m/Y', strtotime($c['data_execucao'])) ?></td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    </div>
+
                 </div>
 
 
 
     </section>
+    </main>
     <?php
     include __DIR__ . '/includes/footer.php';
     ?>

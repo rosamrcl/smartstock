@@ -67,3 +67,4 @@ function marcarConcluido(botao, idChamado) {
     })
     .catch(() => alert("Erro de comunicação com o servidor."));
 }
+

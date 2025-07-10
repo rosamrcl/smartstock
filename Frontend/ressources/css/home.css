@@ -11,7 +11,7 @@
     
 }
 
-.gerenciarprodutos.logo_foto,
+.gerenciarprodutos .logo_foto,
 .usuario .logo_foto{
     background: var(--cor4);
     border-radius: .8rem;    
@@ -23,7 +23,7 @@
     justify-content: center; 
     gap: 10rem;
 }
-.gerenciarprodutos .perfil-cadastro  .image,
+.gerenciarprodutos .perfil-cadastro .image,
 .usuario .logo_foto .perfil{
     display: flex;
     align-items: center;    
