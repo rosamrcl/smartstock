@@ -212,6 +212,54 @@
     }
 }
 
+
+@media (max-width: 600px) {
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    table thead,
+    table tbody,
+    table tr,
+    table th,
+    table td {
+        display: block;
+    }
+    
+    table thead {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    
+    table tr {
+        margin-bottom: 1rem;
+        border-bottom: 2px solid var(--cor8);
+    }
+    
+    table td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+        text-align: left;
+        white-space: normal;
+    }
+    
+    table td:before {
+        position: absolute;
+        left: 1rem;
+        width: 45%;
+        padding-right: 1rem;
+        white-space: nowrap;
+        content: attr(data-label);
+        font-weight: bold;
+        text-align: left;
+    }
+}
+
 @media (max-width: 450px) {
     html {
         font-size: 50%;
@@ -280,5 +328,30 @@
     .btn {
         font-size: 1.4rem;
         padding: 12px 20px;
+    }
+    .tab-buttons {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .tab-button {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+    
+    table td {
+        font-size: 1.4rem;
+        padding: 0.8rem;
+    }
+    
+    .perfil-cadastro img {
+        width: 100%;
+        max-width: 15rem;
+    }
+    
+    .welcome {
+        font-size: 1.8rem;
+        text-align: center;
     }
 }

@@ -35,10 +35,11 @@
 }
 .gerenciarprodutos .perfil-cadastro  .image,
 .usuario .logo_foto .perfil .image{
-    width: 40rem;
-    height: 40rem;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
     padding: 2rem 5%;
-    margin: 2rem 5%;
+    margin: 1rem;
 }
 .usuario .logo_foto .perfil .image{
     display: flex;

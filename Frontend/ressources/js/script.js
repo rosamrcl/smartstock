@@ -68,3 +68,25 @@ function marcarConcluido(botao, idChamado) {
     .catch(() => alert("Erro de comunicação com o servidor."));
 }
 
+// Função para ajustar tabelas em telas pequenas
+function ajustarTabelasResponsivas() {
+    const tabelas = document.querySelectorAll('table');
+    
+    tabelas.forEach(tabela => {
+        const cabecalhos = tabela.querySelectorAll('th');
+        const linhas = tabela.querySelectorAll('tbody tr');
+        
+        linhas.forEach(linha => {
+            const celulas = linha.querySelectorAll('td');
+            celulas.forEach((celula, index) => {
+                if (cabecalhos[index]) {
+                    celula.setAttribute('data-label', cabecalhos[index].textContent);
+                }
+            });
+        });
+    });
+}
+
+// Executa ao carregar e ao redimensionar a tela
+window.addEventListener('load', ajustarTabelasResponsivas);
+window.addEventListener('resize', ajustarTabelasResponsivas);

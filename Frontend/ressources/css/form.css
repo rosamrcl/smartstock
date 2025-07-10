@@ -133,6 +133,7 @@ form h3{
 table{
     background: var(--cor4);
     width: 100%;
+    min-width: 0;
     border: .1rem solid var(--cor8);
     border-radius: .5rem;
     border-collapse: collapse;
@@ -203,9 +204,6 @@ table tr td{
     -webkit-overflow-scrolling: touch;
 }
 
-table {
-    min-width: 600px; 
-}
 
 
 td label {
