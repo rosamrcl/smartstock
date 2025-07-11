@@ -37,6 +37,9 @@
     border-radius: .5rem;
 }
 
+.form-container p{
+    margin-bottom: .5rem;
+}
 form select{
     width: 100%;
     border-radius: .5rem;

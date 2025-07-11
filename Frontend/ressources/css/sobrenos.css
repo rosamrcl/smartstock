@@ -22,14 +22,22 @@
     margin: 1rem;
     padding: 2rem 9%;
     flex: 1 1 calc(50% - 2rem);
-    box-sizing: border-box; /
-    max-width: calc(50% - 2rem); /
+    box-sizing: border-box; 
+    max-width: calc(50% - 2rem); 
+}
+.sobre_nos .membros .box .photo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .sobre_nos .membros .box .photo img {
     width: 250px;
     height: 250px;
     border-radius: 50%;
+    object-fit: cover;
+}
+.sobre_nos .membros .box .photo_equipe img {
     object-fit: cover;
 }
 
@@ -49,4 +57,9 @@
 }
 .sobre_nos .membros .box .git a:hover{
     opacity: .8;
+    box-shadow: var(--box-shadow);
+}
+.txt{
+    text-align: center;
+    color: var(--cor4);
 }

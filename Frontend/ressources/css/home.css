@@ -34,8 +34,7 @@
     gap: 2rem;
 }
 .gerenciarprodutos .perfil-cadastro  .image,
-.usuario .logo_foto .perfil .image,
-{
+.usuario .logo_foto .perfil .image{
     padding: 2rem 5%;
     margin: 1rem;
 }
