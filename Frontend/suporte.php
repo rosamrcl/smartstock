@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php
     include __DIR__ . '/includes/header.php';
     ?>
-    <div class="flex">
+    <section class="suporte">
         <div class="heading">
             <h1> Como podemos ajudar você?</h1>
         </div>
@@ -90,7 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <input type="submit" class="btn" value="Enviar">
             </form>
         </div>
-    </div>
+    </section>
     <?php
     include __DIR__ . '/includes/footer.php';
     ?>

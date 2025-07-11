@@ -134,11 +134,11 @@ $produtosEstoque = $stmtEstoque->fetchAll(PDO::FETCH_ASSOC);
                             <?php if (count($produtosEstoque) > 0): ?>
                                 <?php foreach ($produtosEstoque as $produto): ?>
                                     <tr>
-                                        <td>#<?= $produto['id_products'] ?></td>
-                                        <td><?= htmlspecialchars($produto['nome']) ?></td>
-                                        <td><?= htmlspecialchars($produto['descricao']) ?></td>
-                                        <td><?= $produto['status'] ?></td>
-                                        <td><?= $produto['quantidade'] ?></td>
+                                        <td data-label="ID">#<?= $produto['id_products'] ?></td>
+                                        <td data-label="Nome"><?= htmlspecialchars($produto['nome']) ?></td>
+                                        <td data-label="Descrição"><?= htmlspecialchars($produto['descricao']) ?></td>
+                                        <td data-label="Status"><?= $produto['status'] ?></td>
+                                        <td data-label="Quantidade"><?= $produto['quantidade'] ?></td>
                                     </tr>
                                 <?php endforeach; ?>
                             <?php else: ?>
@@ -163,7 +163,7 @@ $produtosEstoque = $stmtEstoque->fetchAll(PDO::FETCH_ASSOC);
                         <tbody>
                             <tr>
                                 <form action="../Backend/adicionar_checklist.php" method="post">
-                                <td>
+                                <td data-label="Opções">
                                         <label><input type="checkbox" name="etapas[]" value="Verificar conectividade">
                                             Verificar conectividade</label><br>
                                         <label><input type="checkbox" name="etapas[]"
@@ -174,9 +174,9 @@ $produtosEstoque = $stmtEstoque->fetchAll(PDO::FETCH_ASSOC);
                                         <label><input type="checkbox" name="etapas[]" value="Checar sinal da rede">
                                             Checar sinal da rede</label><br>
                                 </td>
-                                <td><input type="text" name="cliente" placeholder="Nome do cliente" required></td>
-                                <td><input type="text" name="local" placeholder="Local do serviço" required></td>
-                                <td><button type="submit" class="btn"><i class="fa-solid fa-check"></i></button></td>
+                                <td data-label="Cliente"><input type="text" name="cliente" placeholder="Nome do cliente" required></td>
+                                <td data-label="Local"><input type="text" name="local" placeholder="Local do serviço" required></td>
+                                <td data-label="Botão"><button type="submit" class="btn"><i class="fa-solid fa-check"></i></button></td>
                                 </form>
                             </tr>
                         </tbody>
@@ -201,16 +201,16 @@ $produtosEstoque = $stmtEstoque->fetchAll(PDO::FETCH_ASSOC);
                             <tbody>
                                 <?php foreach ($checklists as $c): ?>
                                     <tr>
-                                        <td><?= htmlspecialchars($c['cliente']) ?></td>
-                                        <td><?= htmlspecialchars($c['local_servico']) ?></td>
-                                        <td>
+                                        <td data-label="Cliente"><?= htmlspecialchars($c['cliente']) ?></td>
+                                        <td data-label="Local de serviço"><?= htmlspecialchars($c['local_servico']) ?></td>
+                                        <td data-label="">
                                             <ul>
                                                 <?php foreach (json_decode($c['etapas']) as $etapa): ?>
                                                     <li><?= htmlspecialchars($etapa) ?></li>
                                                 <?php endforeach; ?>
                                             </ul>
                                         </td>
-                                        <td><?= date('d/m/Y', strtotime($c['data_execucao'])) ?></td>
+                                        <td data-label="Data"><?= date('d/m/Y', strtotime($c['data_execucao'])) ?></td>
                                     </tr>
                                 <?php endforeach; ?>
                             </tbody>

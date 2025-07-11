@@ -1,11 +1,13 @@
-.flex {
+.suporte {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background: var(--cor2);
     border-radius: 1.25rem;
-    margin: 8rem;
+    margin: 8rem auto;
+    width: 80%;
+    flex-grow: 1;
 }
 
 .heading h1 {
@@ -23,8 +25,8 @@
     margin-bottom: 0;
 }
 
-.flex .container {
-    padding: 1.875rem;
+.suporte .container {
+    padding: 2rem;
     display: flex; 
     flex-wrap: wrap; 
     justify-content: center; 
@@ -33,9 +35,10 @@
     background: var(--cor2);
     border-radius: 1.25rem;
     gap: 1rem; 
+
 }
 .container form{
-    width: 80%;
+    width: 100%;
 }
 
 
@@ -79,7 +82,7 @@
 
 .custom-file-upload {
     display: inline-block;
-    padding: 1.5rem 3rem;
+    padding: 1rem 2rem;
     background: var(--cor4); 
     text-shadow: var(--text-shadow);
     color: var(--cor9);
@@ -88,8 +91,9 @@
     font-size: 2rem;
     cursor: pointer;
     text-align: center;
+    width: auto;
     transition: background 0.3s ease;
-    width: 100%;
+    flex-grow: 1;
 }
 
 
@@ -98,4 +102,10 @@
     color: var(--cor3);
 }
 
+.container .btn {
+    display: block; 
+    width: auto; 
+    margin: 2rem auto 0 auto; 
+    padding: 1.5rem 3rem;     
+}
 

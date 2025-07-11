@@ -110,11 +110,11 @@ require_once("../Backend/conexao.php")
                             ?>
                                 <tr>
 
-                                    <td><?= $row['id_products'] ?></td>
-                                    <td><?= htmlspecialchars($row['nome']) ?></td>
+                                    <td data-label="Nome"><?= $row['id_products'] ?></td>
+                                    <td data-label="Descrição"><?= htmlspecialchars($row['nome']) ?></td>
                                     <td><?= htmlspecialchars($row['descricao']) ?></td>
-                                    <td><?= $row['status'] ?></td>
-                                    <td><?= $row['quantidade'] ?></td>
+                                    <td data-label="Status"><?= $row['status'] ?></td>
+                                    <td data-label="Quantidade"><?= $row['quantidade'] ?></td>
                                     <td>
 
                                         <button class="btn-edit btn" onclick='preencherForm(<?= json_encode($row) ?>)'>
@@ -172,11 +172,11 @@ require_once("../Backend/conexao.php")
 
                                 <tr>
 
-                                    <td><?= $row['id_products'] ?></td>
+                                    <td data-label="Nome"><?= $row['id_products'] ?></td>
                                     <td><?= htmlspecialchars($row['nome']) ?></td>
-                                    <td><?= htmlspecialchars($row['descricao']) ?></td>
-                                    <td><?= $row['status'] ?></td>
-                                    <td><?= $row['quantidade'] ?></td>
+                                    <td data-label="Descrição"><?= htmlspecialchars($row['descricao']) ?></td>
+                                    <td> data-label="Status"<?= $row['status'] ?></td>
+                                    <td data-label="quantidade"><?= $row['quantidade'] ?></td>
                                     <td>
 
                                         <button class="btn-edit btn" onclick='preencherForm(<?= json_encode($row) ?>)'>
@@ -234,11 +234,11 @@ require_once("../Backend/conexao.php")
                             ?>
 
                                 <tr>
-                                    <td><?= $row['id_products'] ?></td>
-                                    <td><?= htmlspecialchars($row['nome']) ?></td>
-                                    <td><?= htmlspecialchars($row['descricao']) ?></td>
-                                    <td><?= $row['status'] ?></td>
-                                    <td><?= $row['quantidade'] ?></td>
+                                    <td data-label="ID"><?= $row['id_products'] ?></td>
+                                    <td data-label="Nome"><?= htmlspecialchars($row['nome']) ?></td>
+                                    <td data-label="Descrição"><?= htmlspecialchars($row['descricao']) ?></td>
+                                    <td data-label="Status"><?= $row['status'] ?></td>
+                                    <td data-label="Quantidade"><?= $row['quantidade'] ?></td>
                                     <td>
 
                                         <button class="btn-edit btn" onclick='preencherForm(<?= json_encode($row) ?>)'>
