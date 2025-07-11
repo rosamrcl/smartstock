@@ -7,7 +7,7 @@
             <a href="gerenciarprodutos.php">Gerenciamento de Estoque</a>
             <a href="ordemdeserviço.php">Ordem de Serviço</a>    
             <a href="suporte.php">Posso ajudar</a>        
-            <a href=""><i class="fa-solid fa-bell"></i></a>
+            <a href="#"><i class="fa-solid fa-bell"></i></a>
         </nav>
         <div class="icons">
             <i class="fas fa-bars" id="menu-bars"></i>
