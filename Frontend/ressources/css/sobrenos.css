@@ -4,23 +4,49 @@
     justify-content: center;
     flex-direction: column;
 }
-.sobre_nos .membros .box .photo img{
+
+.sobre_nos .membros {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto; 
+}
+
+.sobre_nos .membros .box {
+    font-size: 2rem;
+    color: var(--cor9);
+    border-radius: .8rem;
+    box-shadow: var(--box-shadow);
+    background: var(--cor2);
+    margin: 1rem;
+    padding: 2rem 9%;
+    flex: 1 1 calc(50% - 2rem);
+    box-sizing: border-box; /
+    max-width: calc(50% - 2rem); /
+}
+
+.sobre_nos .membros .box .photo img {
     width: 250px;
     height: 250px;
     border-radius: 50%;
     object-fit: cover;
 }
-.sobre_nos .membros{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+
+.sobre_nos .membros .box .git {
+    padding: 1rem 0;
+    text-align: center;
 }
-.sobre_nos .membros .box {
+.sobre_nos .membros .box .git a{
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
     font-size: 2rem;
-    color: var(--cor9);
+    color: var(--cor8);
+    background: var(--cor3);
+    margin: 0 .3rem;
+    border-radius: 50%;
 }
-.sobre_nos .membros .box a{
-    color: var(--cor1);
-    font-size: 2rem;
+.sobre_nos .membros .box .git a:hover{
+    opacity: .8;
 }
