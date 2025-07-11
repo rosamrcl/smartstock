@@ -42,9 +42,6 @@
                     <!-- TOKEN HIDDEN -->
                     <input type="hidden" name="token" value="<?= htmlspecialchars($token) ?>">
 
-                    <!-- E-MAIL APENAS PARA DISPLAY (opcional) -->
-                    <label for="email">E-mail</label>
-                    <input type="email" name="email" id="" placeholder="email@email.com" disabled>
 
                     <!-- SENHA NOVA -->
                     <label for="senha">Nova Senha</label>

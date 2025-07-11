@@ -1,0 +1,11 @@
+.esqueci{   
+    display: flex;   
+    flex-direction: row;
+    align-items: center; 
+    justify-content: center;   
+    gap: 3rem;
+    height: 100%;   
+    padding: 2rem 9%;
+    margin: 2rem;
+    border-radius: .5rem;
+}
