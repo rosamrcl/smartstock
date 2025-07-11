@@ -83,6 +83,15 @@ try {
         deleted_at TIMESTAMP NULL
     )");
 
+    // 7. Redefinir Senha
+    $pdo->exec("CREATE TABLE IF NOT EXISTS redefinicao_senha (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(100) NOT NULL,
+    token VARCHAR(255) NOT NULL,
+    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+");
+
 } catch (PDOException $e) {
 
     echo "Erro ao criar tabelas: " . $e->getMessage();
