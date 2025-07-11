@@ -1,0 +1,26 @@
+.sobre_nos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.sobre_nos .membros .box .photo img{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.sobre_nos .membros{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.sobre_nos .membros .box {
+    font-size: 2rem;
+    color: var(--cor9);
+}
+.sobre_nos .membros .box a{
+    color: var(--cor1);
+    font-size: 2rem;
+}
