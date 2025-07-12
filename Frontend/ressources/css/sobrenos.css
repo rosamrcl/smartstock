@@ -4,6 +4,10 @@
     justify-content: center;
     flex-direction: column;
 }
+.sobre_nos h1{
+    font-size: 4rem;
+    color: var(--cor9);
+}
 
 .sobre_nos .membros {
     display: flex;

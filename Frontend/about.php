@@ -17,7 +17,7 @@
     include __DIR__ . '/includes/headerog.php';
     ?>
     <section class="sobre_nos">
-        <img src="./ressources/img/LARI.png" alt="">
+        <h1>Sobre Nós</h1>
         <div class="membros">
             <div class="box">
                 <div class="photo">
