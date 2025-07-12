@@ -171,12 +171,24 @@ table tr td{
     padding: 2rem 4%; 
     font-size: 2rem;   
 }
-
+.gerenciarprodutos .perfil-cadastro .image{
+    width: 100%;
+    max-width: 40rem; 
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 50%;
+}
 .gerenciarprodutos .perfil-cadastro img{
-    width: 40rem;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
     object-fit: cover;
     padding: 0;
-    margin: 2rem;
+    margin: 0;
+    border-radius: 50%;
 }
 
 .tr-concluida {
@@ -202,10 +214,6 @@ table tr td{
 }
 
 
-.table-container {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-}
 
 
 

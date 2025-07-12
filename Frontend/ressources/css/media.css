@@ -90,9 +90,7 @@
         padding: 6px 12px;
     }
 
-    .gerenciarprodutos .perfil-cadastro img {
-        width: 30rem;
-    }
+
 }
 
 @media (max-width: 768px) {
@@ -154,6 +152,7 @@
     
     table {
         font-size: 1.6rem;
+        border: 0;
     }
     
     table tr th,
@@ -161,11 +160,7 @@
         padding: 0.6rem;
         font-size: 1.6rem;
     }
-
-
-    table {
-        border: 0;
-    }
+        
 
     table thead {
         display: none;
@@ -325,6 +320,9 @@
     .txt p {
         font-size: 1.5rem;
     }
+    .gerenciarprodutos .perfil-cadastro .image {
+        max-width: 30rem; 
+    }
 }
 
 @media (max-width: 450px) {
@@ -458,6 +456,10 @@
     
     .txt p {
         font-size: 1.4rem;
+    }
+
+    .gerenciarprodutos .perfil-cadastro .image {
+        max-width: 25rem;
     }
 
 
