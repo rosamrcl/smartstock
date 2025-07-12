@@ -82,7 +82,7 @@
                 </div>
                 <div class="git">
                     <a class="fa-brands fa-github" target="_blank" href="#"></a>
-                    <a class="fa-brands fa-linkedin" href="#"></a>
+                    <a class="fa-brands fa-linkedin" href="https://www.linkedin.com/in/menise-farias-4026262b9/"></a>
                 </div>
             </div>
             <div class="box">
