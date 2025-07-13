@@ -69,24 +69,18 @@ function marcarConcluido(botao, idChamado) {
 }
 
 // Função para ajustar tabelas em telas pequenas
-function ajustarTabelasResponsivas() {
-    const tabelas = document.querySelectorAll('table');
-    
-    tabelas.forEach(tabela => {
-        const cabecalhos = tabela.querySelectorAll('th');
-        const linhas = tabela.querySelectorAll('tbody tr');
-        
-        linhas.forEach(linha => {
-            const celulas = linha.querySelectorAll('td');
-            celulas.forEach((celula, index) => {
-                if (cabecalhos[index]) {
-                    celula.setAttribute('data-label', cabecalhos[index].textContent);
-                }
-            });
+function adjustTablesForMobile() {
+    if (window.innerWidth <= 768) {
+        document.querySelectorAll('.table-container').forEach(container => {
+            container.style.overflowX = 'hidden';
         });
-    });
+    } else {
+        document.querySelectorAll('.table-container').forEach(container => {
+            container.style.overflowX = 'auto';
+        });
+    }
 }
 
-// Executa ao carregar e ao redimensionar a tela
-window.addEventListener('load', ajustarTabelasResponsivas);
-window.addEventListener('resize', ajustarTabelasResponsivas);
+// Executar ao carregar e redimensionar
+window.addEventListener('load', adjustTablesForMobile);
+window.addEventListener('resize', adjustTablesForMobile);

@@ -48,7 +48,7 @@ if (!empty($dados['foto'])) {
 
         <div class="logo_foto">
 
-            <img src="./ressources/img/smartstock.png" alt="" style="height: 50%; width: 50%; margin-top: 13%;">
+            <img src="./ressources/img/smartstock.png">
 
             <div class="perfil">
 
