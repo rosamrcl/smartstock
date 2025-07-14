@@ -59,6 +59,16 @@
     margin: 0 .3rem;
     border-radius: 50%;
 }
+.sobre_nos .membros .box .git i{
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    font-size: 2rem;
+    color: var(--cor4);
+    background: var(--cor8);
+    margin: 0 .3rem;
+    border-radius: 50%;
+}
 .sobre_nos .membros .box .git a:hover{
     opacity: .8;
     box-shadow: var(--box-shadow);

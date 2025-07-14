@@ -40,7 +40,7 @@
                 </div>
                 <div class="git">
                     <a class="fa-brands fa-github" target="_blank" href="https://github.com/ansilv00"></a>
-                    <a class="fa-brands fa-linkedin" href="#"></a>
+                    <i class="fa-brands fa-linkedin" href="#"></i>
                 </div>
             </div>
             <div class="box">
@@ -66,7 +66,7 @@
                 </div>
                 <div class="git">
                     <a class="fa-brands fa-github" target="_blank" href="https://github.com/BananaSpritee"></a>
-                    <a class="fa-brands fa-linkedin" href="#"></a>
+                    <i class="fa-brands fa-linkedin" href="#"></i>
                 </div>
             </div>
             <div class="box">
@@ -78,7 +78,7 @@
                     <p>Libras</p>
                 </div>
                 <div class="git">
-                    <a class="fa-brands fa-github" target="_blank" href="#"></a>
+                    <i class="fa-brands fa-github" target="_blank" href="#"></i>
                     <a class="fa-brands fa-linkedin" href="https://www.linkedin.com/in/menise-farias-4026262b9/"></a>
                 </div>
             </div>
