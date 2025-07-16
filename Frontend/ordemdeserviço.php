@@ -58,7 +58,15 @@ $produtosEstoque = $stmtEstoque->fetchAll(PDO::FETCH_ASSOC);
                 <img src="<?= htmlspecialchars($fotoPerfil) ?>" alt="Foto de Perfil">
             </div>
             <p class="welcome">Bem Vindo, <strong><?= $_SESSION['nome'] ?> <?= $_SESSION['sobrenome'] ?></strong>.</p>
-            <button type="submit" class="btn-delete">Sair <i class="fa-solid fa-right-to-bracket"></i></button>
+            <?php if (isset($_SESSION['id_user'])): ?>
+
+                <form action="../Backend/logout.php" method="post">
+
+                    <button type="submit" class="btn-delete">Sair <i class="fa-solid fa-right-to-bracket"></i></button>
+
+                </form>
+
+            <?php endif; ?>
         </div>
         <div class="table-container">
             <h3>Área do funcionário</h3>
@@ -159,7 +167,7 @@ $produtosEstoque = $stmtEstoque->fetchAll(PDO::FETCH_ASSOC);
                         <tbody>
                             <tr>
                                 <form action="../Backend/adicionar_checklist.php" method="post">
-                                <td data-label="Opções">
+                                    <td data-label="Opções">
                                         <label><input type="checkbox" name="etapas[]" value="Verificar conectividade">
                                             Verificar conectividade</label><br>
                                         <label><input type="checkbox" name="etapas[]"
@@ -169,10 +177,13 @@ $produtosEstoque = $stmtEstoque->fetchAll(PDO::FETCH_ASSOC);
                                             Atualizar firmware</label><br>
                                         <label><input type="checkbox" name="etapas[]" value="Checar sinal da rede">
                                             Checar sinal da rede</label><br>
-                                </td>
-                                <td data-label="Cliente"><input type="text" name="cliente" placeholder="Nome do cliente" required></td>
-                                <td data-label="Local"><input type="text" name="local" placeholder="Local do serviço" required></td>
-                                <td data-label="Botão"><button type="submit" class="btn"><i class="fa-solid fa-check"></i></button></td>
+                                    </td>
+                                    <td data-label="Cliente"><input type="text" name="cliente"
+                                            placeholder="Nome do cliente" required></td>
+                                    <td data-label="Local"><input type="text" name="local"
+                                            placeholder="Local do serviço" required></td>
+                                    <td data-label="Botão"><button type="submit" class="btn"><i
+                                                class="fa-solid fa-check"></i></button></td>
                                 </form>
                             </tr>
                         </tbody>
