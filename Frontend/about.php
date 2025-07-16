@@ -40,7 +40,8 @@
                 </div>
                 <div class="git">
                     <a class="fa-brands fa-github" target="_blank" href="https://github.com/ansilv00"></a>
-                    <i class="fa-brands fa-linkedin" href="#"></i>
+                    <a class="fa-brands fa-linkedin" target="_blank" href="https://www.linkedin.com/in/anna-iris-silva-60b55736a/"></a>
+
                 </div>
             </div>
             <div class="box">
@@ -53,7 +54,7 @@
                 </div>
                 <div class="git">
                     <a class="fa-brands fa-github" target="_blank" href="https://github.com/Aquino-maker"></a>
-                    <a class="fa-brands fa-linkedin" href="https://www.linkedin.com/in/luan-aquino/"></a>
+                    <a class="fa-brands fa-linkedin" target="_blank" href="https://www.linkedin.com/in/luan-aquino/"></a>
                 </div>
             </div>
             <div class="box">
@@ -66,7 +67,8 @@
                 </div>
                 <div class="git">
                     <a class="fa-brands fa-github" target="_blank" href="https://github.com/BananaSpritee"></a>
-                    <i class="fa-brands fa-linkedin" href="#"></i>
+                    <a class="fa-brands fa-linkedin" target="_blank" href="https://www.linkedin.com/in/isaque-newton-silva-b5734632b/"></a>
+                
                 </div>
             </div>
             <div class="box">
@@ -89,7 +91,7 @@
 
                 <div class="git">
                     <a class="fa-brands fa-github" target="_blank" href="https://github.com/rosamrcl/smartstock"></a>
-                    <a class="fa-brands fa-linkedin" href="#"></a>
+                    <i class="fa-brands fa-linkedin"></i>
                 </div>
             </div>
         </div>
