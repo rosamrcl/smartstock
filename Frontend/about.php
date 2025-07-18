@@ -67,7 +67,7 @@
                 </div>
                 <div class="git">
                     <a class="fa-brands fa-github" target="_blank" href="https://github.com/BananaSpritee"></a>
-                    <a class="fa-brands fa-linkedin" target="_blank" href="https://www.linkedin.com/in/isaque-newton-silva-b5734632b/"></a>
+                    <a class="fa-brands fa-linkedin" target="_blank" href="https://www.linkedin.com/in/isaque-newton-silva-774a72374/"></a>
                 
                 </div>
             </div>
