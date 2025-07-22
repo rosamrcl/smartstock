@@ -1,6 +1,7 @@
 <?php
 session_start();
 include '../Backend/painel.php';
+include '../Backend/alerts.php';
 
 
 if (!isset($_SESSION['id_user'])) {

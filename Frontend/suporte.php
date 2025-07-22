@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__ . '/../Backend/conexao.php'; // ajuste o caminho conforme seu projeto
+include '../Backend/alerts.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 

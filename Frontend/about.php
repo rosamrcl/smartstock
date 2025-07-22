@@ -1,3 +1,6 @@
+<?php
+include '../Backend/alerts.php';
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 

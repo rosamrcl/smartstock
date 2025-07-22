@@ -1,6 +1,7 @@
 <?php
 
-require_once("../Backend/conexao.php")
+require_once("../Backend/conexao.php");
+include '../Backend/alerts.php';
 
 ?>
 
@@ -45,6 +46,7 @@ require_once("../Backend/conexao.php")
                     <label for="status">Status</label>
 
                     <select name="status" id="">
+                        <option value="Vazio">----</option>
                         <option value="Estoque">Estoque</option>
                         <option value="Manutenção">Manutenção</option>
                         <option value="Em uso">Em uso</option>
@@ -172,7 +174,7 @@ require_once("../Backend/conexao.php")
                                     <td data-label="Nome"><?= $row['id_products'] ?></td>
                                     <td><?= htmlspecialchars($row['nome']) ?></td>
                                     <td data-label="Descrição"><?= htmlspecialchars($row['descricao']) ?></td>
-                                    <td> data-label="Status"<?= $row['status'] ?></td>
+                                    <td data-label="Status"><?= $row['status'] ?></td>
                                     <td data-label="quantidade"><?= $row['quantidade'] ?></td>
                                     <td>
 

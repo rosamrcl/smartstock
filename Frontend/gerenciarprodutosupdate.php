@@ -1,5 +1,6 @@
 <?php
 require_once("../Backend/conexao.php");
+include '../Backend/alerts.php';
 
 // Verifica se veio um ID na URL
 if (!isset($_GET['id'])) {

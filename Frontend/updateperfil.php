@@ -3,6 +3,7 @@
 session_start();
 
 require_once('../Backend/conexao.php');
+include '../Backend/alerts.php';
 
 $id = $_SESSION['id_user'];
 
