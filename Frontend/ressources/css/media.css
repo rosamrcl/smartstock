@@ -289,6 +289,20 @@
     .container input[type="email"] {
         width: 100%;
     }
+    .heading h1 {
+        font-size: 2rem;
+    }
+
+    .container input[type="text"],
+    .container input[type="email"],
+    .container textarea {
+        font-size: 1.4rem;
+    }
+
+    .custom-file-upload {
+        font-size: 1.4rem;
+        padding: 0.8rem 1.5rem;
+    }
     
     .container textarea {
         height: 15rem;
