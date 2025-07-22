@@ -83,6 +83,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     include __DIR__ . '/includes/footer.php';
     ?>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js">
+    </script>
     <script src="./ressources/js/script.js"></script>
 
 </body>

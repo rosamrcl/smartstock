@@ -26,11 +26,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 if (move_uploaded_file($_FILES['arquivo']['tmp_name'], $caminho_destino)) {
 
                     $arquivo_nome = $novo_nome;
-
                 }
-
             }
-
         }
 
         // Inserir no banco
@@ -38,13 +35,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->execute([$nome, $email, $mensagem, $arquivo_nome]);
 
         echo "<script>alert('Mensagem enviada com sucesso!');</script>";
-
     } else {
 
         echo "<script>alert('Por favor, preencha todos os campos obrigatórios.');</script>";
-
     }
-    
 }
 
 ?>
@@ -93,6 +87,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     include __DIR__ . '/includes/footer.php';
     ?>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js">
+</script>
 <script src="/Frontend/ressources/js/script.js"></script>
 
 </html>
