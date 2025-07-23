@@ -1,6 +1,6 @@
 <?php
 require_once("../Backend/conexao.php");
-include '../Backend/alerts.php';
+
 
 // Verifica se veio um ID na URL
 if (!isset($_GET['id'])) {
@@ -77,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <input type="submit" value="Atualizar" class="btn" name="atualizar">
                 </form>
             </div>
-        </div>       
+        </div>
 
     </section>
     <?php
@@ -87,6 +87,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js">
     </script>
     <script src="./ressources/js/script.js"></script>
+    <?php
+    include __DIR__ . './includes/alerts.php';
+    ?>
 
 </body>
 

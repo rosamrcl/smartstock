@@ -1,7 +1,7 @@
 <?php
 
 require_once __DIR__ . '/../Backend/conexao.php'; // ajuste o caminho conforme seu projeto
-include '../Backend/alerts.php';
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -91,5 +91,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js">
 </script>
 <script src="/Frontend/ressources/js/script.js"></script>
+<?php
+include __DIR__ . './includes/alerts.php';
+?>
 
 </html>

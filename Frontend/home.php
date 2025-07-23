@@ -8,7 +8,6 @@ if (!isset($_SESSION['id_user'])) {
 }
 
 require_once('../Backend/conexao.php');
-include '../Backend/alerts.php';
 
 $id = $_SESSION['id_user'];
 
@@ -116,6 +115,9 @@ if (!empty($dados['foto'])) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js">
     </script>
     <script src="./ressources/js/script.js"></script>
+    <?php
+    include __DIR__ . './includes/alerts.php';
+    ?>
 
 </body>
 

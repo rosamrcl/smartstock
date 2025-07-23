@@ -1,6 +1,3 @@
-<?php
-include '../Backend/alerts.php';
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -28,7 +25,7 @@ include '../Backend/alerts.php';
                     <p>Front-End</p>
                 </div>
                 <div class="git">
-                    <a class="fa-brands fa-github"target="_blank" href="https://github.com/rosacl"></a>
+                    <a class="fa-brands fa-github" target="_blank" href="https://github.com/rosacl"></a>
                     <a class="fa-brands fa-linkedin" href="https://www.linkedin.com/in/maria-rosa-chagas-lima-16730a293/"></a>
                 </div>
             </div>
@@ -71,7 +68,7 @@ include '../Backend/alerts.php';
                 <div class="git">
                     <a class="fa-brands fa-github" target="_blank" href="https://github.com/BananaSpritee"></a>
                     <a class="fa-brands fa-linkedin" target="_blank" href="https://www.linkedin.com/in/isaque-newton-silva-774a72374/"></a>
-                
+
                 </div>
             </div>
             <div class="box">
@@ -105,6 +102,9 @@ include '../Backend/alerts.php';
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js">
     </script>
     <script src="./ressources/js/script.js"></script>
+    <?php
+    include __DIR__ . './includes/alerts.php';
+    ?>
 </body>
 
 </html>

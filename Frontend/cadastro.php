@@ -1,7 +1,3 @@
-<?php
-    include '../Backend/alerts.php';
-?>
-
 <!DOCTYPE html>
 
 <html lang="pt-br">
@@ -35,7 +31,7 @@
             <div class="form-container">
 
                 <form action="../Backend/cadastro.php" method="post">
-                    
+
                     <h3>Cadastro</h3>
 
                     <label for="nome">Nome</label>
@@ -65,13 +61,11 @@
 
                         echo "<p style='color:var(--cor4); text-align:center; font-size:3rem;'>" . $_SESSION['erro_cadastro'] . "</p>";
                         unset($_SESSION['erro_cadastro']);
-
                     }
                     if (!empty($_SESSION['sucesso_cadastro'])) {
 
                         echo "<p style='color:var(--cor4); text-align:center; font-size:3rem;'>" . $_SESSION['sucesso_cadastro'] . "</p>";
                         unset($_SESSION['sucesso_cadastro']);
-
                     }
 
                     ?>
@@ -93,6 +87,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js">
     </script>
     <script src="./ressources/js/script.js"></script>
+    <?php
+    include __DIR__ . './includes/alerts.php';
+    ?>
 
 </body>
 

@@ -1,7 +1,3 @@
-<?php
-    include '../Backend/alerts.php';
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -10,8 +6,8 @@
     <title>Recuperar Senha</title>
     <link rel="stylesheet" href="./ressources/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -38,6 +34,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js">
     </script>
     <script src="./ressources/js/script.js"></script>
+    <?php
+    include __DIR__ . './includes/alerts.php';
+    ?>
 
 </body>
 

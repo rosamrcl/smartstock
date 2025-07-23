@@ -1,7 +1,7 @@
 <?php
 
 require_once("../Backend/conexao.php");
-include '../Backend/alerts.php';
+
 
 ?>
 
@@ -92,7 +92,7 @@ include '../Backend/alerts.php';
                                 <th>Descrição</th>
                                 <th>Status</th>
                                 <th>Quantidade</th>
-                            
+
                             </tr>
 
                         </thead>
@@ -102,7 +102,7 @@ include '../Backend/alerts.php';
                             <?php
 
                             require_once("../Backend/conexao.php");
-                            
+
                             $stmt = $pdo->query("SELECT * FROM produtos WHERE status = 'Estoque'");
                             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) :
 
@@ -121,7 +121,7 @@ include '../Backend/alerts.php';
                                             <a href="gerenciarprodutosupdate.php?id=<?= $row['id_products'] ?>" class="btn-edit" style="color: white;">
                                                 <i class="fa-solid fa-pencil"></i>
                                             </a>
-                                            
+
                                         </button>
 
                                         <a href="../Backend/produtos.php?excluir=<?= $row['id_products'] ?>" onclick="return confirm('Deseja excluir?')" class="btn-delete">
@@ -155,16 +155,16 @@ include '../Backend/alerts.php';
                                 <th>Descrição</th>
                                 <th>Status</th>
                                 <th>Quantidade</th>
-                                
+
                             </tr>
 
                         </thead>
 
-                        <tbody>  
+                        <tbody>
 
                             <?php
                             require_once("../Backend/conexao.php");
-                            
+
                             $stmt = $pdo->query("SELECT * FROM produtos WHERE status = 'Manutenção'");
                             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) :
                             ?>
@@ -218,7 +218,7 @@ include '../Backend/alerts.php';
                                 <th>Status</th>
                                 <th>Quantidade</th>
                                 <th>Quantidade</th>
-                                
+
                             </tr>
 
                         </thead>
@@ -227,7 +227,7 @@ include '../Backend/alerts.php';
 
                             <?php
                             require_once("../Backend/conexao.php");
-                            
+
                             $stmt = $pdo->query("SELECT * FROM produtos WHERE status = 'Em uso'");
                             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) :
                             ?>
@@ -275,6 +275,9 @@ include '../Backend/alerts.php';
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js">
     </script>
     <script src="./ressources/js/script.js"></script>
+    <?php
+    include __DIR__ . './includes/alerts.php';
+    ?>
 
 </body>
 
