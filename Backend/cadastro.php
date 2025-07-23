@@ -13,14 +13,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Verifica se todos os campos foram preenchidos
     if (empty($nome) || empty($sobrenome) || empty($email) || empty($senha) || empty($codigo_superior)) {
-        $_SESSION['erro_cadastro'] = "Preencha todos os campos.";
+        $error_msg[] = "Preencha todos os campos.";
         header('Location: ../Frontend/cadastro.php');
         exit;
     }
 
     // Verifica se o código do superior é exatamente '1010'
     if ($codigo_superior !== '1010') {
-        $_SESSION['erro_cadastro'] = "Código do superior inválido.";
+        $error_msg[] =  "Código do superior inválido.";
         header('Location: ../Frontend/cadastro.php');
         exit;
     }
@@ -47,11 +47,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->bindParam(':senha', $senhaHash);
 
     if ($stmt->execute()) {
-        $_SESSION['sucesso_cadastro'] = "Usuário cadastrado com sucesso!";
+        $sucess_msg[] =  "Usuário cadastrado com sucesso!";
         header('Location: ../Frontend/login.php');
         exit;
     } else {
-        $_SESSION['erro_cadastro'] = "Erro ao cadastrar. Tente novamente.";
+        $error_msg[] =  "Erro ao cadastrar. Tente novamente.";
         header('Location: ../Frontend/cadastro.php');
         exit;
     }

@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $local = $_POST['local'] ?? '';
 
     if (empty($etapas) || empty($cliente) || empty($local)) {
-        die("Todos os campos devem ser preenchidos.");
+        $error_msg[] = "Todos os campos devem ser preenchidos.";
     }
 
     $etapasJson = json_encode($etapas);

@@ -19,9 +19,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $url = "http://localhost/smartstock/Frontend/redefinir_senha.php?token=$token";
 
         // Aqui você poderia usar PHPMailer para enviar
-        echo "<p style='text-align:center;'>Um link foi enviado: <a href='$url'>$url</a></p>";
+        $info_msg[] ="Um link foi enviado: <a href='$url'>$url</a>";
     } else {
-        echo "<p style='color:red;'>E-mail não encontrado.</p>";
+        $warning_msg[] = "E-mail não encontrado.";
     }
 }
 ?>

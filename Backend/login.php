@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (empty($email) || empty($senha)) {
 
-        $_SESSION['erro_login'] = "Preencha todos os campos.";
+        $error_msg[] =  "Preencha todos os campos.";
         header('Location: ../Frontend/login.php');
         exit;
 
@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     } else {
 
-        $_SESSION['erro_login'] = "Usuário ou senha inválidos.";
+        $error_msg[] =  "Usuário ou senha inválidos.";
         header('Location: ../Frontend/login.php');
         exit;
 

@@ -23,13 +23,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $csenha = $_POST['csenha'];
 
     if (!empty($senha) && $senha !== $csenha) {
-        die("As senhas não coincidem.");
+    $warning_msg[] ="As senhas não coincidem.";
     }
 
     $verificaEmail = $pdo->prepare("SELECT id_user FROM usuarios WHERE email = :email AND id_user != :id_user");
     $verificaEmail->execute([':email' => $email, ':id_user' => $id_user]);
     if ($verificaEmail->rowCount() > 0) {
-        die("E-mail já está sendo usado por outro usuário.");
+        $warning_msg[] = "E-mail já está sendo usado por outro usuário.";
     }
 
     $foto = null;
@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $tiposPermitidos = ['image/jpeg', 'image/png', 'image/jpg', 'image/webp'];
         if (!in_array($_FILES['foto']['type'], $tiposPermitidos)) {
-            die("Tipo de imagem inválido.");
+            $warning_msg[] ="Tipo de imagem inválido.";
         }
 
         if (move_uploaded_file($_FILES['foto']['tmp_name'], $caminho)) {
@@ -89,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header("Location: ../Frontend/home.php");
         exit;
     } else {
-        echo "Erro ao atualizar o perfil.";
+        $info_msg[] = 'Erro ao atualizar o perfil.';
     }
 }
 ?>

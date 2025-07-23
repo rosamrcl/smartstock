@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Verifica se as senhas coincidem
     if ($novaSenha !== $confirmaSenha) {
-        die("<p style='color:red;'>As senhas não coincidem.</p>");
+        $warning_msg[] = 'As senhas não coincidem.';
     }
 
     // Busca token na tabela
@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $dados = $stmt->fetch();
 
     if (!$dados) {
-        die("<p style='color:red;'>Token inválido ou expirado.</p>");
+        $info_msg[] = 'Token inválido ou expirado.';
     }
 
     $email = $dados['email'];
@@ -34,6 +34,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $delete = $pdo->prepare("DELETE FROM redefinicao_senha WHERE email = ?");
     $delete->execute([$email]);
 
-    echo "<p style='color:green; text-align:center;'>Senha atualizada com sucesso! Você já pode fazer login.</p>";
+    $sucess_msg[] = 'Senha atualizada com sucesso! Você já pode fazer login';
 }
 ?>
