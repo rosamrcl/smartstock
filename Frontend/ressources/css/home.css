@@ -97,4 +97,5 @@
 .service .ordem-servico a:hover,
 .service .manutencao a:hover{
     color:var(--cor2);
+    scale: 2;
 }

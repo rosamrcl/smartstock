@@ -28,9 +28,9 @@
                     <form action="../Backend/login.php" method="post">
                         <h3>Login</h3>
                         <label for="email">E-mail</label>
-                        <input type="email" name="email" id="" placeholder="email@email.com" required>
+                        <input type="email" name="email"  placeholder="email@email.com" required>
                         <label for="senha">Senha</label>
-                        <input type="password" name="senha" id="" placeholder="•••••••••" required>
+                        <input type="password" name="senha" placeholder="•••••••••" required>
                         <p>Esqueci minha senha <a href="esqueci_senha.php">Clique aqui</a></p>
                         <p>Ainda não tem cadastro? <a href="cadastro.php">Clique aqui</a></p>
                         <input type="submit" value="Enviar" class="btn">

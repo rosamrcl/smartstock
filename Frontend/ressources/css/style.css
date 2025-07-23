@@ -23,6 +23,7 @@
     --text-shadow:.4rem .54rem 0 rgba(0,0,0,.2);
 
 }
+
 body{
     height: 100vh;
     background: var(--cor4);
@@ -41,12 +42,14 @@ body{
     list-style: none;
 
 }
+
 html{
     font-size: 62.5%;
     overflow-x: hidden;
     scroll-behavior: smooth;
     scroll-padding-top: 5.5rem;
 }
+
 .btn,.btn-delete{
     display: inline-block;
     margin-top: 1rem;
@@ -59,6 +62,7 @@ html{
     width: 100%;
     text-align: center;
 }
+
 .btn{
     background: var(--cor3);
 }
@@ -66,17 +70,21 @@ html{
 .btn-delete{
     background: var(--cor5);
 }
+
 .btn:hover,
 .btn-delete:hover{
     color: var(--cor8);
     opacity: .7;
 }
+
 strong{
     color: var(--cor3);
 }
+
 .welcome{
     text-align: center;
 }
+
 footer{
     display: flex;
     flex-shrink: 0;
@@ -84,13 +92,13 @@ footer{
     justify-content: center;
     box-shadow: var(--box-shadow);
 }
+
 footer img{
     width: 10rem;
 }
+
 .foto-update-perfil img{
     width: 10rem;
     object-fit: cover;
     border-radius: .5rem;
 }
-
-

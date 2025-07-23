@@ -85,7 +85,7 @@
 
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
     header .icons #menu-bars {
         display: inline-block;
     }
@@ -348,6 +348,17 @@
 @media (max-width: 450px) {
     html {
         font-size: 50%;
+    }
+
+    section{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logo{
+        width: 95%;
     }
     
     .btn,

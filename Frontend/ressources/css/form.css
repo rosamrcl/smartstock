@@ -1,35 +1,40 @@
 .container,
-.gerenciarprodutos, 
-.logo{   
-    display: flex;   
-    flex: 1 1 45rem;
+.gerenciarprodutos
+{   
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 2rem;
     height: 100%;   
     padding: 2rem 9%;
     margin: 2rem;
     border-radius: .5rem;
 }
 .logo{
+    display: flex;
+    justify-content: center;
     align-items: center;
     box-shadow: var(--box-shadow);
+    flex: 1;
 }
 .form,
 .form-produto{   
     display: flex;
     align-items: center;
-    padding: 2rem 9%;
+    padding: 9%;
     border-radius: .5rem;
-    
+    flex: 1;
 }
 .form{
-    flex: 1 1 45rem;
     background: var(--cor2);
 }
 .form-produto{
     background: var(--cor1);
 }
+
 .form-container, 
 .form-container-produto{
-    width: 50rem;   
+    width: 50rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -210,4 +215,3 @@ td input[type="checkbox"] {
     transform: scale(1.2);
     margin-right: 6px;
 }
-
