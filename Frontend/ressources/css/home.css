@@ -26,12 +26,14 @@
 .gerenciarprodutos .perfil-cadastro .image,
 .usuario .logo_foto .perfil{
     display: flex;
-    align-items: center;    
+    align-items: center; 
+    justify-content: center;   
     flex-direction: column;
-    padding: 2rem;   
+    padding: 2rem ;   
     width: 100%;
     max-width: 300px; 
     gap: 2rem;
+    margin: 0 auto;
 }
 .gerenciarprodutos .perfil-cadastro  .image,
 .usuario .logo_foto .perfil .image{
@@ -79,23 +81,28 @@
     flex-direction: column; 
     text-align: center;   
     margin: 2rem; 
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
 .service .gerenciar h5,
 .service .ordem-servico h5,
 .service .manutencao h5{
     font-size: 2rem;
+    color: var(--cor9);
 }
 
-.service .gerenciar a,
-.service .ordem-servico a,
-.service .manutencao a{
+.service .gerenciar i,
+.service .ordem-servico i,
+.service .manutencao i{
     font-size: 4rem;
     color: var(--cor9);
 }
-.service .gerenciar a:hover,
-.service .ordem-servico a:hover,
-.service .manutencao a:hover{
-    color:var(--cor2);
-    scale: 2;
+
+.service .gerenciar:hover,
+.service .ordem-servico:hover,
+.service .manutencao:hover{
+    box-shadow:var(--box-shadow);
+    transform: scale(1.08);
+    background: var(--cor3);
 }

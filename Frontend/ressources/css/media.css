@@ -33,10 +33,25 @@
     .container,
     .gerenciarprodutos,
     .updateperfil {
+        flex-direction: column;
+        align-items: center;
         padding: 2rem;
         margin: 1rem;
+        gap: 1.5rem;
     }
     
+    .form-produto,
+    .form-update{
+        width: 100%;
+        margin-bottom: 2rem; 
+        padding: 5%;
+    }
+
+    .form,
+    .form-produto {
+        padding: 5%;
+    }
+
     .form-container,
     .form-container-produto,
     .form-container-update {
@@ -81,11 +96,31 @@
     .table-container{
         -webkit-overflow-scrolling: touch;
     }
+    .esqueci {
+        flex-direction: column;
+        padding: 2rem 5%;
+        gap: 1rem;
+    }
+
+    .esqueci .logo {
+        flex: auto;
+        width: 100%;
+    }
+
+    .esqueci .form {
+        flex: auto;
+        width: 100%;
+        padding: 5%;
+    }
+
+    .esqueci .logo img {
+        height: 25rem;
+    }
 
 
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
     header .icons #menu-bars {
         display: inline-block;
     }
@@ -214,7 +249,7 @@
         border-bottom: 0;
     }
     
-    /* Ajustes específicos para a tabela de checklist */
+    
     #tab3 table td {
         flex-direction: column;
         align-items: flex-start;
@@ -225,7 +260,6 @@
         margin: 0.5rem 0;
     }
     
-    /* Ajustes para botões em tabelas */
     .btn, .btn-delete, .btn-edit {
         padding: 0.5rem;
         font-size: 1.4rem;
@@ -423,24 +457,7 @@
         padding: 12px 20px;
     }
     
-    .tab-buttons {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
     
-    .tab-button {
-        width: 100%;
-        margin-bottom: 0.5rem;
-    }
-    
-
-    
-
-    .welcome {
-        font-size: 1.8rem;
-        text-align: center;
-    }
     
     .sobre_nos {
         padding: 1rem;
@@ -468,7 +485,20 @@
         line-height: 4rem;
         font-size: 1.6rem;
     }
+    .tab-buttons {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
     
+    .tab-button {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }    
+    .welcome {
+        font-size: 1.8rem;
+        text-align: center;
+    }
     .txt h2 {
         font-size: 1.6rem;
     }
@@ -476,7 +506,5 @@
     .txt p {
         font-size: 1.4rem;
     }
-
-
 
 }
