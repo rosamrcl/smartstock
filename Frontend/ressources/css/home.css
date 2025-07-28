@@ -85,24 +85,31 @@
     transition: transform 0.3s ease;
 }
 
-.service .gerenciar h5,
-.service .ordem-servico h5,
-.service .manutencao h5{
+.service .gerenciar,
+.service .ordem-servico,
+.service .manutencao{
     font-size: 2rem;
     color: var(--cor9);
+    font-weight: bolder;
 }
 
 .service .gerenciar i,
 .service .ordem-servico i,
 .service .manutencao i{
     font-size: 4rem;
-    color: var(--cor9);
+
 }
 
+.service .gerenciar i:hover,
+.service .ordem-servico i:hover,
+.service .manutencao i:hover{
+    color: var(--cor4);
+} 
 .service .gerenciar:hover,
 .service .ordem-servico:hover,
 .service .manutencao:hover{
     box-shadow:var(--box-shadow);
     transform: scale(1.08);
-    background: var(--cor3);
-}
+    background: var(--cor3);  
+    color: var(--cor4);  
+} 

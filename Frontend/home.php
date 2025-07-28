@@ -84,14 +84,14 @@ if (!empty($dados['foto'])) {
         <div class="service">
 
             <a class="gerenciar" href="gerenciarprodutos.php">
-                <h5>Gerenciar Produtos</h5><i class="fa-solid fa-boxes-stacked"></i>
+                Gerenciar Produtos<i class="fa-solid fa-boxes-stacked"></i>
             </a>                
             <a class="ordem-servico" href="ordemdeserviço.php">
-                <h5>Ordem de Serviço</h5><i class="fa-solid fa-users-gear"></i>
+                Ordem de Serviço<i class="fa-solid fa-users-gear"></i>
             </a>
 
             <a class="manutencao" href="gerenciarprodutos.php">
-                <h5>Manutenção</h5><i class="fa-solid fa-screwdriver-wrench"></i>
+                Manutenção<i class="fa-solid fa-screwdriver-wrench"></i>
             </a>   
 
         </div>
