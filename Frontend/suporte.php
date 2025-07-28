@@ -75,12 +75,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <input name="email" type="email" placeholder="Digite seu email">
                 </div>
                 <textarea name="mensagem" placeholder="Digite seu problema"></textarea>
-                <div class="file-upload-group">
-                    <label for="arquivo" class="custom-file-upload">
-                        <i class="fa-solid fa-upload"></i> Enviar foto ou PDF
-                    </label>
-                    <input type="file" id="arquivo" name="arquivo" class="hidden-file-input" accept=".jpg,.jpeg,.png,.pdf">
-                </div>
+                
+                <input type="file" id="arquivo" name="arquivo" accept=".jpg,.jpeg,.png,.pdf">
+
                 <input type="submit" class="btn" value="Enviar">
             </form>
         </div>
@@ -89,10 +86,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     include __DIR__ . '/includes/footer.php';
     ?>
 </body>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.all.min.js"></script>
-    <script src="/Frontend/ressources/js/script.js"></script>
-    <?php
-    include __DIR__ . './includes/alerts.php';
-    ?>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.all.min.js"></script>
+<script src="/Frontend/ressources/js/script.js"></script>
+<?php
+include __DIR__ . './includes/alerts.php';
+?>
 
 </html>

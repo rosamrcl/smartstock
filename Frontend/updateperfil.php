@@ -63,7 +63,7 @@ if (!empty($dados['foto'])) {
 
                         <img src="<?= htmlspecialchars($fotoPerfil) ?>" alt="Foto de Perfil">
 
-                        <input type="file" name="foto">
+                        <input type="file" name="foto" accept=".jpg,.jpeg,.png">
 
                     </div>
 

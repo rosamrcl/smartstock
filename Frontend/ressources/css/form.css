@@ -68,6 +68,7 @@ form input{
     font-size: 1.7rem;
     background: var(--cor7);
 }
+
 form a{
     color: var(--cor9);
     text-decoration: underline;
