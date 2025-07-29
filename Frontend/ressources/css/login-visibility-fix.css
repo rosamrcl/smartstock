@@ -1,0 +1,123 @@
+/* ===== CORREÇÕES DE VISIBILIDADE PARA LOGIN E CADASTRO ===== */
+
+/* ===== CORREÇÕES GERAIS ===== */
+.form .form-container form {
+    color: #333 !important; /* Cinza escuro para melhor contraste */
+}
+
+.form .form-container form h3 {
+    color: #333 !important; /* Título em cinza escuro */
+    font-weight: 600;
+}
+
+.form .form-container form label {
+    color: #333 !important; /* Labels em cinza escuro */
+    font-weight: 500;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form .form-container form p {
+    color: #333 !important; /* Parágrafos em cinza escuro */
+    margin-bottom: 1rem;
+}
+
+.form .form-container form a {
+    color: #009EEB !important; /* Links em azul visível */
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.form .form-container form a:hover {
+    color: #FF8C00 !important; /* Hover em laranja */
+    text-decoration: underline;
+}
+
+/* ===== CORREÇÕES ESPECÍFICAS PARA CAMPOS ===== */
+.form .form-container form input {
+    color: #333 !important; /* Texto dos inputs em cinza escuro */
+    background: #F8F9FA !important; /* Fundo claro para contraste */
+}
+
+.form .form-container form input::placeholder {
+    color: #6C757D !important; /* Placeholder em cinza médio */
+}
+
+/* ===== CORREÇÕES PARA MENSAGENS DE ERRO ===== */
+.form .form-container form .error-message {
+    color: #D51C1C !important; /* Mensagens de erro em vermelho */
+    font-size: 1.4rem;
+    margin-top: 0.5rem;
+    display: block;
+}
+
+/* ===== CORREÇÕES PARA BOTÕES ===== */
+.form .form-container form .btn {
+    color: #FFFFFF !important; /* Texto do botão em branco */
+    background: linear-gradient(135deg, #FF8C00 0%, #FF6B00 100%) !important;
+    font-weight: 500;
+}
+
+.form .form-container form .btn:hover {
+    background: linear-gradient(135deg, #FF6B00 0%, #E55A00 100%) !important;
+    transform: translateY(-2px);
+}
+
+/* ===== CORREÇÕES PARA ESTADOS DE LOADING ===== */
+.form .form-container form .btn-loading {
+    color: #FFFFFF !important;
+}
+
+.form .form-container form .btn-loading i {
+    color: #FFFFFF !important;
+}
+
+/* ===== CORREÇÕES PARA RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+    .form .form-container form {
+        color: #333 !important;
+    }
+    
+    .form .form-container form h3 {
+        color: #333 !important;
+        font-size: 2.4rem;
+    }
+    
+    .form .form-container form label {
+        color: #333 !important;
+        font-size: 1.6rem;
+    }
+    
+    .form .form-container form p {
+        color: #333 !important;
+        font-size: 1.4rem;
+    }
+    
+    .form .form-container form a {
+        color: #009EEB !important;
+        font-size: 1.4rem;
+    }
+}
+
+/* ===== CORREÇÕES PARA ALTA CONTRASTE ===== */
+@media (prefers-contrast: high) {
+    .form .form-container form {
+        color: #000000 !important;
+    }
+    
+    .form .form-container form h3 {
+        color: #000000 !important;
+    }
+    
+    .form .form-container form label {
+        color: #000000 !important;
+    }
+    
+    .form .form-container form p {
+        color: #000000 !important;
+    }
+    
+    .form .form-container form a {
+        color: #0066CC !important;
+    }
+} 

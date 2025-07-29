@@ -1,21 +1,50 @@
 <?php
-require_once("/laragon/www/smartstock/Backend/conexao.php");
+session_start();
+require_once("conexao.php");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $etapas = $_POST['etapas'] ?? [];
-    $cliente = $_POST['cliente'] ?? '';
-    $local = $_POST['local'] ?? '';
+    $cliente = trim($_POST['cliente'] ?? '');
+    $local = trim($_POST['local'] ?? '');
 
-    if (empty($etapas) || empty($cliente) || empty($local)) {
-        $error_msg[] = "Todos os campos devem ser preenchidos.";
+    // Validações
+    if (empty($etapas)) {
+        $_SESSION['error_msg'] = ["Selecione pelo menos uma etapa do checklist."];
+        header("Location: ../Frontend/ordemdeserviço.php#tab3");
+        exit;
     }
 
-    $etapasJson = json_encode($etapas);
+    if (empty($cliente)) {
+        $_SESSION['error_msg'] = ["Nome do cliente é obrigatório."];
+        header("Location: ../Frontend/ordemdeserviço.php#tab3");
+        exit;
+    }
 
-    $stmt = $pdo->prepare("INSERT INTO checklist (etapas, cliente, local_servico) VALUES (?, ?, ?)");
-    $stmt->execute([$etapasJson, $cliente, $local]);
+    if (empty($local)) {
+        $_SESSION['error_msg'] = ["Local do serviço é obrigatório."];
+        header("Location: ../Frontend/ordemdeserviço.php#tab3");
+        exit;
+    }
 
-    header("Location: ../Frontend/home.php#tab3"); // ou outra página de destino
-    exit;
+    try {
+        $etapasJson = json_encode($etapas);
+
+        $stmt = $pdo->prepare("INSERT INTO checklist (etapas, cliente, local_servico) VALUES (?, ?, ?)");
+        $result = $stmt->execute([$etapasJson, $cliente, $local]);
+        
+        if ($result) {
+            $_SESSION['success_msg'] = ["Item adicionado com sucesso!"];
+        } else {
+            $_SESSION['error_msg'] = ["Erro ao adicionar item. Tente novamente."];
+        }
+        
+        header("Location: ../Frontend/ordemdeserviço.php#tab3");
+        exit;
+    } catch (PDOException $e) {
+        error_log("Erro ao inserir checklist: " . $e->getMessage());
+        $_SESSION['error_msg'] = ["Erro ao adicionar item. Tente novamente."];
+        header("Location: ../Frontend/ordemdeserviço.php#tab3");
+        exit;
+    }
 }
 ?>

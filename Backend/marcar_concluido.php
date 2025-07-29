@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../Backend/conexao.php';
+require_once __DIR__ . '/conexao.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id = $_POST['id'] ?? null;

@@ -2,7 +2,7 @@
 
 try {
 
-    require_once("/laragon/www/smartstock/Backend/conexao.php");
+    require_once("../Backend/conexao.php");
 
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -85,12 +85,15 @@ try {
 
     // 7. Redefinir Senha
     $pdo->exec("CREATE TABLE IF NOT EXISTS redefinicao_senha (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    email VARCHAR(100) NOT NULL,
-    token VARCHAR(255) NOT NULL,
-    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-");
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        email VARCHAR(100) NOT NULL,
+        token VARCHAR(255) NOT NULL,
+        expira_em TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+        usado TINYINT(1) DEFAULT 0,
+        created_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+        UNIQUE KEY token (token),
+        KEY email (email)
+    )");
 
 } catch (PDOException $e) {
 

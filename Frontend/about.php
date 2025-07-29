@@ -5,9 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartStock</title>
-    <link rel="stylesheet" href="./ressources/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.min.css" rel="stylesheet">
+    <?php include 'includes/head.php'; ?>
 </head>
 
 <body>
@@ -42,69 +40,62 @@
                 <div class="git">
                     <a class="fa-brands fa-github" target="_blank" href="https://github.com/ansilv00"></a>
                     <a class="fa-brands fa-linkedin" target="_blank" href="https://www.linkedin.com/in/anna-iris-silva-60b55736a/"></a>
+                </div>
+            </div>
 
-                </div>
-            </div>
-            <div class="box">
-                <div class="photo">
-                    <img src="./ressources/img/luan.jpg" alt="">
-                </div>
-                <div class="txt">
-                    <h2>Luan Aquino</h2>
-                    <p>Back-End</p>
-                </div>
-                <div class="git">
-                    <a class="fa-brands fa-github" target="_blank" href="https://github.com/Aquino-maker"></a>
-                    <a class="fa-brands fa-linkedin" target="_blank" href="https://www.linkedin.com/in/luan-aquino/"></a>
-                </div>
-            </div>
             <div class="box">
                 <div class="photo">
                     <img src="./ressources/img/isaque.jpg" alt="">
                 </div>
                 <div class="txt">
-                    <h2>Isaque Newton</h2>
+                    <h2>Isaque</h2>
                     <p>Back-End</p>
                 </div>
                 <div class="git">
-                    <a class="fa-brands fa-github" target="_blank" href="https://github.com/BananaSpritee"></a>
-                    <a class="fa-brands fa-linkedin" target="_blank" href="https://www.linkedin.com/in/isaque-newton-silva-774a72374/"></a>
-
+                    <a class="fa-brands fa-github" target="_blank" href="https://github.com/isaque123"></a>
+                    <a class="fa-brands fa-linkedin" target="_blank" href="#"></a>
                 </div>
             </div>
+
             <div class="box">
                 <div class="photo">
-                    <img src="./ressources/img/menise.png" alt="">
+                    <img src="./ressources/img/luan.jpg" alt="">
                 </div>
                 <div class="txt">
-                    <h2>Menise Farias</h2>
-                    <p>Libras</p>
+                    <h2>Luan</h2>
+                    <p>Back-End</p>
                 </div>
                 <div class="git">
-                    <i class="fa-brands fa-github" target="_blank" href="#"></i>
-                    <a class="fa-brands fa-linkedin" href="https://www.linkedin.com/in/menise-farias-4026262b9/"></a>
+                    <a class="fa-brands fa-github" target="_blank" href="https://github.com/luan123"></a>
+                    <a class="fa-brands fa-linkedin" target="_blank" href="#"></a>
                 </div>
             </div>
+
             <div class="box">
-                <div class="photo_equipe">
+                <div class="photo">
                     <img src="./ressources/img/LARI.png" alt="">
                 </div>
-
+                <div class="txt">
+                    <h2>Lari</h2>
+                    <p>Back-End</p>
+                </div>
                 <div class="git">
-                    <a class="fa-brands fa-github" target="_blank" href="https://github.com/rosamrcl/smartstock"></a>
-                    <i class="fa-brands fa-linkedin"></i>
+                    <a class="fa-brands fa-github" target="_blank" href="https://github.com/lari123"></a>
+                    <a class="fa-brands fa-linkedin" target="_blank" href="#"></a>
                 </div>
             </div>
         </div>
     </section>
+
     <?php
     include __DIR__ . '/includes/footer.php';
     ?>
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.all.min.js"></script>
     <script src="./ressources/js/script.js"></script>
-    <?php
-    include __DIR__ . './includes/alerts.php';
-    ?>
-</body>
+    
+    <?php include 'includes/alerts.php'; ?>
 
+</body>
+</html>
 </html>

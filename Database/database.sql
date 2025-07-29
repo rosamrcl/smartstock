@@ -112,6 +112,22 @@ CREATE TABLE IF NOT EXISTS `suporte` (
 
 -- Exportação de dados foi desmarcado.
 
+-- Copiando estrutura para tabela smartstock.redefinicao_senha
+DROP TABLE IF EXISTS `redefinicao_senha`;
+CREATE TABLE IF NOT EXISTS `redefinicao_senha` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `email` varchar(100) NOT NULL,
+  `token` varchar(255) NOT NULL,
+  `expira_em` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `usado` tinyint(1) DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `token` (`token`),
+  KEY `email` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- Exportação de dados foi desmarcado.
+
 -- Copiando estrutura para tabela smartstock.usuarios
 DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE IF NOT EXISTS `usuarios` (

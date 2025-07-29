@@ -1,26 +1,73 @@
 <?php
+// Sistema de Alertas SmartStock - Integração com SweetAlert2
 
-if(isset($sucess_msg)){
-    foreach($sucess_msg as $sucess_msg){
-        echo '<script>swal("'.$sucess_msg.'", "", "sucess");</script>';
+// Verificar mensagens de sessão
+if(isset($_SESSION['success_msg'])){
+    foreach($_SESSION['success_msg'] as $success_msg){
+        echo '<script>
+            smartStockAlerts.showSuccess("Sucesso!", "' . addslashes($success_msg) . '");
+        </script>';
+    }
+    unset($_SESSION['success_msg']);
+}
+
+if(isset($_SESSION['warning_msg'])){
+    foreach($_SESSION['warning_msg'] as $warning_msg){
+        echo '<script>
+            smartStockAlerts.showWarning("Atenção!", "' . addslashes($warning_msg) . '");
+        </script>';
+    }
+    unset($_SESSION['warning_msg']);
+}
+
+if(isset($_SESSION['info_msg'])){
+    foreach($_SESSION['info_msg'] as $info_msg){
+        echo '<script>
+            smartStockAlerts.showInfo("Informação", "' . addslashes($info_msg) . '");
+        </script>';
+    }
+    unset($_SESSION['info_msg']);
+}
+
+if(isset($_SESSION['error_msg'])){
+    foreach($_SESSION['error_msg'] as $error_msg){
+        echo '<script>
+            smartStockAlerts.showError("Erro!", "' . addslashes($error_msg) . '");
+        </script>';
+    }
+    unset($_SESSION['error_msg']);
+}
+
+// Verificar mensagens locais (para compatibilidade)
+if(isset($success_msg)){
+    foreach($success_msg as $success_msg){
+        echo '<script>
+            smartStockAlerts.showSuccess("Sucesso!", "' . addslashes($success_msg) . '");
+        </script>';
     }
 }
 
 if(isset($warning_msg)){
     foreach($warning_msg as $warning_msg){
-        echo '<script>swal("'.$warning_msg.'", "", "warning");</script>';
+        echo '<script>
+            smartStockAlerts.showWarning("Atenção!", "' . addslashes($warning_msg) . '");
+        </script>';
     }
 }
 
 if(isset($info_msg)){
     foreach($info_msg as $info_msg){
-        echo '<script>swal("'.$info_msg.'", "", "info");</script>';
+        echo '<script>
+            smartStockAlerts.showInfo("Informação", "' . addslashes($info_msg) . '");
+        </script>';
     }
 }
 
 if(isset($error_msg)){
     foreach($error_msg as $error_msg){
-        echo '<script>swal("'.$error_msg.'", "", "error");</script>';
+        echo '<script>
+            smartStockAlerts.showError("Erro!", "' . addslashes($error_msg) . '");
+        </script>';
     }
 }
 

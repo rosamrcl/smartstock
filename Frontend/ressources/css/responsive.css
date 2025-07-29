@@ -1,0 +1,430 @@
+/* ===== SISTEMA RESPONSIVO MOBILE-FIRST ===== */
+
+/* ===== BREAKPOINTS PRINCIPAIS ===== */
+/* Mobile: 320px - 767px (padrão) */
+/* Tablet: 768px - 1023px */
+/* Desktop: 1024px - 1439px */
+/* Large Desktop: 1440px+ */
+
+/* ===== MOBILE FIRST - CONFIGURAÇÕES PADRÃO ===== */
+/* Todas as configurações mobile já estão definidas nos arquivos principais */
+
+/* ===== TABLET (768px - 1023px) ===== */
+@media (min-width: 768px) {
+    html {
+        font-size: 62.5%;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+        padding: var(--spacing-md) var(--spacing-xl);
+    }
+
+    header img {
+        height: 8rem;
+    }
+
+    header .home {
+        font-size: var(--font-size-xl);
+    }
+
+    header .navbar a {
+        font-size: var(--font-size-md);
+        margin-left: var(--spacing-lg);
+    }
+
+    /* ===== NAVEGAÇÃO ===== */
+    #menu-btn {
+        display: none;
+    }
+
+    header .navbar {
+        position: static;
+        background: transparent;
+        border-top: none;
+        padding: 0;
+        clip-path: none;
+        display: flex !important;
+    }
+
+    header .navbar a {
+        display: inline-block;
+        margin: 0 var(--spacing-md);
+        font-size: var(--font-size-md);
+    }
+
+    .usuario {
+        display: block;
+    }
+
+    /* ===== SEÇÕES ===== */
+    section {
+        padding: var(--spacing-xl) 5%;
+    }
+
+    .heading {
+        font-size: var(--font-size-title);
+    }
+
+    /* ===== FORMULÁRIOS ===== */
+    .container,
+    .gerenciarprodutos,
+    .updateperfil {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: var(--spacing-xl);
+        padding: var(--spacing-xl);
+    }
+
+    .form-produto,
+    .form-update {
+        width: 45%;
+        margin-bottom: 0;
+    }
+
+    .table-container {
+        width: 55%;
+    }
+
+    /* ===== TABELAS ===== */
+    .tabela {
+        padding: var(--spacing-lg) 5%;
+    }
+
+    /* ===== CARDS ===== */
+    .service .box-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-xl);
+    }
+
+    /* ===== SOBRE NÓS ===== */
+    .sobre_nos .membros {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-xl);
+    }
+
+    .sobre_nos .membros .box {
+        flex-direction: row;
+        text-align: left;
+        gap: var(--spacing-lg);
+    }
+
+    .sobre_nos .membros .box .photo img {
+        width: 18rem;
+        height: 18rem;
+    }
+
+    /* ===== SUPORTE ===== */
+    .suporte .container {
+        flex-direction: row;
+        gap: var(--spacing-xl);
+    }
+
+    .container .input-group {
+        width: 48%;
+    }
+
+    /* ===== PERFIL ===== */
+    .gerenciarprodutos .logo_foto,
+    .gerenciarprodutos .perfil-cadastro {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+        gap: var(--spacing-xl);
+    }
+
+    .gerenciarprodutos .perfil-cadastro .image,
+    .gerenciarprodutos .perfil-cadastro .image img {
+        width: 18rem;
+        height: 18rem;
+    }
+
+    /* ===== BOTÕES ===== */
+    .btn, .btn-delete {
+        min-width: 12rem;
+        width: auto;
+    }
+
+    .tab-button {
+        font-size: var(--font-size-md);
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .tab-buttons {
+        flex-direction: row;
+        gap: var(--spacing-md);
+    }
+}
+
+/* ===== DESKTOP (1024px - 1439px) ===== */
+@media (min-width: 1024px) {
+    html {
+        font-size: 62.5%;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+        padding: var(--spacing-lg) var(--spacing-xxl);
+    }
+
+    header img {
+        height: 9rem;
+    }
+
+    header .home {
+        font-size: var(--font-size-xxl);
+    }
+
+    header .navbar a {
+        font-size: var(--font-size-lg);
+        margin-left: var(--spacing-xl);
+    }
+
+    /* ===== SEÇÕES ===== */
+    section {
+        padding: var(--spacing-xxl) 8%;
+    }
+
+    .heading {
+        font-size: 4rem;
+    }
+
+    /* ===== FORMULÁRIOS ===== */
+    .container,
+    .gerenciarprodutos,
+    .updateperfil {
+        gap: var(--spacing-xxl);
+        padding: var(--spacing-xxl);
+    }
+
+    .form-produto,
+    .form-update {
+        width: 40%;
+    }
+
+    .table-container {
+        width: 60%;
+    }
+
+    /* ===== CARDS ===== */
+    .service .box-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-xxl);
+    }
+
+    .service .box-container .box {
+        min-height: 28rem;
+    }
+
+    .service .box-container .box h3 {
+        font-size: var(--font-size-xxl);
+    }
+
+    .service .box-container .box p {
+        font-size: var(--font-size-lg);
+    }
+
+    /* ===== SOBRE NÓS ===== */
+    .sobre_nos .membros {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-xxl);
+    }
+
+    .sobre_nos .membros .box .photo img {
+        width: 20rem;
+        height: 20rem;
+    }
+
+    /* ===== SUPORTE ===== */
+    .suporte .container {
+        gap: var(--spacing-xxl);
+    }
+
+    .container .input-group {
+        width: 48%;
+    }
+
+    /* ===== PERFIL ===== */
+    .gerenciarprodutos .perfil-cadastro .image,
+    .gerenciarprodutos .perfil-cadastro .image img {
+        width: 20rem;
+        height: 20rem;
+    }
+
+    /* ===== BOTÕES ===== */
+    .btn, .btn-delete {
+        min-width: 15rem;
+        font-size: var(--font-size-lg);
+    }
+
+    .tab-button {
+        font-size: var(--font-size-lg);
+        padding: var(--spacing-md) var(--spacing-lg);
+    }
+}
+
+/* ===== LARGE DESKTOP (1440px+) ===== */
+@media (min-width: 1440px) {
+    html {
+        font-size: 62.5%;
+    }
+
+    /* ===== CONTAINERS ===== */
+    .container,
+    .gerenciarprodutos,
+    .updateperfil {
+        max-width: 140rem;
+        margin: 0 auto;
+    }
+
+    /* ===== SEÇÕES ===== */
+    section {
+        padding: var(--spacing-xxl) 10%;
+    }
+
+    .heading {
+        font-size: 4.5rem;
+    }
+
+    /* ===== CARDS ===== */
+    .service .box-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+    }
+
+    .service .box-container .box {
+        min-height: 32rem;
+        padding: var(--spacing-xxl);
+    }
+
+    .service .box-container .box i {
+        font-size: 6rem;
+    }
+
+    .service .box-container .box h3 {
+        font-size: 2.8rem;
+    }
+
+    .service .box-container .box p {
+        font-size: 2rem;
+    }
+
+    /* ===== SOBRE NÓS ===== */
+    .sobre_nos .membros .box .photo img {
+        width: 25rem;
+        height: 25rem;
+    }
+
+    /* ===== PERFIL ===== */
+    .gerenciarprodutos .perfil-cadastro .image,
+    .gerenciarprodutos .perfil-cadastro .image img {
+        width: 25rem;
+        height: 25rem;
+    }
+
+    /* ===== BOTÕES ===== */
+    .btn, .btn-delete {
+        min-width: 18rem;
+        font-size: 2.2rem;
+    }
+}
+
+/* ===== LANDSCAPE MOBILE (480px - 767px) ===== */
+@media (min-width: 480px) and (max-width: 767px) and (orientation: landscape) {
+    .usuario .box-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-lg);
+    }
+
+    .usuario .logo_foto {
+        flex-direction: row;
+        gap: var(--spacing-xl);
+    }
+
+    .usuario .logo_foto .perfil div {
+        flex-direction: row;
+    }
+}
+
+/* ===== IMPRESSÃO ===== */
+@media print {
+    header,
+    footer,
+    .btn,
+    .btn-delete {
+        display: none !important;
+    }
+
+    body {
+        background: white !important;
+        color: black !important;
+        padding: 0 !important;
+    }
+
+    .usuario .box-container .box {
+        break-inside: avoid;
+        border: 1px solid #ccc !important;
+        box-shadow: none !important;
+    }
+}
+
+/* ===== ALTA DENSIDADE DE PIXEL (RETINA) ===== */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .usuario .logo_foto .perfil .image img,
+    .gerenciarprodutos .perfil-cadastro .image img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* ===== REDUÇÃO DE MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .usuario .box-container .box:hover {
+        transform: none;
+    }
+
+    .usuario .box-container .box:hover i {
+        transform: none;
+    }
+}
+
+/* ===== MODO ESCURO (FUTURO) ===== */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --cor4: #1a1a1a;
+        --cor7: #2d2d2d;
+        --cor8: #404040;
+        --cor9: #ffffff;
+        --cor10: #cccccc;
+    }
+}
+
+/* ===== ACESSIBILIDADE - ALTO CONTRASTE ===== */
+@media (prefers-contrast: high) {
+    .btn,
+    .btn-delete {
+        border: 2px solid currentColor;
+    }
+
+    .usuario .box-container .box {
+        border: 2px solid var(--cor9);
+    }
+}
+
+/* ===== FOCUS VISIBLE MELHORADO ===== */
+@media (prefers-reduced-motion: no-preference) {
+    .btn:focus,
+    .btn-delete:focus,
+    .usuario .box-container .box:focus-within {
+        outline: 3px solid var(--cor1);
+        outline-offset: 3px;
+    }
+} 

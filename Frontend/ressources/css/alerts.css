@@ -1,0 +1,267 @@
+/**
+ * Estilos para Sistema de Alertas SmartStock
+ * Melhorias visuais para formulários e alertas
+ */
+
+/* Estilos para campos com erro */
+.form-group input.error {
+    border-color: #dc3545 !important;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25) !important;
+}
+
+.form-group input.error:focus {
+    border-color: #dc3545 !important;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25) !important;
+}
+
+/* Estilos para mensagens de erro */
+.error-message {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: block;
+    min-height: 1.25rem;
+}
+
+/* Estilos para campos válidos */
+.form-group input.valid {
+    border-color: #28a745 !important;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25) !important;
+}
+
+/* Animação para loading */
+.btn-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.btn-loading i {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Estilos para SweetAlert2 personalizados */
+.swal2-popup {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 12px;
+}
+
+.swal2-title {
+    color: #333;
+    font-weight: 600;
+}
+
+.swal2-content {
+    color: #666;
+    font-size: 1rem;
+}
+
+.swal2-confirm {
+    border-radius: 8px !important;
+    font-weight: 500 !important;
+    padding: 12px 24px !important;
+}
+
+.swal2-cancel {
+    border-radius: 8px !important;
+    font-weight: 500 !important;
+    padding: 12px 24px !important;
+}
+
+/* Estilos para diferentes tipos de alerta */
+.swal2-icon.swal2-error {
+    border-color: #dc3545;
+}
+
+.swal2-icon.swal2-error [class^='swal2-x-mark-line'] {
+    background-color: #dc3545;
+}
+
+.swal2-icon.swal2-success {
+    border-color: #28a745;
+}
+
+.swal2-icon.swal2-success [class^='swal2-success-line'] {
+    background-color: #28a745;
+}
+
+.swal2-icon.swal2-warning {
+    border-color: #ffc107;
+}
+
+.swal2-icon.swal2-warning [class^='swal2-warning-line'] {
+    background-color: #ffc107;
+}
+
+.swal2-icon.swal2-info {
+    border-color: #17a2b8;
+}
+
+.swal2-icon.swal2-info [class^='swal2-info-line'] {
+    background-color: #17a2b8;
+}
+
+/* Estilos para formulários */
+.form-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e1e5e9;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #fff;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #3085d6;
+    box-shadow: 0 0 0 0.2rem rgba(48, 133, 214, 0.25);
+}
+
+.form-group input::placeholder {
+    color: #adb5bd;
+}
+
+/* Estilos para botões */
+.btn {
+    width: 100%;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #3085d6 0%, #1e6bb8 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(48, 133, 214, 0.3);
+}
+
+.btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Estilos para links */
+.form-container a {
+    color: #3085d6;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.form-container a:hover {
+    color: #1e6bb8;
+    text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .swal2-popup {
+        margin: 1rem;
+        width: calc(100% - 2rem);
+    }
+    
+    .form-group input {
+        padding: 10px 14px;
+        font-size: 0.95rem;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
+}
+
+/* Animações de entrada */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-container {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Estilos para validação em tempo real */
+.form-group input:valid:not(:placeholder-shown) {
+    border-color: #28a745;
+}
+
+.form-group input:invalid:not(:placeholder-shown) {
+    border-color: #dc3545;
+}
+
+/* Estilos para tooltip de força da senha */
+.password-strength {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.password-strength.weak {
+    color: #dc3545;
+}
+
+.password-strength.medium {
+    color: #ffc107;
+}
+
+.password-strength.strong {
+    color: #28a745;
+}
+
+/* Estilos para ícones de validação */
+.form-group {
+    position: relative;
+}
+
+.form-group .validation-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    pointer-events: none;
+}
+
+.form-group .validation-icon.valid {
+    color: #28a745;
+}
+
+.form-group .validation-icon.invalid {
+    color: #dc3545;
+} 

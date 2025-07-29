@@ -9,54 +9,84 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $sobrenome = trim($_POST['sobrenome'] ?? '');
     $email = trim($_POST['email'] ?? '');
     $senha = $_POST['senha'] ?? '';
+    $csenha = $_POST['csenha'] ?? '';
     $codigo_superior = trim($_POST['codigo_superior'] ?? '');
 
-    // Verifica se todos os campos foram preenchidos
-    if (empty($nome) || empty($sobrenome) || empty($email) || empty($senha) || empty($codigo_superior)) {
-        $error_msg[] = "Preencha todos os campos.";
+    // Validação de campos obrigatórios
+    if (empty($nome) || empty($sobrenome) || empty($email) || empty($senha) || empty($csenha) || empty($codigo_superior)) {
+        $_SESSION['error_msg'] = ["Por favor, preencha todos os campos obrigatórios."];
+        header('Location: ../Frontend/cadastro.php');
+        exit;
+    }
+
+    // Validação de formato de email
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $_SESSION['error_msg'] = ["Por favor, insira um email válido."];
+        header('Location: ../Frontend/cadastro.php');
+        exit;
+    }
+
+    // Validação de tamanho da senha
+    if (strlen($senha) < 6) {
+        $_SESSION['error_msg'] = ["A senha deve ter pelo menos 6 caracteres."];
+        header('Location: ../Frontend/cadastro.php');
+        exit;
+    }
+
+    // Validação de confirmação de senha
+    if ($senha !== $csenha) {
+        $_SESSION['error_msg'] = ["As senhas não coincidem. Tente novamente."];
         header('Location: ../Frontend/cadastro.php');
         exit;
     }
 
     // Verifica se o código do superior é exatamente '1010'
     if ($codigo_superior !== '1010') {
-        $error_msg[] =  "Código do superior inválido.";
+        $_SESSION['error_msg'] = ["Código do superior inválido. Verifique o código e tente novamente."];
         header('Location: ../Frontend/cadastro.php');
         exit;
     }
 
-    // Verifica se o e-mail já está em uso
-    $stmt = $pdo->prepare("SELECT id_user FROM usuarios WHERE email = :email");
-    $stmt->bindParam(':email', $email);
-    $stmt->execute();
+    try {
+        // Verifica se o e-mail já está em uso
+        $stmt = $pdo->prepare("SELECT id_user FROM usuarios WHERE email = :email AND deleted_at IS NULL");
+        $stmt->bindParam(':email', $email);
+        $stmt->execute();
 
-    if ($stmt->fetch()) {
-        $_SESSION['erro_cadastro'] = "Este e-mail já está em uso.";
-        header('Location: ../Frontend/cadastro.php');
-        exit;
-    }
+        if ($stmt->fetch()) {
+            $_SESSION['error_msg'] = ["Este e-mail já está em uso. Tente fazer login ou use outro email."];
+            header('Location: ../Frontend/cadastro.php');
+            exit;
+        }
 
-    // Criptografa a senha
-    $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
+        // Criptografa a senha
+        $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
 
-    // Insere o usuário no banco
-    $stmt = $pdo->prepare("INSERT INTO usuarios (nome, sobrenome, email, senha) VALUES (:nome, :sobrenome, :email, :senha)");
-    $stmt->bindParam(':nome', $nome);
-    $stmt->bindParam(':sobrenome', $sobrenome);
-    $stmt->bindParam(':email', $email);
-    $stmt->bindParam(':senha', $senhaHash);
+        // Insere o usuário no banco
+        $stmt = $pdo->prepare("INSERT INTO usuarios (nome, sobrenome, email, senha) VALUES (:nome, :sobrenome, :email, :senha)");
+        $stmt->bindParam(':nome', $nome);
+        $stmt->bindParam(':sobrenome', $sobrenome);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':senha', $senhaHash);
 
-    if ($stmt->execute()) {
-        $sucess_msg[] =  "Usuário cadastrado com sucesso!";
-        header('Location: ../Frontend/login.php');
-        exit;
-    } else {
-        $error_msg[] =  "Erro ao cadastrar. Tente novamente.";
+        if ($stmt->execute()) {
+            $_SESSION['success_msg'] = ["Usuário cadastrado com sucesso! Agora você pode fazer login."];
+            header('Location: ../Frontend/login.php');
+            exit;
+        } else {
+            $_SESSION['error_msg'] = ["Erro ao cadastrar. Tente novamente mais tarde."];
+            header('Location: ../Frontend/cadastro.php');
+            exit;
+        }
+
+    } catch (PDOException $e) {
+        $_SESSION['error_msg'] = ["Erro interno do sistema. Tente novamente mais tarde."];
         header('Location: ../Frontend/cadastro.php');
         exit;
     }
 
 } else {
+    // Método não permitido
     header('Location: ../Frontend/cadastro.php');
     exit;
 }

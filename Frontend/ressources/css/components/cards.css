@@ -1,0 +1,426 @@
+/* ===== SISTEMA DE CARDS MODERNO ===== */
+
+/* ===== CARD BASE ===== */
+.card {
+    background: var(--cor4);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow-card);
+    border: 1px solid var(--cor8);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--box-shadow-hover);
+    border-color: var(--cor3);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(135deg, var(--cor3) 0%, #FF6B00 100%);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.card:hover::before {
+    transform: scaleX(1);
+}
+
+/* ===== CARD HEADER ===== */
+.card-header {
+    padding: var(--spacing-lg);
+    border-bottom: 1px solid var(--cor8);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    background: linear-gradient(135deg, var(--cor7) 0%, var(--cor8) 100%);
+}
+
+.card-header i {
+    font-size: var(--font-size-xl);
+    color: var(--cor3);
+}
+
+.card-header h3 {
+    font-size: var(--font-size-lg);
+    color: var(--cor9);
+    font-weight: 600;
+    margin: 0;
+}
+
+/* ===== CARD CONTENT ===== */
+.card-content {
+    padding: var(--spacing-lg);
+}
+
+.card-content p {
+    font-size: var(--font-size-md);
+    color: var(--cor10);
+    line-height: 1.6;
+    margin: var(--spacing-md) 0;
+}
+
+/* ===== CARD FOOTER ===== */
+.card-footer {
+    padding: var(--spacing-lg);
+    border-top: 1px solid var(--cor8);
+    background: var(--cor7);
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--spacing-md);
+}
+
+/* ===== ALERTS MODERNOS ===== */
+.alert {
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+    margin-bottom: var(--spacing-lg);
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    border: 1px solid transparent;
+    font-size: var(--font-size-md);
+    line-height: 1.5;
+}
+
+.alert i {
+    font-size: var(--font-size-lg);
+    margin-top: 0.2rem;
+}
+
+.alert-success {
+    background: linear-gradient(135deg, #D4EDDA 0%, #C3E6CB 100%);
+    border-color: #C3E6CB;
+    color: #155724;
+}
+
+.alert-success i {
+    color: #28A745;
+}
+
+.alert-warning {
+    background: linear-gradient(135deg, #FFF3CD 0%, #FFEAA7 100%);
+    border-color: #FFEAA7;
+    color: #856404;
+}
+
+.alert-warning i {
+    color: #FFC107;
+}
+
+.alert-info {
+    background: linear-gradient(135deg, #D1ECF1 0%, #BEE5EB 100%);
+    border-color: #BEE5EB;
+    color: #0C5460;
+}
+
+.alert-info i {
+    color: #17A2B8;
+}
+
+.alert-error {
+    background: linear-gradient(135deg, #F8D7DA 0%, #F5C6CB 100%);
+    border-color: #F5C6CB;
+    color: #721C24;
+}
+
+.alert-error i {
+    color: #DC3545;
+}
+
+/* ===== BADGES MODERNOS ===== */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    border-radius: var(--border-radius-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1;
+}
+
+.badge-primary {
+    background: linear-gradient(135deg, var(--cor1) 0%, #0056B3 100%);
+    color: var(--cor4);
+}
+
+.badge-success {
+    background: linear-gradient(135deg, #28A745 0%, #1E7E34 100%);
+    color: var(--cor4);
+}
+
+.badge-warning {
+    background: linear-gradient(135deg, #FFC107 0%, #E0A800 100%);
+    color: #212529;
+}
+
+.badge-danger {
+    background: linear-gradient(135deg, #DC3545 0%, #C82333 100%);
+    color: var(--cor4);
+}
+
+.badge-info {
+    background: linear-gradient(135deg, #17A2B8 0%, #138496 100%);
+    color: var(--cor4);
+}
+
+/* ===== PROGRESS BARS MODERNOS ===== */
+.progress {
+    width: 100%;
+    height: 1.2rem;
+    background: var(--cor8);
+    border-radius: var(--border-radius-sm);
+    overflow: hidden;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(135deg, var(--cor3) 0%, #FF6B00 100%);
+    transition: width 0.6s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+.progress-bar-success {
+    background: linear-gradient(135deg, #28A745 0%, #1E7E34 100%);
+}
+
+.progress-bar-warning {
+    background: linear-gradient(135deg, #FFC107 0%, #E0A800 100%);
+}
+
+.progress-bar-danger {
+    background: linear-gradient(135deg, #DC3545 0%, #C82333 100%);
+}
+
+.progress-bar-info {
+    background: linear-gradient(135deg, #17A2B8 0%, #138496 100%);
+}
+
+/* ===== TOOLTIPS MODERNOS ===== */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 20rem;
+    background: var(--cor9);
+    color: var(--cor4);
+    text-align: center;
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-md);
+    position: absolute;
+    z-index: 1000;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -10rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-size: var(--font-size-sm);
+    line-height: 1.4;
+    box-shadow: var(--box-shadow-hover);
+    border: 1px solid var(--cor8);
+}
+
+.tooltip .tooltiptext::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--cor9) transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* ===== CARD GRID SYSTEM ===== */
+.card-grid {
+    display: grid;
+    gap: var(--spacing-xl);
+    width: 100%;
+}
+
+.card-grid-1 {
+    grid-template-columns: 1fr;
+}
+
+.card-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.card-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.card-grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* ===== RESPONSIVIDADE DOS CARDS ===== */
+@media (max-width: 767px) {
+    .card-grid-2,
+    .card-grid-3,
+    .card-grid-4 {
+        grid-template-columns: 1fr;
+    }
+    
+    .card-header,
+    .card-content,
+    .card-footer {
+        padding: var(--spacing-md);
+    }
+    
+    .tooltip .tooltiptext {
+        width: 15rem;
+        margin-left: -7.5rem;
+        font-size: var(--font-size-xs);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .card-grid-3,
+    .card-grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ===== CARD STATES ===== */
+.card.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.card.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2rem;
+    height: 2rem;
+    border: 2px solid var(--cor8);
+    border-top: 2px solid var(--cor3);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    transform: translate(-50%, -50%);
+}
+
+.card.error {
+    border-color: var(--cor5);
+    background: linear-gradient(135deg, #FFF5F5 0%, #FED7D7 100%);
+}
+
+.card.success {
+    border-color: #28A745;
+    background: linear-gradient(135deg, #F0FFF4 0%, #C6F6D5 100%);
+}
+
+.card.info {
+    border-color: #17A2B8;
+    background: linear-gradient(135deg, #F0F8FF 0%, #E6F3FF 100%);
+}
+
+/* ===== CARD ANIMATIONS ===== */
+.card.fade-in {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.card.slide-in {
+    animation: slideIn 0.5s ease-out;
+}
+
+.card.bounce-in {
+    animation: bounceIn 0.6s ease-out;
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ===== CARD INTERACTIONS ===== */
+.card.clickable {
+    cursor: pointer;
+    user-select: none;
+}
+
+.card.clickable:active {
+    transform: scale(0.98);
+}
+
+.card.draggable {
+    cursor: grab;
+}
+
+.card.draggable:active {
+    cursor: grabbing;
+}
+
+/* ===== CARD ACCESSIBILITY ===== */
+.card:focus-within {
+    outline: 2px solid var(--cor1);
+    outline-offset: 2px;
+}
+
+.card[tabindex]:focus {
+    outline: 2px solid var(--cor1);
+    outline-offset: 2px;
+}
+
+/* ===== CARD PRINT STYLES ===== */
+@media print {
+    .card {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+    
+    .card:hover {
+        transform: none;
+    }
+} 
