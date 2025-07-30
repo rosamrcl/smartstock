@@ -77,3 +77,7 @@
     text-align: center;
     color: var(--cor4);
 }
+
+#disable{
+    background: var(--cor10);
+}

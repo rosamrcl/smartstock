@@ -70,18 +70,30 @@
                     <a class="fa-brands fa-linkedin" target="_blank" href="#"></a>
                 </div>
             </div>
-
             <div class="box">
                 <div class="photo">
-                    <img src="./ressources/img/LARI.png" alt="">
+                    <img src="./ressources/img/menise.png" alt="">
                 </div>
                 <div class="txt">
-                    <h2>Lari</h2>
+                    <h2>Menise Farias</h2>
+                    <p>Libras</p>
+                </div>
+                <div class="git">
+                    <a id="disable" class="fa-brands fa-github" target="_blank" href="#"></a>
+                    <a id="disable" class="fa-brands fa-linkedin" target="_blank" href="#"></a>
+                </div>
+            </div>
+
+            <div class="box">                
+                    <img src="./ressources/img/LARI.png" alt="">
+
+                <div class="txt">
+                    <h2>Larim</h2>
                     <p>Back-End</p>
                 </div>
                 <div class="git">
                     <a class="fa-brands fa-github" target="_blank" href="https://github.com/lari123"></a>
-                    <a class="fa-brands fa-linkedin" target="_blank" href="#"></a>
+                    <a id="disable" class="fa-brands fa-linkedin" target="_blank" href="#"></a>
                 </div>
             </div>
         </div>
