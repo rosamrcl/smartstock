@@ -48,11 +48,11 @@
                     <img src="./ressources/img/isaque.jpg" alt="">
                 </div>
                 <div class="txt">
-                    <h2>Isaque</h2>
+                    <h2>Isaque Newton</h2>
                     <p>Back-End</p>
                 </div>
                 <div class="git">
-                    <a class="fa-brands fa-github" target="_blank" href="https://github.com/isaque123"></a>
+                    <a class="fa-brands fa-github" target="_blank" href="https://github.com/BananaSpritee"></a>
                     <a class="fa-brands fa-linkedin" target="_blank" href="#"></a>
                 </div>
             </div>
@@ -62,11 +62,11 @@
                     <img src="./ressources/img/luan.jpg" alt="">
                 </div>
                 <div class="txt">
-                    <h2>Luan</h2>
+                    <h2>Luan Aquino</h2>
                     <p>Back-End</p>
                 </div>
                 <div class="git">
-                    <a class="fa-brands fa-github" target="_blank" href="https://github.com/luan123"></a>
+                    <a class="fa-brands fa-github" target="_blank" href="https://github.com/Aquino-maker"></a>
                     <a class="fa-brands fa-linkedin" target="_blank" href="#"></a>
                 </div>
             </div>
@@ -92,7 +92,7 @@
                     <p>Back-End</p>
                 </div>
                 <div class="git">
-                    <a class="fa-brands fa-github" target="_blank" href="https://github.com/lari123"></a>
+                    <a class="fa-brands fa-github" target="_blank" href="https://github.com/rosamrcl/smartstock"></a>
                     <a id="disable" class="fa-brands fa-linkedin" target="_blank" href="#"></a>
                 </div>
             </div>
