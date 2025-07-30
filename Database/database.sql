@@ -1,6 +1,6 @@
 -- --------------------------------------------------------
 -- Servidor:                     127.0.0.1
--- Versão do servidor:           8.0.30 - MySQL Community Server - GPL
+-- Versão do servidor:           8.0.42 - MySQL Community Server - GPL
 -- OS do Servidor:               Win64
 -- HeidiSQL Versão:              12.1.0.6537
 -- --------------------------------------------------------
@@ -16,40 +16,39 @@
 
 
 -- Copiando estrutura do banco de dados para smartstock
-DROP DATABASE IF EXISTS `smartstock`;
 CREATE DATABASE IF NOT EXISTS `smartstock` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `smartstock`;
 
 -- Copiando estrutura para tabela smartstock.checklist
-DROP TABLE IF EXISTS `checklist`;
 CREATE TABLE IF NOT EXISTS `checklist` (
   `id_checklist` int NOT NULL AUTO_INCREMENT,
-  `id_ordem` int DEFAULT NULL,
-  `manutencao` varchar(100) DEFAULT NULL,
-  `status` varchar(50) DEFAULT NULL,
-  `etapa` varchar(100) DEFAULT NULL,
-  `descricao_tarefa` text,
-  `data_verificacao` date DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
-  `deleted_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id_checklist`),
-  KEY `id_ordem` (`id_ordem`),
-  CONSTRAINT `checklist_ibfk_1` FOREIGN KEY (`id_ordem`) REFERENCES `ordens_servico` (`id_services`)
+  `etapas` text NOT NULL,
+  `cliente` varchar(100) NOT NULL,
+  `local_servico` varchar(150) NOT NULL,
+  `data_execucao` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id_checklist`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Exportação de dados foi desmarcado.
+-- Copiando dados para a tabela smartstock.checklist: ~0 rows (aproximadamente)
+
+-- Copiando estrutura para procedure smartstock.CleanExpiredTokens
+DELIMITER //
+CREATE PROCEDURE `CleanExpiredTokens`()
+BEGIN
+        DELETE FROM password_reset_tokens 
+        WHERE expires_at < NOW() OR used = 1;
+    END//
+DELIMITER ;
 
 -- Copiando estrutura para tabela smartstock.ordem_estoque
-DROP TABLE IF EXISTS `ordem_estoque`;
 CREATE TABLE IF NOT EXISTS `ordem_estoque` (
   `id_stock` int NOT NULL AUTO_INCREMENT,
   `id_ordem` int DEFAULT NULL,
-  `produto` varchar(100) DEFAULT NULL,
-  `descricao` varchar(100) DEFAULT NULL,
-  `quantidade` int DEFAULT NULL,
-  `unidade` varchar(20) DEFAULT NULL,
-  `localizacao` varchar(100) DEFAULT NULL,
+  `produto` varchar(100) NOT NULL,
+  `descricao` varchar(100) NOT NULL,
+  `quantidade` int NOT NULL,
+  `unidade` varchar(20) NOT NULL,
+  `localizacao` varchar(100) NOT NULL,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   `deleted_at` timestamp NULL DEFAULT NULL,
@@ -58,10 +57,9 @@ CREATE TABLE IF NOT EXISTS `ordem_estoque` (
   CONSTRAINT `ordem_estoque_ibfk_1` FOREIGN KEY (`id_ordem`) REFERENCES `ordens_servico` (`id_services`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Exportação de dados foi desmarcado.
+-- Copiando dados para a tabela smartstock.ordem_estoque: ~0 rows (aproximadamente)
 
 -- Copiando estrutura para tabela smartstock.ordens_servico
-DROP TABLE IF EXISTS `ordens_servico`;
 CREATE TABLE IF NOT EXISTS `ordens_servico` (
   `id_services` int NOT NULL AUTO_INCREMENT,
   `id_responsible` int DEFAULT NULL,
@@ -78,13 +76,29 @@ CREATE TABLE IF NOT EXISTS `ordens_servico` (
   CONSTRAINT `ordens_servico_ibfk_1` FOREIGN KEY (`id_responsible`) REFERENCES `usuarios` (`id_user`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Exportação de dados foi desmarcado.
+-- Copiando dados para a tabela smartstock.ordens_servico: ~0 rows (aproximadamente)
+
+-- Copiando estrutura para tabela smartstock.password_reset_tokens
+CREATE TABLE IF NOT EXISTS `password_reset_tokens` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `user_email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `expires_at` datetime NOT NULL,
+  `used` tinyint DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `token` (`token`),
+  KEY `idx_token` (`token`),
+  KEY `idx_email` (`user_email`),
+  KEY `idx_expires` (`expires_at`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Copiando dados para a tabela smartstock.password_reset_tokens: ~0 rows (aproximadamente)
 
 -- Copiando estrutura para tabela smartstock.produtos
-DROP TABLE IF EXISTS `produtos`;
 CREATE TABLE IF NOT EXISTS `produtos` (
   `id_products` int NOT NULL AUTO_INCREMENT,
-  `nome` varchar(100) DEFAULT NULL,
+  `nome` varchar(100) NOT NULL,
   `descricao` text,
   `status` enum('Estoque','Manutenção','Em uso') DEFAULT NULL,
   `quantidade` int DEFAULT NULL,
@@ -94,26 +108,9 @@ CREATE TABLE IF NOT EXISTS `produtos` (
   PRIMARY KEY (`id_products`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Exportação de dados foi desmarcado.
-
--- Copiando estrutura para tabela smartstock.suporte
-DROP TABLE IF EXISTS `suporte`;
-CREATE TABLE IF NOT EXISTS `suporte` (
-  `id_suport` int NOT NULL AUTO_INCREMENT,
-  `nome` varchar(100) DEFAULT NULL,
-  `email` varchar(100) DEFAULT NULL,
-  `mensagem` text,
-  `arquivo` varchar(255) DEFAULT NULL,
-  `data_envio` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
-  `deleted_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id_suport`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
--- Exportação de dados foi desmarcado.
+-- Copiando dados para a tabela smartstock.produtos: ~0 rows (aproximadamente)
 
 -- Copiando estrutura para tabela smartstock.redefinicao_senha
-DROP TABLE IF EXISTS `redefinicao_senha`;
 CREATE TABLE IF NOT EXISTS `redefinicao_senha` (
   `id` int NOT NULL AUTO_INCREMENT,
   `email` varchar(100) NOT NULL,
@@ -126,17 +123,32 @@ CREATE TABLE IF NOT EXISTS `redefinicao_senha` (
   KEY `email` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Exportação de dados foi desmarcado.
+-- Copiando dados para a tabela smartstock.redefinicao_senha: ~0 rows (aproximadamente)
+
+-- Copiando estrutura para tabela smartstock.suporte
+CREATE TABLE IF NOT EXISTS `suporte` (
+  `id_suport` int NOT NULL AUTO_INCREMENT,
+  `nome` varchar(100) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `mensagem` text,
+  `arquivo` varchar(255) DEFAULT NULL,
+  `status_sup` varchar(50) DEFAULT 'pendente',
+  `data_envio` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id_suport`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- Copiando dados para a tabela smartstock.suporte: ~0 rows (aproximadamente)
 
 -- Copiando estrutura para tabela smartstock.usuarios
-DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE IF NOT EXISTS `usuarios` (
   `id_user` int NOT NULL AUTO_INCREMENT,
-  `nome` varchar(100) DEFAULT NULL,
-  `sobrenome` varchar(100) DEFAULT NULL,
-  `email` varchar(100) DEFAULT NULL,
-  `senha` varchar(255) DEFAULT NULL,
+  `nome` varchar(100) NOT NULL,
+  `sobrenome` varchar(100) NOT NULL,
   `foto_perfil` varchar(255) DEFAULT NULL,
+  `email` varchar(100) NOT NULL,
+  `senha` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   `deleted_at` timestamp NULL DEFAULT NULL,
@@ -144,7 +156,9 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   UNIQUE KEY `email` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Exportação de dados foi desmarcado.
+-- Copiando dados para a tabela smartstock.usuarios: ~0 rows (aproximadamente)
+INSERT INTO `usuarios` (`id_user`, `nome`, `sobrenome`, `foto_perfil`, `email`, `senha`, `created_at`, `updated_at`, `deleted_at`) VALUES
+	(1, 'Luan', 'Aquino', '688a7b4d26ffc_1753905997.jpg', 'teste@gmail.com', '$2y$12$EvGxmohtsyPDZ4qIcLEJLO17Srm.9leqP8HI0kjFnr7ECGBKypW86', '2025-07-30 20:01:03', '2025-07-30 20:06:37', NULL);
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
