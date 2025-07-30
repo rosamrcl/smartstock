@@ -12,13 +12,13 @@ require_once('../Backend/conexao.php');
 
 $id = $_SESSION['id_user'];
 
-$stmt = $pdo->prepare("SELECT nome, sobrenome, email, foto FROM usuarios WHERE id_user = ?");
+$stmt = $pdo->prepare("SELECT nome, sobrenome, email, foto_perfil FROM usuarios WHERE id_user = ?");
 $stmt->execute([$id]);
 $dados = $stmt->fetch(PDO::FETCH_ASSOC);
 
 // Verifica se tem foto cadastrada
-if (!empty($dados['foto'])) {
-    $fotoPerfil = './uploads/' . $dados['foto'];
+if (!empty($dados['foto_perfil'])) {
+    $fotoPerfil = './uploads/' . $dados['foto_perfil'];
 } else {
     $fotoPerfil = "./ressources/img/perfil.png";
 }
@@ -97,6 +97,7 @@ if (!empty($dados['foto'])) {
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.all.min.js"></script>
     <script src="./ressources/js/script.js"></script>
+    <script src="./ressources/js/validation.js"></script>
     
     <!-- ===== SCRIPT ESPECÍFICO DA PÁGINA ===== -->
     <script>
@@ -106,56 +107,97 @@ if (!empty($dados['foto'])) {
             const btnText = submitBtn.querySelector('.btn-text');
             const btnLoading = submitBtn.querySelector('.btn-loading');
             
+            // Função para mostrar loading
+            function showLoading() {
+                btnText.style.display = 'none';
+                btnLoading.style.display = 'flex';
+                submitBtn.disabled = true;
+            }
+            
+            // Função para validar campos básicos
+            function validateForm() {
+                const nome = document.getElementById('nome').value.trim();
+                const sobrenome = document.getElementById('sobrenome').value.trim();
+                const email = document.getElementById('email').value.trim();
+                let isValid = true;
+                
+                // Limpar erros anteriores
+                document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
+                document.querySelectorAll('.form-group input').forEach(input => input.classList.remove('error'));
+                
+                // Validar nome
+                if (!nome) {
+                    document.getElementById('nome-error').textContent = 'O campo nome é obrigatório';
+                    document.getElementById('nome').classList.add('error');
+                    isValid = false;
+                }
+                
+                // Validar sobrenome
+                if (!sobrenome) {
+                    document.getElementById('sobrenome-error').textContent = 'O campo sobrenome é obrigatório';
+                    document.getElementById('sobrenome').classList.add('error');
+                    isValid = false;
+                }
+                
+                // Validar email
+                if (!email) {
+                    document.getElementById('email-error').textContent = 'O campo email é obrigatório';
+                    document.getElementById('email').classList.add('error');
+                    isValid = false;
+                } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                    document.getElementById('email-error').textContent = 'Por favor, insira um email válido';
+                    document.getElementById('email').classList.add('error');
+                    isValid = false;
+                }
+                
+                return isValid;
+            }
+            
             // Validação do formulário
             form.addEventListener('submit', function(e) {
                 e.preventDefault();
                 
-                // Usar funções do ValidationSystem
-                if (window.ValidationSystem) {
-                    const nome = document.getElementById('nome').value.trim();
-                    const sobrenome = document.getElementById('sobrenome').value.trim();
-                    const email = document.getElementById('email').value.trim();
-                    const file = document.getElementById('foto').files[0];
-                    let isValid = true;
-                    
-                    // Limpar erros anteriores
-                    window.ValidationSystem.clearAllErrors(form);
-                    
-                    // Validar campos usando funções do ValidationSystem
-                    if (!window.ValidationSystem.validateName(nome)) {
-                        window.ValidationSystem.showError(document.getElementById('nome'), 'O campo nome é obrigatório');
-                        isValid = false;
-                    }
-                    
-                    if (!window.ValidationSystem.validateName(sobrenome)) {
-                        window.ValidationSystem.showError(document.getElementById('sobrenome'), 'O campo sobrenome é obrigatório');
-                        isValid = false;
-                    }
-                    
-                    if (!window.ValidationSystem.validateEmail(email)) {
-                        window.ValidationSystem.showError(document.getElementById('email'), 'Por favor, insira um email válido');
-                        isValid = false;
-                    }
-                    
-                    // Validar arquivo se selecionado
-                    if (file) {
-                        const validation = window.ValidationSystem.validateImageFile(file);
-                        if (!validation.valid) {
-                            document.getElementById('fileInfo').textContent = validation.message;
-                            document.getElementById('fileInfo').className = 'file-info error';
-                            isValid = false;
-                        }
-                    }
-                    
-                    if (isValid) {
-                        // Mostrar loading usando função do ValidationSystem
-                        window.ValidationSystem.showLoadingState(submitBtn, 'Atualizando...');
-                        
-                        // Enviar formulário
-                        form.submit();
-                    }
+                if (validateForm()) {
+                    showLoading();
+                    form.submit();
                 }
             });
+            
+            // Preview de imagem
+            const fotoInput = document.getElementById('foto');
+            const previewImage = document.getElementById('previewImage');
+            const fileInfo = document.getElementById('fileInfo');
+            
+            if (fotoInput && previewImage) {
+                fotoInput.addEventListener('change', function() {
+                    const file = this.files[0];
+                    if (file) {
+                        // Validar tipo de arquivo
+                        const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'];
+                        if (!allowedTypes.includes(file.type)) {
+                            fileInfo.textContent = 'Tipo de arquivo não permitido. Use: JPG, PNG, GIF, WEBP';
+                            fileInfo.className = 'file-info error';
+                            return;
+                        }
+                        
+                        // Validar tamanho (5MB)
+                        if (file.size > 5 * 1024 * 1024) {
+                            fileInfo.textContent = 'Arquivo muito grande. Máximo 5MB';
+                            fileInfo.className = 'file-info error';
+                            return;
+                        }
+                        
+                        // Mostrar preview
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            previewImage.src = e.target.result;
+                            fileInfo.textContent = `Arquivo: ${file.name} (${(file.size / 1024 / 1024).toFixed(2)} MB)`;
+                            fileInfo.className = 'file-info success';
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                });
+            }
         });
     </script>
     

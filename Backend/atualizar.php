@@ -11,93 +11,162 @@ if (!isset($_SESSION['id_user'])) {
 
 $id_user = $_SESSION['id_user'];
 
+// Configurar diretório de uploads
 $diretorioUploads = __DIR__ . "/../Frontend/uploads";
 if (!file_exists($diretorioUploads)) {
     mkdir($diretorioUploads, 0777, true);
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-    $stmtOld = $pdo->prepare("SELECT nome, sobrenome, email, foto FROM usuarios WHERE id_user = :id");
-    $stmtOld->bindParam(':id', $id_user);
-    $stmtOld->execute();
-    $dadosAntigos = $stmtOld->fetch(PDO::FETCH_ASSOC);
-
-    $nome = !empty($_POST['nome']) ? trim($_POST['nome']) : $dadosAntigos['nome'];
-    $sobrenome = !empty($_POST['sobrenome']) ? trim($_POST['sobrenome']) : $dadosAntigos['sobrenome'];
-    $email = !empty($_POST['email']) ? trim($_POST['email']) : $dadosAntigos['email'];
-
-    // Validação de campos obrigatórios
-    if (empty($nome) || empty($sobrenome) || empty($email)) {
-        $_SESSION['error_msg'] = ["Por favor, preencha todos os campos obrigatórios."];
-        header('Location: ../Frontend/updateperfil.php');
-        exit;
-    }
-
-    // Validação de formato de email
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $_SESSION['error_msg'] = ["Por favor, insira um email válido."];
-        header('Location: ../Frontend/updateperfil.php');
-        exit;
-    }
-
-    // Verificar se o email já está sendo usado por outro usuário
-    $verificaEmail = $pdo->prepare("SELECT id_user FROM usuarios WHERE email = :email AND id_user != :id_user AND deleted_at IS NULL");
-    $verificaEmail->execute([':email' => $email, ':id_user' => $id_user]);
-    if ($verificaEmail->rowCount() > 0) {
-        $_SESSION['error_msg'] = ["Este email já está sendo usado por outro usuário."];
-        header('Location: ../Frontend/updateperfil.php');
-        exit;
-    }
-
-    // Processamento do upload de imagem
-    $foto = null;
-    $fotoAntiga = $dadosAntigos['foto'];
+// Função para log de debug
+function logDebug($message, $data = []) {
+    $logFile = __DIR__ . '/../logs/debug.log';
+    $logDir = dirname($logFile);
     
-    if (!empty($_FILES['foto']['name'])) {
-        $uploadResult = processImageUpload($_FILES['foto'], $diretorioUploads);
-        
-        if ($uploadResult['success']) {
-            $foto = $uploadResult['filename'];
-            
-            // Remover foto antiga se existir e não for a padrão
-            if (!empty($fotoAntiga) && $fotoAntiga !== 'perfil.png') {
-                $caminhoFotoAntiga = $diretorioUploads . "/" . $fotoAntiga;
-                if (file_exists($caminhoFotoAntiga)) {
-                    unlink($caminhoFotoAntiga);
-                }
-            }
-        } else {
-            $_SESSION['error_msg'] = [$uploadResult['message']];
+    if (!is_dir($logDir)) {
+        mkdir($logDir, 0755, true);
+    }
+    
+    $logEntry = [
+        'timestamp' => date('Y-m-d H:i:s'),
+        'message' => $message,
+        'data' => $data
+    ];
+    
+    file_put_contents($logFile, json_encode($logEntry) . "\n", FILE_APPEND | LOCK_EX);
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    
+    logDebug("Iniciando processo de atualização de perfil", [
+        'user_id' => $id_user,
+        'post_data' => $_POST,
+        'files' => isset($_FILES['foto']) ? 'foto_enviada' : 'sem_foto'
+    ]);
+
+    try {
+        // Buscar dados atuais do usuário
+        $stmtOld = $pdo->prepare("SELECT nome, sobrenome, email, foto_perfil FROM usuarios WHERE id_user = :id");
+        $stmtOld->bindParam(':id', $id_user);
+        $stmtOld->execute();
+        $dadosAntigos = $stmtOld->fetch(PDO::FETCH_ASSOC);
+
+        if (!$dadosAntigos) {
+            logDebug("Usuário não encontrado no banco", ['user_id' => $id_user]);
+            $_SESSION['error_msg'] = ["Usuário não encontrado. Faça login novamente."];
+            header('Location: ../Frontend/login.php');
+            exit;
+        }
+
+        // Sanitizar e validar dados do formulário
+        $nome = !empty($_POST['nome']) ? trim(filter_var($_POST['nome'], FILTER_SANITIZE_STRING)) : $dadosAntigos['nome'];
+        $sobrenome = !empty($_POST['sobrenome']) ? trim(filter_var($_POST['sobrenome'], FILTER_SANITIZE_STRING)) : $dadosAntigos['sobrenome'];
+        $email = !empty($_POST['email']) ? trim(filter_var($_POST['email'], FILTER_SANITIZE_EMAIL)) : $dadosAntigos['email'];
+
+        logDebug("Dados processados", [
+            'nome' => $nome,
+            'sobrenome' => $sobrenome,
+            'email' => $email
+        ]);
+
+        // Validação de campos obrigatórios
+        if (empty($nome) || empty($sobrenome) || empty($email)) {
+            logDebug("Campos obrigatórios vazios", [
+                'nome_vazio' => empty($nome),
+                'sobrenome_vazio' => empty($sobrenome),
+                'email_vazio' => empty($email)
+            ]);
+            $_SESSION['error_msg'] = ["Por favor, preencha todos os campos obrigatórios."];
             header('Location: ../Frontend/updateperfil.php');
             exit;
         }
-    }
 
-    try {
-        // Atualizar dados do usuário
+        // Validação de formato de email
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            logDebug("Email inválido", ['email' => $email]);
+            $_SESSION['error_msg'] = ["Por favor, insira um email válido."];
+            header('Location: ../Frontend/updateperfil.php');
+            exit;
+        }
+
+        // Verificar se o email já está sendo usado por outro usuário
+        $verificaEmail = $pdo->prepare("SELECT id_user FROM usuarios WHERE email = :email AND id_user != :id_user AND deleted_at IS NULL");
+        $verificaEmail->execute([':email' => $email, ':id_user' => $id_user]);
+        if ($verificaEmail->rowCount() > 0) {
+            logDebug("Email já em uso por outro usuário", ['email' => $email]);
+            $_SESSION['error_msg'] = ["Este email já está sendo usado por outro usuário."];
+            header('Location: ../Frontend/updateperfil.php');
+            exit;
+        }
+
+        // Processamento do upload de imagem
+        $foto = null;
+        $fotoAntiga = $dadosAntigos['foto_perfil'];
+        
+        if (!empty($_FILES['foto']['name'])) {
+            logDebug("Processando upload de foto", [
+                'file_name' => $_FILES['foto']['name'],
+                'file_size' => $_FILES['foto']['size'],
+                'file_type' => $_FILES['foto']['type']
+            ]);
+            
+            $uploadResult = processImageUpload($_FILES['foto'], $diretorioUploads);
+            
+            if ($uploadResult['success']) {
+                $foto = $uploadResult['filename'];
+                logDebug("Upload de foto bem-sucedido", ['filename' => $foto]);
+                
+                // Remover foto antiga se existir e não for a padrão
+                if (!empty($fotoAntiga) && $fotoAntiga !== 'perfil.png') {
+                    $caminhoFotoAntiga = $diretorioUploads . "/" . $fotoAntiga;
+                    if (file_exists($caminhoFotoAntiga)) {
+                        unlink($caminhoFotoAntiga);
+                        logDebug("Foto antiga removida", ['foto_antiga' => $fotoAntiga]);
+                    }
+                }
+            } else {
+                logDebug("Erro no upload de foto", ['error' => $uploadResult['message']]);
+                $_SESSION['error_msg'] = [$uploadResult['message']];
+                header('Location: ../Frontend/updateperfil.php');
+                exit;
+            }
+        }
+
+        // Preparar query de atualização
         $query = "UPDATE usuarios SET nome = :nome, sobrenome = :sobrenome, email = :email";
+        $params = [
+            ':nome' => $nome,
+            ':sobrenome' => $sobrenome,
+            ':email' => $email,
+            ':id_user' => $id_user
+        ];
         
         if ($foto) {
-            $query .= ", foto = :foto";
+            $query .= ", foto_perfil = :foto";
+            $params[':foto'] = $foto;
         }
         
         $query .= ", updated_at = NOW() WHERE id_user = :id_user";
 
+        logDebug("Executando query de atualização", [
+            'query' => $query,
+            'params' => array_keys($params)
+        ]);
+
         $stmt = $pdo->prepare($query);
-        $stmt->bindParam(':nome', $nome);
-        $stmt->bindParam(':sobrenome', $sobrenome);
-        $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':id_user', $id_user);
-
-        if ($foto) {
-            $stmt->bindParam(':foto', $foto);
-        }
-
-        if ($stmt->execute()) {
+        
+        // Executar a query
+        $result = $stmt->execute($params);
+        
+        if ($result && $stmt->rowCount() > 0) {
+            logDebug("Atualização bem-sucedida", [
+                'rows_affected' => $stmt->rowCount(),
+                'user_id' => $id_user
+            ]);
+            
             // Atualizar dados da sessão
             $_SESSION['nome'] = $nome;
             $_SESSION['sobrenome'] = $sobrenome;
+            $_SESSION['email'] = $email;
             if ($foto) {
                 $_SESSION['foto'] = $foto;
             }
@@ -106,18 +175,40 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             header("Location: ../Frontend/home.php");
             exit;
         } else {
-            $_SESSION['error_msg'] = ["Erro ao atualizar o perfil. Tente novamente."];
+            logDebug("Falha na atualização - nenhuma linha afetada", [
+                'result' => $result,
+                'row_count' => $stmt->rowCount(),
+                'user_id' => $id_user
+            ]);
+            $_SESSION['error_msg'] = ["Erro ao atualizar o perfil. Nenhuma alteração foi feita."];
             header('Location: ../Frontend/updateperfil.php');
             exit;
         }
 
     } catch (PDOException $e) {
+        logDebug("Erro PDO na atualização", [
+            'error_code' => $e->getCode(),
+            'error_message' => $e->getMessage(),
+            'user_id' => $id_user
+        ]);
         $_SESSION['error_msg'] = ["Erro interno do sistema. Tente novamente mais tarde."];
+        header('Location: ../Frontend/updateperfil.php');
+        exit;
+    } catch (Exception $e) {
+        logDebug("Erro geral na atualização", [
+            'error_message' => $e->getMessage(),
+            'user_id' => $id_user
+        ]);
+        $_SESSION['error_msg'] = ["Erro inesperado. Tente novamente mais tarde."];
         header('Location: ../Frontend/updateperfil.php');
         exit;
     }
 } else {
     // Método não permitido
+    logDebug("Tentativa de acesso com método não permitido", [
+        'method' => $_SERVER['REQUEST_METHOD'],
+        'user_id' => $id_user ?? 'não_logado'
+    ]);
     header('Location: ../Frontend/updateperfil.php');
     exit;
 }

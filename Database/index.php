@@ -11,7 +11,7 @@ try {
         id_user INT AUTO_INCREMENT PRIMARY KEY,
         nome VARCHAR(100) NOT NULL,
         sobrenome VARCHAR(100) NOT NULL,
-        foto VARCHAR(255),
+        foto_perfil VARCHAR(255),
         email VARCHAR(100) UNIQUE NOT NULL,
         senha VARCHAR(255) NOT NULL,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,

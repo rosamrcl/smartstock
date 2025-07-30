@@ -11,13 +11,13 @@ require_once('../Backend/conexao.php');
 
 $id = $_SESSION['id_user'];
 
-$stmt = $pdo->prepare("SELECT nome, sobrenome, email, foto FROM usuarios WHERE id_user = ?");
+$stmt = $pdo->prepare("SELECT nome, sobrenome, email, foto_perfil FROM usuarios WHERE id_user = ?");
 $stmt->execute([$id]);
 $dados = $stmt->fetch(PDO::FETCH_ASSOC);
 
 // Verifica se tem foto cadastrada
-if (!empty($dados['foto'])) {
-    $fotoPerfil = './uploads/' . $dados['foto'];
+if (!empty($dados['foto_perfil'])) {
+    $fotoPerfil = './uploads/' . $dados['foto_perfil'];
 } else {
     $fotoPerfil = "./ressources/img/perfil.png";
 }
