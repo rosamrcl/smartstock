@@ -11,3 +11,9 @@
 {"timestamp":"2025-07-30 20:06:37","message":"Foto antiga removida","data":{"foto_antiga":"688a7a864d03e_1753905798.jpeg"}}
 {"timestamp":"2025-07-30 20:06:37","message":"Executando query de atualiza\u00e7\u00e3o","data":{"query":"UPDATE usuarios SET nome = :nome, sobrenome = :sobrenome, email = :email, foto_perfil = :foto, updated_at = NOW() WHERE id_user = :id_user","params":[":nome",":sobrenome",":email",":id_user",":foto"]}}
 {"timestamp":"2025-07-30 20:06:37","message":"Atualiza\u00e7\u00e3o bem-sucedida","data":{"rows_affected":1,"user_id":"1"}}
+{"timestamp":"2025-07-30 20:23:05","message":"Iniciando processo de atualiza\u00e7\u00e3o de perfil","data":{"user_id":2,"post_data":{"nome":"anny","sobrenome":"reis","email":"anny@gmail.com"},"files":"foto_enviada"}}
+{"timestamp":"2025-07-30 20:23:05","message":"Dados processados","data":{"nome":"anny","sobrenome":"reis","email":"anny@gmail.com"}}
+{"timestamp":"2025-07-30 20:23:05","message":"Processando upload de foto","data":{"file_name":"download.jpeg","file_size":44153,"file_type":"image\/jpeg"}}
+{"timestamp":"2025-07-30 20:23:05","message":"Upload de foto bem-sucedido","data":{"filename":"688a7f299d078_1753906985.jpeg"}}
+{"timestamp":"2025-07-30 20:23:05","message":"Executando query de atualiza\u00e7\u00e3o","data":{"query":"UPDATE usuarios SET nome = :nome, sobrenome = :sobrenome, email = :email, foto_perfil = :foto, updated_at = NOW() WHERE id_user = :id_user","params":[":nome",":sobrenome",":email",":id_user",":foto"]}}
+{"timestamp":"2025-07-30 20:23:05","message":"Atualiza\u00e7\u00e3o bem-sucedida","data":{"rows_affected":1,"user_id":"2"}}
