@@ -1,4 +1,4 @@
-.suporte {
+/* .suporte {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -7,17 +7,11 @@
     border-radius: 1.25rem;
     margin: 8rem auto;
     width: 90%;
-    max-width: 800px; 
+    max-width: 600px; 
     flex-grow: 1;
-}
+} */
 
-.heading h1 {
-    font-size: 2.4rem; 
-    color: var(--cor4);
-    padding: 2rem;
-}
-
-.suporte .heading {
+.heading {
     border-radius: 1.25rem 1.25rem 0 0;
     background: var(--cor1);
     box-shadow: var(--box-shadow);
@@ -25,6 +19,12 @@
     width: 100%;
     margin-bottom: 0;
 }
+.heading h1 {
+    font-size: 2.4rem;
+    color: var(--cor4);
+    padding: 2rem;
+}
+
 
 .suporte .container {
     padding: 2rem;
@@ -51,7 +51,7 @@
 
 .container input[type="text"],
 .container input[type="email"] {
-    font-size: 1.6rem;
+    font-size: 1.6rem; 
     border-radius: 1.25rem;
     padding: 1rem;
     flex: 1;
@@ -79,14 +79,32 @@
     display: none;
 }
 
+.custom-file-upload {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: var(--cor4);
+    text-shadow: var(--text-shadow);
+    color: var(--cor9);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.6rem; 
+    cursor: pointer;
+    text-align: center;
+    width: auto;
+    transition: background 0.3s ease;
+    flex-grow: 1;
+}
 
+.custom-file-upload:hover {
+    border: .1rem solid var(--cor3);
+    color: var(--cor3);
+}
 
 .container .btn {
     display: block;
-    width: 100%;
+    width: 100%; 
     max-width: 200px; 
     margin: 2rem auto 0 auto;
     padding: 1.5rem 3rem;
 }
-
 
