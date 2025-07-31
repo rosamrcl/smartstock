@@ -1,10 +1,18 @@
-<header>
-    <a href="home.php" class="home">
-        <i class="fa-solid fa-house"></i>        
-        <img src="./ressources/img/smartstock.png" alt="SmartStock Logo">
-    </a>
+<header class="header">
+    <section class="flex">
+        <div class="smartstock">
+            <div id="menu-btn" class="fas fa-bars-staggered"></div>
+            <a href="home.php" class="home"><i class="fa-solid fa-house"></i> 
+            </a>
+            <div class="smart-logo">
+                <img src="./ressources/img/smartstock.png" alt="SmartStock Logo">
+            </div> 
+            <a href="login.php"><i class="fas fa-user"></i>Login</a></a>  
+        </div>
+    </section>
     
-    
+</header>
+<div class="side-bar">
     <nav class="navbar" role="navigation" aria-label="Menu principal">
         <a href="gerenciarprodutos.php" aria-label="Gerenciar produtos">
             <i class="fa-solid fa-box"></i>
@@ -23,10 +31,4 @@
             <span>Notificações</span>
         </a>
     </nav>
-    
-    <div class="icons">
-        <button id="menu-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="navbar">
-            <i class="fas fa-bars" id="menu-bars"></i>
-        </button>
-    </div>
-</header>
+</div>   
