@@ -87,10 +87,7 @@
             <div class="box">                
                     <img src="./ressources/img/LARI.png" alt="">
 
-                <div class="txt">
-                    <h2>Larim</h2>
-                    <p>Back-End</p>
-                </div>
+
                 <div class="git">
                     <a class="fa-brands fa-github" target="_blank" href="https://github.com/rosamrcl/smartstock"></a>
                     <a id="disable" class="fa-brands fa-linkedin" target="_blank" href="#"></a>
