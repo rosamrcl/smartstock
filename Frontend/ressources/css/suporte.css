@@ -1,15 +1,15 @@
-/* .suporte {
+.suporte {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background: var(--cor2);
     border-radius: 1.25rem;
-    margin: 8rem auto;
+    margin: 4rem auto;
     width: 90%;
-    max-width: 600px; 
+    max-width: 800px; 
     flex-grow: 1;
-} */
+}
 
 .heading {
     border-radius: 1.25rem 1.25rem 0 0;
@@ -20,9 +20,10 @@
     margin-bottom: 0;
 }
 .heading h1 {
-    font-size: 2.4rem;
+    font-size: var(--font-size-title);
     color: var(--cor4);
     padding: 2rem;
+    text-shadow: var(--text-shadow);
 }
 
 
@@ -48,12 +49,17 @@
     width: 100%;
     flex-wrap: wrap; 
 }
+.container .input-group input {
+    flex: 1 1 45%;
+    min-width: 200px;
+}
+
 
 .container input[type="text"],
 .container input[type="email"] {
     font-size: 1.6rem; 
     border-radius: 1.25rem;
-    padding: 1rem;
+    padding: 1.5rem;
     flex: 1;
     min-width: 0;
 }
@@ -67,44 +73,12 @@
     padding: 1rem;
 }
 
-.file-upload-group {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 1rem;
-    width: 100%;
-}
-
-.hidden-file-input {
-    display: none;
-}
-
-.custom-file-upload {
-    display: inline-block;
-    padding: 1rem 2rem;
-    background: var(--cor4);
-    text-shadow: var(--text-shadow);
-    color: var(--cor9);
-    border: none;
-    border-radius: 5px;
-    font-size: 1.6rem; 
-    cursor: pointer;
-    text-align: center;
-    width: auto;
-    transition: background 0.3s ease;
-    flex-grow: 1;
-}
-
-.custom-file-upload:hover {
-    border: .1rem solid var(--cor3);
-    color: var(--cor3);
-}
 
 .container .btn {
     display: block;
     width: 100%; 
-    max-width: 200px; 
+    max-width: 150px; 
     margin: 2rem auto 0 auto;
-    padding: 1.5rem 3rem;
+    padding: 1.5rem 2rem;
 }
 

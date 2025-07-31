@@ -6,18 +6,24 @@
 @import url(./components/forms.css);
 
 /* ===== IMPORTAÇÕES DE PÁGINAS ===== */
+@import url(./alerts.css);
+@import url(./alterar-senha.css);
 @import url(./esquecisenha.css);
 @import url(./form.css);
+@import url(./gerenciar-produtos.css);
+@import url(./header-improvements.css);
 @import url(./header.css);
 @import url(./home.css);
-@import url(./responsive.css);
-@import url(./pages/ordem-servico.css);
+@import url(./login-alignment.css);
+@import url(./login-visibility-fix.css);
+@import url(./redefinir-senha.css);
+/* @import url(./responsive.css); */
 @import url(./sobrenos.css);
 @import url(./suporte.css);
 @import url(./updateperfil.css);
-@import url(./redefinir-senha.css);
-@import url(./gerenciar-produtos.css);
-@import url(./alterar-senha.css);
+
+/* ===== IMPORTAÇÕES DE PAGES ===== */
+@import url(./pages/ordem-servico.css);
 
 :root{
     /* ===== CORES PRINCIPAIS ===== */
@@ -112,7 +118,7 @@ body{
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: 2rem;
+    font-size: var(--font-size-xl);
 }
 
 .btn{
