@@ -16,14 +16,14 @@
 @import url(./home.css);
 @import url(./login-alignment.css);
 @import url(./login-visibility-fix.css);
+@import url(.ordem-servico.css);
 @import url(./redefinir-senha.css);
 /* @import url(./responsive.css); */
 @import url(./sobrenos.css);
 @import url(./suporte.css);
 @import url(./updateperfil.css);
 
-/* ===== IMPORTAÇÕES DE PAGES ===== */
-@import url(./pages/ordem-servico.css);
+
 
 :root{
     /* ===== CORES PRINCIPAIS ===== */

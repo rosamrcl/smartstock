@@ -15,6 +15,8 @@ header {
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--cor8);
     transition: all 0.3s ease;
+    margin-bottom: 20rem;
+
 }
 
 /* ===== LOGO E TÍTULO ===== */
