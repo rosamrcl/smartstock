@@ -17,6 +17,7 @@
 </header>
 <div class="side-bar">
     <nav class="navbar" role="navigation" aria-label="Menu principal">
+        <div id="close-btn" class="fas fa-times"></div>
         <a href="gerenciarprodutos.php" aria-label="Gerenciar produtos">
             <i class="fa-solid fa-box"></i>
             <span>Gerenciamento de Estoque</span>

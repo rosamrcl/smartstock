@@ -16,7 +16,7 @@
 </header>
 <div class="side-bar">
     <nav class="navbar">
-        <div id="close-btn"><i class="fas fa-angle-left"></i>close menu</div>
+        <div id="close-btn" class="fas fa-times"></div>
         <a href="login.php"><i class="fa-solid fa-user"></i> Login</a>
         <a href="cadastro.php">Cadastro</a>
         <a href="suporte.php">Posso ajudar</a>
