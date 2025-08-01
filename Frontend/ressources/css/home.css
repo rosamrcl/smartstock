@@ -40,7 +40,7 @@
     width: 100%;
     max-width: 25rem;
     height: auto;
-    object-fit: contain;
+    object-fit: cover;
     transition: transform 0.3s ease;
 }
 
@@ -166,7 +166,7 @@
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(135deg, var(--cor3) 0%, #FF6B00 100%);
+    background: linear-gradient(135deg, var(--cor3) 0%, var(--cor14) 100%);
     transform: scaleX(0);
     transition: transform 0.3s ease;
 }
@@ -191,7 +191,7 @@
 
 .usuario .box-container .box:hover i {
     transform: scale(1.1);
-    color: #FF6B00;
+    color: var(--cor14);
 }
 
 /* ===== TÍTULOS DOS CARDS ===== */
@@ -220,130 +220,6 @@
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-}
-
-/* ===== RESPONSIVIDADE - MOBILE ===== */
-@media (max-width: 767px) {
-    .usuario {
-        padding: var(--spacing-md);
-        gap: var(--spacing-xl);
-        min-height: auto;
-    }
-    
-    .usuario .logo_foto {
-        margin-top: calc(5vh + var(--spacing-lg));
-        margin-bottom: var(--spacing-xl);
-        padding: var(--spacing-xl);
-        max-width: 100%;
-    }
-    
-    .usuario .logo_foto .perfil .image {
-        width: 15rem;
-        height: 15rem;
-    }
-    
-    .usuario .logo_foto .perfil .welcome {
-        font-size: var(--font-size-lg);
-    }
-    
-    .usuario .logo_foto .perfil div {
-        flex-direction: column;
-        max-width: 25rem;
-    }
-    
-    .usuario .box-container {
-        margin-top: var(--spacing-xl);
-        padding: var(--spacing-md);
-    }
-}
-
-/* ===== RESPONSIVIDADE - TABLET ===== */
-@media (min-width: 768px) {
-    .usuario .box-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--spacing-xl);
-    }
-    
-    .usuario .logo_foto {
-        margin-top: calc(8vh + var(--spacing-xxl));
-        flex-direction: row;
-        gap: var(--spacing-xxl);
-        max-width: 80rem;
-        padding: var(--spacing-xxl);
-    }
-    
-    .usuario .logo_foto .perfil div {
-        flex-direction: row;
-        max-width: none;
-    }
-}
-
-/* ===== RESPONSIVIDADE - DESKTOP ===== */
-@media (min-width: 1024px) {
-    .usuario {
-        padding: var(--spacing-xxl);
-        gap: var(--spacing-xxl);
-    }
-    
-    .usuario .logo_foto {
-        margin-top: calc(12vh + var(--spacing-xxl));
-        max-width: 90rem;
-    }
-    
-    .usuario .box-container {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    
-    .usuario .logo_foto .perfil .image {
-        width: 20rem;
-        height: 20rem;
-    }
-    
-    .usuario .logo_foto .perfil .welcome {
-        font-size: var(--font-size-xxl);
-    }
-}
-
-/* ===== RESPONSIVIDADE - TELAS GRANDES ===== */
-@media (min-width: 1200px) {
-    .usuario {
-        padding: var(--spacing-xxl) var(--spacing-xxl);
-    }
-    
-    .usuario .logo_foto {
-        margin-top: calc(15vh + var(--spacing-xxl));
-        max-width: 100rem;
-    }
-    
-    .usuario .box-container .box {
-        min-height: 30rem;
-        padding: var(--spacing-xxl);
-    }
-    
-    .usuario .box-container .box i {
-        font-size: 5rem;
-    }
-    
-    .usuario .box-container .box h3 {
-        font-size: var(--font-size-xxl);
-    }
-    
-    .usuario .box-container .box p {
-        font-size: var(--font-size-lg);
-    }
-}
-
-/* ===== RESPONSIVIDADE - TELAS MUITO GRANDES ===== */
-@media (min-width: 1440px) {
-    .usuario .logo_foto {
-        margin-top: calc(18vh + var(--spacing-xxl));
-        max-width: 110rem;
-    }
-    
-    .usuario .logo_foto .perfil .image {
-        width: 22rem;
-        height: 22rem;
-    }
 }
 
 /* ===== ANIMAÇÕES ESPECÍFICAS ===== */
@@ -420,10 +296,6 @@
     color: #28A745;
 }
 
-/* ===== SCROLL SUAVE ===== */
-html {
-    scroll-behavior: smooth;
-}
 
 /* ===== PRINT STYLES ===== */
 @media print {

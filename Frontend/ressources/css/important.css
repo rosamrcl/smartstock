@@ -1,0 +1,73 @@
+/* ===== MELHORIAS DO HEADER - SMARTSTOCK ===== */
+
+/* ===== HEADER PRINCIPAL ===== */
+header {
+    background: var(--cor7) !important; /* Fundo branco */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important; /* Sombra sutil */
+    opacity: 1; /* Estado inicial visível */
+    transform: translateY(0); /* Posição inicial */
+    position: fixed !important; /* Mantém fixo no topo */
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important; /* Z-index alto para ficar acima de outros elementos */
+}
+
+/* ===== ESTADOS DE SCROLL ===== */
+header.header-hidden {
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+header.header-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* ===== CORES DOS ELEMENTOS DO HEADER ===== */
+header .home, 
+header .navbar a, 
+header .icons {
+    color: #333333 !important; /* Cinza escuro para visibilidade */
+}
+
+header .home:hover,
+header .navbar a:hover {
+    color: var(--cor3) !important; /* Laranja no hover */
+}
+
+/* ===== ESPAÇAMENTO DO DASHBOARD ===== */
+/* Ajusta o espaçamento superior para evitar sobreposição com header fixo */
+body {
+    padding-top: 12rem !important; /* Aumentado para dar mais espaço */
+}
+
+/* Ajustes específicos para diferentes seções */
+.usuario,
+.gerenciarprodutos,
+.updateperfil,
+.suporte,
+.checklist-wrapper {
+    padding-top: 2rem !important; /* Espaçamento adicional para seções */
+    margin-top: 0 !important; /* Remove margem superior padrão */
+}
+
+/* Ajuste específico para a página home */
+.box-container {
+    margin-top: 2rem !important;
+}
+
+
+/* ===== RELATÓRIO ===== */
+.relatorio {
+    margin: var(--spacing-xl);
+}
+
+.relatorio h4 {
+    text-align: center;
+    font-size: var(--font-size-title);
+    color: var(--cor7);
+    margin-bottom: var(--spacing-md); 
+}

@@ -78,9 +78,9 @@ if (!empty($dados['foto_perfil'])) {
                         <span class="error-message" id="email-error"></span>
                     </div>
 
-                    <div class="form-links">
-                        <p><a href="alterar_senha.php" class="btn-secundario">Alterar Senha</a></p>
-                    </div>
+                    
+                        <a class="btn-secundario" href="alterar_senha.php">Alterar Senha</a>
+                    
 
                     <button type="submit" class="btn" id="submitBtn">
                         <span class="btn-text">Atualizar Perfil</span>

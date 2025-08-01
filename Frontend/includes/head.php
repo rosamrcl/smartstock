@@ -7,4 +7,5 @@
 <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.min.css" rel="stylesheet">
 
 <!-- JavaScript para comportamento do header -->
-<script src="./ressources/js/header-scroll.js"></script> 
+<script src="./ressources/js/header-scroll.js"></script>
+<script src="./ressources/js/side-bar.js"></script> 

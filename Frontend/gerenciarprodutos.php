@@ -26,6 +26,7 @@ $aba_ativa = isset($_GET['aba']) ? $_GET['aba'] : 'tab1';
     
     <!-- JavaScript para comportamento do header -->
     <script src="./ressources/js/header-scroll.js"></script>
+    <script src="./ressources/js/side-bar.js"></script>
 </head>
 
 <body>

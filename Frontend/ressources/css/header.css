@@ -1,6 +1,5 @@
 /* ===== HEADER MODERNO E RESPONSIVO ===== */
 
-
 .header .flex{
     display: flex;
     align-items: center;
@@ -157,7 +156,7 @@
     left: 50%;
     width: 0;
     height: 2px;
-    background: linear-gradient(135deg, var(--cor3) 0%, #FF6B00 100%);
+    background: linear-gradient(135deg, var(--cor3) 0%, var(--cor14) 100%);
     transition: all 0.3s ease;
     transform: translateX(-50%);
 }
