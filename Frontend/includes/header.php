@@ -8,10 +8,11 @@
         <div class="smart-logo">
             <img src="./ressources/img/smartstock.png" alt="SmartStock Logo">
         </div>
-        <a href="#" aria-label="Notificações">
-            <i class="fa-solid fa-bell"></i>
-            <span>Notificações</span>
+        <a href="suporte.php" aria-label="Suporte">
+            <i class="fa-solid fa-question-circle"></i>
+            <span>Posso ajudar</span>
         </a>
+
     </section>
 
 </header>
@@ -26,9 +27,9 @@
             <i class="fa-solid fa-clipboard-check"></i>
             <span>Ordem de Serviço</span>
         </a>
-        <a href="suporte.php" aria-label="Suporte">
-            <i class="fa-solid fa-question-circle"></i>
-            <span>Posso ajudar</span>
+        <a href="#" aria-label="Notificações">
+            <i class="fa-solid fa-bell"></i>
+            <span>Notificações</span>
         </a>
 
     </nav>

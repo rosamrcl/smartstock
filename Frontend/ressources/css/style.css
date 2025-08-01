@@ -91,10 +91,11 @@ html{
 body{
     min-height: 100vh;
     background: linear-gradient(135deg, var(--cor7) 0%, var(--cor8) 100%);
-    padding-top: 10rem;
+    padding-top: 12rem;
     line-height: 1.6;
     color: var(--cor9);
 }
+
 
 /* ===== BOTÕES MODERNOS ===== */
 .btn, .btn-delete{

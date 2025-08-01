@@ -8,10 +8,12 @@
         <div class="smart-logo">
             <img src="./ressources/img/smartstock.png" alt="SmartStock Logo">
         </div>
-        <a href="#" aria-label="Notificações">
-            <i class="fa-solid fa-bell"></i>
-            <span>Notificações</span>
+        <a href="suporte.php" aria-label="Suporte">
+            <i class="fa-solid fa-question-circle"></i>
+            <span>Posso ajudar</span>
         </a>
+
+
     </section>
 </header>
 <div class="side-bar">
@@ -19,6 +21,5 @@
         <div id="close-btn" class="fas fa-times"></div>
         <a href="login.php"><i class="fa-solid fa-user"></i> Login</a>
         <a href="cadastro.php">Cadastro</a>
-        <a href="suporte.php">Posso ajudar</a>
     </nav>
 </div>

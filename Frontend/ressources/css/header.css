@@ -1,19 +1,11 @@
 /* ===== HEADER MODERNO E RESPONSIVO ===== */
 
-.header{
-    position: sticky;
-    right: 0;
-    left: 0;
-    top: 0;
-    z-index: 1000;
 
-}
 .header .flex{
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-right: 4rem;
-
 }
 
 #menu-btn{
@@ -38,7 +30,7 @@
     gap: 1rem;
 }
 .header .flex .smart-logo img{
-    height: 12rem;
+    height: 8rem;
     transition: all 0.3s ease;
 }
 
@@ -67,8 +59,6 @@
     background: rgba(0,0,0,.8);
     backdrop-filter: blur(4px);
 }
-
-
 
 .side-bar{
     position: fixed;
