@@ -23,7 +23,7 @@ $aba_ativa = isset($_GET['aba']) ? $_GET['aba'] : 'tab1';
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.min.css" rel="stylesheet">
-    
+
     <!-- JavaScript para comportamento do header -->
     <script src="./ressources/js/header-scroll.js"></script>
     <script src="./ressources/js/side-bar.js"></script>
@@ -139,9 +139,9 @@ $aba_ativa = isset($_GET['aba']) ? $_GET['aba'] : 'tab1';
                                             </a>
                                         </button>
 
-                                        <a href="../Backend/produtos.php?excluir=<?= $row['id_products'] ?>&aba=tab1" 
-                                           onclick="return confirm('Deseja excluir este produto?')" 
-                                           class="btn-delete" title="Excluir">
+                                        <a href="../Backend/produtos.php?excluir=<?= $row['id_products'] ?>&aba=tab1"
+                                            onclick="return confirm('Deseja excluir este produto?')"
+                                            class="btn-delete" title="Excluir">
                                             <i class="fa-solid fa-trash-can"></i>
                                         </a>
                                     </td>
@@ -188,9 +188,9 @@ $aba_ativa = isset($_GET['aba']) ? $_GET['aba'] : 'tab1';
                                             </a>
                                         </button>
 
-                                        <a href="../Backend/produtos.php?excluir=<?= $row['id_products'] ?>&aba=tab2" 
-                                           onclick="return confirm('Deseja excluir este produto?')" 
-                                           class="btn-delete" title="Excluir">
+                                        <a href="../Backend/produtos.php?excluir=<?= $row['id_products'] ?>&aba=tab2"
+                                            onclick="return confirm('Deseja excluir este produto?')"
+                                            class="btn-delete" title="Excluir">
                                             <i class="fa-solid fa-trash-can"></i>
                                         </a>
                                     </td>
@@ -237,9 +237,9 @@ $aba_ativa = isset($_GET['aba']) ? $_GET['aba'] : 'tab1';
                                             </a>
                                         </button>
 
-                                        <a href="../Backend/produtos.php?excluir=<?= $row['id_products'] ?>&aba=tab3" 
-                                           onclick="return confirm('Deseja excluir este produto?')" 
-                                           class="btn-delete" title="Excluir">
+                                        <a href="../Backend/produtos.php?excluir=<?= $row['id_products'] ?>&aba=tab3"
+                                            onclick="return confirm('Deseja excluir este produto?')"
+                                            class="btn-delete" title="Excluir">
                                             <i class="fa-solid fa-trash-can"></i>
                                         </a>
                                     </td>
@@ -258,7 +258,7 @@ $aba_ativa = isset($_GET['aba']) ? $_GET['aba'] : 'tab1';
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.all.min.js"></script>
     <script src="./ressources/js/script.js"></script>
-    
+
     <?php include 'includes/alerts.php'; ?>
 
     <script>
@@ -269,13 +269,13 @@ $aba_ativa = isset($_GET['aba']) ? $_GET['aba'] : 'tab1';
             for (var i = 0; i < tabContents.length; i++) {
                 tabContents[i].classList.remove('active');
             }
-            
+
             // Remove a classe 'active' de todos os botões
             var tabButtons = document.getElementsByClassName('tab-button');
             for (var i = 0; i < tabButtons.length; i++) {
                 tabButtons[i].classList.remove('active');
             }
-            
+
             // Mostra a tabela selecionada e marca o botão como ativo
             document.getElementById(tabId).classList.add('active');
             event.currentTarget.classList.add('active');
@@ -299,9 +299,9 @@ $aba_ativa = isset($_GET['aba']) ? $_GET['aba'] : 'tab1';
                 form.appendChild(inputId);
             }
             inputId.value = produto.id_products;
-            
+
             // Scroll para o formulário
-            document.querySelector('.form-produto').scrollIntoView({ 
+            document.querySelector('.form-produto').scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
             });
@@ -311,7 +311,7 @@ $aba_ativa = isset($_GET['aba']) ? $_GET['aba'] : 'tab1';
         document.getElementById('addProductForm').addEventListener('submit', function(e) {
             const requiredFields = this.querySelectorAll('[required]');
             let isValid = true;
-            
+
             requiredFields.forEach(field => {
                 const errorElement = document.getElementById(field.id + '-error');
                 if (!field.value.trim()) {
@@ -327,7 +327,7 @@ $aba_ativa = isset($_GET['aba']) ? $_GET['aba'] : 'tab1';
                     }
                 }
             });
-            
+
             if (!isValid) {
                 e.preventDefault();
                 if (window.SmartStock) {
@@ -337,4 +337,5 @@ $aba_ativa = isset($_GET['aba']) ? $_GET['aba'] : 'tab1';
         });
     </script>
 </body>
+
 </html>

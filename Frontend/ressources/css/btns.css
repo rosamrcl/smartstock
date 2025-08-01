@@ -1,6 +1,6 @@
 /* ===== BOTÕES MODERNOS ===== */
 
-.submit-btn, .btn-edit, .btn-secundario, .btn, .btn-delete{
+.submit-btn, .btn-secundario, .btn{
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -30,28 +30,59 @@
 }
 
 .btn-secundario{
-    /* background: linear-gradient(135deg, var(--cor8) 0%, var(--cor10) 100%); */
     background: var(--cor8);
     box-shadow: var(--box-shadow);
+    text-decoration: none;
 
+}
+
+.btn-edit,
+.btn-delete {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius-sm);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    transition: all 0.3s ease;
+    min-height: 3.2rem;
+    min-width: 3.2rem;
+}
+
+.btn-edit {
+    background: linear-gradient(135deg, var(--cor1) 0%, var(--cor17) 100%);
+    color: var(--cor4);
+}
+
+.btn-edit:hover {
+    background: linear-gradient(135deg, var(--cor17) 0%, var(--cor18) 100%);
+    transform: translateY(-1px);
+}
+
+.btn-delete {
+    background: linear-gradient(135deg, var(--cor5) 0%, var(--cor12) 100%);
+    color: var(--cor4);
+}
+
+.btn-delete:hover {
+    background: linear-gradient(135deg, var(--cor5) 0%, var(--cor12) 100%);
+    transform: translateY(-1px);
 }
 
 
 
-.btn-delete{
-    background: linear-gradient(135deg, var(--cor5) 0%, #B91C1C 100%);
-    box-shadow: var(--box-shadow);
-}
-.btn-secundario,
-.btn:hover,
-.btn-delete:hover{
+.btn-secundario:hover,
+.btn:hover
+{
     transform: translateY(-2px);
     box-shadow: var(--box-shadow-hover);
     color: var(--cor4);
     opacity: 0.9;
 }
 
-.btn-secundario,
+.btn-secundario:active,
 .btn:active,
 .btn-delete:active{
     transform: translateY(0);
@@ -97,16 +128,7 @@
 }
 
 
-.btn-edit {
-    background: linear-gradient(135deg, var(--cor1) 0%, var(--cor17)  100%);
-    color: var(--cor4);
-}
 
-.btn-edit:hover {
-    background: linear-gradient(135deg, var(--cor17) 0%, var(--cor18) 100%);
-    transform: translateY(-1px);
-    box-shadow: var(--box-shadow-hover);
-}
 
 .submit-btn {
     background: linear-gradient(135deg, var(--cor3) 0%, #ff9500 100%);
