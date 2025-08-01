@@ -8,20 +8,21 @@
 /* ===== IMPORTAÇÕES DE PÁGINAS ===== */
 @import url(./alerts.css);
 @import url(./alterar-senha.css);
+@import url(./btns.css);
 @import url(./esquecisenha.css);
 @import url(./form.css);
 @import url(./gerenciar-produtos.css);
-@import url(./header-improvements.css);
 @import url(./header.css);
 @import url(./home.css);
-@import url(./login-alignment.css);
-@import url(./login-visibility-fix.css);
+@import url(./important.css);
 @import url(.ordem-servico.css);
 @import url(./redefinir-senha.css);
 /* @import url(./responsive.css); */
 @import url(./sobrenos.css);
 @import url(./suporte.css);
+@import url(./table.css);
 @import url(./updateperfil.css);
+
 
 
 
@@ -37,6 +38,16 @@
     --cor8: #E9ECEF;
     --cor9: #1E1E1E;
     --cor10: #6C757D;
+    --cor11: #28a745;
+    --cor12: #dc3545;
+    --cor13:#ffc107;
+    --cor14: #FF6B00;
+    --cor15: #333;
+    --cor16:#666;
+    --cor17:#0056B3;
+    --cor18: #004085;
+    
+
     
     /* ===== SOMBRAS E EFEITOS ===== */
     --box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
@@ -97,61 +108,6 @@ body{
 }
 
 
-/* ===== BOTÕES MODERNOS ===== */
-
-.btn-secundario, .btn, .btn-delete{
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    margin-top: var(--spacing-md);
-    padding: var(--spacing-md) var(--spacing-lg);
-    border-radius: var(--border-radius-md);
-    font-size: var(--font-size-md);
-    font-weight: 500;
-    color: var(--cor4);
-    cursor: pointer;
-    min-height: 4.4rem;
-    min-width: 4.4rem;
-    text-align: center;
-    border: 2px solid transparent;
-    transition: all 0.3s ease;
-    text-transform: none;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: var(--font-size-xl);
-}
-
-.btn{
-    background: linear-gradient(135deg, var(--cor3) 0%, #FF6B00 100%);
-    box-shadow: var(--box-shadow);
-}
-
-.btn-delete{
-    background: linear-gradient(135deg, var(--cor5) 0%, #B91C1C 100%);
-    box-shadow: var(--box-shadow);
-}
-
-.btn:hover,
-.btn-delete:hover{
-    transform: translateY(-2px);
-    box-shadow: var(--box-shadow-hover);
-    color: var(--cor4);
-    opacity: 0.9;
-}
-
-.btn:active,
-.btn-delete:active{
-    transform: translateY(0);
-    box-shadow: var(--box-shadow);
-}
-
-.btn:focus,
-.btn-delete:focus{
-    outline: 2px solid var(--cor1);
-    outline-offset: 2px;
-}
 
 /* ===== ELEMENTOS DE TEXTO ===== */
 strong{
@@ -249,6 +205,8 @@ footer img{
     animation: pulse 2s infinite;
 }
 
+
+
 /* ===== SCROLLBAR PERSONALIZADA ===== */
 ::-webkit-scrollbar {
     width: 8px;
@@ -264,7 +222,7 @@ footer img{
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #FF6B00;
+    background: var(--cor14);
 }
 
 /* ===== FOCUS VISIBLE ===== */
@@ -277,4 +235,50 @@ footer img{
 ::selection {
     background: var(--cor3);
     color: var(--cor4);
+}
+
+
+/* ===== CONTAINER GERAL ===== */
+.container {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: var(--spacing-xl);
+    min-height: 100%;   
+    padding: var(--spacing-xl) 9%;
+    margin: var(--spacing-xl);
+    border-radius: var(--border-radius-md);
+    background: linear-gradient(135deg, var(--cor7) 0%, var(--cor8) 100%);
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1px;
+    height: 60%;
+    background: linear-gradient(to bottom, transparent, var(--cor8), transparent);
+    transform: translate(-50%, -50%);
+    opacity: 0.3;
+    z-index: -1;
+}
+
+/* ===== LOGO ===== */
+
+.logo {
+    flex: 1;
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: slideInLeft 0.6s ease-out 0.2s both;
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto;
+    max-height: 35rem;
+    object-fit: contain;
 }
