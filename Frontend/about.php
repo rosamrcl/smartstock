@@ -53,7 +53,7 @@
                 </div>
                 <div class="git">
                     <a class="fa-brands fa-github" target="_blank" href="https://github.com/BananaSpritee"></a>
-                    <a class="fa-brands fa-linkedin" target="_blank" href="#"></a>
+                    <a class="fa-brands fa-linkedin" target="_blank" href="https://www.linkedin.com/in/isaque-newton-silva-774a72374/"></a>
                 </div>
             </div>
 
@@ -67,7 +67,7 @@
                 </div>
                 <div class="git">
                     <a class="fa-brands fa-github" target="_blank" href="https://github.com/Aquino-maker"></a>
-                    <a class="fa-brands fa-linkedin" target="_blank" href="#"></a>
+                    <a class="fa-brands fa-linkedin" target="_blank" href="https://www.linkedin.com/in/luan-aquino/"></a>
                 </div>
             </div>
             <div class="box">
@@ -86,8 +86,6 @@
 
             <div class="box">                
                     <img src="./ressources/img/LARI.png" alt="">
-
-
                 <div class="git">
                     <a class="fa-brands fa-github" target="_blank" href="https://github.com/rosamrcl/smartstock"></a>
                     <a id="disable" class="fa-brands fa-linkedin" target="_blank" href="#"></a>
