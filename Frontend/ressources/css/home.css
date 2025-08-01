@@ -40,7 +40,7 @@
     width: 100%;
     max-width: 25rem;
     height: auto;
-    object-fit: contain;
+    object-fit: cover;
     transition: transform 0.3s ease;
 }
 

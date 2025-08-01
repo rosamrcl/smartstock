@@ -98,7 +98,8 @@ body{
 
 
 /* ===== BOTÕES MODERNOS ===== */
-.btn, .btn-delete{
+
+.btn-secundario, .btn, .btn-delete{
     display: inline-flex;
     align-items: center;
     justify-content: center;
