@@ -1,24 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-/* ===== IMPORTAÇÕES DE COMPONENTES ===== */
-@import url(./components/cards.css);
-@import url(./components/checklist.css);
-@import url(./components/forms.css);
+
 
 /* ===== IMPORTAÇÕES DE PÁGINAS ===== */
+@import url(./about.css);
 @import url(./alerts.css);
 @import url(./alterar-senha.css);
 @import url(./btns.css);
+@import url(./cards.css);
+@import url(./checklist.css);
 @import url(./esquecisenha.css);
 @import url(./form.css);
+@import url(./forms.css);
 @import url(./gerenciar-produtos.css);
 @import url(./header.css);
 @import url(./home.css);
 @import url(./important.css);
 @import url(.ordem-servico.css);
 @import url(./redefinir-senha.css);
-/* @import url(./responsive.css); */
-@import url(./sobrenos.css);
+@import url(./responsive.css);
 @import url(./suporte.css);
 @import url(./table.css);
 @import url(./updateperfil.css);

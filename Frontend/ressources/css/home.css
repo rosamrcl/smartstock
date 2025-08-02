@@ -21,12 +21,11 @@
     border-radius: var(--border-radius-xl);
     padding: var(--spacing-xxl);
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: var(--spacing-xl);
     width: 100%;
-    max-width: 60rem;
+    /* max-width: 60rem; */
     box-shadow: var(--box-shadow-card);
     border: 1px solid var(--cor8);
     animation: fadeIn 0.8s ease-out;
@@ -40,7 +39,6 @@
     width: 100%;
     max-width: 25rem;
     height: auto;
-    object-fit: cover;
     transition: transform 0.3s ease;
 }
 
@@ -128,7 +126,7 @@
 /* ===== CONTAINER DE CARDS - SEÇÃO SECUNDÁRIA ===== */
 .usuario .box-container {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: var(--spacing-xl);
     width: 100%;
     max-width: 120rem;
@@ -153,6 +151,7 @@
     border: 1px solid var(--cor8);
     transition: all 0.3s ease;
     cursor: pointer;
+    max-width: 100%;
     min-height: 25rem;
     position: relative;
     overflow: hidden;
@@ -272,8 +271,13 @@
 }
 
 @keyframes spin {
-    0% { transform: translate(-50%, -50%) rotate(0deg); }
-    100% { transform: translate(-50%, -50%) rotate(360deg); }
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
 }
 
 /* ===== ESTADOS DE ERRO ===== */
@@ -303,14 +307,14 @@
         min-height: auto;
         gap: var(--spacing-lg);
     }
-    
+
     .usuario .logo_foto {
         margin-top: var(--spacing-lg);
         box-shadow: none;
         border: 1px solid #ccc;
     }
-    
+
     .usuario .box-container {
         margin-top: var(--spacing-lg);
     }
-} 
+}

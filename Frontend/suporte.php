@@ -46,6 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -58,22 +59,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     include __DIR__ . '/includes/header.php';
     ?>
     <section class="suporte">
-        <div class="heading">
-            <h1> Como podemos ajudar você?</h1>
-        </div>
-
-        <div class="container">
-            <form action="" method="post" enctype="multipart/form-data">
-                <div class="input-group">
-                    <input name="nome" type="text" placeholder="Digite seu nome">
-                    <input name="email" type="email" placeholder="Digite seu email">
-                </div>
-                <textarea name="mensagem" placeholder="Digite seu problema"></textarea>
-                
-                <input type="file" id="arquivo" name="arquivo" accept=".jpg,.jpeg,.png,.pdf">
-
-                <input type="submit" class="btn" value="Enviar">
-            </form>
+        <div class="suporte-container">
+            <div class="heading">
+                <h1> Como podemos ajudar você?</h1>
+            </div>
+    
+            <div class="container">
+                <form action="" method="post" enctype="multipart/form-data">
+                    <div class="input-group">
+                        <input name="nome" type="text" placeholder="Digite seu nome">
+                        <input name="email" type="email" placeholder="Digite seu email">
+                    </div>
+                    <textarea name="mensagem" placeholder="Digite seu problema"></textarea>
+    
+                    <input type="file" id="arquivo" name="arquivo" accept=".jpg,.jpeg,.png,.pdf">
+    
+                    <input type="submit" class="btn" value="Enviar">
+                </form>
+            </div>
         </div>
     </section>
     <?php
@@ -83,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.all.min.js"></script>
 <script src="/Frontend/ressources/js/script.js"></script>
 <?php
-    include 'includes/alerts.php';
+include 'includes/alerts.php';
 ?>
 
 </html>

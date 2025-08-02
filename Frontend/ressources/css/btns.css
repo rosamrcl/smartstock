@@ -12,8 +12,8 @@
     font-weight: 500;
     color: var(--cor4);
     cursor: pointer;
-    min-height: 4.4rem;
-    min-width: 4.4rem;
+    min-height: 3.2rem;
+    min-width: 3.2rem;
     text-align: center;
     border: 2px solid transparent;
     transition: all 0.3s ease;

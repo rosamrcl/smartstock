@@ -207,7 +207,7 @@
 
 /* ===== LINKS DE NAVEGAÇÃO ===== */
 .form-links {
-    margin-top: 2rem;
+    margin-top: var(--spacing-xl);
     text-align: center;
 }
 
