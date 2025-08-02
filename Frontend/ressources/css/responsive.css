@@ -11,6 +11,49 @@
 
 
 @media (max-width: 768px) {
+    .login.container {
+        flex-direction: column;
+        align-items: center;
+        padding: var(--spacing-lg) 5%;
+        margin: var(--spacing-md) 0;
+        gap: var(--spacing-lg);
+    }
+
+    .logo {
+        max-width: 100%;
+        min-height: auto;
+        padding: 0;
+        animation: none;
+    }
+
+    .logo img {
+        max-height: 25rem;
+    }
+
+    .form {
+        max-width: 100%;
+        padding: var(--spacing-md);
+        animation: none;
+    }
+
+
+    .form-container {
+        max-width: 100%;
+        padding: var(--spacing-md);
+    }
+
+
+    :root {
+        --font-size-md: 1.4rem;
+        --font-size-lg: 1.6rem;
+        --font-size-title: 2.8rem;
+    }
+
+
+    .welcome {
+        font-size: var(--font-size-md);
+    }
+
     .usuario .box-container {
         grid-template-columns: 1fr;
     }
@@ -43,6 +86,15 @@
 @media (max-width:450px) {
     html {
         font-size: 50%;
+    }
+
+
+    .login .logo {
+        display: none;
+    }
+
+    .logo_foto .logo{
+        display: none;
     }
 
     .container .input-group input {

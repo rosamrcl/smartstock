@@ -41,7 +41,7 @@ if (!empty($dados['foto_perfil'])) {
     <section class="usuario">
         <!-- ===== CARD DE PERFIL CENTRALIZADO ===== -->
         <div class="logo_foto">
-            <img src="./ressources/img/smartstock.png" alt="SmartStock Logo">
+            <img class="logo" src="./ressources/img/smartstock.png" alt="SmartStock Logo">
             
             <div class="perfil">
                 <div class="image">

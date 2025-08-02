@@ -13,7 +13,7 @@
     session_start();
     include __DIR__ . '/includes/headerog.php';
     ?>
-    <section class="container">
+    <section class="login container">
 
         <div class="logo">
             <img src="./ressources/img/smartstock.png" alt="SmartStock Logo">
