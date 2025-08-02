@@ -2,14 +2,14 @@
 
 /* ===== CONTAINER DO FORMULÁRIO OTIMIZADO ===== */
 .checklist-form-container {
-    margin-bottom: var(--space-8);
+    margin-bottom: var(--spacing-xl);
     flex: 1;
 }
 
 .checklist-form-grid {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: var(--space-6);
+    gap: var(--spacing-xl);
     align-items: start;
     min-height: 0;
 }
@@ -19,10 +19,10 @@
     font-size: var(--font-xl);
     font-weight: 600;
     color: var(--cor9);
-    margin-bottom: var(--space-4);
+    margin-bottom: var(--spacing-lg);
     display: flex;
     align-items: center;
-    gap: var(--space-2);
+    gap: var(--spacing-sm);
     line-height: 1.3;
 }
 
@@ -35,7 +35,7 @@
 .categories-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--space-4);
+    gap: var(--spacing-lg);
     max-height: 70vh;
     overflow-y: auto;
 }
@@ -43,8 +43,8 @@
 /* ===== CARDS DE CATEGORIA OTIMIZADOS ===== */
 .category-card {
     background: var(--cor4);
-    border-radius: var(--border-radius);
-    padding: var(--space-4);
+    border-radius: var(--border-radius-sm);
+    padding: var(--spacing-lg);
     box-shadow: var(--box-shadow);
     border: 2px solid transparent;
     transition: var(--transition);
@@ -62,9 +62,9 @@
 .category-header {
     display: flex;
     align-items: center;
-    gap: var(--space-2);
-    margin-bottom: var(--space-3);
-    padding-bottom: var(--space-2);
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
     border-bottom: 2px solid var(--cor7);
     position: sticky;
     top: 0;
@@ -89,14 +89,14 @@
 .category-items {
     display: flex;
     flex-direction: column;
-    gap: var(--space-2);
+    gap: var(--spacing-sm);
 }
 
 .checkbox-item {
     display: flex;
     align-items: center;
-    gap: var(--space-2);
-    padding: var(--space-2);
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm);
     border-radius: var(--border-radius-sm);
     background: var(--cor7);
     cursor: pointer;
@@ -161,16 +161,16 @@
 /* ===== SEÇÃO DE INFORMAÇÕES OTIMIZADA ===== */
 .checklist-info-section {
     background: var(--cor4);
-    border-radius: var(--border-radius);
-    padding: var(--space-4);
+    border-radius: var(--border-radius-sm);
+    padding: var(--spacing-lg);
     box-shadow: var(--box-shadow);
     position: sticky;
-    top: var(--space-4);
+    top: var(--spacing-lg);
     height: fit-content;
     max-height: 80vh;
     overflow-y: auto;
 }
-
+--spacing-lg
 .input-wrapper {
     position: relative;
     display: flex;
@@ -179,7 +179,7 @@
 
 .input-wrapper i {
     position: absolute;
-    left: var(--space-3);
+    left: var(--spacing-md);
     color: var(--cor8);
     font-size: var(--font-base);
     z-index: 1;
@@ -187,7 +187,7 @@
 
 .input-wrapper input {
     width: 100%;
-    padding: var(--space-3) var(--space-3) var(--space-3) 2.5rem;
+    padding: var(--spacing-md) var(--spacing-md) var(--spacing-md) 2.5rem;
     border: 2px solid var(--cor8);
     border-radius: var(--border-radius-sm);
     font-size: var(--font-sm);
@@ -211,20 +211,14 @@
 /* ===== SEÇÃO DE HISTÓRICO OTIMIZADA ===== */
 .checklist-history-section {
     background: var(--cor4);
-    border-radius: var(--border-radius);
-    padding: var(--space-4);
+    border-radius: var(--border-radius-sm);
+    padding: var(--spacing-lg);
     box-shadow: var(--box-shadow);
     flex: 1;
 }
 
 .history-header {
-    margin-bottom: var(--space-4);
-}
-
-.history-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: var(--space-4);
+    margin-bottom: var(--spacing-lg);
     max-height: 60vh;
     overflow-y: auto;
 }
@@ -232,8 +226,8 @@
 /* ===== CARDS DE HISTÓRICO OTIMIZADOS ===== */
 .history-card {
     background: var(--cor4);
-    border-radius: var(--border-radius);
-    padding: var(--space-4);
+    border-radius: var(--border-radius-sm);
+    padding: var(--spacing-lg-space-4);
     box-shadow: var(--box-shadow);
     border-left: 3px solid var(--cor3);
     transition: var(--transition);
@@ -247,8 +241,8 @@
 }
 
 .card-header {
-    margin-bottom: var(--space-3);
-    padding-bottom: var(--space-3);
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-md);
     border-bottom: 1px solid var(--cor8);
     position: sticky;
     top: 0;
@@ -259,13 +253,13 @@
 .card-info {
     display: flex;
     flex-direction: column;
-    gap: var(--space-2);
+    gap: var(--spacing-sm);
 }
 
 .info-item {
     display: flex;
     align-items: center;
-    gap: var(--space-2);
+    gap: var(--spacing-sm);
     font-size: var(--font-sm);
 }
 
@@ -290,21 +284,21 @@
     font-size: var(--font-base);
     font-weight: 600;
     color: var(--cor9);
-    margin-bottom: var(--space-2);
+    margin-bottom: var(--spacing-sm);
     line-height: 1.3;
 }
 
 .steps-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: var(--space-2);
+    gap: var(--spacing-sm);
 }
 
 .step-item {
     display: flex;
     align-items: center;
-    gap: var(--space-2);
-    padding: var(--space-2);
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm);
     background: var(--cor7);
     border-radius: var(--border-radius-sm);
     font-size: var(--font-xs);
@@ -321,20 +315,20 @@
 /* ===== ESTADO VAZIO OTIMIZADO ===== */
 .empty-state {
     text-align: center;
-    padding: var(--space-8) var(--space-4);
+    padding: var(--spacing-xl) var();
     color: var(--cor8);
 }
 
 .empty-icon {
     font-size: var(--font-3xl);
     color: var(--cor8);
-    margin-bottom: var(--space-4);
+    margin-bottom: var(--spacing-lg);
 }
 
 .empty-state h4 {
     font-size: var(--font-xl);
     font-weight: 600;
-    margin-bottom: var(--space-2);
+    margin-bottom: var(--spacing-sm);
     color: var(--cor9);
 }
 
@@ -422,3 +416,4 @@
 .checklist-info-section::-webkit-scrollbar-thumb:hover {
     background: var(--cor1);
 } 
+

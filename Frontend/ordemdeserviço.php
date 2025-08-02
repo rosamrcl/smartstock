@@ -64,7 +64,7 @@ $produtosEstoque = $stmtEstoque->fetchAll(PDO::FETCH_ASSOC);
                         <i class="fas fa-list-check"></i>
                         <span>Categorias de Verificação</span>
                     </div>
-                    
+
                     <div class="categories-grid">
                         <!-- Categoria: Equipamentos -->
                         <div class="category-card">
@@ -199,7 +199,7 @@ $produtosEstoque = $stmtEstoque->fetchAll(PDO::FETCH_ASSOC);
                         <i class="fas fa-info-circle"></i>
                         <span>Informações do Serviço</span>
                     </div>
-                    
+
                     <form action="../Backend/marcar_concluido.php" method="post" id="checklistForm">
                         <div class="form-group">
                             <label for="cliente">Cliente</label>
@@ -212,6 +212,8 @@ $produtosEstoque = $stmtEstoque->fetchAll(PDO::FETCH_ASSOC);
                             <input type="text" name="local" id="local" placeholder="Endereço do serviço" required>
                             <span class="error-message" id="local-error"></span>
                         </div>
+
+                        <div class="divider"></div>
 
                         <div class="form-group">
                             <label for="observacoes">Observações</label>
@@ -234,7 +236,7 @@ $produtosEstoque = $stmtEstoque->fetchAll(PDO::FETCH_ASSOC);
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.all.min.js"></script>
     <script src="./ressources/js/script.js"></script>
-    
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const form = document.getElementById('checklistForm');
@@ -243,19 +245,19 @@ $produtosEstoque = $stmtEstoque->fetchAll(PDO::FETCH_ASSOC);
             const submitBtn = document.getElementById('submitBtn');
             const btnText = submitBtn.querySelector('.btn-text');
             const btnLoading = submitBtn.querySelector('.btn-loading');
-            
+
             function showError(input, message) {
                 const errorElement = document.getElementById(input.id + '-error');
                 errorElement.textContent = message;
                 input.classList.add('error');
             }
-            
+
             function clearError(input) {
                 const errorElement = document.getElementById(input.id + '-error');
                 errorElement.textContent = '';
                 input.classList.remove('error');
             }
-            
+
             // Validação do cliente
             clienteInput.addEventListener('blur', function() {
                 const cliente = this.value.trim();
@@ -265,7 +267,7 @@ $produtosEstoque = $stmtEstoque->fetchAll(PDO::FETCH_ASSOC);
                     clearError(this);
                 }
             });
-            
+
             // Validação do local
             localInput.addEventListener('blur', function() {
                 const local = this.value.trim();
@@ -275,31 +277,31 @@ $produtosEstoque = $stmtEstoque->fetchAll(PDO::FETCH_ASSOC);
                     clearError(this);
                 }
             });
-            
+
             // Validação do formulário
             form.addEventListener('submit', function(e) {
                 e.preventDefault();
-                
+
                 const cliente = clienteInput.value.trim();
                 const local = localInput.value.trim();
                 let isValid = true;
-                
+
                 // Limpar erros anteriores
                 clearError(clienteInput);
                 clearError(localInput);
-                
+
                 // Validar cliente
                 if (cliente === '') {
                     showError(clienteInput, 'O campo cliente é obrigatório');
                     isValid = false;
                 }
-                
+
                 // Validar local
                 if (local === '') {
                     showError(localInput, 'O campo local é obrigatório');
                     isValid = false;
                 }
-                
+
                 // Verificar se pelo menos uma etapa foi selecionada
                 const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
                 if (checkboxes.length === 0) {
@@ -310,21 +312,22 @@ $produtosEstoque = $stmtEstoque->fetchAll(PDO::FETCH_ASSOC);
                     });
                     isValid = false;
                 }
-                
+
                 if (isValid) {
                     // Mostrar loading
                     btnText.style.display = 'none';
                     btnLoading.style.display = 'flex';
                     submitBtn.disabled = true;
-                    
+
                     // Enviar formulário
                     form.submit();
                 }
             });
         });
     </script>
-    
+
     <?php include 'includes/alerts.php'; ?>
 
 </body>
+
 </html>

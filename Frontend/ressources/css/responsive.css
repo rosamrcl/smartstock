@@ -68,6 +68,18 @@
         height: 20rem;
     }
 
+    .checklist-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .categories-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .category-card {
+        max-height: none;
+    }
+
     .sobre_nos .membros .box {
         flex: 1 1 100%;
         max-width: 100%;
@@ -81,6 +93,7 @@
     .sobre_nos h1 {
         font-size: 3rem;
     }
+
 }
 
 @media (max-width:450px) {
@@ -93,7 +106,11 @@
         display: none;
     }
 
-    .logo_foto .logo{
+    .login p {
+        font-size: var(--font-size-xs);
+    }
+
+    .logo_foto .logo {
         display: none;
     }
 
