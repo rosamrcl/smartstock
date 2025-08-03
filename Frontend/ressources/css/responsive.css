@@ -11,6 +11,7 @@
 
 
 @media (max-width: 768px) {
+
     .cadastro.container,
     .login.container {
         flex-direction: column;
@@ -94,46 +95,77 @@
     .sobre_nos h1 {
         font-size: 3rem;
     }
+
     .checklist-wrapper {
         padding: var(--spacing-md);
         gap: var(---spacing-lg);
     }
-    
+
     .checklist-header {
         padding: var(--spacing-lg) var(--spacing-md);
     }
-    
+
     .checklist-section-header {
         padding: var(--spacing-md) var(--spacing-lg);
         flex-direction: column;
         align-items: flex-start;
         gap: var(--spacing-sm);
     }
-    
+
     .checklist-section-status {
         align-self: flex-end;
     }
-    
+
     .checklist-items {
         padding: var(--spacing-md);
     }
-    
+
     .checklist-item {
         flex-direction: column;
         gap: var(--spacing-sm);
     }
-    
+
     .checklist-item-checkbox {
         align-self: flex-start;
     }
-    
+
     .checklist-actions {
         flex-direction: column;
         align-items: stretch;
     }
-    
+
     .checklist-btn {
         justify-content: center;
+    }
+
+    .gerenciarprodutos {
+        flex-direction: column;
+        padding: var(--spacing-md);
+        gap: var(--spacing-lg);
+    }
+
+    .form-produto,
+    .table-container {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .form-container-produto h3,
+    .table-container h3 {
+        font-size: var(--font-size-xl);
+    }
+
+    .form-container-produto .btn {
+        max-width: 100%;
+    }
+
+    .tab-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .tab-button {
+        width: 100%;
     }
 
 }
@@ -142,9 +174,21 @@
     html {
         font-size: 50%;
     }
+    body {
+        padding-top: 6rem;
+    }
+    
+    .container {
+        padding: var(--spacing-md);
+        margin: var(--spacing-sm);
+    }
+    
+    .welcome {
+        font-size: var(--font-size-md);
+    }
 
-
-    .cadastro .logo, 
+    .updateperfil .logo,
+    .cadastro .logo,
     .login .logo {
         display: none;
     }
@@ -204,14 +248,15 @@
         width: 3.5rem;
         font-size: 1.6rem;
     }
-     .checklist-header-text h2 {
+
+    .checklist-header-text h2 {
         font-size: var(--font-size-xl);
     }
-    
+
     .checklist-section-title {
-        font-size: var( --font-size-lg);
+        font-size: var(--font-size-lg);
     }
-    
+
     .checklist-item-title {
         font-size: var(--font-size-sm);
     }
