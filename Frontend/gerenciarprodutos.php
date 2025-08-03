@@ -133,7 +133,7 @@ $aba_ativa = isset($_GET['aba']) ? $_GET['aba'] : 'tab1';
                                     </td>
                                     <td data-label="Quantidade"><?= $row['quantidade'] ?></td>
                                     <td data-label="Ações">
-                                        <button class="btn-edit" onclick='preencherForm(<?= json_encode($row) ?>)' title="Editar">
+                                        <button  onclick='preencherForm(<?= json_encode($row) ?>)' title="Editar">
                                             <a href="gerenciarprodutosupdate.php?id=<?= $row['id_products'] ?>" class="btn-edit">
                                                 <i class="fa-solid fa-pencil"></i>
                                             </a>
@@ -182,7 +182,7 @@ $aba_ativa = isset($_GET['aba']) ? $_GET['aba'] : 'tab1';
                                     </td>
                                     <td data-label="Quantidade"><?= $row['quantidade'] ?></td>
                                     <td data-label="Ações">
-                                        <button class="btn-edit" onclick='preencherForm(<?= json_encode($row) ?>)' title="Editar">
+                                        <button  onclick='preencherForm(<?= json_encode($row) ?>)' title="Editar">
                                             <a href="gerenciarprodutosupdate.php?id=<?= $row['id_products'] ?>" class="btn-edit">
                                                 <i class="fa-solid fa-pencil"></i>
                                             </a>
@@ -231,7 +231,7 @@ $aba_ativa = isset($_GET['aba']) ? $_GET['aba'] : 'tab1';
                                     </td>
                                     <td data-label="Quantidade"><?= $row['quantidade'] ?></td>
                                     <td data-label="Ações">
-                                        <button class="btn-edit" onclick='preencherForm(<?= json_encode($row) ?>)' title="Editar">
+                                        <button onclick='preencherForm(<?= json_encode($row) ?>)' title="Editar">
                                             <a href="gerenciarprodutosupdate.php?id=<?= $row['id_products'] ?>" class="btn-edit">
                                                 <i class="fa-solid fa-pencil"></i>
                                             </a>

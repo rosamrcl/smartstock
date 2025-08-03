@@ -88,8 +88,8 @@ if (!empty($dados['foto_perfil'])) {
                     </button>
 
                     <div class="form-links">
-                        <p><a href="updateperfil.php">Voltar para Editar Perfil</a></p>
-                        <p><a href="home.php">Voltar para o Início</a></p>
+                        <a class="btn-secundario" href="updateperfil.php">Voltar para Editar Perfil</a>
+                        <a class="btn-secundario" href="home.php">Voltar para o Início</a>
                     </div>
                 </form>
             </div>

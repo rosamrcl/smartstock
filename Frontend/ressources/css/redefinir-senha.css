@@ -191,7 +191,7 @@
 
 .password-requirements li.valid::before {
     content: '✓';
-    color: #28a745;
+    color: var(--cor11);
 }
 
 .password-requirements li.invalid {
@@ -210,22 +210,11 @@
     margin-top: var(--spacing-xl);
     text-align: center;
 }
-
-.form-links p {
-    margin: 1rem 0;
-}
-
 .form-links a {
-    color: var(--cor1);
-    text-decoration: none;
-    font-size: 1.4rem;
     transition: color 0.3s ease;
 }
 
-.form-links a:hover {
-    color: var(--cor3);
-    text-decoration: underline;
-}
+
 
 /* ===== CONTAINER DE ERRO ===== */
 .error-container {
