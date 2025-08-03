@@ -15,7 +15,7 @@
 @import url(./header.css);
 @import url(./home.css);
 @import url(./important.css);
-@import url(.ordem-servico.css);
+@import url(./ordem-servico.css);
 @import url(./redefinir-senha.css);
 @import url(./responsive.css);
 @import url(./suporte.css);
@@ -70,7 +70,7 @@
     --border-radius-xl: clamp(1rem, 2vw, 1.5rem);
     
     /* ===== TAMANHOS DE FONTE ===== */
-    --font-size-xs: clamp(1rem, 1.2vw, 1.2rem);
+    --font-size-s: clamp(1rem, 1.2vw, 1.2rem);
     --font-size-sm: clamp(1.2rem, 1.4vw, 1.4rem);
     --font-size-md: clamp(1.4rem, 1.6vw, 1.6rem);
     --font-size-lg: clamp(1.6rem, 1.8vw, 1.8rem);

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="../ressources/img/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="./ressources/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <header class="header">
+        <section class="flex">
+            <div class="smartstock">
+                <div id="menu-btn" class="fas fa-bars-staggered"></div>
+                <a href="home.php" class="home"><i class="fa-solid fa-house"></i>
+                </a>
+            </div>
+            <div class="smart-logo">
+                <img src="./ressources/img/smartstock.png" alt="SmartStock Logo">
+            </div>
+            <a href="suporte.php" aria-label="Suporte">
+                <i class="fa-solid fa-question-circle"></i>
+                <span>Posso ajudar</span>
+            </a>
+
+        </section>
+
+    </header>
+
+    <div class="side-bar">
+        <nav class="navbar" role="navigation" aria-label="Menu principal">
+            <div id="close-btn" class="fas fa-times"></div>
+            <a href="gerenciarprodutos.php" aria-label="Gerenciar produtos">
+                <i class="fa-solid fa-box"></i>
+                <span>Gerenciamento de Estoque</span>
+            </a>
+            <a href="ordemdeserviço.php" aria-label="Ordem de serviço">
+                <i class="fa-solid fa-clipboard-check"></i>
+                <span>Ordem de Serviço</span>
+            </a>
+            <a href="#" aria-label="Notificações">
+                <i class="fa-solid fa-bell"></i>
+                <span>Notificações</span>
+            </a>
+
+        </nav>
+    </div>
+
+    <div class="checklist-wrapper">
+        <div class="checklist-header-content">
+            <div class="checklist-header-icon">
+                <i class="fas fa-clipboard-check"></i>
+            </div>
+            <div class="checklist-header-text">
+                <h2>Ordem de Serviço</h2>
+                <p>Complete o checklist para finalizar a ordem de serviço</p>
+            </div>
+        </div>
+        <div class="checklist-form-container">
+            <div class="checklist-form-grid">
+                <!-- Seção de Categorias -->
+                <div class="categories-section">
+                    <div class="section-title">
+                        <i class="fas fa-list-check"></i>
+                        <span>Categorias de Verificação</span>
+                    </div>
+
+                    <div class="categories-grid">
+                        <!-- Categoria: Equipamentos -->
+                        <div class="category-card">
+                            <div class="category-header">
+                                <i class="fas fa-tools"></i>
+                                <h4>Equipamentos</h4>
+                            </div>
+                            <div class="category-items">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="equipamentos[]" value="verificar_funcionamento">
+                                    <span class="checkmark"></span>
+                                    Verificar funcionamento do equipamento
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="equipamentos[]" value="limpar_componentes">
+                                    <span class="checkmark"></span>
+                                    Limpar componentes
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="equipamentos[]" value="verificar_temperatura">
+                                    <span class="checkmark"></span>
+                                    Verificar temperatura
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="equipamentos[]" value="testar_perifericos">
+                                    <span class="checkmark"></span>
+                                    Testar periféricos
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Categoria: Software -->
+                        <div class="category-card">
+                            <div class="category-header">
+                                <i class="fas fa-laptop-code"></i>
+                                <h4>Software</h4>
+                            </div>
+                            <div class="category-items">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="software[]" value="atualizar_firmware">
+                                    <span class="checkmark"></span>
+                                    Atualizar firmware
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="software[]" value="verificar_atualizacoes">
+                                    <span class="checkmark"></span>
+                                    Verificar atualizações do sistema
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="software[]" value="testar_aplicacoes">
+                                    <span class="checkmark"></span>
+                                    Testar aplicações críticas
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="software[]" value="verificar_antivirus">
+                                    <span class="checkmark"></span>
+                                    Verificar antivírus
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="software[]" value="fazer_backup">
+                                    <span class="checkmark"></span>
+                                    Fazer backup de dados
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Categoria: Segurança -->
+                        <div class="category-card">
+                            <div class="category-header">
+                                <i class="fas fa-shield-alt"></i>
+                                <h4>Segurança</h4>
+                            </div>
+                            <div class="category-items">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="seguranca[]" value="verificar_cameras">
+                                    <span class="checkmark"></span>
+                                    Verificar câmeras de segurança
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="seguranca[]" value="testar_alarme">
+                                    <span class="checkmark"></span>
+                                    Testar sistema de alarme
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="seguranca[]" value="verificar_controle_acesso">
+                                    <span class="checkmark"></span>
+                                    Verificar controle de acesso
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="seguranca[]" value="testar_sensores">
+                                    <span class="checkmark"></span>
+                                    Testar sensores
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Categoria: Documentação -->
+                        <div class="category-card">
+                            <div class="category-header">
+                                <i class="fas fa-file-alt"></i>
+                                <h4>Documentação</h4>
+                            </div>
+                            <div class="category-items">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="documentacao[]" value="atualizar_documentacao">
+                                    <span class="checkmark"></span>
+                                    Atualizar documentação técnica
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="documentacao[]" value="registrar_alteracoes">
+                                    <span class="checkmark"></span>
+                                    Registrar alterações realizadas
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="documentacao[]" value="fotografar_instalacao">
+                                    <span class="checkmark"></span>
+                                    Fotografar instalação
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="documentacao[]" value="gerar_relatorio">
+                                    <span class="checkmark"></span>
+                                    Gerar relatório de serviço
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Seção de Informações -->
+                <div class="info-section">
+                    <div class="section-title">
+                        <i class="fas fa-info-circle"></i>
+                        <span>Informações do Serviço</span>
+                    </div>
+
+                    <form action="../Backend/marcar_concluido.php" method="post" id="checklistForm">
+                        <div class="form-group">
+                            <label for="cliente">Cliente</label>
+                            <input type="text" name="cliente" id="cliente" placeholder="Nome do cliente" required>
+                            <span class="error-message" id="cliente-error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="local">Local</label>
+                            <input type="text" name="local" id="local" placeholder="Endereço do serviço" required>
+                            <span class="error-message" id="local-error"></span>
+                        </div>
+
+                        <div class="divider"></div>
+
+                        <div class="form-group">
+                            <label for="observacoes">Observações</label>
+                            <textarea name="observacoes" id="observacoes" placeholder="Observações adicionais"
+                                rows="4"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn" id="submitBtn">
+                            <span class="btn-text">Finalizar OS</span>
+                            <span class="btn-loading" style="display: none;">
+                                <i class="fas fa-spinner fa-spin"></i> Finalizando...
+                            </span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

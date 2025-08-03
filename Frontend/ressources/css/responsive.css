@@ -93,6 +93,47 @@
     .sobre_nos h1 {
         font-size: 3rem;
     }
+    .checklist-wrapper {
+        padding: var(--spacing-md);
+        gap: var(---spacing-lg);
+    }
+    
+    .checklist-header {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+    
+    .checklist-section-header {
+        padding: var(--spacing-md) var(--spacing-lg);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-sm);
+    }
+    
+    .checklist-section-status {
+        align-self: flex-end;
+    }
+    
+    .checklist-items {
+        padding: var(--spacing-md);
+    }
+    
+    .checklist-item {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .checklist-item-checkbox {
+        align-self: flex-start;
+    }
+    
+    .checklist-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .checklist-btn {
+        justify-content: center;
+    }
 
 }
 
@@ -159,5 +200,16 @@
         height: 3.5rem;
         width: 3.5rem;
         font-size: 1.6rem;
+    }
+     .checklist-header-text h2 {
+        font-size: var(--font-size-xl);
+    }
+    
+    .checklist-section-title {
+        font-size: var( --font-size-lg);
+    }
+    
+    .checklist-item-title {
+        font-size: var(--font-size-sm);
     }
 }
