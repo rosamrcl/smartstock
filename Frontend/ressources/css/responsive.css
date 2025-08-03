@@ -11,6 +11,7 @@
 
 
 @media (max-width: 768px) {
+    .cadastro.container,
     .login.container {
         flex-direction: column;
         align-items: center;
@@ -143,10 +144,12 @@
     }
 
 
+    .cadastro .logo, 
     .login .logo {
         display: none;
     }
 
+    .cadastro p,
     .login p {
         font-size: var(--font-size-xs);
     }

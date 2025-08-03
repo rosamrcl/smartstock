@@ -18,7 +18,8 @@
     include __DIR__ . '/includes/headerog.php';
     ?>
 
-    <section class="container">
+    <section class="cadastro container">
+        
 
         <div class="logo">
 
