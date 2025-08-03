@@ -221,7 +221,7 @@ $produtosEstoque = $stmtEstoque->fetchAll(PDO::FETCH_ASSOC);
                         </div>
 
                         <button type="submit" class="btn" id="submitBtn">
-                            <span class="btn-text">Finalizar Ordem de Serviço</span>
+                            <span class="btn-text">Finalizar OS</span>
                             <span class="btn-loading" style="display: none;">
                                 <i class="fas fa-spinner fa-spin"></i> Finalizando...
                             </span>
