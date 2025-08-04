@@ -26,9 +26,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
-    // Validação de tamanho da senha
-    if (strlen($senha) < 6) {
-        $_SESSION['error_msg'] = ["A senha deve ter pelo menos 6 caracteres."];
+    // Validação de senha (mesmas regras do alterar_senha.php)
+    if (strlen($senha) < 8) {
+        $_SESSION['error_msg'] = ["A senha deve ter pelo menos 8 caracteres."];
+        header('Location: ../Frontend/cadastro.php');
+        exit;
+    }
+
+    if (!preg_match('/[A-Z]/', $senha)) {
+        $_SESSION['error_msg'] = ["A senha deve conter pelo menos 1 letra maiúscula."];
+        header('Location: ../Frontend/cadastro.php');
+        exit;
+    }
+
+    if (!preg_match('/[a-z]/', $senha)) {
+        $_SESSION['error_msg'] = ["A senha deve conter pelo menos 1 letra minúscula."];
+        header('Location: ../Frontend/cadastro.php');
+        exit;
+    }
+
+    if (!preg_match('/[0-9]/', $senha)) {
+        $_SESSION['error_msg'] = ["A senha deve conter pelo menos 1 número."];
+        header('Location: ../Frontend/cadastro.php');
+        exit;
+    }
+
+    if (!preg_match('/[!@#$%^&*(),.?":{}|<>]/', $senha)) {
+        $_SESSION['error_msg'] = ["A senha deve conter pelo menos 1 símbolo (!@#$%^&*)."];
         header('Location: ../Frontend/cadastro.php');
         exit;
     }

@@ -144,13 +144,10 @@ class SmartStockAlerts {
             suggestions: []
         };
 
-        if (password.length < 6) {
-            validations.isValid = false;
-            validations.errors.push('A senha deve ter pelo menos 6 caracteres');
-        }
-
+        // Validação básica para compatibilidade com outros formulários
         if (password.length < 8) {
-            validations.suggestions.push('Considere usar pelo menos 8 caracteres');
+            validations.isValid = false;
+            validations.errors.push('A senha deve ter pelo menos 8 caracteres');
         }
 
         if (!/[A-Z]/.test(password)) {

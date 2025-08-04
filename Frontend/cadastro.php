@@ -57,6 +57,17 @@
                         <label for="senha">Senha</label>
                         <input type="password" name="senha" id="senha" placeholder="•••••••••" required>
                         <span class="error-message" id="senha-error"></span>
+                        <div class="password-strength" id="senha-strength"></div>
+                        <div class="password-requirements" id="password-requirements">
+                            <p><strong>Requisitos da senha:</strong></p>
+                            <ul>
+                                <li id="req-length">Mínimo 8 caracteres</li>
+                                <li id="req-uppercase">Pelo menos 1 letra maiúscula</li>
+                                <li id="req-lowercase">Pelo menos 1 letra minúscula</li>
+                                <li id="req-number">Pelo menos 1 número</li>
+                                <li id="req-symbol">Pelo menos 1 símbolo (!@#$%^&*)</li>
+                            </ul>
+                        </div>
                     </div>
 
                     <div class="form-group">
@@ -111,6 +122,51 @@
             const submitBtn = document.getElementById('submitBtn');
             const btnText = submitBtn.querySelector('.btn-text');
             const btnLoading = submitBtn.querySelector('.btn-loading');
+            const strengthDiv = document.getElementById('senha-strength');
+            
+            // Funções de validação de senha 
+            function validatePassword(password) {
+                const requirements = {
+                    length: password.length >= 8,
+                    uppercase: /[A-Z]/.test(password),
+                    lowercase: /[a-z]/.test(password),
+                    number: /[0-9]/.test(password),
+                    symbol: /[!@#$%^&*(),.?":{}|<>]/.test(password)
+                };
+                
+                return requirements;
+            }
+            
+            function getPasswordStrength(password) {
+                const requirements = validatePassword(password);
+                const metRequirements = Object.values(requirements).filter(Boolean).length;
+                
+                if (metRequirements < 3) return { strength: 'weak', text: 'Senha muito fraca' };
+                if (metRequirements < 5) return { strength: 'medium', text: 'Senha média' };
+                return { strength: 'strong', text: 'Senha forte' };
+            }
+            
+            function updateRequirements(password) {
+                const requirements = validatePassword(password);
+                
+                document.getElementById('req-length').className = requirements.length ? 'requirement-met' : 'requirement-not-met';
+                document.getElementById('req-uppercase').className = requirements.uppercase ? 'requirement-met' : 'requirement-not-met';
+                document.getElementById('req-lowercase').className = requirements.lowercase ? 'requirement-met' : 'requirement-not-met';
+                document.getElementById('req-number').className = requirements.number ? 'requirement-met' : 'requirement-not-met';
+                document.getElementById('req-symbol').className = requirements.symbol ? 'requirement-met' : 'requirement-not-met';
+            }
+            
+            function showError(input, message) {
+                const errorElement = document.getElementById(input.id + '-error');
+                errorElement.textContent = message;
+                input.classList.add('error');
+            }
+            
+            function clearError(input) {
+                const errorElement = document.getElementById(input.id + '-error');
+                errorElement.textContent = '';
+                input.classList.remove('error');
+            }
             
             // Validação em tempo real
             nomeInput.addEventListener('blur', function() {
@@ -142,16 +198,31 @@
                 }
             });
             
-            senhaInput.addEventListener('blur', function() {
-                const senha = this.value.trim();
+            // Validação da senha 
+            senhaInput.addEventListener('input', function() {
+                const senha = this.value;
+                const requirements = validatePassword(senha);
+                const strength = getPasswordStrength(senha);
+                
+                strengthDiv.textContent = strength.text;
+                strengthDiv.className = 'password-strength strength-' + strength.strength;
+                updateRequirements(senha);
+                
                 if (senha === '') {
-                    smartStockAlerts.showFieldError(this, 'O campo senha é obrigatório');
+                    clearError(this);
+                    strengthDiv.textContent = '';
+                } else if (!requirements.length || !requirements.uppercase || !requirements.lowercase || !requirements.number || !requirements.symbol) {
+                    showError(this, 'A senha não atende aos requisitos mínimos');
                 } else {
-                    const passwordValidation = smartStockAlerts.validatePassword(senha);
-                    if (!passwordValidation.isValid) {
-                        smartStockAlerts.showFieldError(this, passwordValidation.errors[0]);
+                    clearError(this);
+                }
+                
+                // Validar confirmação se já foi preenchida
+                if (csenhaInput.value) {
+                    if (csenhaInput.value !== senha) {
+                        showError(csenhaInput, 'As senhas não coincidem');
                     } else {
-                        smartStockAlerts.clearFieldError(this);
+                        clearError(csenhaInput);
                     }
                 }
             });
@@ -159,12 +230,13 @@
             csenhaInput.addEventListener('blur', function() {
                 const csenha = this.value.trim();
                 const senha = senhaInput.value.trim();
+                
                 if (csenha === '') {
-                    smartStockAlerts.showFieldError(this, 'O campo confirmar senha é obrigatório');
+                    showError(this, 'O campo confirmar senha é obrigatório');
                 } else if (csenha !== senha) {
-                    smartStockAlerts.showFieldError(this, 'As senhas não coincidem');
+                    showError(this, 'As senhas não coincidem');
                 } else {
-                    smartStockAlerts.clearFieldError(this);
+                    clearError(this);
                 }
             });
             
@@ -194,16 +266,73 @@
                 smartStockAlerts.clearFieldError(nomeInput);
                 smartStockAlerts.clearFieldError(sobrenomeInput);
                 smartStockAlerts.clearFieldError(emailInput);
-                smartStockAlerts.clearFieldError(senhaInput);
-                smartStockAlerts.clearFieldError(csenhaInput);
+                clearError(senhaInput);
+                clearError(csenhaInput);
                 smartStockAlerts.clearFieldError(codigoInput);
                 
-                // Validar formulário
-                const validation = smartStockAlerts.validateCadastroForm(formData);
+                let isValid = true;
+                const errors = [];
                 
-                if (!validation.isValid) {
+                // Validar nome
+                if (!formData.nome) {
+                    smartStockAlerts.showFieldError(nomeInput, 'O campo nome é obrigatório');
+                    errors.push('O campo nome é obrigatório');
+                    isValid = false;
+                }
+                
+                // Validar sobrenome
+                if (!formData.sobrenome) {
+                    smartStockAlerts.showFieldError(sobrenomeInput, 'O campo sobrenome é obrigatório');
+                    errors.push('O campo sobrenome é obrigatório');
+                    isValid = false;
+                }
+                
+                // Validar email
+                if (!formData.email) {
+                    smartStockAlerts.showFieldError(emailInput, 'O campo email é obrigatório');
+                    errors.push('O campo email é obrigatório');
+                    isValid = false;
+                } else if (!smartStockAlerts.validateEmail(formData.email)) {
+                    smartStockAlerts.showFieldError(emailInput, 'Por favor, insira um email válido');
+                    errors.push('Por favor, insira um email válido');
+                    isValid = false;
+                }
+                
+                // Validar senha (nova validação baseada no alterar_senha.php)
+                if (!formData.senha) {
+                    showError(senhaInput, 'O campo senha é obrigatório');
+                    errors.push('O campo senha é obrigatório');
+                    isValid = false;
+                } else {
+                    const requirements = validatePassword(formData.senha);
+                    if (!requirements.length || !requirements.uppercase || !requirements.lowercase || !requirements.number || !requirements.symbol) {
+                        showError(senhaInput, 'A senha não atende aos requisitos mínimos');
+                        errors.push('A senha não atende aos requisitos mínimos');
+                        isValid = false;
+                    }
+                }
+                
+                // Validar confirmação de senha
+                if (!formData.csenha) {
+                    showError(csenhaInput, 'O campo confirmar senha é obrigatório');
+                    errors.push('O campo confirmar senha é obrigatório');
+                    isValid = false;
+                } else if (formData.csenha !== formData.senha) {
+                    showError(csenhaInput, 'As senhas não coincidem');
+                    errors.push('As senhas não coincidem');
+                    isValid = false;
+                }
+                
+                // Validar código do superior
+                if (!formData.codigo_superior) {
+                    smartStockAlerts.showFieldError(codigoInput, 'O campo código do superior é obrigatório');
+                    errors.push('O campo código do superior é obrigatório');
+                    isValid = false;
+                }
+                
+                if (!isValid) {
                     // Mostrar primeiro erro
-                    smartStockAlerts.showError('Campos obrigatórios', validation.errors[0]);
+                    smartStockAlerts.showError('Campos obrigatórios', errors[0]);
                     return;
                 }
                 
@@ -245,11 +374,11 @@
             });
             
             senhaInput.addEventListener('input', function() {
-                smartStockAlerts.clearFieldError(this);
+                clearError(this);
             });
             
             csenhaInput.addEventListener('input', function() {
-                smartStockAlerts.clearFieldError(this);
+                clearError(this);
             });
             
             codigoInput.addEventListener('input', function() {
