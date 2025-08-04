@@ -3,14 +3,14 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 2rem;
+    padding: var(--spacing-xl);
 }
 
 .sobre_nos h1 {
     font-size: clamp(2.5rem, 5vw, 4rem);
     color: var(--cor9);
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: var(--spacing-xl);
 }
 
 .sobre_nos .membros {
@@ -23,13 +23,13 @@
 }
 
 .sobre_nos .membros .box {
-    font-size: 1.6rem;
+    font-size: var(--font-size-md);
     color: var(--cor9);
     border-radius: .8rem;
     box-shadow: var(--box-shadow);
     background: var(--cor2);
-    margin: 1rem;
-    padding: 2rem;
+    margin: var(--spacing-md);
+    padding: var(--spacing-xl);
     flex: 1 1 calc(33.333% - 2rem);
     box-sizing: border-box;
     max-width: calc(33.333% - 2rem);
@@ -64,21 +64,21 @@
 .sobre_nos .membros .box .txt {
     text-align: center;
     color: var(--cor4);
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--spacing-lg);
     width: 100%;
 }
 
 .sobre_nos .membros .box .txt h2 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
+    font-size: var(--font-size-xl);
+    margin-bottom: var( --spacing-sm);
 }
 
 .sobre_nos .membros .box .txt p {
-    font-size: 1.6rem;
+    font-size: var( --font-size-md);
 }
 
 .sobre_nos .membros .box .git {
-    padding: 1rem 0;
+    padding:var(--spacing-md) 0;
     text-align: center;
     width: 100%;
 }
@@ -89,7 +89,7 @@
     justify-content: center;
     height: 4rem;
     width: 4rem;
-    font-size: 1.8rem;
+    font-size: var(--font-size-lg);
     color: var(--cor8);
     background: var(--cor3);
     margin: 0 .3rem;
@@ -102,7 +102,7 @@
     height: 4rem;
     width: 4rem;
     line-height: 4rem;
-    font-size: 1.8rem;
+    font-size: var(--font-size-lg);
     color: var(--cor4);
     background: var(--cor8);
     margin: 0 .3rem;

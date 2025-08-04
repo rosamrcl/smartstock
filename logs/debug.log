@@ -29,3 +29,16 @@
 {"timestamp":"2025-08-01 17:12:42","message":"Upload de foto bem-sucedido","data":{"filename":"688cf58a01f82_1754068362.png"}}
 {"timestamp":"2025-08-01 17:12:42","message":"Executando query de atualiza\u00e7\u00e3o","data":{"query":"UPDATE usuarios SET nome = :nome, sobrenome = :sobrenome, email = :email, foto_perfil = :foto, updated_at = NOW() WHERE id_user = :id_user","params":[":nome",":sobrenome",":email",":id_user",":foto"]}}
 {"timestamp":"2025-08-01 17:12:42","message":"Atualiza\u00e7\u00e3o bem-sucedida","data":{"rows_affected":1,"user_id":"1"}}
+{"timestamp":"2025-08-04 17:30:56","message":"Iniciando processo de atualiza\u00e7\u00e3o de perfil","data":{"user_id":2,"post_data":{"nome":"Guilherme","sobrenome":"melo de menezes","email":"guilherme@gmail.com"},"files":"foto_enviada"}}
+{"timestamp":"2025-08-04 17:30:56","message":"Dados processados","data":{"nome":"Guilherme","sobrenome":"melo de menezes","email":"guilherme@gmail.com"}}
+{"timestamp":"2025-08-04 17:30:56","message":"Processando upload de foto","data":{"file_name":"post10.png","file_size":377934,"file_type":"image\/png"}}
+{"timestamp":"2025-08-04 17:30:56","message":"Upload de foto bem-sucedido","data":{"filename":"6890ee5074c30_1754328656.png"}}
+{"timestamp":"2025-08-04 17:30:56","message":"Executando query de atualiza\u00e7\u00e3o","data":{"query":"UPDATE usuarios SET nome = :nome, sobrenome = :sobrenome, email = :email, foto_perfil = :foto, updated_at = NOW() WHERE id_user = :id_user","params":[":nome",":sobrenome",":email",":id_user",":foto"]}}
+{"timestamp":"2025-08-04 17:30:56","message":"Atualiza\u00e7\u00e3o bem-sucedida","data":{"rows_affected":1,"user_id":"2"}}
+{"timestamp":"2025-08-04 17:50:14","message":"Iniciando processo de atualiza\u00e7\u00e3o de perfil","data":{"user_id":1,"post_data":{"nome":"Catarina","sobrenome":"Silva","email":"catsil@email.com"},"files":"foto_enviada"}}
+{"timestamp":"2025-08-04 17:50:14","message":"Dados processados","data":{"nome":"Catarina","sobrenome":"Silva","email":"catsil@email.com"}}
+{"timestamp":"2025-08-04 17:50:14","message":"Processando upload de foto","data":{"file_name":"perfil6.png","file_size":292532,"file_type":"image\/png"}}
+{"timestamp":"2025-08-04 17:50:14","message":"Upload de foto bem-sucedido","data":{"filename":"6890f2d677dd3_1754329814.png"}}
+{"timestamp":"2025-08-04 17:50:14","message":"Foto antiga removida","data":{"foto_antiga":"688cf58a01f82_1754068362.png"}}
+{"timestamp":"2025-08-04 17:50:14","message":"Executando query de atualiza\u00e7\u00e3o","data":{"query":"UPDATE usuarios SET nome = :nome, sobrenome = :sobrenome, email = :email, foto_perfil = :foto, updated_at = NOW() WHERE id_user = :id_user","params":[":nome",":sobrenome",":email",":id_user",":foto"]}}
+{"timestamp":"2025-08-04 17:50:14","message":"Atualiza\u00e7\u00e3o bem-sucedida","data":{"rows_affected":1,"user_id":"1"}}
