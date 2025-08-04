@@ -22,8 +22,21 @@ if (!empty($dados['foto_perfil'])) {
     $fotoPerfil = "./ressources/img/perfil.png"; // imagem padrão
 }
 
-// Buscar ordens de serviço
-$stmt = $pdo->prepare("SELECT * FROM ordens_servico WHERE deleted_at IS NULL ORDER BY created_at DESC");
+// Função para verificar se é arquivo de imagem
+function is_image_file($filename) {
+    if (empty($filename)) return false;
+    $ext = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
+    return in_array($ext, ['jpg', 'jpeg', 'png', 'gif', 'webp']);
+}
+
+// Buscar ordens de serviço com dados do suporte
+$stmt = $pdo->prepare("
+    SELECT os.*, s.arquivo as arquivo_suporte, s.nome as nome_cliente 
+    FROM ordens_servico os 
+    LEFT JOIN suporte s ON os.id_suporte_origem = s.id_suport 
+    WHERE os.deleted_at IS NULL 
+    ORDER BY os.created_at DESC
+");
 $stmt->execute();
 $ordens = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -37,6 +50,89 @@ $ordens = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <title>SmartStock - Listar Ordens de Serviço</title>
     <?php include 'includes/head.php'; ?>
     <link rel="stylesheet" href="./ressources/css/listar-ordens.css">
+    <style>
+        /* Estilo para o modal de imagem */
+        .modal-imagem {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-imagem-content {
+            position: relative;
+            margin: 5% auto;
+            padding: 20px;
+            background: white;
+            width: 90%;
+            max-width: 800px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            animation: modalSlideIn 0.3s ease;
+        }
+
+        .modal-imagem img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .modal-imagem .close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+            z-index: 2001;
+        }
+
+        .modal-imagem .close:hover {
+            color: #333;
+        }
+
+        .btn-mostrar-imagem {
+            background: #17a2b8;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 10px;
+        }
+
+        .btn-mostrar-imagem:hover {
+            background: #138496;
+            transform: translateY(-1px);
+        }
+
+        .btn-mostrar-imagem i {
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .modal-imagem-content {
+                margin: 10% auto;
+                width: 95%;
+                padding: 15px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -61,6 +157,15 @@ $ordens = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <p><strong>Categoria:</strong> <?php echo htmlspecialchars($ordem['categoria']); ?></p>
                             <p><strong>Observações:</strong> <?php echo htmlspecialchars(substr($ordem['observacoes'], 0, 100)) . (strlen($ordem['observacoes']) > 100 ? '...' : ''); ?></p>
                             <p><strong>Data:</strong> <?php echo date('d/m/Y H:i', strtotime($ordem['created_at'])); ?></p>
+                            
+                            <!-- Botão para mostrar imagem (apenas se houver arquivo de imagem) -->
+                            <?php if (!empty($ordem['arquivo_suporte']) && is_image_file($ordem['arquivo_suporte'])): ?>
+                                <button class="btn-mostrar-imagem" 
+                                        data-arquivo="<?= htmlspecialchars($ordem['arquivo_suporte']) ?>"
+                                        title="Ver imagem anexada">
+                                    <i class="fas fa-image"></i> 📷 Mostrar Imagem
+                                </button>
+                            <?php endif; ?>
                         </div>
                         <div class="ordem-status status-<?php echo strtolower($ordem['status']); ?>">
                             <?php echo htmlspecialchars($ordem['status']); ?>
@@ -210,6 +315,14 @@ $ordens = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </div>
 
+    <!-- Modal para exibir imagem -->
+    <div id="modalImagem" class="modal-imagem">
+        <div class="modal-imagem-content">
+            <span class="close" onclick="fecharModalImagem()">&times;</span>
+            <img id="imagemViewer" src="" alt="Imagem do suporte" style="max-width:100%; height:auto;">
+        </div>
+    </div>
+
     <?php include 'includes/footer.php'; ?>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.all.min.js"></script>
@@ -218,6 +331,31 @@ $ordens = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <script>
         let ordemAtual = null;
         let checklistData = {};
+
+        // Funcionalidade do modal de imagem
+        document.addEventListener('DOMContentLoaded', function() {
+            const btnsImagem = document.querySelectorAll('.btn-mostrar-imagem');
+            const modal = document.getElementById('modalImagem');
+            const img = document.getElementById('imagemViewer');
+            const close = document.querySelector('#modalImagem .close');
+            
+            btnsImagem.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const arquivo = this.dataset.arquivo;
+                    img.src = './uploads/' + arquivo; // Caminho relativo ao Frontend
+                    modal.style.display = 'block';
+                });
+            });
+            
+            close.addEventListener('click', () => modal.style.display = 'none');
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) modal.style.display = 'none';
+            });
+        });
+
+        function fecharModalImagem() {
+            document.getElementById('modalImagem').style.display = 'none';
+        }
 
         function abrirChecklist(ordemId) {
             ordemAtual = ordemId;
@@ -418,8 +556,12 @@ $ordens = $stmt->fetchAll(PDO::FETCH_ASSOC);
         // Fechar modal ao clicar fora
         window.onclick = function(event) {
             const modal = document.getElementById('checklistModal');
+            const modalImagem = document.getElementById('modalImagem');
             if (event.target === modal) {
                 fecharModal();
+            }
+            if (event.target === modalImagem) {
+                fecharModalImagem();
             }
         }
     </script>
