@@ -85,7 +85,7 @@ if (!empty($dados['foto_perfil'])) {
                 <i class="fas fa-clipboard-check"></i>
                 <h3>Ordem de Serviço</h3>
                 <p>Complete checklists para finalizar ordens de serviço</p>
-                <a href="ordemdeserviço.php" class="btn">
+                <a href="listar_ordens.php" class="btn">
                     Acessar
                 </a>
             </div>

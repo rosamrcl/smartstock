@@ -31,11 +31,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         }
 
-        // Inserir no banco
-        $stmt = $pdo->prepare("INSERT INTO suporte (nome, email, mensagem, arquivo) VALUES (?, ?, ?, ?)");
-        $stmt->execute([$nome, $email, $mensagem, $arquivo_nome]);
+        try {
+            // Iniciar transação
+            $pdo->beginTransaction();
 
-        echo "<script>alert('Mensagem enviada com sucesso!');</script>";
+            // Inserir no banco - suporte
+            $stmt = $pdo->prepare("INSERT INTO suporte (nome, email, mensagem, arquivo) VALUES (?, ?, ?, ?)");
+            $stmt->execute([$nome, $email, $mensagem, $arquivo_nome]);
+            
+            // Obter o ID do suporte recém-criado
+            $id_suporte = $pdo->lastInsertId();
+
+            // Criar ordem de serviço automaticamente
+            $stmt_os = $pdo->prepare("INSERT INTO ordens_servico (solicitante, categoria, observacoes, status, id_suporte_origem) VALUES (?, ?, ?, ?, ?)");
+            $stmt_os->execute([$nome, 'Suporte Técnico', $mensagem, 'Pendente', $id_suporte]);
+
+            // Commit da transação
+            $pdo->commit();
+
+            echo "<script>alert('Mensagem enviada com sucesso! Uma ordem de serviço foi criada automaticamente.');</script>";
+        } catch (Exception $e) {
+            // Rollback em caso de erro
+            $pdo->rollBack();
+            echo "<script>alert('Erro ao processar solicitação. Tente novamente.');</script>";
+        }
     } else {
 
         echo "<script>alert('Por favor, preencha todos os campos obrigatórios.');</script>";

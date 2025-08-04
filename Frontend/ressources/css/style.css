@@ -8,7 +8,7 @@
 @import url(./alterar-senha.css);
 @import url(./btns.css);
 @import url(./cards.css);
-@import url(./checklist.css);
+/* Checklist CSS removido - funcionalidade integrada em listar-ordens.css */
 @import url(./esquecisenha.css);
 @import url(./form.css);
 @import url(./gerenciar-produtos.css);

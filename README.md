@@ -180,8 +180,8 @@ smartstock/
 │   ├── produtos.php               # CRUD de produtos
 │   ├── alterar_senha.php          # Alteração de senha
 │   ├── atualizar.php              # Atualização de dados
-│   ├── marcar_concluido.php       # Marcar tarefas como concluídas
-│   ├── adicionar_checklist.php    # Adicionar itens ao checklist
+│   ├── salvar_checklist.php       # Salvar progresso do checklist
+│   ├── carregar_checklist.php     # Carregar dados do checklist
 │   ├── solicitar_redefinicao.php  # Solicitar redefinição de senha
 │   ├── process_forgot_password.php # Processar esqueci senha
 │   ├── process_reset_password.php  # Processar reset de senha
@@ -193,7 +193,7 @@ smartstock/
 │   ├── login.php                  # Tela de login
 │   ├── cadastro.php               # Tela de cadastro
 │   ├── gerenciarprodutos.php      # Gestão de produtos
-│   ├── ordemdeserviço.php         # Ordens de serviço
+│   ├── listar_ordens.php          # Listar ordens de serviço
 │   ├── suporte.php                # Sistema de suporte
 │   ├── updateperfil.php           # Atualização de perfil
 │   ├── alterar_senha.php          # Alteração de senha
@@ -231,8 +231,8 @@ POST /Backend/cadastro.php                 # Cadastro de usuário
 POST /Backend/produtos.php                 # CRUD de produtos
 POST /Backend/alterar_senha.php            # Alteração de senha
 POST /Backend/atualizar.php                # Atualização de dados
-POST /Backend/adicionar_checklist.php      # Adicionar checklist
-POST /Backend/marcar_concluido.php         # Marcar como concluído
+POST /Backend/salvar_checklist.php         # Salvar progresso do checklist
+GET  /Backend/carregar_checklist.php       # Carregar dados do checklist
 POST /Backend/solicitar_redefinicao.php    # Solicitar redefinição
 POST /Backend/process_forgot_password.php  # Processar esqueci senha
 POST /Backend/process_reset_password.php   # Processar reset
@@ -262,7 +262,7 @@ filter_var($email, FILTER_VALIDATE_EMAIL)
 - **login.php** - Tela de autenticação
 - **home.php** - Dashboard principal
 - **gerenciarprodutos.php** - Gestão de produtos
-- **ordemdeserviço.php** - Ordens de serviço
+- **listar_ordens.php** - Listar ordens de serviço
 - **suporte.php** - Sistema de suporte
 
 ### Componentes CSS

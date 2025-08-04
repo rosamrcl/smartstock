@@ -40,6 +40,8 @@ try {
         agendamento DATE,
         observacoes TEXT,
         status VARCHAR(50),
+        id_suporte_origem INT NULL,
+        checklist_status TEXT NULL,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         updated_at TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP,
         deleted_at TIMESTAMP NULL,
@@ -61,16 +63,7 @@ try {
         FOREIGN KEY (id_ordem) REFERENCES ordens_servico(id_services)
     )");
 
-    // 5. Check-list
-    $pdo->exec("CREATE TABLE IF NOT EXISTS checklist (
-            id_checklist INT AUTO_INCREMENT PRIMARY KEY,
-            etapas TEXT NOT NULL,
-            cliente VARCHAR(100) NOT NULL,
-            local_servico VARCHAR(150) NOT NULL,
-            data_execucao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-    )");
-
-    // 6. Suporte
+    // 5. Suporte
     $pdo->exec("CREATE TABLE IF NOT EXISTS suporte (
         id_suport INT AUTO_INCREMENT PRIMARY KEY,
         nome VARCHAR(100),
@@ -83,7 +76,7 @@ try {
         deleted_at TIMESTAMP NULL
     )");
 
-    // 7. Redefinir Senha
+    // 6. Redefinir Senha
     $pdo->exec("CREATE TABLE IF NOT EXISTS redefinicao_senha (
         id INT AUTO_INCREMENT PRIMARY KEY,
         email VARCHAR(100) NOT NULL,
@@ -94,6 +87,19 @@ try {
         UNIQUE KEY token (token),
         KEY email (email)
     )");
+
+    // Adicionar campos se não existirem (para compatibilidade com instalações existentes)
+    try {
+        $pdo->exec("ALTER TABLE ordens_servico ADD COLUMN id_suporte_origem INT NULL");
+    } catch (PDOException $e) {
+        // Campo já existe, ignorar erro
+    }
+
+    try {
+        $pdo->exec("ALTER TABLE ordens_servico ADD COLUMN checklist_status TEXT NULL");
+    } catch (PDOException $e) {
+        // Campo já existe, ignorar erro
+    }
 
 } catch (PDOException $e) {
 

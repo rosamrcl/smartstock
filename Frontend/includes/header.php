@@ -23,7 +23,7 @@
             <i class="fa-solid fa-box"></i>
             <span>Gerenciamento de Estoque</span>
         </a>
-        <a href="ordemdeserviço.php" aria-label="Ordem de serviço">
+        <a href="listar_ordens.php" aria-label="Ordem de serviço">
             <i class="fa-solid fa-clipboard-check"></i>
             <span>Ordem de Serviço</span>
         </a>
