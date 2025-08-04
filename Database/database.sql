@@ -132,6 +132,7 @@ CREATE TABLE IF NOT EXISTS `suporte` (
   `email` varchar(100) DEFAULT NULL,
   `mensagem` text,
   `arquivo` varchar(255) DEFAULT NULL,
+  `observacoes` text,
   `status_sup` varchar(50) DEFAULT 'pendente',
   `data_envio` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,

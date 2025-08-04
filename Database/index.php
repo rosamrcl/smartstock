@@ -70,6 +70,7 @@ try {
         email VARCHAR(100),
         mensagem TEXT,
         arquivo VARCHAR(255),
+        observacoes TEXT,
         status_sup VARCHAR(50) DEFAULT 'pendente',
         data_envio TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         updated_at TIMESTAMP NULL ON UPDATE CURRENT_TIMESTAMP,
@@ -97,6 +98,12 @@ try {
 
     try {
         $pdo->exec("ALTER TABLE ordens_servico ADD COLUMN checklist_status TEXT NULL");
+    } catch (PDOException $e) {
+        // Campo já existe, ignorar erro
+    }
+
+    try {
+        $pdo->exec("ALTER TABLE suporte ADD COLUMN observacoes TEXT AFTER arquivo");
     } catch (PDOException $e) {
         // Campo já existe, ignorar erro
     }
