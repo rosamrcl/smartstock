@@ -29,16 +29,31 @@ function is_image_file($filename) {
     return in_array($ext, ['jpg', 'jpeg', 'png', 'gif', 'webp']);
 }
 
-// Buscar ordens de serviço com dados do suporte
+// Buscar ordens de serviço com dados do suporte e ordenar por urgência
 $stmt = $pdo->prepare("
     SELECT os.*, s.arquivo as arquivo_suporte, s.nome as nome_cliente 
     FROM ordens_servico os 
     LEFT JOIN suporte s ON os.id_suporte_origem = s.id_suport 
     WHERE os.deleted_at IS NULL 
-    ORDER BY os.created_at DESC
+    ORDER BY 
+        FIELD(os.urgencia, 'critica', 'alta', 'media', 'baixa'),
+        os.created_at DESC
 ");
 $stmt->execute();
 $ordens = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// Contadores para dashboard de urgências
+$counts = $pdo->query("
+    SELECT urgencia, COUNT(*) as total 
+    FROM ordens_servico 
+    WHERE deleted_at IS NULL 
+    GROUP BY urgencia
+")->fetchAll(PDO::FETCH_KEY_PAIR);
+
+$count_critica = $counts['critica'] ?? 0;
+$count_alta = $counts['alta'] ?? 0;
+$count_media = $counts['media'] ?? 0;
+$count_baixa = $counts['baixa'] ?? 0;
 ?>
 
 <!DOCTYPE html>
@@ -62,19 +77,91 @@ $ordens = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <p>Gerencie e acompanhe as ordens de serviço</p>
         </div>
 
+        <!-- Dashboard de Urgências -->
+        <div class="dashboard-urgencias">
+            <div class="card-urgencia critica">
+                <h5 class="text-danger"><?= $count_critica ?></h5>
+                <p>🔴 Críticas</p>
+            </div>
+            <div class="card-urgencia alta">
+                <h5 class="text-warning"><?= $count_alta ?></h5>
+                <p>🟠 Altas</p>
+            </div>
+            <div class="card-urgencia media">
+                <h5 class="text-primary"><?= $count_media ?></h5>
+                <p>🟡 Médias</p>
+            </div>
+            <div class="card-urgencia baixa">
+                <h5 class="text-success"><?= $count_baixa ?></h5>
+                <p>🟢 Baixas</p>
+            </div>
+        </div>
+
+        <!-- Filtros de Urgência -->
+        <div class="filtros-urgencia">
+            <button class="btn-outline-danger" onclick="filtrarUrgencia('critica')">
+                🔴 Críticas (<?= $count_critica ?>)
+            </button>
+            <button class="btn-outline-warning" onclick="filtrarUrgencia('alta')">
+                🟠 Altas (<?= $count_alta ?>)
+            </button>
+            <button class="btn-outline-primary" onclick="filtrarUrgencia('media')">
+                🟡 Médias (<?= $count_media ?>)
+            </button>
+            <button class="btn-outline-success" onclick="filtrarUrgencia('baixa')">
+                🟢 Baixas (<?= $count_baixa ?>)
+            </button>
+            <button class="btn-secondary active" onclick="filtrarUrgencia('todas')">
+                📋 Todas
+            </button>
+        </div>
+
         <?php if (empty($ordens)): ?>
             <div class="no-orders">
                 <p>Nenhuma ordem de serviço encontrada.</p>
             </div>
         <?php else: ?>
             <?php foreach ($ordens as $ordem): ?>
-                <div class="ordem-card <?php echo $ordem['status'] === 'Concluída' ? 'concluida' : ''; ?>" data-id="<?php echo $ordem['id_services']; ?>">
+                <?php 
+                // Definir classes de urgência
+                $urgencia_class = 'urgencia-' . ($ordem['urgencia'] ?? 'media');
+                
+                // Definir ícones e textos de urgência
+                $urgencias = [
+                    'critica' => '🔴 Crítica',
+                    'alta' => '🟠 Alta', 
+                    'media' => '🟡 Média',
+                    'baixa' => '🟢 Baixa'
+                ];
+                $urgencia_text = $urgencias[$ordem['urgencia'] ?? 'media'] ?? '🟡 Média';
+                
+                // Definir ícones de categoria
+                $categorias = [
+                    'hardware' => '🖥️ Hardware',
+                    'software' => '💾 Software',
+                    'rede' => '🌐 Rede',
+                    'email' => '📧 Email',
+                    'impressora' => '🖨️ Impressora',
+                    'outros' => '❓ Outros'
+                ];
+                $categoria_text = $categorias[$ordem['categoria']] ?? $ordem['categoria'];
+                ?>
+                <div class="ordem-card <?php echo $ordem['status'] === 'Concluída' ? 'concluida' : ''; ?> <?= $urgencia_class ?>" data-id="<?php echo $ordem['id_services']; ?>">
                     <div class="ordem-header">
                         <div class="ordem-info">
+                            <div class="ordem-urgencia">
+                                <span class="badge badge-<?= $ordem['urgencia'] ?? 'media' ?>"><?= $urgencia_text ?></span>
+                            </div>
                             <h3><?php echo htmlspecialchars($ordem['solicitante']); ?></h3>
-                            <p><strong>Categoria:</strong> <?php echo htmlspecialchars($ordem['categoria']); ?></p>
-                            <p><strong>Observações:</strong> <?php echo htmlspecialchars(substr($ordem['observacoes'], 0, 100)) . (strlen($ordem['observacoes']) > 100 ? '...' : ''); ?></p>
-                            <p><strong>Data:</strong> <?php echo date('d/m/Y H:i', strtotime($ordem['created_at'])); ?></p>
+                            <p><strong>📂 Categoria:</strong> <?= $categoria_text ?></p>
+                            <?php if (!empty($ordem['setor'])): ?>
+                                <p><strong>🏢 Setor:</strong> <?php echo htmlspecialchars($ordem['setor']); ?></p>
+                            <?php endif; ?>
+                            <?php if (!empty($ordem['equipamento'])): ?>
+                                <p><strong>💻 Equipamento:</strong> <?php echo htmlspecialchars($ordem['equipamento']); ?></p>
+                            <?php endif; ?>
+                            <p><strong>📝 Observações:</strong> <?php echo htmlspecialchars(substr($ordem['observacoes'], 0, 100)) . (strlen($ordem['observacoes']) > 100 ? '...' : ''); ?></p>
+                            <p><strong>📅 Data:</strong> <?php echo date('d/m/Y H:i', strtotime($ordem['created_at'])); ?></p>
                             
                             <!-- Botão para mostrar imagem (apenas se houver arquivo de imagem) -->
                             <?php if (!empty($ordem['arquivo_suporte']) && is_image_file($ordem['arquivo_suporte'])): ?>
@@ -116,7 +203,7 @@ $ordens = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </div>
             
             <div class="progress-bar">
-                <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+                <div class="progress-fill" id="progressFill"></div>
             </div>
             <div class="progress-text" id="progressText">0% concluído</div>
             
@@ -237,7 +324,7 @@ $ordens = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <div id="modalImagem" class="modal-imagem">
         <div class="modal-imagem-content">
             <span class="close" onclick="fecharModalImagem()">&times;</span>
-            <img id="imagemViewer" src="" alt="Imagem do suporte" style="max-width:100%; height:auto;">
+            <img id="imagemViewer" src="" alt="Imagem do suporte">
         </div>
     </div>
 
@@ -446,6 +533,26 @@ $ordens = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     });
                 }
             });
+        }
+
+        // Função para filtrar por urgência
+        function filtrarUrgencia(urgencia) {
+            const linhas = document.querySelectorAll('.ordem-card');
+            
+            linhas.forEach(linha => {
+                if (urgencia === 'todas') {
+                    linha.style.display = '';
+                } else {
+                    const temUrgencia = linha.classList.contains(`urgencia-${urgencia}`);
+                    linha.style.display = temUrgencia ? '' : 'none';
+                }
+            });
+            
+            // Atualizar botão ativo
+            document.querySelectorAll('.filtros-urgencia button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
         }
 
         function carregarChecklist(ordemId) {
