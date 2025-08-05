@@ -1,23 +1,7 @@
 /* ========================================
-   LISTAR ORDENS DE SERVIÇO - ESTILOS
+LISTAR ORDENS DE SERVIÇO - ESTILOS
    ======================================== */
 
-/* === VARIÁVEIS CSS === */
-:root {
-    --cor-critica: #f44336;
-    --cor-alta: #ff9800;
-    --cor-media: #ffeb3b;
-    --cor-baixa: #4caf50;
-    --border-radius: 8px;
-    --spacing-sm: 10px;
-    --spacing-md: 15px;
-    --spacing-lg: 20px;
-    --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
-    --shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.15);
-    --shadow-heavy: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-/* === LAYOUT GERAL === */
 .ordens-container {
     max-width: 1200px;
     margin: 20px auto;
@@ -35,19 +19,20 @@
 .ordens-container .heading h1 {
     color: var(--cor15);
     font-size: var(--font-size-title);
-    margin-bottom: 10px;
+
 }
 
 .ordens-container .heading p {
-    color: var(--cor16);
-    font-size:var(--font-size-sm);
+    color: var(--cor8);
+    font-size: var(--font-size-md);
+    padding-bottom: var(--spacing-lg);
 }
 
 .no-orders {
     text-align: center;
     padding: 40px;
     color: var(--cor16);
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-lg);
 }
 
 /* === CARDS DE ORDENS === */
@@ -83,14 +68,14 @@
 .ordem-info h3 {
     margin: 0 0 10px 0;
     color: var(--cor15);
-    font-size:var(--font-size-md);
+    font-size: var(--font-size-xxl);
     font-weight: 600;
 }
 
 .ordem-info p {
     margin: 5px 0;
-    color: var(--cor16);
-    font-size: 0.95rem;
+    color: var(--cor9);
+    font-size: var(--font-size-lg);
     line-height: 1.4;
 }
 
@@ -102,7 +87,7 @@
 .ordem-status {
     padding: 8px 16px;
     border-radius: 20px;
-    font-size: var( --font-size-s);
+    font-size: var(--font-size-sm);
     font-weight: bold;
     text-transform: uppercase;
     white-space: nowrap;
@@ -111,15 +96,15 @@
 }
 
 .status-pendente {
-    background-color: #fff3cd;
-    color: #856404;
-    border: 1px solid #ffeaa7;
+    background-color: var(--cor26);
+    color: var(--cor25);
+    border: 1px solid var(--cor27);
 }
 
 .status-concluida {
-    background-color: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
+    background-color: var(--cor20);
+    color: var(--cor19);
+    border: 1px solid var(--cor21);
 }
 
 .ordem-content {
@@ -135,8 +120,8 @@
 
 /* === BOTÕES PRINCIPAIS === */
 .btn-checklist {
-    background: #007bff;
-    color: white;
+    background: var(--cor24);
+    color: var(--cor4);
     border: none;
     padding: 12px 24px;
     border-radius: 25px;
@@ -153,7 +138,7 @@
 }
 
 .btn-checklist:hover {
-    background: #0056b3;
+    background: var(--cor17);
     transform: translateY(-1px);
 }
 
@@ -162,8 +147,8 @@
 }
 
 .btn-finalizar {
-    background: #28a745;
-    color: white;
+    background: var(--cor11);
+    color: var(--cor4);
     border: none;
     padding: 12px 24px;
     border-radius: 25px;
@@ -185,7 +170,7 @@
 }
 
 .btn-finalizar:disabled {
-    background: #6c757d;
+    background: var(--cor10);
     cursor: not-allowed;
     transform: none;
     box-shadow: 0 2px 8px rgba(108, 117, 125, 0.3);
@@ -197,7 +182,7 @@
 
 .btn-mostrar-imagem {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    color: var(--cor4);
     border: none;
     padding: 8px 16px;
     border-radius: 20px;
@@ -254,44 +239,44 @@
 }
 
 .status-pendente {
-    background: #ffc107;
-    color: #000;
+    background: var(--cor13);
+    color: var(--cor6);
 }
 
 .status-em_andamento {
     background: #17a2b8;
-    color: #fff;
+    color: var(--cor4);
 }
 
 .status-concluida {
-    background: #28a745;
-    color: #fff;
+    background: var(--cor11);
+    color: var(--cor4);
 }
 
 .status-cancelada {
-    background: #dc3545;
-    color: #fff;
+    background: var(--cor12);
+    color: var(--cor4);
 }
 
 /* Badges de urgência */
 .badge-critica {
     background: var(--cor-critica);
-    color: #fff;
+    color: var(--cor4);
 }
 
 .badge-alta {
     background: var(--cor-alta);
-    color: #fff;
+    color: var(--cor4);
 }
 
 .badge-media {
     background: var(--cor-media);
-    color: #000;
+    color: var(--cor6);
 }
 
 .badge-baixa {
     background: var(--cor-baixa);
-    color: #fff;
+    color: var(--cor4);
 }
 
 .ordem-urgencia {
@@ -315,7 +300,7 @@
 }
 
 .card-urgencia {
-    background: white;
+    background: var(--cor4);
     border-radius: var(--border-radius);
     padding: var(--spacing-md);
     text-align: center;
@@ -345,14 +330,14 @@
 
 .card-urgencia h5 {
     margin: 0;
-    font-size: 24px;
+    font-size: var(--font-size-xxl);
     font-weight: bold;
 }
 
 .card-urgencia p {
     margin: 5px 0 0 0;
     font-size: 14px;
-    color: #666;
+    color: var(--cor16);
 }
 
 /* === FILTROS === */
@@ -367,7 +352,7 @@
     padding: 10px 20px;
     border-radius: 25px;
     border: 2px solid;
-    background: white;
+    background: var(--cor4);
     cursor: pointer;
     transition: all 0.3s;
     font-size: 12px;
@@ -383,63 +368,63 @@
 }
 
 .filtros-urgencia button.active {
-    color: white;
+    color: var(--cor4);
     transform: translateY(-1px);
 }
 
 .filtros-urgencia .btn-outline-danger {
-    border-color: #dc3545;
-    color: #dc3545;
+    border-color: var(--cor12);
+    color: var(--cor12);
 }
 
 .filtros-urgencia .btn-outline-danger:hover,
 .filtros-urgencia .btn-outline-danger.active {
-    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
-    border-color: #dc3545;
+    background: linear-gradient(135deg, var(--cor12) 0%, #c82333 100%);
+    border-color: var(--cor12);
 }
 
 .filtros-urgencia .btn-outline-warning {
-    border-color: #ffc107;
-    color: #ffc107;
+    border-color: var(--cor13);
+    color: var(--cor13);
 }
 
 .filtros-urgencia .btn-outline-warning:hover,
 .filtros-urgencia .btn-outline-warning.active {
-    background: linear-gradient(135deg, #ffc107 0%, #e0a800 100%);
-    border-color: #ffc107;
+    background: linear-gradient(135deg, var(--cor13) 0%, #e0a800 100%);
+    border-color: var(--cor13);
 }
 
 .filtros-urgencia .btn-outline-primary {
-    border-color: #007bff;
-    color: #007bff;
+    border-color: var(--cor24);
+    color: var(--cor24);
 }
 
 .filtros-urgencia .btn-outline-primary:hover,
 .filtros-urgencia .btn-outline-primary.active {
-    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
-    border-color: #007bff;
+    background: linear-gradient(135deg, var(--cor24) 0%, var(--cor17) 100%);
+    border-color: var(--cor24);
 }
 
 .filtros-urgencia .btn-outline-success {
-    border-color: #28a745;
-    color: #28a745;
+    border-color: var(--cor11);
+    color: var(--cor11);
 }
 
 .filtros-urgencia .btn-outline-success:hover,
 .filtros-urgencia .btn-outline-success.active {
-    background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%);
-    border-color: #28a745;
+    background: linear-gradient(135deg, var(--cor11) 0%, #1e7e34 100%);
+    border-color: var(--cor11);
 }
 
 .filtros-urgencia .btn-secondary {
-    border-color: #6c757d;
-    color: #6c757d;
+    border-color: var(--cor10);
+    color: var(--cor10);
 }
 
 .filtros-urgencia .btn-secondary:hover,
 .filtros-urgencia .btn-secondary.active {
-    background: linear-gradient(135deg, #6c757d 0%, #545b62 100%);
-    border-color: #6c757d;
+    background: linear-gradient(135deg, var(--cor10) 0%, #545b62 100%);
+    border-color: var(--cor10);
 }
 
 /* === MODAL DO CHECKLIST === */
@@ -464,88 +449,89 @@
     max-width: 900px;
     max-height: 85vh;
     overflow-y: auto;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     animation: modalSlideIn 0.3s ease;
 }
 
- .modal-imagem {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.8);
-            backdrop-filter: blur(5px);
-        }
+.modal-imagem {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+}
 
-        .modal-imagem-content {
-            position: relative;
-            margin: 5% auto;
-            padding: 20px;
-            background: white;
-            width: 90%;
-            max-width: 800px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            animation: modalSlideIn 0.3s ease;
-        }
+.modal-imagem-content {
+    position: relative;
+    margin: 5% auto;
+    padding: 20px;
+    background: var(--cor4);
+    width: 90%;
+    max-width: 800px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: modalSlideIn 0.3s ease;
+}
 
-        .modal-imagem img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            display: block;
-            margin: 0 auto;
-        }
+.modal-imagem img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+}
 
-        .modal-imagem .close {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            color: #aaa;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: color 0.3s;
-            z-index: 2001;
-        }
+.modal-imagem .close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: var(--cor16);
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+    z-index: 2001;
+}
 
-        .modal-imagem .close:hover {
-            color: #333;
-        }
+.modal-imagem .close:hover {
+    color: var(--cor15);
+}
 
-        .btn-mostrar-imagem {
-            background: #17a2b8;
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 12px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            margin-top: 10px;
-        }
+.btn-mostrar-imagem {
+    background: #17a2b8;
+    color: var(--cor4);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 10px;
+}
 
-        .btn-mostrar-imagem:hover {
-            background: #138496;
-            transform: translateY(-1px);
-        }
+.btn-mostrar-imagem:hover {
+    background: #138496;
+    transform: translateY(-1px);
+}
 
-        .btn-mostrar-imagem i {
-            font-size: 14px;
-        }
+.btn-mostrar-imagem i {
+    font-size: 14px;
+}
 
 @keyframes modalSlideIn {
     from {
         opacity: 0;
         transform: translateY(-50px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -594,15 +580,15 @@
 .progress-fill {
     width: 0%;
     height: 100%;
-    background: linear-gradient(90deg, #007bff, #0056b3);
+    background: linear-gradient(90deg, var(--cor24), var(--cor17));
     transition: width 0.5s ease;
     border-radius: 6px;
 }
 
 .progress-text {
     text-align: center;
-    font-size: 14px;
-    color: #666;
+    font-size: var(--font-size-lg);
+    color: var(--cor16);
     margin-top: 8px;
     font-weight: 500;
 }
@@ -624,9 +610,9 @@
 }
 
 .category-card:hover {
-    border-color: #007bff;
-    background: white;
-    box-shadow: 0 4px 15px rgba(0,123,255,0.1);
+    border-color: var(--cor24);
+    background: var(--cor4);
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.1);
 }
 
 .category-header {
@@ -640,8 +626,8 @@
 
 .category-header i {
     margin-right: 12px;
-    color: #007bff;
-    font-size: 1.2rem;
+    color: var(--cor24);
+    font-size: var(--font-size-sm);
 }
 
 .checkbox-item {
@@ -655,14 +641,14 @@
 }
 
 .checkbox-item:hover {
-    background: rgba(0,123,255,0.05);
+    background: rgba(0, 123, 255, 0.05);
 }
 
 .checkbox-item input[type="checkbox"] {
     margin-right: var(--spacing-md);
     width: 18px;
     height: 18px;
-    accent-color: #007bff;
+    accent-color: var(--cor24);
 }
 
 .checkbox-item span {
@@ -679,6 +665,3 @@
     padding-top: 20px;
     border-top: 2px solid var(--cor8);
 }
-
-
-
