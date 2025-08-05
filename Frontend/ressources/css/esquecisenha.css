@@ -4,7 +4,7 @@
 .error-message {
     display: block;
     color: var(--cor5);
-    font-size: 1.2rem;
+    font-size: var(--font-size-sm);
     margin-top: 0.5rem;
     min-height: 1.6rem;
 }
@@ -23,7 +23,7 @@
 .link-container a {
     color: var(--cor1);
     text-decoration: none;
-    font-size: 1.3rem;
+    font-size: var(--font-size-sm);
     line-height: 1.4;
 }
 

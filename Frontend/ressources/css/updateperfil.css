@@ -7,7 +7,7 @@
     height: 100%;   
     padding: 2rem 9%;
     margin: 2rem;
-    border-radius: .5rem;
+    border-radius: var(--border-radius-md);
 }
 .form-update{   
     flex: 2;

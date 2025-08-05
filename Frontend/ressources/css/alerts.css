@@ -61,18 +61,6 @@
     background-color: var(--cor1);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 /* Estilos para validação em tempo real */
 .form-group input:valid:not(:placeholder-shown) {
     border-color: var(--cor11);

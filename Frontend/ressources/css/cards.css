@@ -24,7 +24,7 @@
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(135deg, var(--cor3) 0%, #FF6B00 100%);
+    background: linear-gradient(135deg, var(--cor3) 0%, var(--cor14) 100%);
     transform: scaleX(0);
     transition: transform 0.3s ease;
 }
@@ -96,43 +96,43 @@
 }
 
 .alert-success {
-    background: linear-gradient(135deg, #D4EDDA 0%, #C3E6CB 100%);
-    border-color: #C3E6CB;
-    color: #155724;
+    background: linear-gradient(135deg, var(--cor20) 0%, var(--cor21) 100%);
+    border-color: var(--cor21);
+    color: var(--cor19);
 }
 
 .alert-success i {
-    color: #28A745;
+    color: var(--cor11);
 }
 
 .alert-warning {
-    background: linear-gradient(135deg, #FFF3CD 0%, #FFEAA7 100%);
-    border-color: #FFEAA7;
-    color: #856404;
+    background: linear-gradient(135deg, var(--cor26) 0%, var(--cor27) 100%);
+    border-color: var(--cor27);
+    color: var(--cor25);
 }
 
 .alert-warning i {
-    color: #FFC107;
+    color: var(--cor13);
 }
 
 .alert-info {
-    background: linear-gradient(135deg, #D1ECF1 0%, #BEE5EB 100%);
-    border-color: #BEE5EB;
-    color: #0C5460;
+    background: linear-gradient(135deg, var(--cor20) 0%, var(--cor21)100%);
+    border-color: var(--cor21);
+    color: var(--cor28);
 }
 
 .alert-info i {
-    color: #17A2B8;
+    color: var(--cor2);
 }
 
 .alert-error {
-    background: linear-gradient(135deg, #F8D7DA 0%, #F5C6CB 100%);
-    border-color: #F5C6CB;
+    background: linear-gradient(135deg, var(--cor22) 0%, var(--cor23) 100%);
+    border-color: var(--cor23);
     color: #721C24;
 }
 
 .alert-error i {
-    color: #DC3545;
+    color: var(--cor12);
 }
 
 /* ===== BADGES MODERNOS ===== */
@@ -149,22 +149,22 @@
 }
 
 .badge-primary {
-    background: linear-gradient(135deg, var(--cor1) 0%, #0056B3 100%);
+    background: linear-gradient(135deg, var(--cor1) 0%, var(--cor17) 100%);
     color: var(--cor4);
 }
 
 .badge-success {
-    background: linear-gradient(135deg, #28A745 0%, #1E7E34 100%);
+    background: linear-gradient(135deg, var(--cor11) 0%, #1E7E34 100%);
     color: var(--cor4);
 }
 
 .badge-warning {
-    background: linear-gradient(135deg, #FFC107 0%, #E0A800 100%);
+    background: linear-gradient(135deg, var(--cor13) 0%, #E0A800 100%);
     color: #212529;
 }
 
 .badge-danger {
-    background: linear-gradient(135deg, #DC3545 0%, #C82333 100%);
+    background: linear-gradient(135deg, var(--cor12) 0%, #C82333 100%);
     color: var(--cor4);
 }
 
@@ -185,7 +185,7 @@
 
 .progress-bar {
     height: 100%;
-    background: linear-gradient(135deg, var(--cor3) 0%, #FF6B00 100%);
+    background: linear-gradient(135deg, var(--cor3) 0%, var(--cor14) 100%);
     transition: width 0.6s ease;
     position: relative;
     overflow: hidden;
@@ -208,15 +208,15 @@
 }
 
 .progress-bar-success {
-    background: linear-gradient(135deg, #28A745 0%, #1E7E34 100%);
+    background: linear-gradient(135deg, var(--cor11) 0%, #1E7E34 100%);
 }
 
 .progress-bar-warning {
-    background: linear-gradient(135deg, #FFC107 0%, #E0A800 100%);
+    background: linear-gradient(135deg, var(--cor13) 0%, #E0A800 100%);
 }
 
 .progress-bar-danger {
-    background: linear-gradient(135deg, #DC3545 0%, #C82333 100%);
+    background: linear-gradient(135deg, var(--cor12) 0%, #C82333 100%);
 }
 
 .progress-bar-info {
@@ -339,17 +339,17 @@
 
 .card.error {
     border-color: var(--cor5);
-    background: linear-gradient(135deg, #FFF5F5 0%, #FED7D7 100%);
+    background: linear-gradient(135deg, var(--cor8) 0%, var(--cor23) 100%);
 }
 
 .card.success {
-    border-color: #28A745;
-    background: linear-gradient(135deg, #F0FFF4 0%, #C6F6D5 100%);
+    border-color: var(--cor11);
+    background: linear-gradient(135deg, #F0FFF4 0%, var(--cor21) 100%);
 }
 
 .card.info {
     border-color: #17A2B8;
-    background: linear-gradient(135deg, #F0F8FF 0%, #E6F3FF 100%);
+    background: linear-gradient(135deg, var(--cor7) 0%, #E6F3FF 100%);
 }
 
 /* ===== CARD ANIMATIONS ===== */

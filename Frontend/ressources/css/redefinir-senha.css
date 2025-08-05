@@ -6,7 +6,7 @@
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    padding: 2rem;
+    padding: var(--spacing-xxl);
     background: linear-gradient(135deg, var(--cor7) 0%, var(--cor8) 100%);
     gap: 4rem;
 }
@@ -124,7 +124,7 @@
     font-size: 1.2rem;
     font-weight: 500;
     padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
+    border-radius:var(--border-radius-md);
     text-align: center;
 }
 
@@ -142,7 +142,7 @@
 
 .password-strength.strong {
     background: rgba(40, 167, 69, 0.1);
-    color: #28a745;
+    color: var(--cor11);
     border: 1px solid rgba(40, 167, 69, 0.3);
 }
 
@@ -156,7 +156,7 @@
 }
 
 .password-requirements p {
-    font-size: 1.3rem;
+    font-size: var(--font-size-sm);
     font-weight: 600;
     color: var(--cor9);
     margin-bottom: 1rem;
@@ -169,7 +169,7 @@
 }
 
 .password-requirements li {
-    font-size: 1.2rem;
+    font-size:var(--font-size-sm);
     margin: 0.5rem 0;
     padding: 0.5rem 0;
     display: flex;
@@ -180,13 +180,13 @@
 
 .password-requirements li::before {
     content: '○';
-    font-size: 1.4rem;
+    font-size: var(--font-size-md);
     font-weight: bold;
     transition: all 0.3s ease;
 }
 
 .password-requirements li.valid {
-    color: #28a745;
+    color: var(--cor11);
 }
 
 .password-requirements li.valid::before {
@@ -229,13 +229,13 @@
 }
 
 .error-container h3 {
-    font-size: 2.4rem;
+    font-size:var(--font-size-title);
     color: var(--cor9);
     margin-bottom: 1rem;
 }
 
 .error-container .error-message {
-    font-size: 1.4rem;
+    font-size: var(--font-size-md);
     color: var(--cor10);
     margin-bottom: 3rem;
     line-height: 1.6;

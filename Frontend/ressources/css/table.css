@@ -52,8 +52,8 @@ tbody tr:nth-child(even) {
 
 /* ===== LINHA CONCLUÍDA ===== */
 .tr-concluida {
-    background: linear-gradient(135deg, #D4EDDA 0%, #C3E6CB 100%);
-    color: #155724;
+    background: linear-gradient(135deg, var(--cor20) 0%, var(--cor21) 100%);
+    color: var(--cor19);
     transition: 0.3s;
 }
 
