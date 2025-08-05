@@ -19,6 +19,9 @@ if (!isset($_SESSION['csrf_token'])) {
 </head>
 
 <body>
+    <?php
+    include __DIR__ . '/includes/header.php';
+    ?>
     <div class="container">
         <!-- ===== LOGO ===== -->
         <div class="logo">
@@ -66,7 +69,7 @@ if (!isset($_SESSION['csrf_token'])) {
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.all.min.js"></script>
     <script src="./ressources/js/script.js"></script>
     <script src="./ressources/js/alerts.js"></script>
-    
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const form = document.getElementById('forgotPasswordForm');
@@ -88,17 +91,17 @@ if (!isset($_SESSION['csrf_token'])) {
             function validateEmail(input) {
                 const email = input.value.trim();
                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                
+
                 if (email === '') {
                     smartStockAlerts.showFieldError(input, 'Email é obrigatório');
                     return false;
                 }
-                
+
                 if (!emailRegex.test(email)) {
                     smartStockAlerts.showFieldError(input, 'Email inválido');
                     return false;
                 }
-                
+
                 smartStockAlerts.clearFieldError(input);
                 return true;
             }
@@ -106,41 +109,41 @@ if (!isset($_SESSION['csrf_token'])) {
             // ===== ENVIO DO FORMULÁRIO =====
             form.addEventListener('submit', async function(e) {
                 e.preventDefault();
-                
+
                 // Validar email
                 if (!validateEmail(emailInput)) {
                     return;
                 }
-                
+
                 // Mostrar loading
                 btnText.style.display = 'none';
                 btnLoading.style.display = 'inline-flex';
                 submitBtn.disabled = true;
-                
+
                 // Mostrar alerta de loading
                 smartStockAlerts.showLoading('Processando...', 'Verificando seu email...');
-                
+
                 try {
                     const formData = new FormData(form);
-                    
+
                     const response = await fetch('../Backend/process_forgot_password.php', {
                         method: 'POST',
                         body: formData
                     });
-                    
+
                     const result = await response.json();
-                    
+
                     // Fechar loading
                     smartStockAlerts.close();
-                    
+
                     if (result.success) {
                         if (result.reset_link) {
                             // Para localhost, mostrar o link diretamente
                             await smartStockAlerts.showSuccess(
-                                'Link Gerado!', 
+                                'Link Gerado!',
                                 'Clique no link abaixo para redefinir sua senha:'
                             );
-                            
+
                             // Criar elemento para mostrar o link
                             const linkContainer = document.createElement('div');
                             linkContainer.style.cssText = `
@@ -151,15 +154,15 @@ if (!isset($_SESSION['csrf_token'])) {
                                 border-radius: 8px;
                                 word-break: break-all;
                             `;
-                            
+
                             const link = document.createElement('a');
                             link.href = result.reset_link;
                             link.textContent = result.reset_link;
                             link.style.cssText = 'color: #007bff; text-decoration: none;';
-                            
+
                             linkContainer.appendChild(link);
                             document.querySelector('.form-container').appendChild(linkContainer);
-                            
+
                             // Adicionar botão para copiar link
                             const copyBtn = document.createElement('button');
                             copyBtn.textContent = 'Copiar Link';
@@ -169,32 +172,32 @@ if (!isset($_SESSION['csrf_token'])) {
                                 navigator.clipboard.writeText(result.reset_link);
                                 smartStockAlerts.showSuccess('Copiado!', 'Link copiado para a área de transferência.');
                             };
-                            
+
                             linkContainer.appendChild(copyBtn);
-                            
+
                         } else {
                             smartStockAlerts.showSuccess(
-                                'Verificação Enviada', 
+                                'Verificação Enviada',
                                 result.message
                             );
                         }
-                        
+
                         // Limpar formulário
                         form.reset();
-                        
+
                     } else {
                         smartStockAlerts.showError('Erro', result.message);
                     }
-                    
+
                 } catch (error) {
                     smartStockAlerts.close();
                     smartStockAlerts.showError(
-                        'Erro de Conexão', 
+                        'Erro de Conexão',
                         'Não foi possível processar sua solicitação. Tente novamente.'
                     );
                     console.error('Erro:', error);
                 }
-                
+
                 // Restaurar botão
                 btnText.style.display = 'inline-flex';
                 btnLoading.style.display = 'none';

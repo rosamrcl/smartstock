@@ -10,7 +10,7 @@
 
 <body>
     <?php
-    include __DIR__ . '/includes/headerog.php';
+    include __DIR__ . '/includes/header.php';
     ?>
     <section class="sobre_nos">
         <h1>Sobre Nós</h1>

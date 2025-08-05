@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 // Inserir no banco - suporte
                 $stmt = $pdo->prepare("INSERT INTO suporte (nome, email, mensagem, arquivo, observacoes) VALUES (?, ?, ?, ?, ?)");
                 $stmt->execute([$nome, $email, $mensagem, $arquivo_nome, $info_adicional]);
-                
+
                 // Obter o ID do suporte recém-criado
                 $id_suporte = $pdo->lastInsertId();
 
@@ -94,115 +94,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartStock - Suporte</title>
     <?php include 'includes/head.php'; ?>
-    <style>
-        /* Estilos adicionais para as melhorias */
-        .campo-problema {
-            position: relative;
-        }
-
-        .contador-chars {
-            display: block;
-            margin-top: 5px;
-            font-size: 12px;
-            color: #666;
-            transition: color 0.3s;
-        }
-
-        .dicas-laterais {
-            background: #f8f9fa;
-            padding: 15px;
-            border-left: 4px solid #007bff;
-            margin-top: 10px;
-            font-size: 14px;
-            border-radius: 0 8px 8px 0;
-        }
-
-        .dicas-laterais ul {
-            margin: 10px 0 0 20px;
-            padding: 0;
-        }
-
-        .dicas-laterais li {
-            margin-bottom: 5px;
-        }
-
-        .upload-area {
-            margin-top: 2rem;
-        }
-
-        .upload-label {
-            display: block;
-            padding: 20px;
-            border: 2px dashed #ddd;
-            text-align: center;
-            cursor: pointer;
-            border-radius: 8px;
-            transition: all 0.3s;
-            background: #f8f9fa;
-        }
-
-        .upload-label:hover {
-            border-color: #007bff;
-            background: #e3f2fd;
-        }
-
-        .upload-label small {
-            display: block;
-            margin-top: 5px;
-            color: #666;
-        }
-
-        #preview-arquivo {
-            margin-top: 10px;
-        }
-
-        #preview-arquivo img {
-            max-width: 200px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        .categoria-select {
-            font-size: 1.6rem;
-            border-radius: 1.25rem;
-            padding: 1.5rem;
-            width: 100%;
-            margin-bottom: 2rem;
-            border: 1px solid #ddd;
-        }
-
-        .info-adicional {
-            margin-bottom: 2rem;
-        }
-
-        .urgencia-select {
-            font-size: 1.6rem;
-            border-radius: 1.25rem;
-            padding: 1.5rem;
-            width: 100%;
-            margin-bottom: 2rem;
-            border: 1px solid #ddd;
-        }
-
-        .alert {
-            padding: 15px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            border: 1px solid transparent;
-        }
-
-        .alert-success {
-            color: #155724;
-            background-color: #d4edda;
-            border-color: #c3e6cb;
-        }
-
-        .alert-danger {
-            color: #721c24;
-            background-color: #f8d7da;
-            border-color: #f5c6cb;
-        }
-    </style>
 </head>
 
 <body>
@@ -214,12 +105,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="heading">
                 <h1> Como podemos ajudar você?</h1>
             </div>
-    
+
             <div class="container">
                 <?php if ($erro): ?>
                     <div class="alert alert-danger"><?php echo htmlspecialchars($erro); ?></div>
                 <?php endif; ?>
-                
+
                 <?php if ($sucesso): ?>
                     <div class="alert alert-success"><?php echo htmlspecialchars($sucesso); ?></div>
                 <?php endif; ?>
@@ -258,16 +149,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     <!-- Campo de descrição melhorado -->
                     <div class="campo-problema">
-                        <textarea name="mensagem" required 
-                                  placeholder="Descreva detalhadamente seu problema:
+                        <textarea name="mensagem" required
+                            placeholder="Descreva detalhadamente seu problema:
 - O que você estava fazendo quando aconteceu?
 - Que mensagem de erro apareceu?
 - Quando começou o problema?
 - Já tentou reiniciar?"
-                                  minlength="30" 
-                                  oninput="contarCaracteres(this)"></textarea>
+                            minlength="30"
+                            oninput="contarCaracteres(this)"></textarea>
                         <small class="contador-chars">Mínimo 30 caracteres</small>
-                        
+
                         <div class="dicas-laterais">
                             <strong>💡 Dicas para uma boa descrição:</strong>
                             <ul>

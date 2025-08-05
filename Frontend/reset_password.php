@@ -16,7 +16,7 @@ if (!empty($token)) {
     // Limpar tokens expirados
     $stmt = $pdo->prepare("DELETE FROM password_reset_tokens WHERE expires_at < NOW() OR used = 1");
     $stmt->execute();
-    
+
     // Verificar se token é válido
     $stmt = $pdo->prepare("
         SELECT id, user_email, expires_at, used 
@@ -25,7 +25,7 @@ if (!empty($token)) {
     ");
     $stmt->execute([$token]);
     $tokenData = $stmt->fetch(PDO::FETCH_ASSOC);
-    
+
     if ($tokenData) {
         $tokenValid = true;
     } else {
@@ -48,6 +48,9 @@ if (!empty($token)) {
 </head>
 
 <body>
+    <?php
+    include __DIR__ . '/includes/header.php';
+    ?>
     <div class="container">
         <!-- ===== LOGO ===== -->
         <div class="logo">
@@ -130,7 +133,7 @@ if (!empty($token)) {
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.all.min.js"></script>
     <script src="./ressources/js/script.js"></script>
     <script src="./ressources/js/alerts.js"></script>
-    
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const form = document.getElementById('resetPasswordForm');
@@ -162,10 +165,10 @@ if (!empty($token)) {
                 // Calcular força da senha
                 const strength = Object.values(requirements).filter(Boolean).length;
                 const strengthElement = document.getElementById('new_password-strength');
-                
+
                 let strengthText = '';
                 let strengthClass = '';
-                
+
                 if (strength <= 2) {
                     strengthText = 'Fraca';
                     strengthClass = 'weak';
@@ -176,7 +179,7 @@ if (!empty($token)) {
                     strengthText = 'Forte';
                     strengthClass = 'strong';
                 }
-                
+
                 strengthElement.textContent = `Força: ${strengthText}`;
                 strengthElement.className = `password-strength ${strengthClass}`;
 
@@ -199,7 +202,7 @@ if (!empty($token)) {
             function validatePasswordMatch() {
                 const newPassword = newPasswordInput.value;
                 const confirmPassword = confirmPasswordInput.value;
-                
+
                 if (confirmPassword && newPassword !== confirmPassword) {
                     smartStockAlerts.showFieldError(confirmPasswordInput, 'As senhas não coincidem');
                     return false;
@@ -212,65 +215,65 @@ if (!empty($token)) {
             // ===== ENVIO DO FORMULÁRIO =====
             form.addEventListener('submit', async function(e) {
                 e.preventDefault();
-                
+
                 const newPassword = newPasswordInput.value;
                 const confirmPassword = confirmPasswordInput.value;
-                
+
                 // Validações
                 if (!validatePasswordStrength(newPassword)) {
                     smartStockAlerts.showError('Senha Fraca', 'Sua senha não atende aos requisitos mínimos de segurança.');
                     return;
                 }
-                
+
                 if (!validatePasswordMatch()) {
                     return;
                 }
-                
+
                 // Mostrar loading
                 btnText.style.display = 'none';
                 btnLoading.style.display = 'inline-flex';
                 submitBtn.disabled = true;
-                
+
                 // Mostrar alerta de loading
                 smartStockAlerts.showLoading('Processando...', 'Atualizando sua senha...');
-                
+
                 try {
                     const formData = new FormData(form);
-                    
+
                     const response = await fetch('../Backend/process_reset_password.php', {
                         method: 'POST',
                         body: formData
                     });
-                    
+
                     const result = await response.json();
-                    
+
                     // Fechar loading
                     smartStockAlerts.close();
-                    
+
                     if (result.success) {
                         await smartStockAlerts.showSuccess(
-                            'Senha Atualizada!', 
+                            'Senha Atualizada!',
                             result.message
                         );
-                        
+
                         // Redirecionar para login após 2 segundos
                         setTimeout(() => {
                             window.location.href = result.redirect;
                         }, 2000);
-                        
+
                     } else {
                         smartStockAlerts.showError('Erro', result.message);
                     }
-                    
+
                 } catch (error) {
                     smartStockAlerts.close();
                     smartStockAlerts.showError(
-                        'Erro de Conexão', 
+                        'Erro de Conexão',
                         'Não foi possível processar sua solicitação. Tente novamente.'
                     );
                     console.error('Erro:', error);
                 }
-                
+
                 // Restaurar botão
                 btnText.style.display = 'inline-flex';
                 btnLoading.style.display = 'none';
@@ -278,6 +281,9 @@ if (!empty($token)) {
             });
         });
     </script>
+    <?php
+    include __DIR__ . '/includes/footer.php';
+    ?>
 </body>
 
-</html> 
+</html>
