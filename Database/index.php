@@ -37,7 +37,9 @@ try {
         id_responsible INT,
         solicitante VARCHAR(100) NOT NULL,
         categoria VARCHAR(100) NOT NULL,
-        agendamento DATE,
+        setor VARCHAR(100) NULL,
+        equipamento VARCHAR(150) NULL,
+        urgencia VARCHAR(20) DEFAULT 'media',
         observacoes TEXT,
         status VARCHAR(50),
         id_suporte_origem INT NULL,
@@ -103,9 +105,40 @@ try {
     }
 
     try {
+        $pdo->exec("ALTER TABLE ordens_servico ADD COLUMN setor VARCHAR(100) NULL");
+    } catch (PDOException $e) {
+        // Campo já existe, ignorar erro
+    }
+
+    try {
+        $pdo->exec("ALTER TABLE ordens_servico ADD COLUMN equipamento VARCHAR(150) NULL");
+    } catch (PDOException $e) {
+        // Campo já existe, ignorar erro
+    }
+
+    try {
+        $pdo->exec("ALTER TABLE ordens_servico ADD COLUMN urgencia VARCHAR(20) DEFAULT 'media'");
+    } catch (PDOException $e) {
+        // Campo já existe, ignorar erro
+    }
+
+    try {
         $pdo->exec("ALTER TABLE suporte ADD COLUMN observacoes TEXT AFTER arquivo");
     } catch (PDOException $e) {
         // Campo já existe, ignorar erro
+    }
+
+    // Adicionar índices para performance
+    try {
+        $pdo->exec("CREATE INDEX idx_urgencia ON ordens_servico(urgencia)");
+    } catch (PDOException $e) {
+        // Índice já existe, ignorar erro
+    }
+
+    try {
+        $pdo->exec("CREATE INDEX idx_categoria ON ordens_servico(categoria)");
+    } catch (PDOException $e) {
+        // Índice já existe, ignorar erro
     }
 
 } catch (PDOException $e) {

@@ -1,12 +1,30 @@
-/* ===== PÁGINA LISTAR ORDENS DE SERVIÇO ===== */
+/* ========================================
+   LISTAR ORDENS DE SERVIÇO - ESTILOS
+   ======================================== */
 
+/* === VARIÁVEIS CSS === */
+:root {
+    --cor-critica: #f44336;
+    --cor-alta: #ff9800;
+    --cor-media: #ffeb3b;
+    --cor-baixa: #4caf50;
+    --border-radius: 8px;
+    --spacing-sm: 10px;
+    --spacing-md: 15px;
+    --spacing-lg: 20px;
+    --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.15);
+    --shadow-heavy: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* === LAYOUT GERAL === */
 .ordens-container {
     max-width: 1200px;
     margin: 20px auto;
     padding: 20px;
     background: #f8f9fa;
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .ordens-container .heading {
@@ -32,10 +50,11 @@
     font-size: 1.2rem;
 }
 
+/* === CARDS DE ORDENS === */
 .ordem-card {
     background: white;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
     overflow: hidden;
     transition: all 0.3s ease;
@@ -44,7 +63,7 @@
 
 .ordem-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
 .ordem-card.concluida {
@@ -91,18 +110,6 @@
     text-align: center;
 }
 
-.status-pendente {
-    background-color: #fff3cd;
-    color: #856404;
-    border: 1px solid #ffeaa7;
-}
-
-.status-concluida {
-    background-color: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
-}
-
 .ordem-content {
     padding: 20px;
 }
@@ -114,24 +121,33 @@
     flex-wrap: wrap;
 }
 
+/* === BOTÕES PRINCIPAIS === */
 .btn-checklist {
-    background: #007bff;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     border: none;
-    padding: 10px 20px;
-    border-radius: 6px;
+    padding: 12px 24px;
+    border-radius: 25px;
     cursor: pointer;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
     gap: 8px;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .btn-checklist:hover {
-    background: #0056b3;
-    transform: translateY(-1px);
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.btn-checklist:active {
+    transform: translateY(0);
 }
 
 .btn-checklist i {
@@ -139,36 +155,292 @@
 }
 
 .btn-finalizar {
-    background: #28a745;
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
     color: white;
     border: none;
-    padding: 10px 20px;
-    border-radius: 6px;
+    padding: 12px 24px;
+    border-radius: 25px;
     cursor: pointer;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
     gap: 8px;
+    box-shadow: 0 4px 15px rgba(17, 153, 142, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .btn-finalizar:hover {
-    background: #1e7e34;
-    transform: translateY(-1px);
+    background: linear-gradient(135deg, #38ef7d 0%, #11998e 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(17, 153, 142, 0.6);
+}
+
+.btn-finalizar:active {
+    transform: translateY(0);
 }
 
 .btn-finalizar:disabled {
-    background: #6c757d;
+    background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
     cursor: not-allowed;
     transform: none;
+    box-shadow: 0 2px 8px rgba(108, 117, 125, 0.3);
 }
 
 .btn-finalizar i {
     font-size: 16px;
 }
 
-/* Modal do Checklist */
+.btn-mostrar-imagem {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 10px;
+    box-shadow: 0 2px 10px rgba(102, 126, 234, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.btn-mostrar-imagem:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.5);
+}
+
+.btn-mostrar-imagem i {
+    font-size: 14px;
+}
+
+/* === URGÊNCIAS === */
+.urgencia-critica {
+    background-color: #ffebee !important;
+    border-left: 4px solid var(--cor-critica);
+}
+
+.urgencia-alta {
+    background-color: #fff3e0 !important;
+    border-left: 4px solid var(--cor-alta);
+}
+
+.urgencia-media {
+    background-color: #fffde7 !important;
+    border-left: 4px solid var(--cor-media);
+}
+
+.urgencia-baixa {
+    background-color: #e8f5e8 !important;
+    border-left: 4px solid var(--cor-baixa);
+}
+
+/* === BADGES E STATUS === */
+.badge {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.status-pendente {
+    background: #ffc107;
+    color: #000;
+}
+
+.status-em_andamento {
+    background: #17a2b8;
+    color: #fff;
+}
+
+.status-concluida {
+    background: #28a745;
+    color: #fff;
+}
+
+.status-cancelada {
+    background: #dc3545;
+    color: #fff;
+}
+
+/* Badges de urgência */
+.badge-critica {
+    background: var(--cor-critica);
+    color: #fff;
+}
+
+.badge-alta {
+    background: var(--cor-alta);
+    color: #fff;
+}
+
+.badge-media {
+    background: var(--cor-media);
+    color: #000;
+}
+
+.badge-baixa {
+    background: var(--cor-baixa);
+    color: #fff;
+}
+
+.ordem-urgencia {
+    margin-bottom: 10px;
+}
+
+.ordem-urgencia .badge {
+    font-size: 12px;
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 15px;
+    display: inline-block;
+}
+
+/* === DASHBOARD === */
+.dashboard-urgencias {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.card-urgencia {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    text-align: center;
+    box-shadow: var(--shadow-light);
+    transition: transform 0.2s;
+}
+
+.card-urgencia:hover {
+    transform: translateY(-2px);
+}
+
+.card-urgencia.critica {
+    border-left: 4px solid var(--cor-critica);
+}
+
+.card-urgencia.alta {
+    border-left: 4px solid var(--cor-alta);
+}
+
+.card-urgencia.media {
+    border-left: 4px solid var(--cor-media);
+}
+
+.card-urgencia.baixa {
+    border-left: 4px solid var(--cor-baixa);
+}
+
+.card-urgencia h5 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.card-urgencia p {
+    margin: 5px 0 0 0;
+    font-size: 14px;
+    color: #666;
+}
+
+/* === FILTROS === */
+.filtros-urgencia {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.filtros-urgencia button {
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: 2px solid;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filtros-urgencia button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.filtros-urgencia button.active {
+    color: white;
+    transform: translateY(-1px);
+}
+
+.filtros-urgencia .btn-outline-danger {
+    border-color: #dc3545;
+    color: #dc3545;
+}
+
+.filtros-urgencia .btn-outline-danger:hover,
+.filtros-urgencia .btn-outline-danger.active {
+    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+    border-color: #dc3545;
+}
+
+.filtros-urgencia .btn-outline-warning {
+    border-color: #ffc107;
+    color: #ffc107;
+}
+
+.filtros-urgencia .btn-outline-warning:hover,
+.filtros-urgencia .btn-outline-warning.active {
+    background: linear-gradient(135deg, #ffc107 0%, #e0a800 100%);
+    border-color: #ffc107;
+}
+
+.filtros-urgencia .btn-outline-primary {
+    border-color: #007bff;
+    color: #007bff;
+}
+
+.filtros-urgencia .btn-outline-primary:hover,
+.filtros-urgencia .btn-outline-primary.active {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    border-color: #007bff;
+}
+
+.filtros-urgencia .btn-outline-success {
+    border-color: #28a745;
+    color: #28a745;
+}
+
+.filtros-urgencia .btn-outline-success:hover,
+.filtros-urgencia .btn-outline-success.active {
+    background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%);
+    border-color: #28a745;
+}
+
+.filtros-urgencia .btn-secondary {
+    border-color: #6c757d;
+    color: #6c757d;
+}
+
+.filtros-urgencia .btn-secondary:hover,
+.filtros-urgencia .btn-secondary.active {
+    background: linear-gradient(135deg, #6c757d 0%, #545b62 100%);
+    border-color: #6c757d;
+}
+
+/* === MODAL DO CHECKLIST === */
 .modal {
     display: none;
     position: fixed;
@@ -177,7 +449,7 @@
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(5px);
 }
 
@@ -190,92 +462,8 @@
     max-width: 900px;
     max-height: 85vh;
     overflow-y: auto;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    box-shadow: var(--shadow-heavy);
     animation: modalSlideIn 0.3s ease;
-}
-
- .modal-imagem {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.8);
-            backdrop-filter: blur(5px);
-        }
-
-        .modal-imagem-content {
-            position: relative;
-            margin: 5% auto;
-            padding: 20px;
-            background: white;
-            width: 90%;
-            max-width: 800px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            animation: modalSlideIn 0.3s ease;
-        }
-
-        .modal-imagem img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            display: block;
-            margin: 0 auto;
-        }
-
-        .modal-imagem .close {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            color: #aaa;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: color 0.3s;
-            z-index: 2001;
-        }
-
-        .modal-imagem .close:hover {
-            color: #333;
-        }
-
-        .btn-mostrar-imagem {
-            background: #17a2b8;
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 12px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            margin-top: 10px;
-        }
-
-        .btn-mostrar-imagem:hover {
-            background: #138496;
-            transform: translateY(-1px);
-        }
-
-        .btn-mostrar-imagem i {
-            font-size: 14px;
-        }
-
-@keyframes modalSlideIn {
-    from {
-        opacity: 0;
-        transform: translateY(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 .modal-header {
@@ -306,6 +494,7 @@
     color: #333;
 }
 
+/* === PROGRESS BAR === */
 .progress-bar {
     width: 100%;
     height: 12px;
@@ -313,24 +502,25 @@
     border-radius: 6px;
     margin: 15px 0;
     overflow: hidden;
-    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .progress-fill {
+    width: 0%;
     height: 100%;
-    background: linear-gradient(90deg, #007bff, #0056b3);
+    background: linear-gradient(90deg, #667eea, #764ba2);
     transition: width 0.5s ease;
     border-radius: 6px;
 }
 
 .progress-text {
-    text-align: center;
     font-size: 14px;
     color: #666;
     margin-top: 8px;
     font-weight: 500;
 }
 
+/* === CHECKLIST CATEGORIES === */
 .checklist-categories {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -347,9 +537,9 @@
 }
 
 .category-card:hover {
-    border-color: #007bff;
+    border-color: #667eea;
     background: white;
-    box-shadow: 0 4px 15px rgba(0,123,255,0.1);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.1);
 }
 
 .category-header {
@@ -363,7 +553,7 @@
 
 .category-header i {
     margin-right: 12px;
-    color: #007bff;
+    color: #667eea;
     font-size: 1.2rem;
 }
 
@@ -378,14 +568,14 @@
 }
 
 .checkbox-item:hover {
-    background: rgba(0,123,255,0.05);
+    background: rgba(102, 126, 234, 0.05);
 }
 
 .checkbox-item input[type="checkbox"] {
     margin-right: 12px;
     width: 18px;
     height: 18px;
-    accent-color: #007bff;
+    accent-color: #667eea;
 }
 
 .checkbox-item span {
@@ -400,8 +590,169 @@
     gap: 15px;
     margin-top: 25px;
     padding-top: 20px;
-    border-top: 2px solid var(--cor8);
+    border-top: 2px solid #eee;
 }
 
+/* === MODAL DE IMAGEM === */
+.modal-imagem {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+}
 
+.modal-imagem-content {
+    position: relative;
+    margin: 5% auto;
+    padding: 20px;
+    background: white;
+    width: 90%;
+    max-width: 800px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-heavy);
+    animation: modalSlideIn 0.3s ease;
+}
 
+.modal-imagem img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    display: block;
+    margin: 0 auto;
+}
+
+.modal-imagem .close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+    z-index: 2001;
+}
+
+.modal-imagem .close:hover {
+    color: #333;
+}
+
+/* === ELEMENTOS ESPECÍFICOS === */
+#imagemViewer {
+    max-width: 100%;
+    height: auto;
+}
+
+/* === ANIMAÇÕES === */
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* === RESPONSIVO === */
+@media (max-width: 768px) {
+    .modal-imagem-content {
+        margin: 10% auto;
+        width: 95%;
+        padding: 15px;
+    }
+
+    .dashboard-urgencias {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .filtros-urgencia {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .filtros-urgencia button {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Modal do checklist responsivo */
+    .modal-content {
+        margin: 5% auto;
+        padding: 20px;
+        width: 95%;
+    }
+
+    .checklist-categories {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .modal-actions {
+        flex-direction: column;
+    }
+
+    .modal-actions button {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-urgencias {
+        grid-template-columns: 1fr;
+    }
+
+    .card-urgencia {
+        padding: 12px;
+    }
+
+    .card-urgencia h5 {
+        font-size: 20px;
+    }
+
+    .card-urgencia p {
+        font-size: 12px;
+    }
+
+    /* Layout geral responsivo */
+    .ordens-container {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .ordens-container .heading h1 {
+        font-size: 2rem;
+    }
+
+    .ordem-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .ordem-status {
+        align-self: flex-start;
+    }
+
+    .ordem-actions {
+        flex-direction: column;
+    }
+
+    .btn-checklist,
+    .btn-finalizar {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .modal-header h2 {
+        font-size: 1.5rem;
+    }
+}

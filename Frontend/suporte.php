@@ -67,9 +67,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 // Obter o ID do suporte recém-criado
                 $id_suporte = $pdo->lastInsertId();
 
-                // Criar ordem de serviço automaticamente
-                $stmt_os = $pdo->prepare("INSERT INTO ordens_servico (solicitante, categoria, observacoes, status, id_suporte_origem) VALUES (?, ?, ?, ?, ?)");
-                $stmt_os->execute([$nome, 'Suporte Técnico - ' . ucfirst($categoria), $mensagem, 'Pendente', $id_suporte]);
+                // Criar ordem de serviço automaticamente com todos os dados do suporte
+                $stmt_os = $pdo->prepare("INSERT INTO ordens_servico (solicitante, categoria, setor, equipamento, urgencia, observacoes, status, id_suporte_origem) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+                $stmt_os->execute([$nome, $categoria, $setor, $equipamento, $urgencia, $mensagem, 'pendente', $id_suporte]);
 
                 // Commit da transação
                 $pdo->commit();
