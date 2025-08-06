@@ -56,6 +56,13 @@
     --cor26: #fff3cd;
     --cor27: #ffeaa7;
     --cor28: #0C5460;
+    --cor29: #e67e00;
+    --cor30: #5a6268;
+    --cor31: #218838;
+    --cor32:#c82333;
+    --cor33: #2c3e50;
+    --cor34: #95a5a6;
+    --cor35: #dee2e6;
     --cor-critica: #f44336;
     --cor-alta: #ff9800;
     --cor-media: #ffeb3b;
@@ -93,6 +100,16 @@
     --font-size-xl: clamp(1.8rem, 2vw, 2rem);
     --font-size-xxl: clamp(2rem, 2.4vw, 2.4rem);
     --font-size-title: clamp(2.4rem, 3.2vw, 3.2rem);
+
+
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+    --shadow-focus: 0 0 0 3px rgba(255, 140, 0, 0.25);
+
+    --transition: all 0.3s ease;
+    --transition-fast: all 0.15s ease;
+    --transition-slow: all 0.5s ease;
 }
 
 /* ===== RESET E CONFIGURAÇÕES GLOBAIS ===== */

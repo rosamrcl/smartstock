@@ -15,7 +15,6 @@ if (!isset($_SESSION['csrf_token'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartStock - Recuperar Senha</title>
     <?php include 'includes/head.php'; ?>
-    <link rel="stylesheet" href="./ressources/css/esquecisenha.css">
 </head>
 
 <body>

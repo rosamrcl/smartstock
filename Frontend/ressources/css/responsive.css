@@ -261,6 +261,36 @@
         font-size: var(--font-size-xs);
     }
 
+    .forgot-password-card {
+        padding: 2rem 1.5rem;
+        margin: 1rem;
+        border-radius: var(--border-radius);
+    }
+    
+    .forgot-password-title {
+        font-size: 1.5rem;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .action-button {
+        min-width: auto;
+        width: 100%;
+    }
+    
+    .navigation-links {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .navigation-links a {
+        margin: 0;
+    }
+
 }
 
 @media (max-width:450px) {
@@ -359,5 +389,38 @@
         margin: 10% auto;
         width: 95%;
         padding: 15px;
+    }
+
+    .forgot-password-container {
+        padding: 0.5rem;
+    }
+    
+    .forgot-password-card {
+        padding: 1.5rem 1rem;
+    }
+    
+    .form-input {
+        padding: 0.75rem 0.75rem 0.75rem 2.5rem;
+        font-size: 0.95rem;
+    }
+    
+    .input-icon {
+        left: 0.75rem;
+        font-size: 0.9rem;
+    }
+    
+    .submit-button {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.95rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
     }
 }
