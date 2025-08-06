@@ -75,7 +75,7 @@
     width: 100%;
     padding: 0.875rem 1rem 0.875rem 2.75rem;
     border: 2px solid var(--cor35);
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-sm);
     font-size: var(--font-size-s);
     transition: var(--transition);
     background: var(--cor4);
@@ -145,7 +145,7 @@
     background: var(--cor3);
     color: white;
     border: none;
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-sm);
     font-size: var(--font-size-md);
     font-weight: 600;
     cursor: pointer;
@@ -260,7 +260,7 @@
 }
 
 .reset-link-header i {
-    font-size: 1.25rem;
+    font-size: var(--font-size-md);
     animation: bounceIn 0.6s ease-out;
 }
 
@@ -363,7 +363,7 @@
 
 .copy-button {
     background: var(--cor3);
-    color: white;
+    color: var(--cor4);
 }
 
 .copy-button:hover {
@@ -374,7 +374,7 @@
 
 .back-button {
     background: var(--cor10);
-    color: white;
+    color: var(--cor4);
 }
 
 .back-button:hover {
