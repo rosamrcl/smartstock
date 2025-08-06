@@ -63,27 +63,7 @@ $count_baixa = $counts['baixa'] ?? 0;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartStock - Listar Ordens de Serviço</title>
-    <?php include 'includes/head.php'; ?>
-    <link rel="stylesheet" href="./ressources/css/listar-ordens.css">
-    <style>
-        .chamado-destacado {
-            background-color: #fff3cd !important;
-            border-left: 4px solid #ffc107 !important;
-            animation: pulse 2s ease-in-out;
-            box-shadow: 0 0 20px rgba(255, 193, 7, 0.3);
-        }
-
-        @keyframes pulse {
-            0%, 100% { 
-                opacity: 1; 
-                transform: scale(1);
-            }
-            50% { 
-                opacity: 0.9; 
-                transform: scale(1.02);
-            }
-        }
-    </style>
+    <?php include 'includes/head.php'; ?>   
 
 </head>
 

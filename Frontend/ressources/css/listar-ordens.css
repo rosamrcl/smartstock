@@ -603,3 +603,21 @@ LISTAR ORDENS DE SERVIÇO - ESTILOS
     color: var(--cor17);
     text-decoration: underline;
 }
+
+.chamado-destacado {
+            background-color: #fff3cd !important;
+            border-left: 4px solid #ffc107 !important;
+            animation: pulse 2s ease-in-out;
+            box-shadow: 0 0 20px rgba(255, 193, 7, 0.3);
+        }
+
+        @keyframes pulse {
+            0%, 100% { 
+                opacity: 1; 
+                transform: scale(1);
+            }
+            50% { 
+                opacity: 0.9; 
+                transform: scale(1.02);
+            }
+        }

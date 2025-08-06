@@ -14,6 +14,8 @@
 @import url(./header.css);
 @import url(./home.css);
 @import url(./important.css);
+@import url(./listar-ordens.css);
+@import url(./notifica.css);
 @import url(./ordem-servico.css);
 @import url(./redefinir-senha.css);
 @import url(./responsive.css);
