@@ -160,7 +160,19 @@ $count_baixa = $counts['baixa'] ?? 0;
                             <?php if (!empty($ordem['equipamento'])): ?>
                                 <p><strong>💻 Equipamento:</strong> <?php echo htmlspecialchars($ordem['equipamento']); ?></p>
                             <?php endif; ?>
-                            <p><strong>📝 Observações:</strong> <?php echo htmlspecialchars(substr($ordem['observacoes'], 0, 100)) . (strlen($ordem['observacoes']) > 100 ? '...' : ''); ?></p>
+                            <p><strong>📝 Observações:</strong> 
+                                <div class="observacao-container">
+                                    <span class="observacao-texto" id="obs-<?php echo $ordem['id_services']; ?>">
+                                        <?php echo htmlspecialchars(substr($ordem['observacoes'], 0, 150)); ?>
+                                    </span>
+                                    <span class="observacao-completa" id="obs-completa-<?php echo $ordem['id_services']; ?>" style="display: none;">
+                                        <?php echo htmlspecialchars($ordem['observacoes']); ?>
+                                    </span>
+                                    <?php if (strlen($ordem['observacoes']) > 150): ?>
+                                        <a href="#" class="mostrar-mais" onclick="toggleObservacao('<?php echo $ordem['id_services']; ?>')">mostrar mais</a>
+                                    <?php endif; ?>
+                                </div>
+                            </p>
                             <p><strong>📅 Data:</strong> <?php echo date('d/m/Y H:i', strtotime($ordem['created_at'])); ?></p>
                             
                             <!-- Botão para mostrar imagem (apenas se houver arquivo de imagem) -->
@@ -587,6 +599,25 @@ $count_baixa = $counts['baixa'] ?? 0;
             }
             if (event.target === modalImagem) {
                 fecharModalImagem();
+            }
+        }
+
+        // Função para expandir/contrair observações
+        function toggleObservacao(id) {
+            const textoTruncado = document.getElementById('obs-' + id);
+            const textoCompleto = document.getElementById('obs-completa-' + id);
+            const link = textoTruncado.nextElementSibling.nextElementSibling; // Link "mostrar mais"
+            
+            if (textoCompleto.style.display === 'none') {
+                // Expandir
+                textoTruncado.style.display = 'none';
+                textoCompleto.style.display = 'inline';
+                link.textContent = 'mostrar menos';
+            } else {
+                // Contrair
+                textoCompleto.style.display = 'none';
+                textoTruncado.style.display = 'inline';
+                link.textContent = 'mostrar mais';
             }
         }
     </script>
