@@ -83,7 +83,6 @@ O **SMARTSTOCK** é um sistema completo de controle de estoque inteligente desen
 ### Ferramentas de Desenvolvimento
 - **Laragon** - Ambiente de desenvolvimento local
 - **Git** - Controle de versão
-- **Cursor AI** - Editor com inteligência artificial
 
 ## 📋 Pré-requisitos
 
@@ -171,6 +170,7 @@ $db = 'smartstock';
 smartstock/
 │
 ├── 📄 index.php                    # Redirecionamento inicial
+├── 📄 README.md                    # Documentação
 │
 ├── 📁 Backend/                     # Processamento e lógica
 │   ├── conexao.php                # Conexão com banco de dados
@@ -179,9 +179,14 @@ smartstock/
 │   ├── cadastro.php               # Processamento de cadastro
 │   ├── produtos.php               # CRUD de produtos
 │   ├── alterar_senha.php          # Alteração de senha
+│   ├── atualizar_senha.php        # Atualização de senha
 │   ├── atualizar.php              # Atualização de dados
 │   ├── salvar_checklist.php       # Salvar progresso do checklist
 │   ├── carregar_checklist.php     # Carregar dados do checklist
+│   ├── finalizar_ordem.php        # Finalizar ordem de serviço
+│   ├── listar_notificacoes.php    # Listar notificações
+│   ├── marcar_notificacao_lida.php # Marcar notificação como lida
+│   ├── painel.php                 # Painel administrativo
 │   ├── solicitar_redefinicao.php  # Solicitar redefinição de senha
 │   ├── process_forgot_password.php # Processar esqueci senha
 │   ├── process_reset_password.php  # Processar reset de senha
@@ -193,33 +198,67 @@ smartstock/
 │   ├── login.php                  # Tela de login
 │   ├── cadastro.php               # Tela de cadastro
 │   ├── gerenciarprodutos.php      # Gestão de produtos
+│   ├── gerenciarprodutosupdate.php # Atualização de produtos
 │   ├── listar_ordens.php          # Listar ordens de serviço
 │   ├── suporte.php                # Sistema de suporte
+│   ├── notificacoes.php           # Sistema de notificações
 │   ├── updateperfil.php           # Atualização de perfil
 │   ├── alterar_senha.php          # Alteração de senha
 │   ├── esqueci_senha.php          # Recuperação de senha
 │   ├── redefinir_senha.php        # Redefinição de senha
+│   ├── reset_password.php         # Reset de senha
 │   ├── about.php                  # Sobre o sistema
+│   ├── .gitattributes             # Configurações Git
 │   ├── includes/                  # Componentes reutilizáveis
 │   │   ├── head.php              # Meta tags e CSS
 │   │   ├── header.php            # Cabeçalho autenticado
-│   │   ├── headerog.php          # Cabeçalho não autenticado
 │   │   ├── footer.php            # Rodapé
 │   │   ├── alerts.php            # Sistema de alertas
 │   │   ├── ux.php                # Melhorias de UX
 │   │   └── validation.php        # Validações
 │   ├── ressources/               # Recursos estáticos
 │   │   ├── css/                  # Estilos
+│   │   │   ├── style.css         # Estilos principais
+│   │   │   ├── responsive.css    # Responsividade
+│   │   │   ├── header.css        # Estilos do cabeçalho
+│   │   │   ├── home.css          # Estilos da home
+│   │   │   ├── form.css          # Estilos de formulários
+│   │   │   ├── cards.css         # Estilos de cards
+│   │   │   ├── btns.css          # Estilos de botões
+│   │   │   ├── table.css         # Estilos de tabelas
+│   │   │   ├── alerts.css        # Estilos de alertas
+│   │   │   ├── about.css         # Estilos da página sobre
+│   │   │   ├── suporte.css       # Estilos do suporte
+│   │   │   ├── listar-ordens.css # Estilos das ordens
+│   │   │   ├── notifica.css      # Estilos de notificações
+│   │   │   ├── esquecisenha.css  # Estilos recuperação senha
+│   │   │   ├── redefinir-senha.css # Estilos redefinição senha
+│   │   │   ├── alterar-senha.css # Estilos alteração senha
+│   │   │   ├── updateperfil.css  # Estilos atualização perfil
+│   │   │   ├── gerenciar-produtos.css # Estilos gestão produtos
+│   │   │   └── important.css     # Estilos importantes
 │   │   ├── js/                   # JavaScript
+│   │   │   ├── script.js         # Script principal
+│   │   │   ├── validation.js     # Validações
+│   │   │   ├── alerts.js         # Sistema de alertas
+│   │   │   ├── alerts-examples.js # Exemplos de alertas
+│   │   │   ├── header-scroll.js  # Efeitos de scroll
+│   │   │   ├── side-bar.js       # Sidebar
+│   │   │   ├── notificacoes.js   # Sistema de notificações
+│   │   │   ├── suporte.js        # Funcionalidades do suporte
+│   │   │   ├── forgot-password.js # Recuperação de senha
+│   │   │   └── components/       # Componentes JS
 │   │   └── img/                  # Imagens
 │   └── uploads/                  # Arquivos enviados
 │
 ├── 📁 Database/                   # Banco de dados
 │   ├── database.sql              # Schema completo
 │   ├── index.php                 # Página de teste
-│   └── password_reset_tokens.sql # Tokens de recuperação
+│   ├── DER.png                   # Diagrama ER (PNG)
+│   └── DER.pdf                   # Diagrama ER (PDF)
 │
-└── 📄 README.md                   # Documentação
+└── 📁 logs/                      # Logs do sistema
+    └── debug.log                 # Log de debug
 ```
 
 ## 🔧 API/Backend
@@ -230,9 +269,14 @@ POST /Backend/login.php                    # Autenticação
 POST /Backend/cadastro.php                 # Cadastro de usuário
 POST /Backend/produtos.php                 # CRUD de produtos
 POST /Backend/alterar_senha.php            # Alteração de senha
+POST /Backend/atualizar_senha.php          # Atualização de senha
 POST /Backend/atualizar.php                # Atualização de dados
 POST /Backend/salvar_checklist.php         # Salvar progresso do checklist
 GET  /Backend/carregar_checklist.php       # Carregar dados do checklist
+POST /Backend/finalizar_ordem.php          # Finalizar ordem de serviço
+GET  /Backend/listar_notificacoes.php      # Listar notificações
+POST /Backend/marcar_notificacao_lida.php  # Marcar notificação como lida
+GET  /Backend/painel.php                   # Painel administrativo
 POST /Backend/solicitar_redefinicao.php    # Solicitar redefinição
 POST /Backend/process_forgot_password.php  # Processar esqueci senha
 POST /Backend/process_reset_password.php   # Processar reset
@@ -262,8 +306,12 @@ filter_var($email, FILTER_VALIDATE_EMAIL)
 - **login.php** - Tela de autenticação
 - **home.php** - Dashboard principal
 - **gerenciarprodutos.php** - Gestão de produtos
+- **gerenciarprodutosupdate.php** - Atualização de produtos
 - **listar_ordens.php** - Listar ordens de serviço
 - **suporte.php** - Sistema de suporte
+- **notificacoes.php** - Sistema de notificações
+- **esqueci_senha.php** - Recuperação de senha
+- **reset_password.php** - Reset de senha
 
 ### Componentes CSS
 - **Responsive design** - Layout adaptativo
@@ -277,6 +325,9 @@ filter_var($email, FILTER_VALIDATE_EMAIL)
 - **Alertas interativos** - SweetAlert2
 - **Header scroll** - Efeitos visuais
 - **UX improvements** - Melhorias de experiência
+- **Sistema de notificações** - Notificações em tempo real
+- **Recuperação de senha** - Formulário moderno
+- **Suporte** - Funcionalidades avançadas
 
 ## 🗄️ Banco de Dados
 
