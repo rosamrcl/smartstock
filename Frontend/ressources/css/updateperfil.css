@@ -49,7 +49,7 @@
     color: var(--cor4);
     align-self: flex-start;
     margin-left: 1rem;
-    font-size: 1.6rem;
+    font-size: var(--font-size-lg);
 }
 .form-update .form-container-update form .foto-update-perfil{
     width: 100%;

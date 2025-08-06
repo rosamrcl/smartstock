@@ -243,7 +243,23 @@
     .modal-header h2 {
         font-size: 1.5rem;
     }
-
+    .card-grid-2,
+    .card-grid-3,
+    .card-grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .card-header,
+    .card-content,
+    .card-footer {
+        padding: var(--spacing-md);
+    }
+    
+    .tooltip .tooltiptext {
+        width: 15rem;
+        margin-left: -7.5rem;
+        font-size: var(--font-size-xs);
+    }
 
 }
 

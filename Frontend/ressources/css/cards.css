@@ -289,33 +289,7 @@
     grid-template-columns: repeat(4, 1fr);
 }
 
-/* ===== RESPONSIVIDADE DOS CARDS ===== */
-@media (max-width: 767px) {
-    .card-grid-2,
-    .card-grid-3,
-    .card-grid-4 {
-        grid-template-columns: 1fr;
-    }
-    
-    .card-header,
-    .card-content,
-    .card-footer {
-        padding: var(--spacing-md);
-    }
-    
-    .tooltip .tooltiptext {
-        width: 15rem;
-        margin-left: -7.5rem;
-        font-size: var(--font-size-xs);
-    }
-}
 
-@media (min-width: 768px) and (max-width: 1023px) {
-    .card-grid-3,
-    .card-grid-4 {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
 
 /* ===== CARD STATES ===== */
 .card.loading {
