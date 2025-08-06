@@ -27,9 +27,10 @@
             <i class="fa-solid fa-clipboard-check"></i>
             <span>Ordem de Serviço</span>
         </a>
-        <a href="#" aria-label="Notificações">
+        <a href="notificacoes.php" aria-label="Notificações" id="notificacoes-link">
             <i class="fa-solid fa-bell"></i>
             <span>Notificações</span>
+            <span class="contador-notificacoes" id="contador-notificacoes" style="display: none;">0</span>
         </a>
 
     </nav>

@@ -8,4 +8,5 @@
 
 <!-- JavaScript para comportamento do header -->
 <script src="./ressources/js/header-scroll.js"></script>
-<script src="./ressources/js/side-bar.js"></script> 
+<script src="./ressources/js/side-bar.js"></script>
+<script src="./ressources/js/notificacoes.js"></script> 

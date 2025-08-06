@@ -91,6 +91,17 @@ try {
         KEY email (email)
     )");
 
+    // 7. Notificações
+    $pdo->exec("CREATE TABLE IF NOT EXISTS notificacoes (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        chamado_id INT NOT NULL,
+        titulo VARCHAR(255) NOT NULL,
+        mensagem TEXT,
+        lida TINYINT DEFAULT 0,
+        data_criacao TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (chamado_id) REFERENCES ordens_servico(id_services) ON DELETE CASCADE
+    )");
+
     // Adicionar campos se não existirem (para compatibilidade com instalações existentes)
     try {
         $pdo->exec("ALTER TABLE ordens_servico ADD COLUMN id_suporte_origem INT NULL");
@@ -140,7 +151,6 @@ try {
     } catch (PDOException $e) {
         // Índice já existe, ignorar erro
     }
-
 } catch (PDOException $e) {
 
     echo "Erro ao criar tabelas: " . $e->getMessage();

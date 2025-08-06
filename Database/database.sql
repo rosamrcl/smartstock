@@ -157,9 +157,18 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   UNIQUE KEY `email` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Copiando dados para a tabela smartstock.usuarios: ~0 rows (aproximadamente)
-INSERT INTO `usuarios` (`id_user`, `nome`, `sobrenome`, `foto_perfil`, `email`, `senha`, `created_at`, `updated_at`, `deleted_at`) VALUES
-	(1, 'Luan', 'Aquino', '688a7b4d26ffc_1753905997.jpg', 'teste@gmail.com', '$2y$12$EvGxmohtsyPDZ4qIcLEJLO17Srm.9leqP8HI0kjFnr7ECGBKypW86', '2025-07-30 20:01:03', '2025-07-30 20:06:37', NULL);
+-- Copiando estrutura para tabela smartstock.notificacoes
+CREATE TABLE IF NOT EXISTS `notificacoes` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `chamado_id` int NOT NULL,
+  `titulo` varchar(255) NOT NULL,
+  `mensagem` text,
+  `lida` tinyint DEFAULT '0',
+  `data_criacao` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `chamado_id` (`chamado_id`),
+  CONSTRAINT `notificacoes_ibfk_1` FOREIGN KEY (`chamado_id`) REFERENCES `ordens_servico` (`id_services`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

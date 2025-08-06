@@ -65,6 +65,25 @@ $count_baixa = $counts['baixa'] ?? 0;
     <title>SmartStock - Listar Ordens de Serviço</title>
     <?php include 'includes/head.php'; ?>
     <link rel="stylesheet" href="./ressources/css/listar-ordens.css">
+    <style>
+        .chamado-destacado {
+            background-color: #fff3cd !important;
+            border-left: 4px solid #ffc107 !important;
+            animation: pulse 2s ease-in-out;
+            box-shadow: 0 0 20px rgba(255, 193, 7, 0.3);
+        }
+
+        @keyframes pulse {
+            0%, 100% { 
+                opacity: 1; 
+                transform: scale(1);
+            }
+            50% { 
+                opacity: 0.9; 
+                transform: scale(1.02);
+            }
+        }
+    </style>
 
 </head>
 
@@ -146,7 +165,13 @@ $count_baixa = $counts['baixa'] ?? 0;
                 ];
                 $categoria_text = $categorias[$ordem['categoria']] ?? $ordem['categoria'];
                 ?>
-                <div class="ordem-card <?php echo $ordem['status'] === 'Concluída' ? 'concluida' : ''; ?> <?= $urgencia_class ?>" data-id="<?php echo $ordem['id_services']; ?>">
+                <?php 
+                // Verificar se este chamado deve ser destacado
+                $highlight_id = $_GET['highlight'] ?? null;
+                $is_highlighted = $highlight_id == $ordem['id_services'];
+                $highlight_class = $is_highlighted ? 'chamado-destacado' : '';
+                ?>
+                <div class="ordem-card <?php echo $ordem['status'] === 'Concluída' ? 'concluida' : ''; ?> <?= $urgencia_class ?> <?= $highlight_class ?>" data-id="<?php echo $ordem['id_services']; ?>">
                     <div class="ordem-header">
                         <div class="ordem-info">
                             <div class="ordem-urgencia">
@@ -620,6 +645,32 @@ $count_baixa = $counts['baixa'] ?? 0;
                 link.textContent = 'mostrar mais';
             }
         }
+
+        // Scroll automático para chamado destacado
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const highlightId = urlParams.get('highlight');
+            
+            if (highlightId) {
+                const chamadoDestacado = document.querySelector(`[data-id="${highlightId}"]`);
+                if (chamadoDestacado) {
+                    // Scroll suave até o chamado destacado
+                    setTimeout(() => {
+                        chamadoDestacado.scrollIntoView({ 
+                            behavior: 'smooth', 
+                            block: 'center' 
+                        });
+                    }, 500);
+                    
+                    // Remover o parâmetro highlight da URL após 3 segundos
+                    setTimeout(() => {
+                        const url = new URL(window.location);
+                        url.searchParams.delete('highlight');
+                        window.history.replaceState({}, '', url);
+                    }, 3000);
+                }
+            }
+        });
     </script>
 
     <?php include 'includes/alerts.php'; ?>

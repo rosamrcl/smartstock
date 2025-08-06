@@ -71,6 +71,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $stmt_os = $pdo->prepare("INSERT INTO ordens_servico (solicitante, categoria, setor, equipamento, urgencia, observacoes, status, id_suporte_origem) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
                 $stmt_os->execute([$nome, $categoria, $setor, $equipamento, $urgencia, $mensagem, 'pendente', $id_suporte]);
 
+                // Obter o ID da ordem de serviço recém-criada
+                $chamado_id = $pdo->lastInsertId();
+
+                // Criar notificação para o novo chamado
+                $titulo_notificacao = "Novo Chamado #{$chamado_id}";
+                $mensagem_notificacao = "Chamado criado por {$nome} - " . substr($mensagem, 0, 50) . "...";
+                
+                $stmt_notif = $pdo->prepare("INSERT INTO notificacoes (chamado_id, titulo, mensagem) VALUES (?, ?, ?)");
+                $stmt_notif->execute([$chamado_id, $titulo_notificacao, $mensagem_notificacao]);
+
                 // Commit da transação
                 $pdo->commit();
 
