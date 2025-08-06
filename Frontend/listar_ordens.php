@@ -9,6 +9,8 @@ if (!isset($_SESSION['id_user'])) {
 
 require_once('../Backend/conexao.php');
 
+
+
 $id = $_SESSION['id_user'];
 
 $stmt = $pdo->prepare("SELECT foto_perfil FROM usuarios WHERE id_user = ?");
@@ -29,12 +31,13 @@ function is_image_file($filename) {
     return in_array($ext, ['jpg', 'jpeg', 'png', 'gif', 'webp']);
 }
 
-// Buscar ordens de serviço com dados do suporte e ordenar por urgência
+$where_adicional = "";
+
 $stmt = $pdo->prepare("
     SELECT os.*, s.arquivo as arquivo_suporte, s.nome as nome_cliente 
     FROM ordens_servico os 
     LEFT JOIN suporte s ON os.id_suporte_origem = s.id_suport 
-    WHERE os.deleted_at IS NULL 
+    WHERE os.deleted_at IS NULL
     ORDER BY 
         FIELD(os.urgencia, 'critica', 'alta', 'media', 'baixa'),
         os.created_at DESC
@@ -42,18 +45,23 @@ $stmt = $pdo->prepare("
 $stmt->execute();
 $ordens = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-// Contadores para dashboard de urgências
-$counts = $pdo->query("
+$counts_query = "
     SELECT urgencia, COUNT(*) as total 
     FROM ordens_servico 
-    WHERE deleted_at IS NULL 
+    WHERE deleted_at IS NULL
     GROUP BY urgencia
-")->fetchAll(PDO::FETCH_KEY_PAIR);
+";
+$counts = $pdo->query($counts_query)->fetchAll(PDO::FETCH_KEY_PAIR);
 
 $count_critica = $counts['critica'] ?? 0;
 $count_alta = $counts['alta'] ?? 0;
 $count_media = $counts['media'] ?? 0;
 $count_baixa = $counts['baixa'] ?? 0;
+
+$count_total = $pdo->query("
+    SELECT COUNT(*) FROM ordens_servico 
+    WHERE deleted_at IS NULL
+")->fetchColumn();
 ?>
 
 <!DOCTYPE html>
@@ -76,7 +84,6 @@ $count_baixa = $counts['baixa'] ?? 0;
             <p>Gerencie e acompanhe as ordens de serviço</p>
         </div>
 
-        <!-- Dashboard de Urgências -->
         <div class="dashboard-urgencias">
             <div class="card-urgencia critica">
                 <h5 class="text-danger"><?= $count_critica ?></h5>
@@ -96,7 +103,6 @@ $count_baixa = $counts['baixa'] ?? 0;
             </div>
         </div>
 
-        <!-- Filtros de Urgência -->
         <div class="filtros-urgencia">
             <button class="btn-outline-danger" onclick="filtrarUrgencia('critica')">
                 🔴 Críticas (<?= $count_critica ?>)
@@ -151,7 +157,7 @@ $count_baixa = $counts['baixa'] ?? 0;
                 $is_highlighted = $highlight_id == $ordem['id_services'];
                 $highlight_class = $is_highlighted ? 'chamado-destacado' : '';
                 ?>
-                <div class="ordem-card <?php echo $ordem['status'] === 'Concluída' ? 'concluida' : ''; ?> <?= $urgencia_class ?> <?= $highlight_class ?>" data-id="<?php echo $ordem['id_services']; ?>">
+                <div class="ordem-card <?= $urgencia_class ?> <?= $highlight_class ?>" data-id="<?php echo $ordem['id_services']; ?>">
                     <div class="ordem-header">
                         <div class="ordem-info">
                             <div class="ordem-urgencia">

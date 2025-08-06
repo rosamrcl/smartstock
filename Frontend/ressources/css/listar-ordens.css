@@ -259,7 +259,8 @@ LISTAR ORDENS DE SERVIÇO - ESTILOS
     flex-wrap: wrap;
 }
 
-.filtros-urgencia button {
+.filtros-urgencia button,
+.filtros-urgencia a {
     padding: 10px 20px;
     border-radius: 25px;
     border: 2px solid;
@@ -271,14 +272,21 @@ LISTAR ORDENS DE SERVIÇO - ESTILOS
     text-transform: uppercase;
     letter-spacing: 0.5px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
 }
 
-.filtros-urgencia button:hover {
+.filtros-urgencia button:hover,
+.filtros-urgencia a:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    text-decoration: none;
 }
 
-.filtros-urgencia button.active {
+.filtros-urgencia button.active,
+.filtros-urgencia a.active {
     color: var(--cor4);
     transform: translateY(-1px);
 }
@@ -336,6 +344,31 @@ LISTAR ORDENS DE SERVIÇO - ESTILOS
 .filtros-urgencia .btn-secondary.active {
     background: linear-gradient(135deg, var(--cor10) 0%, #545b62 100%);
     border-color: var(--cor10);
+}
+
+/* === FILTROS DE STATUS === */
+.filtros-container {
+    margin-bottom: 20px;
+}
+
+.filtros-container .filtros-urgencia {
+    margin-bottom: 0;
+}
+
+/* Responsividade para filtros */
+@media (max-width: 768px) {
+    .filtros-urgencia {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .filtros-urgencia button,
+    .filtros-urgencia a {
+        width: 100%;
+        justify-content: center;
+        font-size: 11px;
+        padding: 12px 16px;
+    }
 }
 
 /* === MODAL DO CHECKLIST === */
