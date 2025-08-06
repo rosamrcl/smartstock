@@ -665,3 +665,29 @@ LISTAR ORDENS DE SERVIÇO - ESTILOS
     padding-top: 20px;
     border-top: 2px solid var(--cor8);
 }
+
+/* === FUNCIONALIDADE MOSTRAR MAIS === */
+.observacao-container {
+    display: inline;
+}
+
+.observacao-texto,
+.observacao-completa {
+    display: inline;
+}
+
+.mostrar-mais {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 8px;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.mostrar-mais:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
