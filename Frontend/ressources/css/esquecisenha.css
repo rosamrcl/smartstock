@@ -1,4 +1,5 @@
-/* ===== RESET E CONFIGURAÇÕES GLOBAIS ===== */
+/* ===== CONTAINER PRINCIPAL ===== */
+
 .forgot-password-container {
     min-height: 100vh;
     display: flex;
@@ -9,7 +10,6 @@
     position: relative;
 }
 
-/* ===== CONTAINER PRINCIPAL ===== */
 .forgot-password-card {
     background: var(--cor4);
     border-radius: var(--border-radius-lg);
@@ -455,4 +455,3 @@
     white-space: nowrap;
     border: 0;
 }
-

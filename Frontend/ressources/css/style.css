@@ -28,32 +28,58 @@
 
 :root {
     /* ===== CORES PRINCIPAIS ===== */
-    --cor1: #009EEB;
-    --cor2: #327596;
-    --cor3: #FF8C00;
-    --cor4: #FFFFFF;
-    --cor5: #D51C1C;
+    /* Azul */
+    --cor1: #009EEB;  /* Azul claro vibrante */
+    --cor17: #0056B3; /* Azul escuro */
+    --cor2: #327596; /* Azul bg */
+    --cor35: #dee2e6; /* Azul clarinho */
+
+    /* Vermelho */
+    --cor-critica: #f44336;   /* Vermelho vivo */
+    --cor12: #dc3545;   /* Vermelho escuro */
+
+    /* Laranja */
+    --cor3: #FF8C00; /* Laranja intenso */
+    --cor14: #FF6B00; /* Laranja saturado */
+    --cor-alta: #ff9800; /* Laranja semâtico */
+
+    /* Verde */
+    --cor11: #28a745; /* verde médio */
+    --cor-baixa: #4caf50; /* Verde claro semântico*/
+
+    /* Neutros */
+    /* Preto */
     --cor6: #000000;
+    /* Branco */
+    --cor4: #FFFFFF;
+    /* Cinza */
+    --cor9: #1E1E1E; /* almost_black */
+    --cor15: #333; /* cinza médio */
+    --cor16: #666;
+    --cor34: #95a5a6; /* cinza zulado */
+
+    /* outros */
+    /* Marron */
+    --cor25: #856404; /* marrom/mostarda */
+    /* Amarelo */
+    --cor26: #fff3cd; /* Amarelo claro */
+    --cor-media: #ffeb3b; /* Amarelo semântico */
+    /* Rosa */
+    --cor22: #f8d7da;
+    --cor23: #f5c6cb;
+
+    
+    /* Eliminar*/
+    --cor5: #D51C1C;
     --cor7: #F8F9FA;
     --cor8: #E9ECEF;
-    --cor9: #1E1E1E;
     --cor10: #6C757D;
-    --cor11: #28a745;
-    --cor12: #dc3545;
     --cor13: #ffc107;
-    --cor14: #FF6B00;
-    --cor15: #333;
-    --cor16: #666;
-    --cor17: #0056B3;
     --cor18: #004085;
     --cor19: #155724;
     --cor20: #d4edda;
     --cor21: #c3e6cb;
-    --cor22: #f8d7da;
-    --cor23: #f5c6cb;
     --cor24: #007bff;
-    --cor25: #856404;
-    --cor26: #fff3cd;
     --cor27: #ffeaa7;
     --cor28: #0C5460;
     --cor29: #e67e00;
@@ -61,12 +87,7 @@
     --cor31: #218838;
     --cor32:#c82333;
     --cor33: #2c3e50;
-    --cor34: #95a5a6;
-    --cor35: #dee2e6;
-    --cor-critica: #f44336;
-    --cor-alta: #ff9800;
-    --cor-media: #ffeb3b;
-    --cor-baixa: #4caf50;
+    
 
 
 
