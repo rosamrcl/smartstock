@@ -57,7 +57,7 @@ $aba_ativa = isset($_GET['aba']) ? $_GET['aba'] : 'tab1';
                     <div class="form-group">
                         <label for="status">Status</label>
                         <select name="status" id="status" required>
-                            <option value="">Selecione um status</option>
+                            <option value="Selecione um status">Selecione um status</option>
                             <option value="Estoque">Estoque</option>
                             <option value="Manutenção">Manutenção</option>
                             <option value="Em uso">Em uso</option>
