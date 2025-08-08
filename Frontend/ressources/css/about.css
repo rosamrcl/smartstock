@@ -8,7 +8,7 @@
 
 .sobre_nos h1 {
     font-size: clamp(2.5rem, 5vw, 4rem);
-    color: var(--cor9);
+    color: var(--quase-preto);
     text-align: center;
     margin-bottom: var(--spacing-xl);
 }
@@ -24,10 +24,10 @@
 
 .sobre_nos .membros .box {
     font-size: var(--font-size-md);
-    color: var(--cor9);
+    color: var(--quase-preto);
     border-radius: .8rem;
     box-shadow: var(--box-shadow);
-    background: var(--cor2);
+    background: var(--azul-bg);
     margin: var(--spacing-md);
     padding: var(--spacing-xl);
     flex: 1 1 calc(33.333% - 2rem);
@@ -63,7 +63,7 @@
 
 .sobre_nos .membros .box .txt {
     text-align: center;
-    color: var(--cor4);
+    color: var(--branco);
     margin-bottom: var(--spacing-lg);
     width: 100%;
 }
@@ -90,8 +90,8 @@
     height: 4rem;
     width: 4rem;
     font-size: var(--font-size-lg);
-    color: var(--cor8);
-    background: var(--cor3);
+    color: var(--branco-light);
+    background: var(--laranja);
     margin: 0 .3rem;
     border-radius: 50%;
     text-decoration: none;
@@ -103,8 +103,8 @@
     width: 4rem;
     line-height: 4rem;
     font-size: var(--font-size-lg);
-    color: var(--cor4);
-    background: var(--cor8);
+    color: var(--branco);
+    background: var(--branco-light);
     margin: 0 .3rem;
     border-radius: 50%;
 }
@@ -117,6 +117,6 @@
 
 
 #disable {
-    background: var(--cor10);
+    background: var(--cinza_azulado);
     cursor: not-allowed;
 }

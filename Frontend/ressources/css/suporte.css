@@ -9,7 +9,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: var(--cor2);
+    background: var(--azul-bg);
     border-radius: 1.25rem;
     width: 90%;
     max-width: 800px;
@@ -18,7 +18,7 @@
 
 .heading {
     border-radius: 1.25rem 1.25rem 0 0;
-    background: var(--cor1);
+    background: var(--azul);
     box-shadow: var(--box-shadow);
     text-align: center;
     width: 100%;
@@ -26,7 +26,7 @@
 
 .heading h1 {
     font-size: var(--font-size-title);
-    color: var(--cor4);
+    color: var(--branco);
     padding: 2rem;
     text-shadow: var(--text-shadow);
 }
@@ -39,7 +39,7 @@
     justify-content: center;
     align-items: flex-start;
     width: 100%;
-    background: var(--cor2);
+    background: var(--azul-bg);
     border-radius: 1.25rem;
     gap: 1rem;
 }
@@ -99,14 +99,14 @@
     display: block;
     margin-top: var(--spacing-xs);
     font-size: var( --font-size-sm);
-    color: var(--cor8);
+    color: var(--branco-light);
     transition: color 0.3s;
 }
 
 .dicas-laterais {
-    background: var(--cor7);
+    background: var(--branco-light);
     padding: var(--spacing-md);
-    border-left: 4px solid var(--cor2);
+    border-left: 4px solid var(--azul-bg);
     margin-top: var(--spacing-sm);
     font-size: var(--font-size-s);
     border-radius: 0 8px 8px 0;
@@ -128,23 +128,23 @@
 .upload-label {
     display: block;
     padding: 20px;
-    border: 2px dashed var(--cor8);
+    border: 2px dashed var(--branco-light);
     text-align: center;
     cursor: pointer;
     border-radius: var(--border-radius-md);
     transition: all 0.3s;
-    background: var(--cor7);
+    background: var(--branco-light);
 }
 
 .upload-label:hover {
-    border-color: var(--cor2);
-    background: var(--cor8);
+    border-color: var(--azul-bg);
+    background: var(--branco-light);
 }
 
 .upload-label small {
     display: block;
     margin-top: var(--spacing-xs);
-    color: var(--cor16);
+    color: var(--cinza);
 }
 
 #preview-arquivo {
@@ -164,8 +164,8 @@
     padding:var(--spacing-lg);
     width: 100%;
     margin-bottom: 2rem;
-    border: 1px solid var(--cor8);
-    background: var(--cor4);
+    border: 1px solid var(--branco-light);
+    background: var(--branco);
 }
 
 .info-adicional {
@@ -180,13 +180,13 @@
 }
 
 .alert-success {
-    color: var(--cor19);
-    background-color: var(--cor20);
-    border-color: var(--cor21);
+    color: var(--verde-escuro);
+    background-color: var(--verde-claro);
+    border-color: var( --verde-claro);
 }
 
 .alert-danger {
-    color: var(--cor12);
-    background-color: var(--cor22);
-    border-color: var(--cor23);
+    color: var(--vermelho-escuro);
+    background-color: var(--rosa-claro);
+    border-color: var(--rosa_medio);
 }

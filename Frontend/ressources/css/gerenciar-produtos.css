@@ -13,11 +13,11 @@
 
 /* ===== FORMULÁRIO DE CADASTRO ===== */
 .form-produto {
-    background: var(--cor4);
+    background: var(--branco);
     border-radius: var(--border-radius-xl);
     padding: var(--spacing-xl);
     box-shadow: var(--box-shadow-card);
-    border: 1px solid var(--cor8);
+    border: 1px solid var(--branco-light);
     flex: 1;
     min-width: 0;
 }
@@ -30,7 +30,7 @@
 
 .form-container-produto h3 {
     font-size: var(--font-size-xxl);
-    color: var(--cor9);
+    color: var(--quase-preto);
     text-align: center;
     margin-bottom: var(--spacing-xl);
     font-weight: 600;
@@ -58,16 +58,16 @@
 }
 
 .status-estoque {
-    background: linear-gradient(135deg, var(--cor11) 0%, #1E7E34 100%);
-    color: var(--cor4);
+    background: linear-gradient(135deg, var(--verde-medio) 0%, #1E7E34 100%);
+    color: var(--branco);
 }
 
 .status-manutencao {
-    background: linear-gradient(135deg, var(--cor13) 0%, #E0A800 100%);
+    background: linear-gradient(135deg, var(--dourado) 0%, #E0A800 100%);
     color: #212529;
 }
 
 .status-em-uso {
-    background: linear-gradient(135deg, var(--cor2) 0%, #138496 100%);
-    color: var(--cor4);
+    background: linear-gradient(135deg, var(--azul-bg) 0%, #138496 100%);
+    color: var(--branco);
 }

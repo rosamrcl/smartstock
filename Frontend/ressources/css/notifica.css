@@ -10,18 +10,18 @@
 }
 
 .notificacoes-header h1 {
-    color: var(--cor9);
+    color: var(--quase-preto);
     margin-bottom: 10px;
     font-size: var(--font-size-title);
 }
 
 .notificacoes-header p {
-    color: var(--cor16);
+    color: var(--cinza);
     font-size: var(--font-size-lg);
 }
 
 .notificacoes-list {
-    background: var(--cor4);
+    background: var(--branco);
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -37,16 +37,16 @@
 }
 
 .notificacao-item:hover {
-    background-color: var(--cor8);
+    background-color: var(--branco-light);
 }
 
 .notificacao-item.nao-lida {
-    background-color: var(--cor26);
-    border-left: 4px solid var(--cor13);
+    background-color: var(--amarelo-claro);
+    border-left: 4px solid var(--dourado);
 }
 
 .notificacao-item.nao-lida:hover {
-    background-color: var(--cor27);
+    background-color: var(  --amarelo-claro);
 }
 
 .notificacao-header {
@@ -58,12 +58,12 @@
 
 .notificacao-titulo {
     font-weight: bold;
-    color: var(--cor15);
+    color: var(--cinza-medio);
     font-size: var(--font-size-xl);
 }
 
 .notificacao-data {
-    color: var(--cor16);
+    color: var(--cinza);
     font-size: var(--font-size-md);
 }
 
@@ -77,7 +77,7 @@
     display: flex;
     gap: 15px;
     font-size: var(--font-size-md);
-    color: var(--cor16);
+    color: var(--cinza);
 }
 
 .notificacao-info span {
@@ -94,29 +94,29 @@
 }
 
 .badge-critica {
-    background-color: var(--cor12);
-    color: var(--cor4);
+    background-color: var(--vermelho-escuro);
+    color: var(--branco);
 }
 
 .badge-alta {
-    background-color: var(--cor14);
-    color: var(--cor4);
+    background-color: var(--laranja-saturado);
+    color: var(--branco);
 }
 
 .badge-media {
-    background-color: var(--cor13);
-    color: var(--cor6);
+    background-color: var(--dourado);
+    color: var(--black);
 }
 
 .badge-baixa {
-    background-color: var(--cor11);
-    color: var(--cor4);
+    background-color: var(--verde-medio);
+    color: var(--branco);
 }
 
 .sem-notificacoes {
     text-align: center;
     padding: 50px 20px;
-    color: var(--cor16);
+    color: var(--cinza);
 }
 
 .sem-notificacoes i {
@@ -129,8 +129,8 @@
     position: absolute;
     top: -5px;
     right: -5px;
-    background-color: var(--cor12);
-    color: var(--cor4);
+    background-color: var(--vermelho-escuro);
+    color: var(--branco);
     border-radius: 50%;
     width: 20px;
     height: 20px;
@@ -144,7 +144,7 @@
 .loading {
     text-align: center;
     padding: 50px;
-    color: var(--cor16);
+    color: var(--cinza);
 }
 
 .loading i {

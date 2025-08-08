@@ -6,15 +6,15 @@
 }
 
 .strength-weak { 
-    color: var(--cor12); 
+    color: var(--vermelho-escuro); 
 }
 
 .strength-medium { 
-    color: var(--cor14); 
+    color: var(--laranja-saturado); 
 }
 
 .strength-strong { 
-    color: var(--cor11); 
+    color: var(--verde-medio); 
 }
 
 .password-requirements {
@@ -24,20 +24,20 @@
 
 .requirement {
     margin: 2px 0;
-    color: var(--cor16);
+    color: var(--cinza);
 }
 
 .requirement-met {
-    color: var(--cor11);
+    color: var(--verde-medio);
 }
 
 .requirement-not-met {
-    color: var(--cor12);
+    color: var(--vermelho-escuro);
 }
 
 .form-info {
     text-align: center;
-    color:var(--cor16);
+    color:var(--cinza);
     margin-bottom: 20px;
     font-size: var(--font-size-s);
 }

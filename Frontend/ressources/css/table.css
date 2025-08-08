@@ -9,31 +9,31 @@
 table {
     width: 100%;
     border-collapse: collapse;
-    background: var(--cor4);
+    background: var(--branco);
     border-radius: var(--border-radius-lg);
     overflow: hidden;
     font-size: var(--font-size-md);
 }
 
 thead {
-    background: linear-gradient(135deg, var(--cor7) 0%, var(--cor8) 100%);
+    background: linear-gradient(135deg, var(--branco-light) 0%, var(--branco-light) 100%);
 }
 
 th {
     padding: var(--spacing-md);
     text-align: left;
     font-weight: 600;
-    color: var(--cor9);
+    color: var(--quase-preto);
     font-size: var(--font-size-sm);
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    border-bottom: 2px solid var(--cor8);
+    border-bottom: 2px solid var(--branco-light);
 }
 
 td {
     padding: var(--spacing-md);
-    border-bottom: 1px solid var(--cor8);
-    color: var(--cor10);
+    border-bottom: 1px solid var(--branco-light);
+    color: var(--cinza_azulado);
     vertical-align: middle;
 }
 
@@ -42,24 +42,24 @@ tbody tr {
 }
 
 tbody tr:hover {
-    background: var(--cor7);
+    background: var(--branco-light);
     transform: scale(1.01);
 }
 
 tbody tr:nth-child(even) {
-    background: var(--cor7);
+    background: var(--branco-light);
 }
 
 /* ===== LINHA CONCLUÍDA ===== */
 .tr-concluida {
-    background: linear-gradient(135deg, var(--cor20) 0%, var(--cor21) 100%);
-    color: var(--cor19);
+    background: linear-gradient(135deg, var(--verde-claro) 0%, var( --verde-claro) 100%);
+    color: var(--verde-escuro);
     transition: 0.3s;
 }
 
 .tr-concluida .btn {
-    background: linear-gradient(135deg, var(--cor11) 0%, #1E7E34 100%);
-    color: var(--cor4);
+    background: linear-gradient(135deg, var(--verde-medio) 0%, #1E7E34 100%);
+    color: var(--branco);
 }
 
 /* ===== CHECKBOXES ===== */
@@ -68,7 +68,7 @@ td label {
     align-items: center;
     gap: var(--spacing-xs);
     font-size: var(--font-size-sm);
-    color: var(--cor9);
+    color: var(--quase-preto);
 }
 
 td input[type="checkbox"] {
@@ -111,9 +111,9 @@ td {
 .table-stacked tr {
     margin-bottom: var(--spacing-lg);
     padding: var(--spacing-md);
-    border: 1px solid var(--cor8);
+    border: 1px solid var(--branco-light);
     border-radius: var(--border-radius-md);
-    background: var(--cor4);
+    background: var(--branco);
 }
 
 .table-stacked td {
@@ -130,7 +130,7 @@ td {
     left: 0;
     width: 45%;
     font-weight: 600;
-    color: var(--cor9);
+    color: var(--quase-preto);
     text-transform: uppercase;
     font-size: var(--font-size-xs);
     letter-spacing: 0.5px;
@@ -138,18 +138,18 @@ td {
 
 /* ===== CONTAINER DA TABELA ===== */
 .table-container {
-    background: var(--cor4);
+    background: var(--branco);
     border-radius: var(--border-radius-xl);
     padding: var(--spacing-xl);
     box-shadow: var(--box-shadow-card);
-    border: 1px solid var(--cor8);
+    border: 1px solid var(--branco-light);
     flex: 2;
     min-width: 0;
 }
 
 .table-container h3 {
     font-size: var(--font-size-xxl);
-    color: var(--cor9);
+    color: var(--quase-preto);
     text-align: center;
     margin-bottom: var(--spacing-xl);
     font-weight: 600;
@@ -166,12 +166,12 @@ td {
 
 .tab-button {
     padding: var(--spacing-md) var(--spacing-lg);
-    background: var(--cor8);
+    background: var(--branco-light);
     border: none;
     border-radius: var(--border-radius-md);
     cursor: pointer;
     font-size: var(--font-size-md);
-    color: var(--cor9);
+    color: var(--quase-preto);
     font-weight: 500;
     transition: all 0.3s ease;
     min-height: 4.4rem;
@@ -179,14 +179,14 @@ td {
 }
 
 .tab-button:hover {
-    background: var(--cor3);
-    color: var(--cor4);
+    background: var(--laranja);
+    color: var(--branco);
     transform: translateY(-2px);
 }
 
 .tab-button.active {
-    background: linear-gradient(135deg, var(--cor3) 0%, var(--cor14) 100%);
-    color: var(--cor4);
+    background: linear-gradient(135deg, var(--laranja) 0%, var(--laranja-saturado) 100%);
+    color: var(--branco);
     box-shadow: var(--box-shadow);
 }
 

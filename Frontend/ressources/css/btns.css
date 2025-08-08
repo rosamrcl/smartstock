@@ -10,7 +10,7 @@
     border-radius: var(--border-radius-md);
     font-size: var(--font-size-md);
     font-weight: 500;
-    color: var(--cor4);
+    color: var(--branco);
     cursor: pointer;
     min-height: 3.2rem;
     min-width: 3.2rem;
@@ -25,31 +25,31 @@
 }
 
 .btn{
-    background: linear-gradient(135deg, var(--cor3) 0%, var(--cor14) 100%);
+    background: linear-gradient(135deg, var(--laranja) 0%, var(--laranja-saturado) 100%);
     box-shadow: var(--box-shadow);
 }
 
 .btn-secundario{
-    background: var(--cor4);
+    background: var(--branco);
     box-shadow: var(--box-shadow);
     text-decoration: none;
-    color: var(--cor15);
+    color: var(--cinza-medio);
 }
 
 .btn-edit {
-    background: linear-gradient(135deg, var(--cor1) 0%, var(--cor17) 100%);
+    background: linear-gradient(135deg, var(--azul) 0%, var(--azul-escuro) 100%);
 }
 
 .btn-delete {
-    background: linear-gradient(135deg, var(--cor5) 0%, var(--cor12) 100%);
+    background: linear-gradient(135deg, var(--vermelho-escuro) 0%, var(--vermelho-escuro) 100%);
 }
 
 .btn-edit:hover {
-    background: linear-gradient(135deg, var(--cor17) 0%, var(--cor18) 100%);
+    background: linear-gradient(135deg, var(--azul-escuro) 0%, var(--azul-bg) 100%);
     
 }
 .btn-delete:hover {
-    background: linear-gradient(135deg, var(--cor5) 0%, var(--cor12) 100%);
+    background: linear-gradient(135deg, var(--vermelho-escuro) 0%, var(--vermelho-escuro) 100%);
 }
 .btn-edit:hover, .btn-delete:hover{
     transform: translateY(-1px);
@@ -66,7 +66,7 @@
 {
     transform: translateY(-2px);
     box-shadow: var(--box-shadow-hover);
-    color: var(--cor4);
+    color: var(--branco);
     opacity: 0.9;
 }
 
@@ -79,7 +79,7 @@
 .btn-secundario:focus,
 .btn:focus,
 .btn-delete:focus{
-    outline: 2px solid var(--cor1);
+    outline: 2px solid var(--azul);
     outline-offset: 2px;
 }
 
@@ -119,14 +119,14 @@
 
 
 .submit-btn {
-    background: linear-gradient(135deg, var(--cor3) 0%, #ff9500 100%);
+    background: linear-gradient(135deg, var(--laranja) 0%, #ff9500 100%);
 
 }
 
 .submit-btn:hover {
     transform: translateY(-1px);
     box-shadow: var(--box-shadow-hover);
-    background: linear-gradient(135deg, var(--cor1) 0%, var(--cor2) 100%);
+    background: linear-gradient(135deg, var(--azul) 0%, var(--azul-bg) 100%);
 }
 
 .submit-btn:disabled {
@@ -143,7 +143,7 @@
 }
 
 .btn-secondary {
-    background: linear-gradient(135deg, var(--cor10) 0%, #495057 100%);
+    background: linear-gradient(135deg, var(--cinza_azulado) 0%, #495057 100%);
     margin-top: 1rem;
 }
 
@@ -152,8 +152,8 @@
 }
 
 .btn-checklist {
-    background: var(--cor24);
-    color: var(--cor4);
+    background: var(  --azul-bg);
+    color: var(--branco);
     border: none;
     padding: 12px 24px;
     border-radius: 25px;
@@ -170,7 +170,7 @@
 }
 
 .btn-checklist:hover {
-    background: var(--cor17);
+    background: var(--azul-escuro);
     transform: translateY(-1px);
 }
 
@@ -179,8 +179,8 @@
 }
 
 .btn-finalizar {
-    background: var(--cor11);
-    color: var(--cor4);
+    background: var(--verde-medio);
+    color: var(--branco);
     border: none;
     padding: 12px 24px;
     border-radius: 25px;
@@ -202,7 +202,7 @@
 }
 
 .btn-finalizar:disabled {
-    background: var(--cor10);
+    background: var(--cinza_azulado);
     cursor: not-allowed;
     transform: none;
     box-shadow: 0 2px 8px rgba(108, 117, 125, 0.3);
@@ -214,7 +214,7 @@
 
 .btn-mostrar-imagem {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: var(--cor4);
+    color: var(--branco);
     border: none;
     padding: 8px 16px;
     border-radius: 20px;

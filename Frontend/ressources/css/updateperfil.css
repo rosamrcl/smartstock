@@ -16,7 +16,7 @@
     justify-content: center;
     padding: 2rem ;
     border-radius: .5rem;
-    background: var(--cor2);
+    background: var(--azul-bg);
     width: 100%;
     max-width: 800px;
 }
@@ -39,14 +39,14 @@
     max-width: 100%; 
 }
 .form-update .form-container-update form h3{
-    color: var(--cor4);
+    color: var(--branco);
     font-size: 3rem;
     margin-bottom: 1rem;
     text-align: center;
 
 }
 .form-update .form-container-update form label{
-    color: var(--cor4);
+    color: var(--branco);
     align-self: flex-start;
     margin-left: 1rem;
     font-size: var(--font-size-lg);
@@ -60,7 +60,7 @@
     display: block;
     margin: 1rem auto;
     width: auto;
-    background: var(--cor7);
+    background: var(--branco-light);
 
 }
 .form-update .form-container-update form .foto-update-perfil img{
@@ -77,4 +77,8 @@
     height: 200px;
     object-fit: cover;
     border-radius: 50%;
+}
+
+.upload-container{
+    margin: 1rem;
 }

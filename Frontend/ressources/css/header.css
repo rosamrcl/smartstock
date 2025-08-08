@@ -9,7 +9,7 @@
 
 #menu-btn{
     font-size: var(--font-size-title);
-    color: var(--cor9);
+    color: var(--quase-preto);
     margin-right:1rem;
     padding: 2rem;
     cursor: pointer;
@@ -21,7 +21,7 @@
 }
 .header .flex .smartstock a{
     font-size: var(--font-size-title);
-    color: var(--cor9); 
+    color: var(--quase-preto); 
 }
 .header .flex .smart-logo{
     display: flex;
@@ -39,7 +39,7 @@
 
 
 .home {
-    color: var(--cor9);
+    color: var(--quase-preto);
     font-size: var(--font-size-xl);
     font-weight: 600;
     text-decoration: none;
@@ -50,7 +50,7 @@
 }
 
 .home:hover {
-    color: var(--cor3);
+    color: var(--laranja);
     transform: translateY(-1px);
 }
 
@@ -103,13 +103,13 @@
     border: .1rem solid #555;
     border-radius: 5rem;
     display: inline-block;
-    color: var(--cor9);
+    color: var(--quase-preto);
     cursor: pointer;
     font-size: 1.8rem;
 }
 .side-bar .navbar #close-btn:hover{
-    background-color: var(--cor9);
-    color: var(--cor8);
+    background-color: var(--quase-preto);
+    color: var(--branco-light);
 
 }
 .side-bar .navbar #close-btn i {
@@ -121,7 +121,7 @@
 
 .header .flex a{
     font-size: var(--font-size-md);
-    color: var(--cor9);
+    color: var(--quase-preto);
     text-decoration: none;
     padding: var(--spacing-sm) var(--spacing-md);
     border-radius: var(--border-radius-md);
@@ -136,7 +136,7 @@
 .side-bar .navbar a{
     display: block;
     font-size: var(--font-size-md);
-    color: var(--cor9);
+    color: var(--quase-preto);
     text-decoration: none;
     padding: var(--spacing-sm) var(--spacing-md);
     border-radius: var(--border-radius-md);
@@ -156,15 +156,15 @@
     left: 50%;
     width: 0;
     height: 2px;
-    background: linear-gradient(135deg, var(--cor3) 0%, var(--cor14) 100%);
+    background: linear-gradient(135deg, var(--laranja) 0%, var(--laranja-saturado) 100%);
     transition: all 0.3s ease;
     transform: translateX(-50%);
 }
 .header .flex a:hover,
 .side-bar .navbar a:hover{
     color: var(--main-color);
-    color: var(--cor3);
-    background: var(--cor7);
+    color: var(--laranja);
+    background: var(--branco-light);
     transform: translateY(-1px);
 
 }

@@ -2,10 +2,10 @@
 
 /* ===== CARD BASE ===== */
 .card {
-    background: var(--cor4);
+    background: var(--branco);
     border-radius: var(--border-radius-lg);
     box-shadow: var(--box-shadow-card);
-    border: 1px solid var(--cor8);
+    border: 1px solid var(--branco-light);
     transition: all 0.3s ease;
     overflow: hidden;
     position: relative;
@@ -14,7 +14,7 @@
 .card:hover {
     transform: translateY(-4px);
     box-shadow: var(--box-shadow-hover);
-    border-color: var(--cor3);
+    border-color: var(--laranja);
 }
 
 .card::before {
@@ -24,7 +24,7 @@
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(135deg, var(--cor3) 0%, var(--cor14) 100%);
+    background: linear-gradient(135deg, var(--laranja) 0%, var(--laranja-saturado) 100%);
     transform: scaleX(0);
     transition: transform 0.3s ease;
 }
@@ -36,21 +36,21 @@
 /* ===== CARD HEADER ===== */
 .card-header {
     padding: var(--spacing-lg);
-    border-bottom: 1px solid var(--cor8);
+    border-bottom: 1px solid var(--branco-light);
     display: flex;
     align-items: center;
     gap: var(--spacing-md);
-    background: linear-gradient(135deg, var(--cor7) 0%, var(--cor8) 100%);
+    background: linear-gradient(135deg, var(--branco-light) 0%, var(--branco-light) 100%);
 }
 
 .card-header i {
     font-size: var(--font-size-xl);
-    color: var(--cor3);
+    color: var(--laranja);
 }
 
 .card-header h3 {
     font-size: var(--font-size-lg);
-    color: var(--cor9);
+    color: var(--quase-preto);
     font-weight: 600;
     margin: 0;
 }
@@ -62,7 +62,7 @@
 
 .card-content p {
     font-size: var(--font-size-md);
-    color: var(--cor10);
+    color: var(--cinza_azulado);
     line-height: 1.6;
     margin: var(--spacing-md) 0;
 }
@@ -70,8 +70,8 @@
 /* ===== CARD FOOTER ===== */
 .card-footer {
     padding: var(--spacing-lg);
-    border-top: 1px solid var(--cor8);
-    background: var(--cor7);
+    border-top: 1px solid var(--branco-light);
+    background: var(--branco-light);
     display: flex;
     justify-content: flex-end;
     gap: var(--spacing-md);
@@ -96,43 +96,43 @@
 }
 
 .alert-success {
-    background: linear-gradient(135deg, var(--cor20) 0%, var(--cor21) 100%);
-    border-color: var(--cor21);
-    color: var(--cor19);
+    background: linear-gradient(135deg, var(--verde-claro) 0%, var( --verde-claro) 100%);
+    border-color: var( --verde-claro);
+    color: var(--verde-escuro);
 }
 
 .alert-success i {
-    color: var(--cor11);
+    color: var(--verde-medio);
 }
 
 .alert-warning {
-    background: linear-gradient(135deg, var(--cor26) 0%, var(--cor27) 100%);
-    border-color: var(--cor27);
-    color: var(--cor25);
+    background: linear-gradient(135deg, var(--amarelo-claro) 0%, var(  --amarelo-claro) 100%);
+    border-color: var(  --amarelo-claro);
+    color: var(--marron-mostarda);
 }
 
 .alert-warning i {
-    color: var(--cor13);
+    color: var(--dourado);
 }
 
 .alert-info {
-    background: linear-gradient(135deg, var(--cor20) 0%, var(--cor21)100%);
-    border-color: var(--cor21);
-    color: var(--cor28);
+    background: linear-gradient(135deg, var(--verde-claro) 0%, var( --verde-claro)100%);
+    border-color: var( --verde-claro);
+    color: var(--cinza_azulado);
 }
 
 .alert-info i {
-    color: var(--cor2);
+    color: var(--azul-bg);
 }
 
 .alert-error {
-    background: linear-gradient(135deg, var(--cor22) 0%, var(--cor23) 100%);
-    border-color: var(--cor23);
+    background: linear-gradient(135deg, var(--rosa-claro) 0%, var(--rosa_medio) 100%);
+    border-color: var(--rosa_medio);
     color: #721C24;
 }
 
 .alert-error i {
-    color: var(--cor12);
+    color: var(--vermelho-escuro);
 }
 
 /* ===== BADGES MODERNOS ===== */
@@ -149,35 +149,35 @@
 }
 
 .badge-primary {
-    background: linear-gradient(135deg, var(--cor1) 0%, var(--cor17) 100%);
-    color: var(--cor4);
+    background: linear-gradient(135deg, var(--azul) 0%, var(--azul-escuro) 100%);
+    color: var(--branco);
 }
 
 .badge-success {
-    background: linear-gradient(135deg, var(--cor11) 0%, #1E7E34 100%);
-    color: var(--cor4);
+    background: linear-gradient(135deg, var(--verde-medio) 0%, #1E7E34 100%);
+    color: var(--branco);
 }
 
 .badge-warning {
-    background: linear-gradient(135deg, var(--cor13) 0%, #E0A800 100%);
+    background: linear-gradient(135deg, var(--dourado) 0%, #E0A800 100%);
     color: #212529;
 }
 
 .badge-danger {
-    background: linear-gradient(135deg, var(--cor12) 0%, #C82333 100%);
-    color: var(--cor4);
+    background: linear-gradient(135deg, var(--vermelho-escuro) 0%, #C82333 100%);
+    color: var(--branco);
 }
 
 .badge-info {
     background: linear-gradient(135deg, #17A2B8 0%, #138496 100%);
-    color: var(--cor4);
+    color: var(--branco);
 }
 
 /* ===== PROGRESS BARS MODERNOS ===== */
 .progress {
     width: 100%;
     height: 1.2rem;
-    background: var(--cor8);
+    background: var(--branco-light);
     border-radius: var(--border-radius-sm);
     overflow: hidden;
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -185,7 +185,7 @@
 
 .progress-bar {
     height: 100%;
-    background: linear-gradient(135deg, var(--cor3) 0%, var(--cor14) 100%);
+    background: linear-gradient(135deg, var(--laranja) 0%, var(--laranja-saturado) 100%);
     transition: width 0.6s ease;
     position: relative;
     overflow: hidden;
@@ -208,15 +208,15 @@
 }
 
 .progress-bar-success {
-    background: linear-gradient(135deg, var(--cor11) 0%, #1E7E34 100%);
+    background: linear-gradient(135deg, var(--verde-medio) 0%, #1E7E34 100%);
 }
 
 .progress-bar-warning {
-    background: linear-gradient(135deg, var(--cor13) 0%, #E0A800 100%);
+    background: linear-gradient(135deg, var(--dourado) 0%, #E0A800 100%);
 }
 
 .progress-bar-danger {
-    background: linear-gradient(135deg, var(--cor12) 0%, #C82333 100%);
+    background: linear-gradient(135deg, var(--vermelho-escuro) 0%, #C82333 100%);
 }
 
 .progress-bar-info {
@@ -232,8 +232,8 @@
 .tooltip .tooltiptext {
     visibility: hidden;
     width: 20rem;
-    background: var(--cor9);
-    color: var(--cor4);
+    background: var(--quase-preto);
+    color: var(--branco);
     text-align: center;
     border-radius: var(--border-radius-md);
     padding: var(--spacing-md);
@@ -247,7 +247,7 @@
     font-size: var(--font-size-sm);
     line-height: 1.4;
     box-shadow: var(--box-shadow-hover);
-    border: 1px solid var(--cor8);
+    border: 1px solid var(--branco-light);
 }
 
 .tooltip .tooltiptext::after {
@@ -258,7 +258,7 @@
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
-    border-color: var(--cor9) transparent transparent transparent;
+    border-color: var(--quase-preto) transparent transparent transparent;
 }
 
 .tooltip:hover .tooltiptext {
@@ -304,26 +304,26 @@
     left: 50%;
     width: 2rem;
     height: 2rem;
-    border: 2px solid var(--cor8);
-    border-top: 2px solid var(--cor3);
+    border: 2px solid var(--branco-light);
+    border-top: 2px solid var(--laranja);
     border-radius: 50%;
     animation: spin 1s linear infinite;
     transform: translate(-50%, -50%);
 }
 
 .card.error {
-    border-color: var(--cor5);
-    background: linear-gradient(135deg, var(--cor8) 0%, var(--cor23) 100%);
+    border-color: var(--vermelho-escuro);
+    background: linear-gradient(135deg, var(--branco-light) 0%, var(--rosa_medio) 100%);
 }
 
 .card.success {
-    border-color: var(--cor11);
-    background: linear-gradient(135deg, #F0FFF4 0%, var(--cor21) 100%);
+    border-color: var(--verde-medio);
+    background: linear-gradient(135deg, #F0FFF4 0%, var( --verde-claro) 100%);
 }
 
 .card.info {
     border-color: #17A2B8;
-    background: linear-gradient(135deg, var(--cor7) 0%, #E6F3FF 100%);
+    background: linear-gradient(135deg, var(--branco-light) 0%, #E6F3FF 100%);
 }
 
 /* ===== CARD ANIMATIONS ===== */
@@ -377,12 +377,12 @@
 
 /* ===== CARD ACCESSIBILITY ===== */
 .card:focus-within {
-    outline: 2px solid var(--cor1);
+    outline: 2px solid var(--azul);
     outline-offset: 2px;
 }
 
 .card[tabindex]:focus {
-    outline: 2px solid var(--cor1);
+    outline: 2px solid var(--azul);
     outline-offset: 2px;
 }
 

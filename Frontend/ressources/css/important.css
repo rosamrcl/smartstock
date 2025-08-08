@@ -2,7 +2,7 @@
 
 /* ===== HEADER PRINCIPAL ===== */
 header {
-    background: var(--cor7) !important; /* Fundo branco */
+    background: var(--branco-light) !important; /* Fundo branco */
     box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important; /* Sombra sutil */
     opacity: 1; /* Estado inicial visível */
     transform: translateY(0); /* Posição inicial */

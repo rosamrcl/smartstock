@@ -6,19 +6,19 @@
     align-items: center;
     justify-content: center;
     padding: 1rem;
-    background: var(--cor4);
+    background: var(--branco);
     position: relative;
 }
 
 .forgot-password-card {
-    background: var(--cor4);
+    background: var(--branco);
     border-radius: var(--border-radius-lg);
     box-shadow: var(--shadow-md);
     padding: 2.5rem;
     width: 100%;
     max-width: 420px;
     position: relative;
-    border: 1px solid var(--cor35);
+    border: 1px solid var(--azul-light);
     animation: fadeInUp 0.6s ease-out;
 }
 
@@ -42,12 +42,12 @@
 .forgot-password-title {
     font-size: 1.75rem;
     font-weight: 700;
-    color: var(--cor33);
+    color: var(--cinza-medio);
     margin-bottom: 0.75rem;
 }
 
 .forgot-password-subtitle {
-    color: var(--cor10);
+    color: var(--cinza_azulado);
     font-size: var(--font-size-sm);
     line-height: 1.6;
     margin: 0;
@@ -66,7 +66,7 @@
 .form-label {
     display: block;
     font-weight: 600;
-    color: var(--cor33);
+    color: var(--cinza-medio);
     margin-bottom: 0.5rem;
     font-size: var(--font-size-sm);
 }
@@ -74,28 +74,28 @@
 .form-input {
     width: 100%;
     padding: 0.875rem 1rem 0.875rem 2.75rem;
-    border: 2px solid var(--cor35);
+    border: 2px solid var(--azul-light);
     border-radius: var(--border-radius-sm);
     font-size: var(--font-size-s);
     transition: var(--transition);
-    background: var(--cor4);
-    color: var(--cor33);
+    background: var(--branco);
+    color: var(--cinza-medio);
     position: relative;
 }
 
 .form-input::placeholder {
-    color: var(--cor34);
+    color: var(--cinza_azulado);
     font-weight: 400;
 }
 
 .form-input:focus {
     outline: none;
-    border-color: var(--cor3);
+    border-color: var(--laranja);
     box-shadow: var(--shadow-focus);
 }
 
 .form-input:focus ~ .input-icon {
-    color: var(--cor3);
+    color: var(--laranja);
 }
 
 .input-icon {
@@ -103,7 +103,7 @@
     left: 1rem;
     top: 50%;
     transform: translateY(-50%);
-    color: var(--cor34);
+    color: var(--cinza_azulado);
     font-size: var(--font-size-md);
     transition: var(--transition);
     pointer-events: none;
@@ -112,18 +112,18 @@
 
 /* ===== ESTADOS DE VALIDAÇÃO ===== */
 .form-input.error {
-    border-color: var(--cor12);
-    background: var(--cor22);
+    border-color: var(--vermelho-escuro);
+    background: var(--rosa-claro);
 }
 
 .form-input.success {
-    border-color: var(--cor11);
-    background: var(--cor20);
+    border-color: var(--verde-medio);
+    background: var(--verde-claro);
 }
 
 .error-message {
     display: block;
-    color: var(--cor12);
+    color: var(--vermelho-escuro);
     font-size: var(--font-size-md);
     margin-top: 0.5rem;
     font-weight: 500;
@@ -142,7 +142,7 @@
 .submit-button {
     width: 100%;
     padding: 0.875rem 2rem;
-    background: var(--cor3);
+    background: var(--laranja);
     color: white;
     border: none;
     border-radius: var(--border-radius-sm);
@@ -160,7 +160,7 @@
 }
 
 .submit-button:hover {
-    background: var(--cor29);
+    background: var(--laranja);
     transform: translateY(-1px);
     box-shadow: var(--shadow-md);
 }
@@ -194,7 +194,7 @@
 }
 
 .submit-button.success {
-    background: var(--cor11);
+    background: var(--verde-medio);
 }
 
 .submit-button.success .button-text::before {
@@ -219,7 +219,7 @@
     width: 18px;
     height: 18px;
     border: 2px solid rgba(255, 255, 255, 0.3);
-    border-top: 2px solid var(--cor4);
+    border-top: 2px solid var(--branco);
     border-radius: 50%;
     animation: spin 1s linear infinite;
 }
@@ -236,7 +236,7 @@
     overflow: hidden;
     transition: var(--transition-slow);
     margin: 0;
-    background: var(--cor20);
+    background: var(--verde-claro);
     border-radius: var(--border-radius);
     border: 1px solid rgba(40, 167, 69, 0.2);
     transform: translateY(-20px);
@@ -256,7 +256,7 @@
     align-items: center;
     gap: 0.75rem;
     margin-bottom: 1rem;
-    color: var(--cor11);
+    color: var(--verde-medio);
 }
 
 .reset-link-header i {
@@ -289,20 +289,20 @@
 }
 
 .reset-link-description {
-    color: var(--cor10);
+    color: var(--cinza_azulado);
     margin-bottom: 1rem;
     line-height: 1.6;
     font-size: var(--font-size-md);
 }
 
 .reset-link-display {
-    background: var(--cor4);
-    border: 1px solid var(--cor35);
+    background: var(--branco);
+    border: 1px solid var(--azul-light);
     border-radius: var(--border-radius-sm);
     padding: 0.875rem;
     margin: 1rem 0;    
     font-size: var(--font-size-md);
-    color: var(--cor3);
+    color: var(--laranja);
     word-break: break-all;
     position: relative;
     transition: var(--transition);
@@ -310,13 +310,13 @@
 }
 
 .reset-link-display:hover {
-    border-color: var(--cor3);
+    border-color: var(--laranja);
     box-shadow: var(--shadow-sm);
 }
 
 .reset-link-display:focus {
     outline: none;
-    border-color: var(--cor3);
+    border-color: var(--laranja);
     box-shadow: var(--shadow-focus);
 }
 
@@ -327,13 +327,13 @@
     right: 0.875rem;
     top: 50%;
     transform: translateY(-50%);
-    color: var(--cor34);
+    color: var(--cinza_azulado);
     font-size:var(--font-size-md);
     transition: var(--transition);
 }
 
 .reset-link-display:hover::after {
-    color: var(--cor3);
+    color: var(--laranja);
 }
 
 /* ===== BOTÕES DE AÇÃO ===== */
@@ -362,23 +362,23 @@
 }
 
 .copy-button {
-    background: var(--cor3);
-    color: var(--cor4);
+    background: var(--laranja);
+    color: var(--branco);
 }
 
 .copy-button:hover {
-    background: var(--cor29);
+    background: var(--laranja);
     transform: translateY(-1px);
     box-shadow: var(--shadow-sm);
 }
 
 .back-button {
-    background: var(--cor10);
-    color: var(--cor4);
+    background: var(--cinza_azulado);
+    color: var(--branco);
 }
 
 .back-button:hover {
-    background: var(--cor10);
+    background: var(--cinza_azulado);
     transform: translateY(-1px);
     box-shadow: var(--shadow-sm);
 }
@@ -393,11 +393,11 @@
     text-align: center;
     margin-top: 1.5rem;
     padding-top: 1.25rem;
-    border-top: 1px solid var(--cor35);
+    border-top: 1px solid var(--azul-light);
 }
 
 .navigation-links a {
-    color: var(--cor3);
+    color: var(--laranja);
     text-decoration: none;
     font-weight: 500;
     transition: var(--transition);
@@ -409,8 +409,8 @@
 }
 
 .navigation-links a:hover {
-    color: var(--cor29);
-    background: var(--cor7);
+    color: var(--laranja);
+    background: var(--branco-light);
     transform: translateY(-1px);
 }
 

@@ -29,65 +29,54 @@
 :root {
     /* ===== CORES PRINCIPAIS ===== */
     /* Azul */
-    --cor1: #009EEB;  /* Azul claro vibrante */
-    --cor17: #0056B3; /* Azul escuro */
-    --cor2: #327596; /* Azul bg */
-    --cor35: #dee2e6; /* Azul clarinho */
+    --azul: #009EEB;
+    --azul-escuro: #0056B3;
+    --azul-bg: #327596;
+    --azul-light: #dee2e6;
+
 
     /* Vermelho */
-    --cor-critica: #f44336;   /* Vermelho vivo */
-    --cor12: #dc3545;   /* Vermelho escuro */
+    --vermelho-vivo: #f44336;
+    --vermelho-escuro: #dc3545;
 
     /* Laranja */
-    --cor3: #FF8C00; /* Laranja intenso */
-    --cor14: #FF6B00; /* Laranja saturado */
-    --cor-alta: #ff9800; /* Laranja semâtico */
+    --laranja: #FF8C00;
+    --laranja-saturado: #FF6B00;
+
+
 
     /* Verde */
-    --cor11: #28a745; /* verde médio */
-    --cor-baixa: #4caf50; /* Verde claro semântico*/
-
+    --verde-medio: #4caf50;
+    --verde-escuro: #155724;
+    --verde-claro: #d4edda;
     /* Neutros */
     /* Preto */
-    --cor6: #000000;
+    --black: #000000;
     /* Branco */
-    --cor4: #FFFFFF;
+    --branco: #FFFFFF;
+    --branco-light: #F8F9FA;
     /* Cinza */
-    --cor9: #1E1E1E; /* almost_black */
-    --cor15: #333; /* cinza médio */
-    --cor16: #666;
-    --cor34: #95a5a6; /* cinza zulado */
+    --quase-preto: #1E1E1E;
+    /* almost_black */
+    --cinza-medio: #333;
+    --cinza: #666;
+    --cinza_azulado: #95a5a6;
+
 
     /* outros */
     /* Marron */
-    --cor25: #856404; /* marrom/mostarda */
+    --marron-mostarda: #856404;
     /* Amarelo */
-    --cor26: #fff3cd; /* Amarelo claro */
-    --cor-media: #ffeb3b; /* Amarelo semântico */
+    --amarelo-claro: #fff3cd;
+    --dourado: #ffc107;
+    --amarelo-sematico: #ffeb3b;
     /* Rosa */
-    --cor22: #f8d7da;
-    --cor23: #f5c6cb;
+    --rosa-claro: #f8d7da;
+    --rosa_medio: #f5c6cb;
 
-    
-    /* Eliminar*/
-    --cor5: #D51C1C;
-    --cor7: #F8F9FA;
-    --cor8: #E9ECEF;
-    --cor10: #6C757D;
-    --cor13: #ffc107;
-    --cor18: #004085;
-    --cor19: #155724;
-    --cor20: #d4edda;
-    --cor21: #c3e6cb;
-    --cor24: #007bff;
-    --cor27: #ffeaa7;
-    --cor28: #0C5460;
-    --cor29: #e67e00;
-    --cor30: #5a6268;
-    --cor31: #218838;
-    --cor32:#c82333;
-    --cor33: #2c3e50;
-    
+
+
+
 
 
 
@@ -155,24 +144,24 @@ html {
 
 body {
     min-height: 100vh;
-    background: linear-gradient(135deg, var(--cor7) 0%, var(--cor8) 100%);
+    background: linear-gradient(135deg, var(--branco-light) 0%, var(--branco-light) 100%);
     padding-top: 12rem;
     line-height: 1.6;
-    color: var(--cor9);
+    color: var(--quase-preto);
 }
 
 
 
 /* ===== ELEMENTOS DE TEXTO ===== */
 strong {
-    color: var(--cor3);
+    color: var(--laranja);
     font-weight: 600;
 }
 
 .welcome {
     text-align: center;
     font-size: var(--font-size-lg);
-    color: var(--cor9);
+    color: var(--quase-preto);
     margin: var(--spacing-md) 0;
 }
 
@@ -199,7 +188,7 @@ footer img {
     height: 10rem;
     object-fit: cover;
     border-radius: var(--border-radius-lg);
-    border: 3px solid var(--cor4);
+    border: 3px solid var(--branco);
     box-shadow: var(--box-shadow);
 }
 
@@ -337,28 +326,28 @@ footer img {
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--cor8);
+    background: var(--branco-light);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--cor3);
+    background: var(--laranja);
     border-radius: var(--border-radius-sm);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--cor14);
+    background: var(--laranja-saturado);
 }
 
 /* ===== FOCUS VISIBLE ===== */
 *:focus-visible {
-    outline: 2px solid var(--cor1);
+    outline: 2px solid var(--azul);
     outline-offset: 2px;
 }
 
 /* ===== SELECTION ===== */
 ::selection {
-    background: var(--cor3);
-    color: var(--cor4);
+    background: var(--laranja);
+    color: var(--branco);
 }
 
 
@@ -372,7 +361,7 @@ footer img {
     padding: var(--spacing-xl) 9%;
     margin: var(--spacing-xl);
     border-radius: var(--border-radius-md);
-    background: linear-gradient(135deg, var(--cor7) 0%, var(--cor8) 100%);
+    background: linear-gradient(135deg, var(--branco-light) 0%, var(--branco-light) 100%);
     animation: fadeInUp 0.8s ease-out;
 }
 
@@ -383,7 +372,7 @@ footer img {
     left: 50%;
     width: 1px;
     height: 60%;
-    background: linear-gradient(to bottom, transparent, var(--cor8), transparent);
+    background: linear-gradient(to bottom, transparent, var(--branco-light), transparent);
     transform: translate(-50%, -50%);
     opacity: 0.3;
     z-index: -1;

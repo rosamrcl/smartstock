@@ -7,7 +7,7 @@
     justify-content: center;
     min-height: 100vh;
     padding: var(--spacing-xxl);
-    background: linear-gradient(135deg, var(--cor7) 0%, var(--cor8) 100%);
+    background: linear-gradient(135deg, var(--branco-light) 0%, var(--branco-light) 100%);
     gap: 4rem;
 }
 
@@ -37,7 +37,7 @@
 }
 
 .form-container {
-    background: var(--cor4);
+    background: var(--branco);
     padding: 4rem;
     border-radius: 2rem;
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
@@ -54,21 +54,21 @@
     left: 0;
     right: 0;
     height: 0.5rem;
-    background: linear-gradient(135deg, var(--cor1) 0%, var(--cor3) 100%);
+    background: linear-gradient(135deg, var(--azul) 0%, var(--laranja) 100%);
 }
 
 /* ===== TÍTULO E INFORMAÇÕES ===== */
 .form-container h3 {
     font-size: var(--font-size-title);
     font-weight: 600;
-    color: var(--cor9);
+    color: var(--quase-preto);
     text-align: center;
     margin-bottom: 1rem;
 }
 
 .form-info {
     font-size: var(--font-size-md);
-    color: var(--cor10);
+    color: var(--cinza_azulado);
     text-align: center;
     margin-bottom: 3rem;
     line-height: 1.6;
@@ -83,36 +83,36 @@
     display: block;
     font-size: var(--font-size-md);
     font-weight: 500;
-    color: var(--cor9);
+    color: var(--quase-preto);
     margin-bottom: 0.8rem;
 }
 
 .form-group input {
     width: 100%;
     padding: 1.2rem 1.5rem;
-    border: 2px solid var(--cor8);
+    border: 2px solid var(--branco-light);
     border-radius: 1rem;
     font-size: 1.4rem;
     transition: all 0.3s ease;
-    background: var(--cor4);
-    color: var(--cor9);
+    background: var(--branco);
+    color: var(--quase-preto);
 }
 
 .form-group input:focus {
-    border-color: var(--cor1);
+    border-color: var(--azul);
     box-shadow: 0 0 0 3px rgba(0, 158, 235, 0.1);
     outline: none;
 }
 
 .form-group input.error {
-    border-color: var(--cor5);
+    border-color: var(--vermelho-escuro);
     box-shadow: 0 0 0 3px rgba(213, 28, 28, 0.1);
 }
 
 /* ===== MENSAGENS DE ERRO ===== */
 .error-message {
     display: block;
-    color: var(--cor5);
+    color: var(--vermelho-escuro);
     font-size: var(--font-size-sm);
     margin-top: 0.5rem;
     min-height: 1.6rem;
@@ -130,35 +130,35 @@
 
 .password-strength.weak {
     background: rgba(213, 28, 28, 0.1);
-    color: var(--cor5);
+    color: var(--vermelho-escuro);
     border: 1px solid rgba(213, 28, 28, 0.3);
 }
 
 .password-strength.medium {
     background: rgba(255, 140, 0, 0.1);
-    color: var(--cor3);
+    color: var(--laranja);
     border: 1px solid rgba(255, 140, 0, 0.3);
 }
 
 .password-strength.strong {
     background: rgba(40, 167, 69, 0.1);
-    color: var(--cor11);
+    color: var(--verde-medio);
     border: 1px solid rgba(40, 167, 69, 0.3);
 }
 
 /* ===== REQUISITOS DA SENHA ===== */
 .password-requirements {
-    background: var(--cor7);
+    background: var(--branco-light);
     padding: var(--spacing-xl);
     border-radius: var(--border-radius-xl);
     margin: 2rem 0;
-    border: 1px solid var(--cor8);
+    border: 1px solid var(--branco-light);
 }
 
 .password-requirements p {
     font-size: var(--font-size-sm);
     font-weight: 600;
-    color: var(--cor9);
+    color: var(--quase-preto);
     margin-bottom: 1rem;
 }
 
@@ -186,21 +186,21 @@
 }
 
 .password-requirements li.valid {
-    color: var(--cor11);
+    color: var(--verde-medio);
 }
 
 .password-requirements li.valid::before {
     content: '✓';
-    color: var(--cor11);
+    color: var(--verde-medio);
 }
 
 .password-requirements li.invalid {
-    color: var(--cor10);
+    color: var(--cinza_azulado);
 }
 
 .password-requirements li.invalid::before {
     content: '○';
-    color: var(--cor10);
+    color: var(--cinza_azulado);
 }
 
 
@@ -224,19 +224,19 @@
 
 .error-icon {
     font-size: 6rem;
-    color: var(--cor5);
+    color: var(--vermelho-escuro);
     margin-bottom: 2rem;
 }
 
 .error-container h3 {
     font-size:var(--font-size-title);
-    color: var(--cor9);
+    color: var(--quase-preto);
     margin-bottom: 1rem;
 }
 
 .error-container .error-message {
     font-size: var(--font-size-md);
-    color: var(--cor10);
+    color: var(--cinza_azulado);
     margin-bottom: 3rem;
     line-height: 1.6;
 }
@@ -268,7 +268,7 @@
 
 /* ===== ESTADOS DE FOCUS ===== */
 .form-group input:focus {
-    border-color: var(--cor1);
+    border-color: var(--azul);
     box-shadow: 0 0 0 3px rgba(0, 158, 235, 0.1);
 }
 

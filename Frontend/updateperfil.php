@@ -95,7 +95,7 @@ if (!empty($dados['foto_perfil'])) {
         </div>
     </section>
 
-    <?php include 'includes/footer.php'; ?>
+    
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.22.2/dist/sweetalert2.all.min.js"></script>
     <script src="./ressources/js/script.js"></script>

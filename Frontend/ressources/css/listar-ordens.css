@@ -6,7 +6,7 @@ LISTAR ORDENS DE SERVIÇO - ESTILOS
     max-width: 1200px;
     margin: 20px auto;
     padding: 20px;
-    background: var(--cor7);
+    background: var(--branco-light);
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
@@ -17,13 +17,13 @@ LISTAR ORDENS DE SERVIÇO - ESTILOS
 }
 
 .ordens-container .heading h1 {
-    color: var(--cor15);
+    color: var(--cinza-medio);
     font-size: var(--font-size-title);
 
 }
 
 .ordens-container .heading p {
-    color: var(--cor8);
+    color: var(--branco-light);
     font-size: var(--font-size-md);
     padding-bottom: var(--spacing-lg);
 }
@@ -31,19 +31,19 @@ LISTAR ORDENS DE SERVIÇO - ESTILOS
 .no-orders {
     text-align: center;
     padding: 40px;
-    color: var(--cor16);
+    color: var(--cinza);
     font-size: var(--font-size-lg);
 }
 
 /* === CARDS DE ORDENS === */
 .ordem-card {
-    background: var(--cor4);
+    background: var(--branco);
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
     overflow: hidden;
     transition: all 0.3s ease;
-    border-left: 4px solid var(--cor24);
+    border-left: 4px solid var(  --azul-bg);
 }
 
 .ordem-card:hover {
@@ -52,13 +52,13 @@ LISTAR ORDENS DE SERVIÇO - ESTILOS
 }
 
 .ordem-card.concluida {
-    border-left: 4px solid var(--cor11);
-    background-color: var(--cor7);
+    border-left: 4px solid var(--verde-medio);
+    background-color: var(--branco-light);
 }
 
 .ordem-header {
     padding: 20px;
-    border-bottom: 1px solid var(--cor8);
+    border-bottom: 1px solid var(--branco-light);
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -67,20 +67,20 @@ LISTAR ORDENS DE SERVIÇO - ESTILOS
 
 .ordem-info h3 {
     margin: 0 0 10px 0;
-    color: var(--cor15);
+    color: var(--cinza-medio);
     font-size: var(--font-size-xxl);
     font-weight: 600;
 }
 
 .ordem-info p {
     margin: 5px 0;
-    color: var(--cor9);
+    color: var(--quase-preto);
     font-size: var(--font-size-lg);
     line-height: 1.4;
 }
 
 .ordem-info p strong {
-    color: var(--cor15);
+    color: var(--cinza-medio);
     font-weight: 600;
 }
 
@@ -96,15 +96,15 @@ LISTAR ORDENS DE SERVIÇO - ESTILOS
 }
 
 .status-pendente {
-    background-color: var(--cor26);
-    color: var(--cor25);
-    border: 1px solid var(--cor27);
+    background-color: var(--amarelo-claro);
+    color: var(--marron-mostarda);
+    border: 1px solid var(  --amarelo-claro);
 }
 
 .status-concluida {
-    background-color: var(--cor20);
-    color: var(--cor19);
-    border: 1px solid var(--cor21);
+    background-color: var(--verde-claro);
+    color: var(--verde-escuro);
+    border: 1px solid var( --verde-claro);
 }
 
 .ordem-content {
@@ -123,22 +123,22 @@ LISTAR ORDENS DE SERVIÇO - ESTILOS
 /* === URGÊNCIAS === */
 .urgencia-critica {
     background-color: #ffebee !important;
-    border-left: 4px solid var(--cor-critica);
+    border-left: 4px solid var(--vermelho-vivo);
 }
 
 .urgencia-alta {
     background-color: #fff3e0 !important;
-    border-left: 4px solid var(--cor-alta);
+    border-left: 4px solid var(--laranja);
 }
 
 .urgencia-media {
     background-color: #fffde7 !important;
-    border-left: 4px solid var(--cor-media);
+    border-left: 4px solid var(--amarelo-sematico);
 }
 
 .urgencia-baixa {
     background-color: #e8f5e8 !important;
-    border-left: 4px solid var(--cor-baixa);
+    border-left: 4px solid var(--verde-medio);
 }
 
 /* === BADGES E STATUS === */
@@ -150,44 +150,44 @@ LISTAR ORDENS DE SERVIÇO - ESTILOS
 }
 
 .status-pendente {
-    background: var(--cor13);
-    color: var(--cor6);
+    background: var(--dourado);
+    color: var(--black);
 }
 
 .status-em_andamento {
     background: #17a2b8;
-    color: var(--cor4);
+    color: var(--branco);
 }
 
 .status-concluida {
-    background: var(--cor11);
-    color: var(--cor4);
+    background: var(--verde-medio);
+    color: var(--branco);
 }
 
 .status-cancelada {
-    background: var(--cor12);
-    color: var(--cor4);
+    background: var(--vermelho-escuro);
+    color: var(--branco);
 }
 
 /* Badges de urgência */
 .badge-critica {
-    background: var(--cor-critica);
-    color: var(--cor4);
+    background: var(--vermelho-vivo);
+    color: var(--branco);
 }
 
 .badge-alta {
-    background: var(--cor-alta);
-    color: var(--cor4);
+    background: var(--laranja);
+    color: var(--branco);
 }
 
 .badge-media {
-    background: var(--cor-media);
-    color: var(--cor6);
+    background: var(--amarelo-sematico);
+    color: var(--black);
 }
 
 .badge-baixa {
-    background: var(--cor-baixa);
-    color: var(--cor4);
+    background: var(--verde-medio);
+    color: var(--branco);
 }
 
 .ordem-urgencia {
@@ -211,7 +211,7 @@ LISTAR ORDENS DE SERVIÇO - ESTILOS
 }
 
 .card-urgencia {
-    background: var(--cor4);
+    background: var(--branco);
     border-radius: var(--border-radius);
     padding: var(--spacing-md);
     text-align: center;
@@ -224,19 +224,19 @@ LISTAR ORDENS DE SERVIÇO - ESTILOS
 }
 
 .card-urgencia.critica {
-    border-left: 4px solid var(--cor-critica);
+    border-left: 4px solid var(--vermelho-vivo);
 }
 
 .card-urgencia.alta {
-    border-left: 4px solid var(--cor-alta);
+    border-left: 4px solid var(--laranja);
 }
 
 .card-urgencia.media {
-    border-left: 4px solid var(--cor-media);
+    border-left: 4px solid var(--amarelo-sematico);
 }
 
 .card-urgencia.baixa {
-    border-left: 4px solid var(--cor-baixa);
+    border-left: 4px solid var(--verde-medio);
 }
 
 .card-urgencia h5 {
@@ -248,7 +248,7 @@ LISTAR ORDENS DE SERVIÇO - ESTILOS
 .card-urgencia p {
     margin: 5px 0 0 0;
     font-size: 14px;
-    color: var(--cor16);
+    color: var(--cinza);
 }
 
 /* === FILTROS === */
@@ -264,7 +264,7 @@ LISTAR ORDENS DE SERVIÇO - ESTILOS
     padding: 10px 20px;
     border-radius: 25px;
     border: 2px solid;
-    background: var(--cor4);
+    background: var(--branco);
     cursor: pointer;
     transition: all 0.3s;
     font-size: 12px;
@@ -287,63 +287,63 @@ LISTAR ORDENS DE SERVIÇO - ESTILOS
 
 .filtros-urgencia button.active,
 .filtros-urgencia a.active {
-    color: var(--cor4);
+    color: var(--branco);
     transform: translateY(-1px);
 }
 
 .filtros-urgencia .btn-outline-danger {
-    border-color: var(--cor12);
-    color: var(--cor12);
+    border-color: var(--vermelho-escuro);
+    color: var(--vermelho-escuro);
 }
 
 .filtros-urgencia .btn-outline-danger:hover,
 .filtros-urgencia .btn-outline-danger.active {
-    background: linear-gradient(135deg, var(--cor12) 0%, #c82333 100%);
-    border-color: var(--cor12);
+    background: linear-gradient(135deg, var(--vermelho-escuro) 0%, #c82333 100%);
+    border-color: var(--vermelho-escuro);
 }
 
 .filtros-urgencia .btn-outline-warning {
-    border-color: var(--cor13);
-    color: var(--cor13);
+    border-color: var(--dourado);
+    color: var(--dourado);
 }
 
 .filtros-urgencia .btn-outline-warning:hover,
 .filtros-urgencia .btn-outline-warning.active {
-    background: linear-gradient(135deg, var(--cor13) 0%, #e0a800 100%);
-    border-color: var(--cor13);
+    background: linear-gradient(135deg, var(--dourado) 0%, #e0a800 100%);
+    border-color: var(--dourado);
 }
 
 .filtros-urgencia .btn-outline-primary {
-    border-color: var(--cor24);
-    color: var(--cor24);
+    border-color: var(  --azul-bg);
+    color: var(  --azul-bg);
 }
 
 .filtros-urgencia .btn-outline-primary:hover,
 .filtros-urgencia .btn-outline-primary.active {
-    background: linear-gradient(135deg, var(--cor24) 0%, var(--cor17) 100%);
-    border-color: var(--cor24);
+    background: linear-gradient(135deg, var(  --azul-bg) 0%, var(--azul-escuro) 100%);
+    border-color: var(  --azul-bg);
 }
 
 .filtros-urgencia .btn-outline-success {
-    border-color: var(--cor11);
-    color: var(--cor11);
+    border-color: var(--verde-medio);
+    color: var(--verde-medio);
 }
 
 .filtros-urgencia .btn-outline-success:hover,
 .filtros-urgencia .btn-outline-success.active {
-    background: linear-gradient(135deg, var(--cor11) 0%, #1e7e34 100%);
-    border-color: var(--cor11);
+    background: linear-gradient(135deg, var(--verde-medio) 0%, #1e7e34 100%);
+    border-color: var(--verde-medio);
 }
 
 .filtros-urgencia .btn-secondary {
-    border-color: var(--cor10);
-    color: var(--cor10);
+    border-color: var(--cinza_azulado);
+    color: var(--cinza_azulado);
 }
 
 .filtros-urgencia .btn-secondary:hover,
 .filtros-urgencia .btn-secondary.active {
-    background: linear-gradient(135deg, var(--cor10) 0%, #545b62 100%);
-    border-color: var(--cor10);
+    background: linear-gradient(135deg, var(--cinza_azulado) 0%, #545b62 100%);
+    border-color: var(--cinza_azulado);
 }
 
 /* === FILTROS DE STATUS === */
@@ -385,7 +385,7 @@ LISTAR ORDENS DE SERVIÇO - ESTILOS
 }
 
 .modal-content {
-    background-color: var(--cor4);
+    background-color: var(--branco);
     margin: 3% auto;
     padding: 30px;
     border-radius: 12px;
@@ -413,7 +413,7 @@ LISTAR ORDENS DE SERVIÇO - ESTILOS
     position: relative;
     margin: 5% auto;
     padding: 20px;
-    background: var(--cor4);
+    background: var(--branco);
     width: 90%;
     max-width: 800px;
     border-radius: 12px;
@@ -433,7 +433,7 @@ LISTAR ORDENS DE SERVIÇO - ESTILOS
     position: absolute;
     top: 15px;
     right: 20px;
-    color: var(--cor16);
+    color: var(--cinza);
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
@@ -442,12 +442,12 @@ LISTAR ORDENS DE SERVIÇO - ESTILOS
 }
 
 .modal-imagem .close:hover {
-    color: var(--cor15);
+    color: var(--cinza-medio);
 }
 
 .btn-mostrar-imagem {
     background: #17a2b8;
-    color: var(--cor4);
+    color: var(--branco);
     border: none;
     padding: 8px 16px;
     border-radius: 6px;
@@ -488,17 +488,17 @@ LISTAR ORDENS DE SERVIÇO - ESTILOS
     align-items: center;
     margin-bottom: 25px;
     padding-bottom: 15px;
-    border-bottom: 2px solid var(--cor8);
+    border-bottom: 2px solid var(--branco-light);
 }
 
 .modal-header h2 {
-    color: var(--cor15);
+    color: var(--cinza-medio);
     font-size: var(--font-size-xl);
     margin: 0;
 }
 
 .close {
-    color: var(--cor10);
+    color: var(--cinza_azulado);
     font-size: 32px;
     font-weight: bold;
     cursor: pointer;
@@ -507,14 +507,14 @@ LISTAR ORDENS DE SERVIÇO - ESTILOS
 }
 
 .close:hover {
-    color: var(--cor15);
+    color: var(--cinza-medio);
 }
 
 /* === PROGRESS BAR === */
 .progress-bar {
     width: 100%;
     height: 12px;
-    background-color: var(--cor8);
+    background-color: var(--branco-light);
     border-radius: 6px;
     margin: 15px 0;
     overflow: hidden;
@@ -524,7 +524,7 @@ LISTAR ORDENS DE SERVIÇO - ESTILOS
 .progress-fill {
     width: 0%;
     height: 100%;
-    background: linear-gradient(90deg, var(--cor24), var(--cor17));
+    background: linear-gradient(90deg, var(  --azul-bg), var(--azul-escuro));
     transition: width 0.5s ease;
     border-radius: 6px;
 }
@@ -532,7 +532,7 @@ LISTAR ORDENS DE SERVIÇO - ESTILOS
 .progress-text {
     text-align: center;
     font-size: var(--font-size-lg);
-    color: var(--cor16);
+    color: var(--cinza);
     margin-top: 8px;
     font-weight: 500;
 }
@@ -546,16 +546,16 @@ LISTAR ORDENS DE SERVIÇO - ESTILOS
 }
 
 .category-card {
-    border: 2px solid var(--cor8);
+    border: 2px solid var(--branco-light);
     border-radius: var(--border-radius-md);
     padding: var(--spacing-lg);
-    background: var(--cor7);
+    background: var(--branco-light);
     transition: all 0.3s ease;
 }
 
 .category-card:hover {
-    border-color: var(--cor24);
-    background: var(--cor4);
+    border-color: var(  --azul-bg);
+    background: var(--branco);
     box-shadow: 0 4px 15px rgba(0, 123, 255, 0.1);
 }
 
@@ -564,13 +564,13 @@ LISTAR ORDENS DE SERVIÇO - ESTILOS
     align-items: center;
     margin-bottom: 20px;
     font-weight: 600;
-    color: var(--cor15);
+    color: var(--cinza-medio);
     font-size: var(--font-size-sm);
 }
 
 .category-header i {
     margin-right: 12px;
-    color: var(--cor24);
+    color: var(  --azul-bg);
     font-size: var(--font-size-sm);
 }
 
@@ -592,12 +592,12 @@ LISTAR ORDENS DE SERVIÇO - ESTILOS
     margin-right: var(--spacing-md);
     width: 18px;
     height: 18px;
-    accent-color: var(--cor24);
+    accent-color: var(  --azul-bg);
 }
 
 .checkbox-item span {
     font-size: var(--font-size-s);
-    color: var(--cor16);
+    color: var(--cinza);
     line-height: 1.4;
 }
 
@@ -607,7 +607,7 @@ LISTAR ORDENS DE SERVIÇO - ESTILOS
     gap: 15px;
     margin-top: 25px;
     padding-top: 20px;
-    border-top: 2px solid var(--cor8);
+    border-top: 2px solid var(--branco-light);
 }
 
 /* === FUNCIONALIDADE MOSTRAR MAIS === */
@@ -622,7 +622,7 @@ LISTAR ORDENS DE SERVIÇO - ESTILOS
 }
 
 .mostrar-mais {
-    color: var(--cor24);
+    color: var(  --azul-bg);
     text-decoration: none;
     font-size: var(--font-size-sm);
     font-weight: 600;
@@ -633,7 +633,7 @@ LISTAR ORDENS DE SERVIÇO - ESTILOS
 }
 
 .mostrar-mais:hover {
-    color: var(--cor17);
+    color: var(--azul-escuro);
     text-decoration: underline;
 }
 

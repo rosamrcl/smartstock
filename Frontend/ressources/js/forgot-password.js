@@ -161,7 +161,7 @@ class ForgotPasswordForm {
         // Feedback visual temporário
         const originalText = this.copyLinkBtn.innerHTML;
         this.copyLinkBtn.innerHTML = '<i class="fas fa-check" aria-hidden="true"></i> Copiado!';
-        this.copyLinkBtn.style.background = 'var(--cor11)';
+        this.copyLinkBtn.style.background = 'var(--verde-medio)';
         
         setTimeout(() => {
             this.copyLinkBtn.innerHTML = originalText;
