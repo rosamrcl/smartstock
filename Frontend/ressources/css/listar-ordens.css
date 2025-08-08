@@ -592,7 +592,7 @@ LISTAR ORDENS DE SERVIÇO - ESTILOS
     margin-right: var(--spacing-md);
     width: 18px;
     height: 18px;
-    accent-color: var(  --azul-bg);
+    accent-color: var(--azul-bg);
 }
 
 .checkbox-item span {
@@ -622,7 +622,7 @@ LISTAR ORDENS DE SERVIÇO - ESTILOS
 }
 
 .mostrar-mais {
-    color: var(  --azul-bg);
+    color: var(--azul-bg);
     text-decoration: none;
     font-size: var(--font-size-sm);
     font-weight: 600;
@@ -638,8 +638,8 @@ LISTAR ORDENS DE SERVIÇO - ESTILOS
 }
 
 .chamado-destacado {
-            background-color: #fff3cd !important;
-            border-left: 4px solid #ffc107 !important;
+            background-color: var(--amarelo-claro) !important;
+            border-left: 4px solid var(--dourado) !important;
             animation: pulse 2s ease-in-out;
             box-shadow: 0 0 20px rgba(255, 193, 7, 0.3);
         }

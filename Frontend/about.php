@@ -76,7 +76,7 @@
                 </div>
                 <div class="txt">
                     <h2>Menise Farias</h2>
-                    <p>Libras</p>
+                    <p>Intérprete de Libras</p>
                 </div>
                 <div class="git">
                     <a id="disable" class="fa-brands fa-github" target="_blank" href="#"></a>

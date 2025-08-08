@@ -70,11 +70,11 @@
 
 .sobre_nos .membros .box .txt h2 {
     font-size: var(--font-size-xl);
-    margin-bottom: var( --spacing-sm);
+    margin-bottom: var(--spacing-sm);
 }
 
 .sobre_nos .membros .box .txt p {
-    font-size: var( --font-size-md);
+    font-size: var(--font-size-md);
 }
 
 .sobre_nos .membros .box .git {

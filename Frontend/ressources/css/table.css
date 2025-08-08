@@ -16,7 +16,7 @@ table {
 }
 
 thead {
-    background: linear-gradient(135deg, var(--branco-light) 0%, var(--branco-light) 100%);
+    background: linear-gradient(135deg, var(--branco) 0%, var(--branco-light) 100%);
 }
 
 th {
@@ -52,7 +52,7 @@ tbody tr:nth-child(even) {
 
 /* ===== LINHA CONCLUÍDA ===== */
 .tr-concluida {
-    background: linear-gradient(135deg, var(--verde-claro) 0%, var( --verde-claro) 100%);
+    background: linear-gradient(135deg, var(--verde-medio) 0%, var(--verde-claro) 100%);
     color: var(--verde-escuro);
     transition: 0.3s;
 }

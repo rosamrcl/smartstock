@@ -56,7 +56,6 @@
 }
 
 
-
 .btn-secundario:hover{
     transform: translateY(-2px);
     box-shadow: var(--box-shadow-hover);    
@@ -116,8 +115,6 @@
 }
 
 
-
-
 .submit-btn {
     background: linear-gradient(135deg, var(--laranja) 0%, #ff9500 100%);
 
@@ -152,7 +149,7 @@
 }
 
 .btn-checklist {
-    background: var(  --azul-bg);
+    background: var(--azul-bg);
     color: var(--branco);
     border: none;
     padding: 12px 24px;

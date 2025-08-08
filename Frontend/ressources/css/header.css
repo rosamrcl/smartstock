@@ -55,7 +55,7 @@
 }
 
 .header.active{
-    background: rgba(0,0,0,.8);
+    background: var(--black);
     backdrop-filter: blur(4px);
 }
 
@@ -100,7 +100,7 @@
 .side-bar .navbar #close-btn{
     margin-bottom: 2rem;
     padding: 1rem 2rem;
-    border: .1rem solid #555;
+    border: .1rem solid var(--cinza-medio);
     border-radius: 5rem;
     display: inline-block;
     color: var(--quase-preto);
@@ -178,8 +178,8 @@
     position: absolute;
     top: -8px;
     right: -8px;
-    background-color: #dc3545;
-    color: white;
+    background-color: var(--vermelho-escuro);
+    color: var(--branco);
     border-radius: 50%;
     width: 20px;
     height: 20px;

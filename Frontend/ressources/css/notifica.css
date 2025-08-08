@@ -68,7 +68,7 @@
 }
 
 .notificacao-mensagem {
-    color: #555;
+    color: var(--cinza-medio);
     line-height: 1.5;
     margin-bottom: 10px;
 }
@@ -121,7 +121,7 @@
 
 .sem-notificacoes i {
     font-size: 48px;
-    color: #ddd;
+    color: var(--branco-light);
     margin-bottom: 20px;
 }
 
