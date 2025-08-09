@@ -77,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 // Criar notificação para o novo chamado
                 $titulo_notificacao = "Novo Chamado #{$chamado_id}";
                 $mensagem_notificacao = "Chamado criado por {$nome} - " . substr($mensagem, 0, 50) . "...";
-                
+
                 $stmt_notif = $pdo->prepare("INSERT INTO notificacoes (chamado_id, titulo, mensagem) VALUES (?, ?, ?)");
                 $stmt_notif->execute([$chamado_id, $titulo_notificacao, $mensagem_notificacao]);
 
