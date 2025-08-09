@@ -22,6 +22,7 @@
 @import url(./suporte.css);
 @import url(./table.css);
 @import url(./updateperfil.css);
+@import url(./teste.css);
 
 
 
@@ -394,4 +395,18 @@ footer img {
     height: auto;
     max-height: 35rem;
     object-fit: contain;
+}
+
+.heading{
+    text-align: center;
+    padding-bottom: 2rem;
+    text-shadow: var(--text-shadow);
+    text-transform: uppercase;
+    color: var(--black);
+    font-size: 5rem;
+    letter-spacing: .4rem;
+}
+.heading span{
+    color: var(--laranja);
+    text-transform: uppercase;
 }
