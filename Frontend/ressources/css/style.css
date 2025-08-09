@@ -117,10 +117,13 @@
     --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
     --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
     --shadow-focus: 0 0 0 3px rgba(255, 140, 0, 0.25);
+    --box-shadow-box:.5rem .5rem 0 rgba(0, 157, 235, 0.192);
 
     --transition: all 0.3s ease;
     --transition-fast: all 0.15s ease;
     --transition-slow: all 0.5s ease;
+    --text-shadow:.4rem .54rem 0 rgba(0,0,0,.2);
+    --border:.2rem solid #327596;
 }
 
 /* ===== RESET E CONFIGURAÇÕES GLOBAIS ===== */
@@ -397,16 +400,3 @@ footer img {
     object-fit: contain;
 }
 
-.heading{
-    text-align: center;
-    padding-bottom: 2rem;
-    text-shadow: var(--text-shadow);
-    text-transform: uppercase;
-    color: var(--black);
-    font-size: 5rem;
-    letter-spacing: .4rem;
-}
-.heading span{
-    color: var(--laranja);
-    text-transform: uppercase;
-}

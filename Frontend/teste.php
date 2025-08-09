@@ -110,9 +110,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php
     include __DIR__ . '/includes/header.php';
     ?>
-    <section class="home" id="home">
+    <section class="summit" id="summit">
         <div class="image">
-            <img src="./img/smartstock.png" alt="">
+            <img src="./ressources/img/smartstock.png" alt="">
         </div>
         <div class="content">
             <h3>SMARTSTOCK</h3>
@@ -123,8 +123,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </section>
 
-    <section class="services" id="services">
-        <h1 class="heading">Nossos <span>Serviços</span></h1>
+    <section class="servicing" id="servicing">
+        <h1 class="billhead">Nossos <span>Serviços</span></h1>
         <div class="box-container">
             <div class="box">
                 <i class="fa-solid fa-shield"></i>
@@ -266,91 +266,72 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
         </div>
     </section>
-    <section class="about" id="about">
-        <h1 class="heading"><span>Sobre</span> Nós</h1>
-        <div class="row">
-            <div class="image">
-                <img src="./img/LARI.png" alt="">
-            </div>
-            <div class="content">
-                <h3>Nós cuidamos da sua saúde</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum qui facilis unde tempora sed
-                    consectetur porro asperiores dignissimos et. Omnis deserunt facilis ipsum natus et. Quisquam
-                    voluptatem cumque corrupti a?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, libero qui, in accusantium incidunt
-                    omnis neque optio nulla quas non itaque facere doloremque quia eius autem voluptatem aperiam dolore.
-                    Blanditiis.</p>
-                <a href="#" class="btn">Leia mais<span class="fas fa-chevron-right"></span></a>
-            </div>
-        </div>
-    </section>
-    <section class="doctors" id="doctors">
-        <h1 class="heading">Nossos <span>Médicos</span></h1>
+    <section class="team" id="team">
+        <h1 class="billhead">Sobre<span>Nós</span></h1>
         <div class="box-container">
             <div class="box">
-                <img src="./resources/img/doctor01.png" alt="">
-                <h3>Ana Silva</h3>
-                <span>Pediatra</span>
+                <div class="photo">
+                    <img src="./ressources/img/eu.png" alt="">
+                </div>
+                <h2>Rosa Chagas</h2>
+                <span>Front-End</span>
+
                 <div class="share">
-                    <a href="#" class="fab fa-facebook-f"></a>
-                    <a href="#" class="fab fa-bluesky"></a>
-                    <a href="#" class="fab fa-instagram"></a>
-                    <a href="#" class="fab fa-linkedin"></a>
+                    <a class="fa-brands fa-github" target="_blank" href="https://github.com/rosacl"></a>
+                    <a class="fa-brands fa-linkedin" href="https://www.linkedin.com/in/maria-rosa-chagas-lima-16730a293/"></a>
                 </div>
             </div>
             <div class="box">
-                <img src="./resources/img/doctor02.png" alt="">
-                <h3>João Silva</h3>
-                <span>Ortopesdista</span>
+                <div class="photo">
+                    <img src="./ressources/img/anna.jpg" alt="">
+                </div>
+                <h2>Anna Iris</h2>
+                <span>Front-End</span>
                 <div class="share">
-                    <a href="#" class="fab fa-facebook-f"></a>
-                    <a href="#" class="fab fa-bluesky"></a>
-                    <a href="#" class="fab fa-instagram"></a>
-                    <a href="#" class="fab fa-linkedin"></a>
+                    <a class="fa-brands fa-github" target="_blank" href="https://github.com/ansilv00"></a>
+                    <a class="fa-brands fa-linkedin" target="_blank" href="https://www.linkedin.com/in/anna-iris-silva-60b55736a/"></a>
                 </div>
             </div>
             <div class="box">
-                <img src="./resources/img/doctor03.png" alt="">
-                <h3>Catarina Silva</h3>
-                <span>Dermatologista</span>
+                <div class="photo">
+                    <img src="./ressources/img/luan.jpg" alt="">
+                </div>
+                <h2>Luan Aquino</h2>
+                <span>Back-End</span>
                 <div class="share">
-                    <a href="#" class="fab fa-facebook-f"></a>
-                    <a href="#" class="fab fa-bluesky"></a>
-                    <a href="#" class="fab fa-instagram"></a>
-                    <a href="#" class="fab fa-linkedin"></a>
+                    <a class="fa-brands fa-github" target="_blank" href="https://github.com/Aquino-maker"></a>
+                    <a class="fa-brands fa-linkedin" target="_blank" href="https://www.linkedin.com/in/luan-aquino/"></a>
                 </div>
             </div>
             <div class="box">
-                <img src="./resources/img/doctor04.png" alt="">
-                <h3>Maria Silva</h3>
-                <span>Ginecologia e Obstetrícia </span>
+                <div class="photo">
+                    <img src="./ressources/img/isaque.jpg" alt="">
+                </div>
+                <h2>Isaque Newton</h2>
+                <span>Back-End</span>
                 <div class="share">
-                    <a href="#" class="fab fa-facebook-f"></a>
-                    <a href="#" class="fab fa-bluesky"></a>
-                    <a href="#" class="fab fa-instagram"></a>
-                    <a href="#" class="fab fa-linkedin"></a>
+                    <a class="fa-brands fa-github" target="_blank" href="https://github.com/BananaSpritee"></a>
+                    <a class="fa-brands fa-linkedin" target="_blank" href="https://www.linkedin.com/in/isaque-newton-silva-774a72374/"></a>
                 </div>
             </div>
             <div class="box">
-                <img src="./resources/img/doctor05.png" alt="">
-                <h3>Luiz Silva</h3>
-                <span>Cardiologista</span>
+                <div class="photo">
+                    <img src="./ressources/img/menise.png" alt="">
+
+                </div>
+                <h2>Menise Farias</h2>
+                <span>Intérprete de Libras</span>
                 <div class="share">
-                    <a href="#" class="fab fa-facebook-f"></a>
-                    <a href="#" class="fab fa-bluesky"></a>
-                    <a href="#" class="fab fa-instagram"></a>
-                    <a href="#" class="fab fa-linkedin"></a>
+                    <a id="disable" class="fa-brands fa-github" target="_blank" href="#"></a>
+                    <a id="disable" class="fa-brands fa-linkedin" target="_blank" href="#"></a>
                 </div>
             </div>
             <div class="box">
-                <img src="./resources/img/doctor06.png" alt="">
-                <h3>Melina Silva</h3>
-                <span>Cirurgião Geral</span>
+                <img src="./ressources/img/LARI.png" alt="">
+                <h3>LARIM</h3>
                 <div class="share">
-                    <a href="#" class="fab fa-facebook-f"></a>
-                    <a href="#" class="fab fa-bluesky"></a>
-                    <a href="#" class="fab fa-instagram"></a>
-                    <a href="#" class="fab fa-linkedin"></a>
+                    <a class="fa-brands fa-github" target="_blank" href="https://github.com/rosamrcl/smartstock"></a>
+                    <a id="disable" class="fa-brands fa-linkedin" target="_blank" href="#"></a>
                 </div>
 
             </div>
