@@ -1,122 +1,133 @@
-.sobre_nos {
+.summit{
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: var(--spacing-xl);
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding-top: 10rem;
 }
-
-.sobre_nos h1 {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    color: var(--quase-preto);
-    text-align: center;
-    margin-bottom: var(--spacing-xl);
+.summit .figure{
+    flex: 1 1 45rem;
 }
-
-.sobre_nos .membros {
-    display: flex;
-    flex-wrap: wrap; 
-    justify-content: center;
-    max-width: 1200px;
-    margin: 0 auto;
+.summit .figure img{
     width: 100%;
 }
-
-.sobre_nos .membros .box {
-    font-size: var(--font-size-md);
+.summit .content{
+    flex: 1 1 45rem;
+    margin: 2rem;
+}
+.summit .content h3{
+    font-size: 4.5rem;
     color: var(--quase-preto);
-    border-radius: .8rem;
-    box-shadow: var(--box-shadow);
-    background: var(--azul-bg);
-    margin: var(--spacing-md);
-    padding: var(--spacing-xl);
-    flex: 1 1 calc(33.333% - 2rem);
-    box-sizing: border-box;
-    max-width: calc(33.333% - 2rem);
-    min-width: 280px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    line-height: 1.8;
+    text-shadow: var(--text-shadow-box);
+
+}
+.summit .content p{
+    font-size: 1.7rem;
+    color: var(--cinza-medio);
+    line-height: 1.8;
+    padding: 1rem 0;
+    
+}
+.servicing .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(27rem,1fr));
+    gap: 2rem;
+    margin: 2rem;
 }
 
-.sobre_nos .membros .box .photo {
+.servicing .box-container .box{
+    background: var(--bg);
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow-box);
+    border: var(--border);
+    padding: 2.5rem;
+}
+.servicing .box-container .box i{
+    color: var(--laranja);
+    font-size: 5rem;
+    padding-bottom: .5rem;
+}
+.servicing .box-container .box h3{
+    color: var(--quase-preto);
+    font-size: 2.5rem;
+    padding: 1rem 0;
+}
+.servicing .box-container .box li{
+    color: var(--cinza-medio);
+    font-size: 1.4rem;
+    line-height: 2;
+}
+
+.team .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem,1fr));
+    gap: 2rem;
+    margin: 2rem;
+}
+.team .box-container .box{
+    text-align: center;
+    background: var(--bg);
+    border: var(--border);
+    box-shadow: var(--box-shadow-box);
+    padding: 2rem;
+}
+.team .box-container .box img{
+    height: 20rem;
+
+    margin-top:1rem;
+    margin-bottom: 1rem;
+}
+.team .box-container .box .photo {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 1.5rem;
 }
-
-.sobre_nos .membros .box .photo img {
+.team .box-container .box .photo img {
     width: 200px;
     height: 200px;
     border-radius: 50%;
     object-fit: cover;
 }
-
-.sobre_nos .membros .box .photo_equipe img {
-    width: 100%;
-    height: auto;
-    max-height: 200px;
-    object-fit: cover;
-    border-radius: 0.8rem;
+.team.box-container .box h2{
+    color: var(--quase-preto);
+    font-size: 2.8rem;
+}
+.team .box-container .box span{
+    color: var(--laranja);
+    font-size: 1.6rem;
 }
 
-.sobre_nos .membros .box .txt {
-    text-align: center;
-    color: var(--branco);
-    margin-bottom: var(--spacing-lg);
-    width: 100%;
+.team .box-container .box .share{
+    padding-top: 2rem;
 }
-
-.sobre_nos .membros .box .txt h2 {
-    font-size: var(--font-size-xl);
-    margin-bottom: var(--spacing-sm);
-}
-
-.sobre_nos .membros .box .txt p {
-    font-size: var(--font-size-md);
-}
-
-.sobre_nos .membros .box .git {
-    padding:var(--spacing-md) 0;
-    text-align: center;
-    width: 100%;
-}
-
-.sobre_nos .membros .box .git a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    height: 4rem;
-    width: 4rem;
-    font-size: var(--font-size-lg);
-    color: var(--branco-light);
-    background: var(--laranja);
-    margin: 0 .3rem;
+.team .box-container .box .share a{
+    height: 5rem;
+    width: 5rem;
+    line-height: 4.5rem;
+    font-size: 2rem;
+    color: var(--azul);
     border-radius: 50%;
-    text-decoration: none;
-    transition: all 0.3s ease;
+    border: var(--border);
+    margin: .3rem;
+}
+.team .box-container .box .share a:hover{
+    background: var(--azul-escuro);
+    color: var(--bg);
+    box-shadow: var(--box-shadow-box);
 }
 
-.sobre_nos .membros .box .git i {
-    height: 4rem;
-    width: 4rem;
-    line-height: 4rem;
-    font-size: var(--font-size-lg);
-    color: var(--branco);
-    background: var(--branco-light);
-    margin: 0 .3rem;
-    border-radius: 50%;
+.billhead{
+    text-align: center;
+    padding-bottom: 2rem;
+    text-shadow: var(--text-shadow);
+    text-transform: uppercase;
+    color: var(--quase-preto);
+    font-size: 5rem;
+    letter-spacing: .4rem;
 }
-
-.sobre_nos .membros .box .git a:hover {
-    opacity: .8;
-    box-shadow: var(--box-shadow);
-    transform: translateY(-3px);
-}
-
-
-#disable {
-    background: var(--cinza_azulado);
-    cursor: not-allowed;
+.billhead span{
+    color: var(--laranja);
+    text-transform: uppercase;
 }
