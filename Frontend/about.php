@@ -93,7 +93,7 @@
                     <img src="./ressources/img/eu.png" alt="">
                 </div>
                 <h2>Rosa Chagas</h2>
-                <span>Front-End</span>
+                <span>Full Stack</span>
 
                 <div class="share">
                     <a class="fa-brands fa-github" target="_blank" href="https://github.com/rosacl"></a>
@@ -105,7 +105,7 @@
                     <img src="./ressources/img/anna.jpg" alt="">
                 </div>
                 <h2>Anna Iris</h2>
-                <span>Front-End</span>
+                <span>Full Stack</span>
                 <div class="share">
                     <a class="fa-brands fa-github" target="_blank" href="https://github.com/ansilv00"></a>
                     <a class="fa-brands fa-linkedin" target="_blank" href="https://www.linkedin.com/in/anna-iris-silva-60b55736a/"></a>
@@ -116,7 +116,7 @@
                     <img src="./ressources/img/luan.jpg" alt="">
                 </div>
                 <h2>Luan Aquino</h2>
-                <span>Back-End</span>
+                <span>Full Stack</span>
                 <div class="share">
                     <a class="fa-brands fa-github" target="_blank" href="https://github.com/Aquino-maker"></a>
                     <a class="fa-brands fa-linkedin" target="_blank" href="https://www.linkedin.com/in/luan-aquino/"></a>
@@ -127,7 +127,7 @@
                     <img src="./ressources/img/isaque.jpg" alt="">
                 </div>
                 <h2>Isaque Newton</h2>
-                <span>Back-End</span>
+                <span>Full Stack</span>
                 <div class="share">
                     <a class="fa-brands fa-github" target="_blank" href="https://github.com/BananaSpritee"></a>
                     <a class="fa-brands fa-linkedin" target="_blank" href="https://www.linkedin.com/in/isaque-newton-silva-774a72374/"></a>

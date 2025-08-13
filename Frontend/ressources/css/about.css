@@ -131,3 +131,7 @@
     color: var(--laranja);
     text-transform: uppercase;
 }
+#disable{
+    color: var(--cinza_azulado);
+    background: var(--azul-light);
+}
