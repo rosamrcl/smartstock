@@ -400,3 +400,150 @@ footer img {
     object-fit: contain;
 }
 
+/* ===== ESTILIZAÇÃO GLOBAL DOS INPUTS ===== */
+input[type="email"],
+input[type="password"],
+input[type="text"],
+input[type="number"],
+input[type="tel"],
+input[type="url"],
+input[type="search"],
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+textarea,
+select {
+    border-radius: 8px;
+    padding: 12px 16px;
+    border: 2px solid #e1e5e9;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+    min-height: 48px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="date"]:focus,
+input[type="time"]:focus,
+input[type="datetime-local"]:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--laranja);
+    box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.1);
+    transform: translateY(-1px);
+}
+
+input[type="email"]:hover,
+input[type="password"]:hover,
+input[type="text"]:hover,
+input[type="number"]:hover,
+input[type="tel"]:hover,
+input[type="url"]:hover,
+input[type="search"]:hover,
+input[type="date"]:hover,
+input[type="time"]:hover,
+input[type="datetime-local"]:hover,
+textarea:hover,
+select:hover {
+    border-color: #c1c7cd;
+}
+
+input[type="email"]::placeholder,
+input[type="password"]::placeholder,
+input[type="text"]::placeholder,
+input[type="number"]::placeholder,
+input[type="tel"]::placeholder,
+input[type="url"]::placeholder,
+input[type="search"]::placeholder,
+textarea::placeholder {
+    color: #6c757d;
+    opacity: 0.7;
+}
+
+/* Estilização específica para textarea */
+textarea {
+    min-height: 100px;
+    resize: vertical;
+    font-family: inherit;
+}
+
+/* Estilização específica para select */
+select {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 12px center;
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    padding-right: 40px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+/* Estados de erro para inputs */
+input[type="email"].error,
+input[type="password"].error,
+input[type="text"].error,
+input[type="number"].error,
+input[type="tel"].error,
+input[type="url"].error,
+input[type="search"].error,
+input[type="date"].error,
+input[type="time"].error,
+input[type="datetime-local"].error,
+textarea.error,
+select.error {
+    border-color: var(--vermelho-escuro);
+    background-color: #fff5f5;
+    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+}
+
+/* Estados de sucesso para inputs */
+input[type="email"].success,
+input[type="password"].success,
+input[type="text"].success,
+input[type="number"].success,
+input[type="tel"].success,
+input[type="url"].success,
+input[type="search"].success,
+input[type="date"].success,
+input[type="time"].success,
+input[type="datetime-local"].success,
+textarea.success,
+select.success {
+    border-color: var(--verde-medio);
+    background-color: #f0fff4;
+    box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.1);
+}
+
+/* Responsividade para inputs */
+@media (max-width: 768px) {
+    input[type="email"],
+    input[type="password"],
+    input[type="text"],
+    input[type="number"],
+    input[type="tel"],
+    input[type="url"],
+    input[type="search"],
+    input[type="date"],
+    input[type="time"],
+    input[type="datetime-local"],
+    textarea,
+    select {
+        font-size: 16px; /* Previne zoom no iOS */
+        padding: 10px 14px;
+        min-height: 44px;
+    }
+}
+

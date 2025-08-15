@@ -4,7 +4,7 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 
 // Verificar se o usuário já está logado
-if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])) {
+if (isset($_SESSION['id_user']) && !empty($_SESSION['id_user'])) {
     // Se já está logado, redirecionar para o painel
     header("Location: Frontend/home.php");
     exit();

@@ -1,9 +1,17 @@
+<?php
+$isLoggedIn = isset($_SESSION['id_user']) && !empty($_SESSION['id_user']);
+?>
+
 <header class="header">
     <section class="flex">
         <div class="smartstock">
-            <div id="menu-btn" class="fas fa-bars-staggered"></div>
-            <a href="home.php" class="home"><i class="fa-solid fa-house"></i>
-            </a>
+            <?php if ($isLoggedIn): ?>
+                <div id="menu-btn" class="fas fa-bars-staggered"></div>
+            <?php endif; ?>
+            <?php if ($isLoggedIn): ?>
+                <a href="home.php" class="home"><i class="fa-solid fa-house"></i>
+                </a>
+            <?php endif; ?>
         </div>
         <div class="smart-logo">
             <img src="./ressources/img/smartstock.png" alt="SmartStock Logo">
@@ -16,6 +24,8 @@
     </section>
 
 </header>
+
+<?php if ($isLoggedIn): ?>
 <div class="side-bar">
     <nav class="navbar" role="navigation" aria-label="Menu principal">
         <div id="close-btn" class="fas fa-times"></div>
@@ -36,3 +46,4 @@
 
     </nav>
 </div>
+<?php endif; ?>

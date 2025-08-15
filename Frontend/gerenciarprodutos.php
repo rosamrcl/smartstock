@@ -1,4 +1,10 @@
 <?php
+session_start();
+
+if (!isset($_SESSION['id_user']) || empty($_SESSION['id_user'])) {
+    header('Location: login.php');
+    exit;
+}
 
 require_once("../Backend/conexao.php");
 
